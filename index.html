@@ -2,9 +2,178 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoLoad=true&amp;skin=sunburst"></script>
   </head>
   <body>
-    <h1>Kameleon</h1>
-    <p>Make your things instantly with JavaScript</p>
+    <div class="wrap">
+      <!-- Header -->
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="/">
+            <img class="navbar-logo" src="image/kameleon_logo.png">
+            Kameleon
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto navbar-right">
+              <a class="nav-item nav-link " href="/download">Boards</a>
+              <a class="nav-item nav-link " href="/support">Support</a>
+              <a class="nav-item nav-link" href="https://docs.staruml.io" target="_blank">Docs</a>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Body -->
+      <div class="jumbotron-fluid">
+        <div class="container" style="margin-top: 5rem;">
+          <div class="row">
+            <div class="col-md-6">
+              <div style="padding-left: 1em; padding-right: 1em; padding-top: 3em;">
+                <h1>Kameleon</h1>
+                <div style="font-size: 27px; color: rgba(255,255,255,.8); margin-bottom: 20px;">
+                  Make your things with JavaScript
+                </div>
+                <div class="mb-3">
+                  <span style="padding: .2em .8em; background-color: #444444; border-radius: .5em;">v0.1.0-beta</span>
+                </div>
+                <a class="btn btn-primary">Getting Started</a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div style="padding-left: 2em; padding-right: 2em;">
+                <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                  <div class="board-led"></div>
+                  <img src="image/kameleon-board.png" width="360px" height="190px" style="opacity: 0.5">
+                </div>    
+                <div style="width: 100%;">
+<pre class="prettyprint lang-js js-example">
+// Blink LED
+var led = board.led(0);
+setInterval(function () {
+  digitalToggle(led);
+}, 1000);
+</pre>
+                </div>                                  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Open Source</h4>
+            <p>
+              Compatible with UML 2.x standard metamodel and diagrams: Class, Object, Use Case, Component, Deployment, Composite Structure, Sequence, Communication, Statechart, Activity and Profile Diagram.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h4>Standard Compliant</h4>
+            <p>
+              Support to create Entity-Relationship Diagrams (ERD), Data-flow Diagrams (DFD) and Flowchart Diagrams.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Small footprint</h4>
+              <p>
+                Compatible with UML 2.x standard metamodel and diagrams: Class, Object, Use Case, Component, Deployment, Composite Structure, Sequence, Communication, Statechart, Activity and Profile Diagram.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <h4>Non-blocking I/O</h4>
+              <p>
+                Support to create Entity-Relationship Diagrams (ERD), Data-flow Diagrams (DFD) and Flowchart Diagrams.
+              </p>
+            </div>
+          </div>
+        </div>
+  
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Web IDE (comming in 2019)</h4>
+            <p>
+              Compatible with UML 2.x standard metamodel and diagrams: Class, Object, Use Case, Component, Deployment, Composite Structure, Sequence, Communication, Statechart, Activity and Profile Diagram.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h4>Terminal Support</h4>
+            <p>
+              Support to create Entity-Relationship Diagrams (ERD), Data-flow Diagrams (DFD) and Flowchart Diagrams.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="container" style="text-align: center; margin-top: 2em;">
+          <div>&copy; 2018 <a href="/">Kameleon</a></div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col span-3">
+              <ul style="list-style-type: none">
+                <li><a href="/mklab">About Company</a></li>
+                <li><a href="/eula">License</a></li>
+                <li><a target="_blank" href="https://github.com/staruml">Github</a></li>
+              </ul>
+            </div>
+            <div class="col span-3">
+              <ul style="list-style-type: none">
+                <li><a href="/download">Download</a></li>
+                <li><a href="/buy">Buy</a></li>
+                <li><a href="/extensions">Extensions</a></li>
+                <li><a href="/support">Support</a></li>
+              </ul>
+            </div>
+            <div class="col span-3">
+              <ul style="list-style-type: none">
+                <li><a target="_blank" href="http://docs.staruml.io">Documentation</a></li>
+                <li><a target="_blank" href="https://groups.google.com/forum/#!forum/staruml">Discuss on Google Group</a></li>
+                <li><a target="_blank" href="https://staruml.uservoice.com/">User Voice</a></li>
+              </ul>
+            </div>
+            <div class="col span-3">
+              <ul style="list-style-type: none">
+                <li><a target="_blank" href="http://blog.staruml.io">Blog</a></li>
+                <li><a target="_blank" href="http://facebook.com/staruml.io">Facebook</a></li>
+                <li><a target="_blank" href="http://twitter.com/starumlio">Twitter</a></li>
+                <li><a target="_blank" href="http://plus.google.com/u/0/b/111242240141659810409/111242240141659810409">Google+</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var led = document.querySelector('div.board-led');
+      var state = false;
+      setInterval(function () {
+        if (state) {
+          led.style['background-color'] = '#000000';
+          led.style['box-shadow'] = 'none';
+        } else {
+          led.style['background-color'] = '#00ff00';
+          led.style['box-shadow'] = '0px 0px 30px #ffffff';
+        }
+        state = !state;
+      }, 1000)
+    </script>
   </body>
 </html>
