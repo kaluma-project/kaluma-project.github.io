@@ -1,12 +1,12 @@
 html {
   height: 100%;
+  font-size: 1.2rem;
 }
 
 body {
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-weight: normal;
-  font-size: 16px;
-  line-height: 26px;
+  line-height: 1.5em;
   color: #677277;
   height: 100%;
 }
@@ -15,7 +15,6 @@ div.wrap {
   min-height: 100%;
   position: relative;
   padding-top: 65px; /* height of navbar */
-  padding-bottom: 250px; /* height of footer */
 }
 
 .container {
@@ -56,43 +55,95 @@ img.navbar-logo {
 
 .jumbotron-fluid {
   background-color: #000; /* #358b35; */
-  margin-bottom: 50px;
   padding-top: 10px;
   padding-bottom: 0px;
   color: #ffffff;
   font-weight: 300;
 }
 
-pre.prettyprint.js-example {
+pre.prettyprint.code-block {
   background: #313030;
-  font-size: 18px;
   border: none;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  padding: 1.5em 2em;
-  margin-top: 2em;
-  margin-bottom: 0;
+  border-radius: 1rem;
+  padding: 1.2em 1.7em;
+  margin: 0;
+  width: 100%;
 }
 
 div.board-led {
   position: relative;
-  width: 13px;
-  height: 25px;
+  width: 12px;
+  height: 22px;
   background-color: black;
-  left: 152px;
-  top: -17px;
+  left: -32px;
+  top: 85px;
+}
+
+/* Section */
+
+.section {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3em;  
+}
+
+/* Feature */
+
+.feature .icon {
+  font-size: 32px;
+}
+
+.feature .title {
+  font-size: 24px;
+  margin-left: .3em;
+}
+
+.feature .desc {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+/* Getting Started */
+
+.step {
+  display: flex;
+  flex-direction: row;
+}
+
+.step .number {
+  width: 64px;
+  height: 64px;
+  display: block;
+  text-align: center;
+  background-color: #28a745; /* #007bff; */
+  color: white;
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: .6em .7em;
+  margin-right: .5em;
+  border-radius: .1em;
+}
+
+.step .title {
+  font-size: 1.5rem;
+  margin-bottom: .2em;
+}
+
+.step .desc {
+  color: #9b9a9a;
+  margin-bottom: 1em;
 }
 
 /* Footer */
 
 .footer {
   font-weight: normal;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 250px; /* set the fixed height */
   background-color: #000000;
   color: #999999;
 }
@@ -103,48 +154,25 @@ div.board-led {
 
 /* Common */
 
-.text-primary {
-  color: #2191ec;
+.btn {
+  border-radius: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
-.form-control::placeholder {
-  color: #b3b3b3;
+li.nav-item a.nav-link {
+  cursor: pointer;
 }
 
-.btn-primary {
-  border: none;
-  background-color: #2191ec;
+li.nav-item a.nav-link.active {
+  color: #28a745;
+  background-color: transparent;
+  border-bottom: 4px solid #28a745;
+  border-radius: 0;
 }
 
-.headline {
-  color: #000000;
-  background-color: #eeeeee;
-}
-
-.subtitle {
-  font-size: 20px;
-  color: rgb(0, 0, 0, .5);
-}
-
-
-/* Features */
-
-.feature {
-  padding-top: 50px;
-  padding-bottom: 30px;
-  font-size: 16px;  
-}
-
-.feature img.feature-img {
-  border: 1px solid #dddddd;
-  border-radius: 5px;
-  box-shadow: 1px 1px 1px #dddddd;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.feature p {
-  color: #7e7e7e;
+li.nav-item a.nav-link.active:hover {
+  /* color: #fff; */
 }
 
 /* Customers */
