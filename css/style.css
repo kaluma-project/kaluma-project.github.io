@@ -11,10 +11,10 @@ body {
   height: 100%;
 }
 
-div.wrap {
+.wrap {
   min-height: 100%;
   position: relative;
-  padding-top: 65px; /* height of navbar */
+  /* padding-top: 65px; */
 }
 
 .container {
@@ -26,7 +26,7 @@ div.wrap {
 .navbar-dark {
   background-color: #000; /* #358b35; */
   font-weight: normal;
-  height: 65px;
+  /* height: 65px; */
 }
 
 .navbar-dark .navbar-nav .nav-link {

@@ -9,31 +9,36 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoLoad=true&amp;skin=sunburst"></script>
   </head>
   <body>
-    <div class="wrap">
 
-      <!-- Header -->
+    <main role="main" class="wrap">
 
-      <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+      <!-- HEADER (NAVBAR) ---------------------------------------------------->
+
+      <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
           <a class="navbar-brand" href="/" style="margin-right: .3em;">
             <img class="navbar-logo" src="image/kameleon-logo.png">
             Kameleon
+            <span style="position: relative; font-size: 0.6rem; color: #fff; background-color: green; padding: .2rem .5rem; border-radius: 1em; font-weight: bold; top: -.8em; left: .1em;">BETA</span>
           </a>
-          <div style="font-size: 0.6rem">
-            <span style="color: #fff; background-color: green; padding: 0.3rem .8rem; border-radius: 1em; font-weight: bold; margin-bottom: .5em;">BETA</span>
-          </div>          
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto navbar-right">
-              <a class="nav-item nav-link " href="/board">Board</a>
-              <a class="nav-item nav-link " href="/support">Support</a>
+              <a class="nav-item nav-link " href="#features">Features</a>
+              <a class="nav-item nav-link " href="#getting-started">Getting Started</a>
+              <a class="nav-item nav-link " href="#board">Board</a>
+              <a class="nav-item nav-link " href="#support">Support</a>
               <a class="nav-item nav-link" href="https://docs.kameleon.io" target="_blank">Docs</a>
             </ul>
           </div>
@@ -52,9 +57,8 @@
                   A tiny JavaScript platform for Microcontrollers
                 </div>
                 <div class="mb-3">
-                  <span style="padding: .2em .8em; background-color: #444444; border-radius: .5em;">v0.9.0-beta</span>
+                  <span style="padding: .2em .8em; background-color: #444444; border-radius: .5em;">v0.9.0-beta.1</span>
                 </div>
-                <!-- <a class="btn btn-primary">Getting Started</a> -->
               </div>
             </div>
             <div class="col-md-6">
@@ -82,12 +86,12 @@ setInterval(function () {
         </div>
       </div>
 
-      <!-- Key Features -->
+      <!-- FEATURES --------------------------------------------------------->
 
-      <div class="section">
+      <div class="section" id="features">
         <div class="container">
           <div class="section-head">
-            <h2>Key features</h2>
+            <h2>Features</h2>
           </div>
 
           <div class="row">
@@ -133,15 +137,17 @@ setInterval(function () {
         </div>      
       </div>
 
-      <!-- Getting Started-->
 
-      <div class="section" style="background-color: #eee;">
+
+      <!-- GETTING STARTED --------------------------------------------------->
+
+      <div id="getting-started" class="section" style="background-color: #eee;">
 
         <div class="container">
 
           <!-- Nav Tabs -->
           <div class="section-head">
-            <h2>Getting started</h2>
+            <h2>Getting Started</h2>
             <ul class="nav nav-pills justify-content-center" style="margin-top: 1em;">
               <li class="nav-item">
                 <a class="nav-link platform-mac active">macOS</a>
@@ -623,38 +629,66 @@ $ (sudo) screen /dev/tty.usbmodem&lt;n&gt;
         </div>
       </div>
 
-      <!-- Footer -->
+
+      <!-- BOARD --------------------------------------------------------->
+      
+      <div id="board" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Kameleon Core Board</h2>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <!-- <img width="80%" src="image/kameleon-core.jpg"> -->
+              <h4 style="margin-bottom: 1em">Pinmap</h4>
+              <img width="90%" src="image/kameleon-core-pinmap.png">
+            </div>
+            <div class="col-md-6">
+              <h4 style="margin-bottom: 1em">Main features</h4>
+              <ul>
+                <li>38mm x 21mm</li>
+                <li>STM32F411CEU6 Microcontroller</li>
+                <li>100MHz ARM 32-bit Cortex M4</li>
+                <li>512KB flash and 126KB RAM</li>
+                <li>20x GPIO, 5x PWM, 6x ADC, 2x I2C, 2x SPI, 2x UART</li>
+                <li>2 LEDs (1 for power, 1 for user)</li>
+                <li>2 Switches (1 for reset, 1 for user)</li>
+                <li>On-board 3.3v 250mA voltage regulator, accepts voltages from 3.5v to 5v</li>
+                <li>Kameleon firmware is pre-programmed</li>
+                <li>128KB is reserved for user program in flash</li>
+              </ul>
+              <a class="btn btn-success btn-lg" href="https://www.tindie.com/products/15066/" role="button" target="_blank">Buy on Tindie</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER ------------------------------------------------------------>
 
       <div class="footer">
-        <div class="container" style="text-align: center; padding-top: 2em;">
+        <div class="container" style="text-align: center; padding-top: 1em; padding-bottom: 1em;">
           <div>&copy; 2018 <a href="/">Kameleon</a></div>
         </div>
+        <!--
         <div class="container">
           <div class="row">
-            <div class="col span-3">
+            <div class="col-md-4">
               <ul style="list-style-type: none">
-                <li><a href="/mklab">About Company</a></li>
-                <li><a href="/eula">License</a></li>
-                <li><a target="_blank" href="https://github.com/staruml">Github</a></li>
+                <li><a target="_blank" href="https://github.com/kameleon-project">Github</a></li>
               </ul>
             </div>
-            <div class="col span-3">
+            <div class="col-md-4">
               <ul style="list-style-type: none">
                 <li><a href="/download">Download</a></li>
                 <li><a href="/buy">Buy</a></li>
                 <li><a href="/extensions">Extensions</a></li>
-                <li><a href="/support">Support</a></li>
               </ul>
             </div>
-            <div class="col span-3">
+            <div class="col-md-4">
               <ul style="list-style-type: none">
                 <li><a target="_blank" href="http://docs.staruml.io">Documentation</a></li>
                 <li><a target="_blank" href="https://groups.google.com/forum/#!forum/staruml">Discuss on Google Group</a></li>
                 <li><a target="_blank" href="https://staruml.uservoice.com/">User Voice</a></li>
-              </ul>
-            </div>
-            <div class="col span-3">
-              <ul style="list-style-type: none">
                 <li><a target="_blank" href="http://blog.staruml.io">Blog</a></li>
                 <li><a target="_blank" href="http://facebook.com/staruml.io">Facebook</a></li>
                 <li><a target="_blank" href="http://twitter.com/starumlio">Twitter</a></li>
@@ -663,6 +697,7 @@ $ (sudo) screen /dev/tty.usbmodem&lt;n&gt;
             </div>
           </div>
         </div>
+        -->
       </div>
     </div>
 
