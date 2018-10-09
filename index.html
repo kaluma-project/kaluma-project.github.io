@@ -38,8 +38,9 @@
               <a class="nav-item nav-link " href="#features">Features</a>
               <a class="nav-item nav-link " href="#getting-started">Getting Started</a>
               <a class="nav-item nav-link " href="#board">Board</a>
-              <a class="nav-item nav-link " href="#support">Support</a>
-              <a class="nav-item nav-link" href="https://docs.kameleon.io" target="_blank">Docs</a>
+              <a class="nav-item nav-link " href="https://groups.google.com/forum/#!forum/kameleonjs" target="_blank">Forum</a>
+              <a class="nav-item nav-link" href="https://github.com/kameleon-project/kameleon/wiki" target="_blank">Docs</a>
+              <a class="nav-item nav-link" href="https://github.com/kameleon-project" target="_blank"><i class="fab fa-github"></i></a>
             </ul>
           </div>
         </div>
@@ -98,18 +99,23 @@ setInterval(function () {
             <div class="col-md-6">
               <div class="feature">
                 <i class="icon fab fa-js"></i>
-                <span class="title">ECMAScript compliant</span>
-                <p class="desc">Compliant with ECMAScript 5.1 and 2015(subset) standard, so you can use many tools including Linters (JSHint, ESLint, ...), Transpilers (Babel, TypeScript, CoffeeScript, ...), Bundlers (Webpack, Parcel, Rollup, ...) to program Microcontrollers. (Powered by <a href="http://jerryscript.net/" target="_blank">JerryScript</a>)</p>
+                <span class="title">Standard compliant</span>
+                <div class="desc">
+                  Compliant with ECMAScript 5.1 and 2015(subset) standard, so you can use many tools including Linters (JSHint, ESLint, ...), Transpilers (Babel, TypeScript, ...), Bundlers (Webpack, Rollup, ...).
+                  <div style="margin-top: .3em;">
+                    <i>Powered by <a href="http://jerryscript.net/" target="_blank">JerryScript</a></i>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="feature">
-                <i class="icon fas fa-compress"></i>
-                <span class="title">Small and efficient</span>
-                <p class="desc">
+                <i class="icon fas fa-bolt"></i>
+                <span class="title">Small and fast</span>
+                <div class="desc">
                   Kameleon is very small and efficient which can be run on microcontrollers having about 300KB ROM and 64KB RAM.
-                  User program can be stored in the flash memory of microcontroller.
-                </p>    
+                  User program can be stored in the in-chip flash memory without SD card or additional memory.
+                </div>
               </div>
             </div>
           </div>
@@ -134,6 +140,29 @@ setInterval(function () {
               </div>
             </div>
           </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="feature">
+                <i class="icon fab fa-github"></i>
+                <span class="title">Open source</span>
+                <div class="desc">
+                  Kameleon is an open source project includes JavaScript runtime, hardware boards and some tools licensed under MIT.
+                  <div style="margin-top: .3em;">
+                    <a target="_blank" href="https://github.com/kameleon-project"><i class="fab fa-github"></i> Github</a>
+                  </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+              <div class="feature">
+                <i class="icon fas fa-code"></i>
+                <span class="title">Portable and extensible</span>
+                <div class="desc">
+                  It is easier to port the runtime on a new kind of microcontroller and add a new native module which can be imported in JavaScript code by <code>require()</code> function.
+                </div>
+              </div>
+            </div>
+          </div>  
         </div>      
       </div>
 
@@ -170,7 +199,7 @@ setInterval(function () {
                   <div>
                     <div class="title">Get a board</div>
                     <div class="desc">
-                      Get a kameleon-compatible board.
+                      Get a Kameleon compatible board.
                     </div>
                   </div>                
                 </div>
@@ -186,7 +215,7 @@ setInterval(function () {
                   <div>
                     <div class="title">Install CLI</div>
                     <div class="desc">
-                      Install Kameleon CLI (Command Line Interface).
+                      Open a terminal and install Kameleon CLI (Command Line Interface).
                     </div>
                   </div>
                 </div>
@@ -205,7 +234,7 @@ $ npm install -g kameleon-cli
                   <div>
                     <div class="title">Write your code</div>
                     <div class="desc">
-                      Write your code with Code Editor (Sublime Text, Visual Studio Code, Atom, Brackets, etc.).
+                      Write your code with a code editor (Sublime Text, Visual Studio Code, Atom, etc.).
                     </div>
                   </div>
                 </div>
@@ -235,9 +264,9 @@ setInterval(function () {
               <div class="col-md-6">
                 <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> Check the serial port where the board is connected</div>
 <pre class="prettyprint lang-sh code-block">
-$ ls /dev/tty.*
-<span class="nocode" style="color: #acabab;">/dev/tty.Bluetooth-Incoming-Port</span>
-<span class="nocode" style="color: #acabab;">/dev/tty.usbmodem&lt;n&gt;</span>
+$ kameleon -l
+<span class="nocode" style="color: #acabab;">...</span>
+<span class="nocode" style="color: #acabab;">/dev/tty.usbmodem?</span>
 </pre>
               </div>
             </div>
@@ -255,92 +284,10 @@ $ ls /dev/tty.*
               </div>
               <div class="col-md-6">
 <pre class="prettyprint lang-sh code-block">
-$ kameleon write index.js -p /dev/tty.usbmodem&lt;n&gt;
+$ kameleon write index.js -p /dev/tty.usbmodem?
 </pre>
               </div>
-            </div>
-
-            <!-- macOS (REPL) -->
-            <div style="text-align: center; border-top: 1px solid #ddd; padding-top: 2em; margin-top: 4em; margin-bottom: 2em;">
-              <h5>Use in REPL mode</h5>
-            </div>
-            <div class="row" style="margin-bottom: 2em;">
-              <div class="col-md-6">
-                <div class="step">
-                  <div class="number">1</div>
-                  <div>
-                    <div class="title">Get a board</div>
-                    <div class="desc">
-                      Get a kameleon-compatible board.
-                    </div>
-                  </div>                
-                </div>
-              </div>
-              <div class="col-md-6">
-                <a class="btn btn-success btn-lg" href="https://www.tindie.com/products/15066/" role="button" target="_blank">Buy on Tindie</a>
-              </div>              
-            </div>
-            <div class="row" style="margin-bottom: 2em;">
-              <div class="col-md-6">
-                <div class="step">
-                  <div class="number">2</div>
-                  <div>
-                    <div class="title">Connect the board</div>
-                    <div class="desc">
-                      Connect the board to your computer using a USB cable.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> Check the serial port where the board is connected</div>
-<pre class="prettyprint lang-sh code-block">
-$ ls /dev/tty.*
-<span class="nocode" style="color: #acabab;">/dev/tty.Bluetooth-Incoming-Port</span>
-<span class="nocode" style="color: #acabab;">/dev/tty.usbmodem&lt;n&gt;</span>
-</pre>
-              </div>
-            </div>
-            <div class="row" style="margin-bottom: 2em;">
-              <div class="col-md-6">
-                <div class="step">
-                  <div class="number">3</div>
-                  <div>
-                    <div class="title">Run a terminal</div>
-                    <div class="desc">
-                      Run a terminal program connecting to the serial port.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-<pre class="prettyprint lang-sh code-block">
-$ screen /dev/tty.usbmodem&lt;n&gt;
-</pre>
-              </div>
-            </div>
-            <div class="row" style="margin-bottom: 2em;">
-              <div class="col-md-6">
-                <div class="step">
-                  <div class="number">4</div>
-                  <div>
-                    <div class="title">Evaluate JavaScript code</div>
-                    <div class="desc">
-                      You can evaluate JavaScript code line by line in the terminal.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-<pre class="prettyprint lang-sh code-block">
-<span class="nocode" style="color: #fff;">&gt; 1+2</span>
-<span class="nocode" style="color: #acabab;">3</span>
-<span class="nocode" style="color: #fff;">&gt; digitalWrite(board.led(0), 1)</span>
-<span class="nocode" style="color: #acabab;">undefined</span>
-</pre>
-              </div>
-            </div>
-  
+            </div>  
           </div>
 
           <!-- Windows -->
@@ -352,7 +299,7 @@ $ screen /dev/tty.usbmodem&lt;n&gt;
                   <div>
                     <div class="title">Get a board</div>
                     <div class="desc">
-                      Get a kameleon-compatible board.
+                      Get a Kameleon compatible board.
                     </div>
                   </div>                
                 </div>
@@ -368,7 +315,7 @@ $ screen /dev/tty.usbmodem&lt;n&gt;
                   <div>
                     <div class="title">Install CLI</div>
                     <div class="desc">
-                      Install Kameleon CLI (Command Line Interface).
+                      Open a PowerShell and install Kameleon CLI (Command Line Interface).
                     </div>
                   </div>
                 </div>
@@ -388,7 +335,7 @@ PS> npm install -g kameleon-cli
                   <div>
                     <div class="title">Write your code</div>
                     <div class="desc">
-                      Write your code with Code Editor (Sublime Text, Visual Studio Code, Atom, Brackets, etc.).
+                        Write your code with a code editor (Sublime Text, Visual Studio Code, Atom, etc.).
                     </div>
                   </div>
                 </div>
@@ -419,8 +366,8 @@ setInterval(function () {
                 <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> Check the serial port where the board is connected</div>
 <pre class="prettyprint lang-sh code-block">
 PS> kameleon -l
-<span class="nocode" style="color: #acabab;">/dev/tty.Bluetooth-Incoming-Port</span>
-<span class="nocode" style="color: #acabab;">/dev/tty.usbmodem&lt;n&gt;</span>
+<span class="nocode" style="color: #acabab;">...</span>
+<span class="nocode" style="color: #acabab;">COM?</span>
 </pre>
               </div>
             </div>
@@ -438,7 +385,7 @@ PS> kameleon -l
               </div>
               <div class="col-md-6">
 <pre class="prettyprint lang-sh code-block">
-PS> kameleon write index.js -p /dev/tty.usbmodem&lt;n&gt;
+PS> kameleon write index.js -p COM?
 </pre>
               </div>
             </div>  
@@ -453,7 +400,7 @@ PS> kameleon write index.js -p /dev/tty.usbmodem&lt;n&gt;
                   <div>
                     <div class="title">Get a board</div>
                     <div class="desc">
-                      Get a kameleon-compatible board.
+                      Get a Kameleon compatible board.
                     </div>
                   </div>                
                 </div>
@@ -469,13 +416,14 @@ PS> kameleon write index.js -p /dev/tty.usbmodem&lt;n&gt;
                   <div>
                     <div class="title">Install CLI</div>
                     <div class="desc">
-                      Install Kameleon CLI (Command Line Interface).
+                      Open a terminal and install Kameleon CLI (Command Line Interface).
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> Ensure that <a href="https://nodejs.org" target="_blank">Node.js/NPM</a> is installed.</div>
+                <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> You may need to use npm option <code>--unsafe-perm=true</code></div>
 <pre class="prettyprint lang-bash code-block">
 $ npm install -g kameleon-cli
 </pre>
@@ -488,7 +436,7 @@ $ npm install -g kameleon-cli
                   <div>
                     <div class="title">Write your code</div>
                     <div class="desc">
-                      Write your code with Code Editor (Sublime Text, Visual Studio Code, Atom, Brackets, etc.).
+                        Write your code with a code editor (Sublime Text, Visual Studio Code, Atom, etc.).
                     </div>
                   </div>
                 </div>
@@ -518,9 +466,9 @@ setInterval(function () {
               <div class="col-md-6">
                 <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> Check the serial port where the board is connected</div>
 <pre class="prettyprint lang-sh code-block">
-$ ls /dev/tty.*
-<span class="nocode" style="color: #acabab;">/dev/tty.Bluetooth-Incoming-Port</span>
-<span class="nocode" style="color: #acabab;">/dev/tty.usbmodem&lt;n&gt;</span>
+$ kameleon -l
+<span class="nocode" style="color: #acabab;">...</span>
+<span class="nocode" style="color: #acabab;">/dev/ttyACM?</span>
 </pre>
               </div>
             </div>
@@ -538,92 +486,10 @@ $ ls /dev/tty.*
               </div>
               <div class="col-md-6">
 <pre class="prettyprint lang-sh code-block">
-$ kameleon write index.js -p /dev/tty.usbmodem&lt;n&gt;
+$ kameleon write index.js -p /dev/ttyACM?
 </pre>
               </div>
             </div>
-
-            <!-- Linux (REPL) -->
-            <div style="text-align: center; border-top: 1px solid #ddd; padding-top: 2em; margin-top: 4em; margin-bottom: 2em;">
-              <h5>Use in REPL mode</h5>
-            </div>
-            <div class="row" style="margin-bottom: 2em;">
-              <div class="col-md-6">
-                <div class="step">
-                  <div class="number">1</div>
-                  <div>
-                    <div class="title">Get a board</div>
-                    <div class="desc">
-                      Get a kameleon-compatible board.
-                    </div>
-                  </div>                
-                </div>
-              </div>
-              <div class="col-md-6">
-                <a class="btn btn-success btn-lg" href="https://www.tindie.com/products/15066/" role="button" target="_blank">Buy on Tindie</a>
-              </div>              
-            </div>
-            <div class="row" style="margin-bottom: 2em;">
-              <div class="col-md-6">
-                <div class="step">
-                  <div class="number">2</div>
-                  <div>
-                    <div class="title">Connect the board</div>
-                    <div class="desc">
-                      Connect the board to your computer using a USB cable.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> Check the serial port where the board is connected</div>
-<pre class="prettyprint lang-sh code-block">
-$ ls /dev/tty.*
-<span class="nocode" style="color: #acabab;">/dev/tty.Bluetooth-Incoming-Port</span>
-<span class="nocode" style="color: #acabab;">/dev/tty.usbmodem&lt;n&gt;</span>
-</pre>
-              </div>
-            </div>
-            <div class="row" style="margin-bottom: 2em;">
-              <div class="col-md-6">
-                <div class="step">
-                  <div class="number">3</div>
-                  <div>
-                    <div class="title">Run a terminal</div>
-                    <div class="desc">
-                      Run a terminal program connecting to the serial port.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-<pre class="prettyprint lang-sh code-block">
-$ (sudo) screen /dev/tty.usbmodem&lt;n&gt;
-</pre>
-              </div>
-            </div>
-            <div class="row" style="margin-bottom: 2em;">
-              <div class="col-md-6">
-                <div class="step">
-                  <div class="number">4</div>
-                  <div>
-                    <div class="title">Evaluate JavaScript code</div>
-                    <div class="desc">
-                      You can evaluate JavaScript code line by line in the terminal.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-<pre class="prettyprint lang-sh code-block">
-<span class="nocode" style="color: #fff;">&gt; 1+2</span>
-<span class="nocode" style="color: #acabab;">3</span>
-<span class="nocode" style="color: #fff;">&gt; digitalWrite(board.led(0), 1)</span>
-<span class="nocode" style="color: #acabab;">undefined</span>
-</pre>
-              </div>
-            </div>
-
           </div>
 
         </div>
@@ -640,11 +506,11 @@ $ (sudo) screen /dev/tty.usbmodem&lt;n&gt;
           <div class="row">
             <div class="col-md-6">
               <!-- <img width="80%" src="image/kameleon-core.jpg"> -->
-              <h4 style="margin-bottom: 1em">Pinmap</h4>
+              <h4 style="margin-bottom: .5em; margin-top: .5em;">Pinmap</h4>
               <img width="90%" src="image/kameleon-core-pinmap.png">
             </div>
             <div class="col-md-6">
-              <h4 style="margin-bottom: 1em">Main features</h4>
+              <h4 style="margin-bottom: .5em; margin-top: .5em;">Main features</h4>
               <ul>
                 <li>38mm x 21mm</li>
                 <li>STM32F411CEU6 Microcontroller</li>
@@ -663,41 +529,22 @@ $ (sudo) screen /dev/tty.usbmodem&lt;n&gt;
         </div>
       </div>
 
+
       <!-- FOOTER ------------------------------------------------------------>
 
       <div class="footer">
-        <div class="container" style="text-align: center; padding-top: 1em; padding-bottom: 1em;">
+        <div class="container" style="text-align: center; padding-top: 1.5em; padding-bottom: 2em;">
           <div>&copy; 2018 <a href="/">Kameleon</a></div>
-        </div>
-        <!--
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <ul style="list-style-type: none">
-                <li><a target="_blank" href="https://github.com/kameleon-project">Github</a></li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-              <ul style="list-style-type: none">
-                <li><a href="/download">Download</a></li>
-                <li><a href="/buy">Buy</a></li>
-                <li><a href="/extensions">Extensions</a></li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-              <ul style="list-style-type: none">
-                <li><a target="_blank" href="http://docs.staruml.io">Documentation</a></li>
-                <li><a target="_blank" href="https://groups.google.com/forum/#!forum/staruml">Discuss on Google Group</a></li>
-                <li><a target="_blank" href="https://staruml.uservoice.com/">User Voice</a></li>
-                <li><a target="_blank" href="http://blog.staruml.io">Blog</a></li>
-                <li><a target="_blank" href="http://facebook.com/staruml.io">Facebook</a></li>
-                <li><a target="_blank" href="http://twitter.com/starumlio">Twitter</a></li>
-                <li><a target="_blank" href="http://plus.google.com/u/0/b/111242240141659810409/111242240141659810409">Google+</a></li>
-              </ul>
-            </div>
+          <div style="margin-top: .5em; margin-bottom: 1em;">
+            <ul style="list-style: none; display: block; justify-content: space-between;">
+              <li style="display: inline-block; margin: .5em 1em;"><a target="_blank" href="https://github.com/kameleon-project"><i class="fab fa-github"></i> Github</a></li>
+              <li style="display: inline-block; margin: .5em 1em;"><a target="_blank" href="https://groups.google.com/forum/#!forum/kameleonjs"><i class="fas fa-users"></i> Forum</a></li>
+              <li style="display: inline-block; margin: .5em 1em;"><a target="_blank" href="https://github.com/kameleon-project/kameleon/wiki"><i class="fas fa-book"></i> Docs</li>
+              <!-- <li style="display: inline-block; margin: .5em 1em;"><a target="_blank" href="https://www.facebook.com/kameleonjs/"><i class="fab fa-facebook"></i> Facebook</li> -->
+              <li style="display: inline-block; margin: .5em 1em;"><a href="mailto:niklaus.lee@gmail.com"><i class="fas fa-envelope"></i> Contact</li>
+            </ul>
           </div>
         </div>
-        -->
       </div>
     </div>
 
