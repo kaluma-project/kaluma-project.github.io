@@ -146,7 +146,7 @@ setInterval(function () {
                 <i class="icon fab fa-github"></i>
                 <span class="title">Open source</span>
                 <div class="desc">
-                  Kameleon is an open source project includes JavaScript runtime, hardware boards and some tools licensed under MIT.
+                  Kameleon is an open source project includes JavaScript runtime, hardware boards and some tools licensed under Apache License.
                   <div style="margin-top: .3em;">
                     <a target="_blank" href="https://github.com/kameleon-project"><i class="fab fa-github"></i> Github</a>
                   </div>
@@ -222,8 +222,9 @@ setInterval(function () {
               </div>
               <div class="col-md-6">
                 <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> Ensure that <a href="https://nodejs.org" target="_blank">Node.js/NPM</a> is installed.</div>
+                <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> You may need to use npm option <code>--unsafe-perm=true</code></div>
 <pre class="prettyprint lang-bash code-block">
-$ npm install -g kameleon-cli
+$ <span class="nocode" style="color: #646464;">sudo</span> npm install -g kameleon-cli
 </pre>
               </div>              
             </div>
@@ -321,6 +322,7 @@ $ kameleon write index.js -p /dev/tty.usbmodem?
                 </div>
               </div>
               <div class="col-md-6">
+                <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> You may need to run PowerShell as Administrator</div>
                 <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> Ensure that <a href="https://nodejs.org" target="_blank">Node.js/NPM</a> is installed.</div>
                 <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> Ensure that <a href="https://github.com/nodejs/node-gyp#installation" target="_blank">node-gyp</a> is installed.</div>
 <pre class="prettyprint lang-bash code-block">
@@ -362,8 +364,9 @@ setInterval(function () {
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> Check the serial port where the board is connected</div>
+              <div class="col-md-6">                  
+                <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> You may need to install <a href="https://www.st.com/en/development-tools/stsw-stm32102.html">STM32 Virtual COM Port Driver</a> (for older than Windows 10).</div>
+                <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> Check the serial port where the board is connected.</div>
 <pre class="prettyprint lang-sh code-block">
 PS> kameleon -l
 <span class="nocode" style="color: #acabab;">...</span>
@@ -425,7 +428,7 @@ PS> kameleon write index.js -p COM?
                 <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> Ensure that <a href="https://nodejs.org" target="_blank">Node.js/NPM</a> is installed.</div>
                 <div style="color: green; font-size: .9rem;"><i class="fas fa-check" style="margin-right: .3em"></i> You may need to use npm option <code>--unsafe-perm=true</code></div>
 <pre class="prettyprint lang-bash code-block">
-$ npm install -g kameleon-cli
+$ <span class="nocode" style="color: #646464;">sudo</span> npm install -g kameleon-cli
 </pre>
               </div>              
             </div>
