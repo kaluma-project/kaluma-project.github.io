@@ -75,9 +75,9 @@
                 <div style="width: 100%; margin-top: 1em;">
 <pre class="prettyprint lang-js code-block" style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
 // Blink LED
-var led = board.led(0);
+var led = board.LED0;
 setInterval(function () {
-  digitalToggle(led);
+  led.toggle();
 }, 1000);
 </pre>
                 </div>                                  
