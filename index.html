@@ -243,9 +243,9 @@ $ <span class="nocode" style="color: #646464;">sudo</span> npm install -g kamele
               <div class="col-md-6">
 <pre class="prettyprint lang-js code-block">
 // index.js
-var led = board.led(0);
+var led = board.LED0;
 setInterval(function () {
-  digitalToggle(led);
+  led.toggle();
 }, 1000);
 </pre>    
               </div>              
@@ -345,9 +345,9 @@ PS> npm install -g kameleon-cli
               <div class="col-md-6">
 <pre class="prettyprint lang-js code-block">
 // index.js
-var led = board.led(0);
+var led = board.LED0;
 setInterval(function () {
-  digitalToggle(led);
+  led.toggle();
 }, 1000);
 </pre>    
               </div>              
@@ -447,9 +447,9 @@ $ <span class="nocode" style="color: #646464;">sudo</span> npm install -g kamele
               <div class="col-md-6">
 <pre class="prettyprint lang-js code-block">
 // index.js
-var led = board.led(0);
+var led = board.LED0;
 setInterval(function () {
-  digitalToggle(led);
+  led.toggle();
 }, 1000);
 </pre>    
               </div>              
