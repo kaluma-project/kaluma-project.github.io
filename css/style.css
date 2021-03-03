@@ -1,188 +1,27 @@
 html {
   height: 100%;
-  font-size: 1.2rem;
 }
 
 body {
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-weight: normal;
   line-height: 1.5em;
-  color: #677277;
   height: 100%;
 }
 
-code {
-  color: #000;
-}
-
 .wrap {
-  min-height: 100%;
-  position: relative;
-  /* padding-top: 65px; */
+  height: 100vh;
 }
 
-.container {
-  max-width: 960px;
-}
-
-/* Navbar */
-
-.navbar-dark {
-  background-color: #000; /* #358b35; */
-  font-weight: normal;
-  /* height: 65px; */
-}
-
-.navbar-dark .navbar-nav .nav-link {
-  color: rgba(255,255,255,.7);
-}
-
-.navbar-dark .navbar-nav .nav-link:hover {
-  color: rgba(255,255,255,.85);
-}
-
-.navbar-light {
-  background-color: #eeeeee;
-}
-
-.navbar-brand {
-  font-weight: bold;
-}
-
-img.navbar-logo {
-  width: 36px;
-  height: 36px;
-  margin-right: 10px;
-}
-
-/* Jumbotron */
-
-.jumbotron-fluid {
-  background-color: #000; /* #358b35; */
-  padding-top: 10px;
-  padding-bottom: 0px;
-  color: #ffffff;
-  font-weight: 300;
-}
-
-pre.prettyprint.code-block {
-  background: #313030;
-  border: none;
-  border-radius: 1rem;
-  padding: 1.2em 1.7em;
-  margin: 0;
-  width: 100%;
-}
-
-div.board-led {
-  position: relative;
-  width: 12px;
-  height: 22px;
-  background-color: black;
-  left: -32px;
-  top: 85px;
-}
-
-/* Section */
-
-.section {
-  padding-top: 3em;
-  padding-bottom: 3em;
-}
-
-.section-head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 3em;  
-}
-
-/* Feature */
-
-.feature .icon {
-  font-size: 32px;
-}
-
-.feature .title {
-  font-size: 24px;
-  margin-left: .3em;
-}
-
-.feature .desc {
-  margin-top: 1em;
-  margin-bottom: 2em;
-}
-
-/* Getting Started */
-
-.step {
-  display: flex;
-  flex-direction: row;
-}
-
-.step .number {
-  width: 64px;
-  height: 64px;
-  display: block;
-  text-align: center;
-  background-color: #28a745; /* #007bff; */
-  color: white;
-  font-size: 1.7rem;
-  font-weight: bold;
-  padding: .6em .7em;
-  margin-right: .5em;
-  border-radius: .1em;
-}
-
-.step .title {
-  font-size: 1.5rem;
-  margin-bottom: .2em;
-}
-
-.step .desc {
-  color: #9b9a9a;
-  margin-bottom: 1em;
-}
-
-/* Footer */
-
-.footer {
-  font-weight: normal;
-  background-color: #000000;
-  color: #999999;
-}
-
-.footer a {
-  color: #999999;
-}
-
-/* Common */
-
-.btn {
+a.btn.btn-primary {
   border-radius: 2em;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  color: white;
+  background-color: #3BB878;
+  border-width: 0px;
 }
 
-li.nav-item a.nav-link {
-  cursor: pointer;
+a.btn.btn-primary:hover {
+  text-decoration: underline;
 }
-
-li.nav-item a.nav-link.active {
-  color: #28a745;
-  background-color: transparent;
-  border-bottom: 4px solid #28a745;
-  border-radius: 0;
-}
-
-li.nav-item a.nav-link.active:hover {
-  /* color: #fff; */
-}
-
-/* Customers */
-
-.customer {
-  width: 120px;
-  height: 120px;
-}
-
