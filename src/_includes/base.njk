@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <title>{{ title }}</title>
+</head>
+<body>
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
+  <div>
+  <a href="/">Home</a>
+{% for post in collections.posts %}
+| <a href="{{post.url}}">{{post.data.title}}</a>
+{% endfor %}  
+    <hr>
+  </div>
+  <main>
+    {{ content | safe }}
+  </main>
+</body>
+</html>
