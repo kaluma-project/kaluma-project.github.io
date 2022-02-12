@@ -1,3 +1,8 @@
 {
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "emmet.includeLanguages": {
+    "ejs": "html",
+    "nunjucks": "html"
+  },
+  "emmet.triggerExpansionOnTab": true
 }
