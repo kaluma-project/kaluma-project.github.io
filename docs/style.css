@@ -1,2 +1,27 @@
+html {
+  height: 100%;
+}
+
 body {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  line-height: 1.5em;
+  height: 100%;
+}
+
+.wrap {
+  height: 100vh;
+}
+
+a.btn.btn-primary {
+  border-radius: 2em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  color: white;
+  background-color: #3bb878;
+  border-width: 0px;
+}
+
+a.btn.btn-primary:hover {
+  text-decoration: underline;
 }

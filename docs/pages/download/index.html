@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{{ title }}</title>
+    <title>Download</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
@@ -9,14 +9,17 @@
   </head>
   <body>
     <header>
-      <h1 class="text-2xl">{{ title }}</h1>
+      <h1 class="text-2xl">Download</h1>
     </header>
     <div>
       <a href="/">Home</a>
-      {% for page in collections.pages %}
+      
         |
-        <a href="{{page.url}}">{{page.data.title}}</a>
-      {% endfor %}
+        <a href="/pages/download/">Download</a>
+      
+        |
+        <a href="/pages/modules/">Modules</a>
+      
       |
       <a href="https://github.com/kaluma-project/kaluma" target="_blank">Github</a>
       |
@@ -26,7 +29,17 @@
       <hr>
     </div>
     <main>
-      {{ content | safe }}
+      <p>Current Version: <code>v1.1.0-beta.13</code></p>
+<ul>
+<li><a href="#">How to upload .UF2 to my board?</a></li>
+</ul>
+<h4>Targets</h4>
+<ul>
+<li><a href="#">rp2040</a> - Raspberry Pi Pico</li>
+<li><a href="#">rp2040-8mb</a> - Pimoroni Tiny2040 with 8MB Flash</li>
+<li><a href="#">rp2040-16mb</a> - ...</li>
+</ul>
+
     </main>
   </body>
 </html>
