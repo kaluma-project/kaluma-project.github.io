@@ -1,5 +1,7 @@
 ---
+layout: "base.njk"
 title: Modules
+tags: pages
 ---
 
 # Third-party modules
@@ -9,7 +11,7 @@ title: Modules
 1. Copy URL of a module
 2. Install the module using NPM:
 
-```powershell
+```shell-session
 npm install --save https://github.com/<username>/<repo>
 ```
 
@@ -22,7 +24,7 @@ npm install --save https://github.com/<username>/<repo>
 ```json
 {
   "url": "https://github.com/<username>/<repo>",
-  "tags": [...]
+  "tags": ["tag1", "tag2"]
 }
 ```
 
@@ -31,6 +33,23 @@ npm install --save https://github.com/<username>/<repo>
 #### H4
 
 ##### H5
+
+```js
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy('./src/images');
+  eleventyConfig.addPassthroughCopy('./src/styles');
+  eleventyConfig.addPlugin(syntaxHighlight);
+  return {
+    dir: {
+      input: 'src',
+      output: 'docs',
+    },
+    markdownTemplateEngine: 'njk',
+  };
+};
+```
 
 ---
 

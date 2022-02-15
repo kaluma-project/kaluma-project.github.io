@@ -1,5 +1,7 @@
 ---
+layout: "base.njk"
 title: Download
+tags: pages
 ---
 
 Current Version: `v1.1.0-beta.13`

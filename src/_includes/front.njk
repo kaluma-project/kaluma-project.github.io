@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "head.njk" %}
+    <title>Kaluma</title>
+  </head>
+  <body>
+    <div class="hero">
+      <header>
+        {% include "nav.njk" %}
+      </header>
+      <div class="container text-center my-5">
+        <h1 style="font-weight: 700">Kaluma</h1>
+        <p style="color: #888; font-size: 18px;">A tiny JavaScript runtime for RP2040 (Raspberry Pi Pico)</p>
+        <div class="my-3">
+          <span class="badge bg-dark">v1.0.0-beta.13</span>
+        </div>
+        <a class="btn btn-primary" href="https://docs.kaluma.io/getting_started" target="_blank">Get Started</a>
+        <span class="mx-1"></span>
+        <a class="btn btn-outline-secondary" href="/download">Download</a>
+      </div>
+    </div>
+    <main>
+      <div class="container my-5" style="max-width: 720px">
+        {{ content | safe }}
+      </div>
+    </main>
+  </body>
+</html>

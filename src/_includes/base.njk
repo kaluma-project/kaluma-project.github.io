@@ -1,32 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{{ title }}</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
+    <title>{{ title }}
+      | Kaluma</title>
+    {% include "head.njk" %}
   </head>
-  <body class="font-sans">
+  <body>
     <header>
-      <h1 class="text-2xl">{{ title }}</h1>
+      {% include "nav.njk" %}
     </header>
-    <div>
-      <a href="/">Home</a>
-      {% for page in collections.pages %}
-        |
-        <a href="{{page.url}}">{{page.data.title}}</a>
-      {% endfor %}
-      |
-      <a href="https://github.com/kaluma-project/kaluma" target="_blank">Github</a>
-      |
-      <a href="https://docs.kaluma.io" target="_blank">Docs</a>
-      |
-      <a href="#">Discussion</a>
-      <hr>
-    </div>
     <main>
-      {{ content | safe }}
+      <div class="container my-5" style="max-width: 720px">
+        {{ content | safe }}
+      </div>
     </main>
   </body>
 </html>

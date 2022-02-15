@@ -1,0 +1,58 @@
+:root {
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
+  --bg-light-gray: #f4f4f4;
+}
+
+/* default elements */
+
+body {
+  font-family: var(--font-sans);
+}
+
+code:not([class*='language-']) {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--bg-light-gray);
+  padding: 0.2em 0.5em;
+  border-radius: 0.3em;
+  color: gray;
+}
+
+/* utility classes */
+
+.hero {
+  background-color: var(--bg-light-gray);
+  border-bottom: 1px solid #ddd;
+}
+
+/* bootstrap styles */
+
+.navbar-light .navbar-toggler {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  color: black;
+}
+
+.btn {
+  border-radius: 5em;
+  padding-left: 1.3em;
+  padding-right: 1.3em;
+}
+
+/* prismjs styles */
+
+pre[class*='language-'] {
+  background: var(--bg-light-gray);
+  padding: 0.7em 1em;
+  border-radius: 0.5rem;
+}
+
+code[class*='language-'] {
+  font-family: var(--font-mono);
+  line-height: 0;
+  text-shadow: none;
+}
