@@ -7,7 +7,7 @@ tags: pages
 <div class="container px-4 my-5">
   <h1 class="mb-4">Packages</h1>
   <p>
-  We prefered Github repository as a package for Kaluma (Don't need to publish to npmjs.org).<br>
+  Github repository is prefered for package distribution (Don't need to publish to npmjs.org).<br>
   A package can be installed easily with <code>npm i https://github.com/(owner)/(repo)</code>.
   </p>
   <p><a href="#">How to register my package here?</a></p>
@@ -20,7 +20,7 @@ tags: pages
       {% for name, item in packages %}
         <li class="list-group-item">
           <div class="d-flex justify-content-between">
-            <div><a href="#">{{name}}</a></div>
+            <div><a href="{{item.repo}}" target="_blank">{{name}}</a></div>
             <div><code>npm i {{item.repo}}</code></div>
           </div>
           <div class="text-secondary">
