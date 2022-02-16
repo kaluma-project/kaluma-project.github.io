@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Modules
+    <title>Packages
       | Kaluma</title>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,9 @@
 <link href="https://unpkg.com/prismjs@1.20.0/themes/prism.css" rel="stylesheet">
 <link rel="stylesheet" href="/styles/main.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!-- google fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +26,7 @@
       <a class="navbar-brand d-flex align-items-center" href="/">
         <img src="/images/kaluma-logo.png" width="32">
       </a>
-      <div>Modules</div>
+      <div>Packages</div>
       <button class="navbar-toggler collapsed border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-items" aria-controls="navbar-items" aria-expanded="false" aria-label="Toggle navigation">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
           <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -39,7 +42,7 @@
             </li>
           
             <li class="nav-item">
-              <a class="nav-link" href="/modules/">Modules</a>
+              <a class="nav-link" href="/modules/">Packages</a>
             </li>
           
           <li class="nav-item">
@@ -62,38 +65,54 @@
 </div>
     </header>
     <main>
-      <div class="container my-5" style="max-width: 720px">
-        <h1>Third-party modules</h1>
-<h2>Install a module</h2>
-<ol>
-<li>Copy URL of a module</li>
-<li>Install the module using NPM:</li>
-</ol>
-<pre class="language-shell-session"><code class="language-shell-session"><span class="token output">npm install --save https://github.com/&lt;username>/&lt;repo></code></pre>
-<h2>Publish a module in Github</h2>
-<ol>
-<li>Place module <code>name</code> and <code>version</code> in <code>package.json</code>.</li>
-<li>Create a tag (release) with the version name.</li>
-<li>Create PR with adding <code>&lt;module_name&gt;.json</code> to <code>src/_data/modules</code>.</li>
-</ol>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://github.com/&lt;username>/&lt;repo>"</span><span class="token punctuation">,</span><br>  <span class="token property">"tags"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"tag1"</span><span class="token punctuation">,</span> <span class="token string">"tag2"</span><span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
-<h3>H3</h3>
-<h4>H4</h4>
-<h5>H5</h5>
-<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> syntaxHighlight <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@11ty/eleventy-plugin-syntaxhighlight'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">eleventyConfig</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  eleventyConfig<span class="token punctuation">.</span><span class="token function">addPassthroughCopy</span><span class="token punctuation">(</span><span class="token string">'./src/images'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  eleventyConfig<span class="token punctuation">.</span><span class="token function">addPassthroughCopy</span><span class="token punctuation">(</span><span class="token string">'./src/styles'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  eleventyConfig<span class="token punctuation">.</span><span class="token function">addPlugin</span><span class="token punctuation">(</span>syntaxHighlight<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token keyword">return</span> <span class="token punctuation">{</span><br>    <span class="token literal-property property">dir</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token literal-property property">input</span><span class="token operator">:</span> <span class="token string">'src'</span><span class="token punctuation">,</span><br>      <span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token string">'docs'</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token literal-property property">markdownTemplateEngine</span><span class="token operator">:</span> <span class="token string">'njk'</span><span class="token punctuation">,</span><br>  <span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
-<hr>
-<h2>Modules</h2>
-<p>Total: 2 modules</p>
-<ul>
-<li>
-<p><code>simple-fonts</code> - <a href="https://github.com/niklauslee/simple-fonts">https://github.com/niklauslee/simple-fonts</a></p>
-</li>
-<li>
-<p><code>st7735</code> - <a href="https://github.com/niklauslee/st7735">https://github.com/niklauslee/st7735</a></p>
-</li>
-</ul>
+      
+<div class="container px-4 my-5">
+  <h1 class="mb-4">Packages</h1>
+  <p>
+  We prefered Github repository as a package for Kaluma (Don't need to publish to npmjs.org).<br>
+  A package can be installed easily with <code>npm i https://github.com/(owner)/(repo)</code>.
+  </p>
+  <p><a href="#">How to register my package here?</a></p>
+  <div class="my-3"> 
+    Total: 3 packages
+  </div>
 
-      </div>
+  <div class="card">
+    <ul class="list-group list-group-flush">
+      
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <div><a href="#">buzzer-music</a></div>
+            <div><code>npm i https://github.com/niklauslee/buzzer-music</code></div>
+          </div>
+          <div class="text-secondary">
+          Kaluma library to play a music for passive buzzer.
+          </div>
+        </li>
+      
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <div><a href="#">simple-fonts</a></div>
+            <div><code>npm i https://github.com/niklauslee/simple-fonts</code></div>
+          </div>
+          <div class="text-secondary">
+          Simple bitmap fonts for Kaluma
+          </div>
+        </li>
+      
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <div><a href="#">st7735</a></div>
+            <div><code>npm i https://github.com/niklauslee/st7735</code></div>
+          </div>
+          <div class="text-secondary">
+          Kaluma library for ST7735 (color TFT LCD displays)
+          </div>
+        </li>
+      
+    </ul>
+  </div>
+</div>
     </main>
   </body>
 </html>

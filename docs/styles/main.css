@@ -37,7 +37,7 @@ code:not([class*='language-']) {
   color: black;
 }
 
-.btn {
+.btn-rounded {
   border-radius: 5em;
   padding-left: 1.3em;
   padding-right: 1.3em;

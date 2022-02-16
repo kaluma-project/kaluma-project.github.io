@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="/styles/main.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <!-- google fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
@@ -39,7 +42,7 @@
             </li>
           
             <li class="nav-item">
-              <a class="nav-link" href="/modules/">Modules</a>
+              <a class="nav-link" href="/modules/">Packages</a>
             </li>
           
           <li class="nav-item">
@@ -62,19 +65,40 @@
 </div>
     </header>
     <main>
-      <div class="container my-5" style="max-width: 720px">
-        <p>Current Version: <code>v1.1.0-beta.13</code></p>
-<ul>
-<li><a href="#">How to upload .UF2 to my board?</a></li>
-</ul>
-<h4>Targets</h4>
-<ul>
-<li><a href="#">rp2040</a> - Raspberry Pi Pico</li>
-<li><a href="#">rp2040-8mb</a> - Pimoroni Tiny2040 with 8MB Flash</li>
-<li><a href="#">rp2040-16mb</a> - ...</li>
-</ul>
-
-      </div>
+      
+<div class="container px-4 my-5 text-center">
+  <h1>Download</h1>
+  <div>
+    <a href="#" class="tag-version" target="_blank">(checking...)</a>
+  </div>
+  <div>
+    <img src="/images/rpi-pico.png" width="250px" class="my-4">
+    <div>Target: Raspberry Pi Pico (rp2040)</div>
+  </div>
+  <div class="my-4">
+    <a href="#" class="btn btn-primary btn-rounded tag-download">Download .UF2</a>
+  </div>
+  <div>
+    <a href="https://docs.kaluma.io/boards/raspberry-pi-pico#upload-firmware-uf-2" target="_blank">How to upload .UF2 to my board?</a>
+  </div>
+</div>
+<script>
+async function get() {
+  const res = await fetch('https://api.github.com/repos/kaluma-project/kaluma/releases/latest', {
+    method: 'GET',
+    headers: {
+      'User-Agent': 'Kaluma',
+    },
+  });
+  const release = await res.json();
+  const target = 'rp2';
+  const board = 'pico';
+  $('.tag-version').html(release.name);
+  $('.tag-version').attr("href", `https://github.com/kaluma-project/kaluma/releases/tag/${release.tag_name}`);
+  $('.tag-download').attr("href", `https://github.com/kaluma-project/kaluma/releases/download/${release.tag_name}/kaluma-${target}-${board}-${release.tag_name}.uf2`);
+}
+get();
+</script>
     </main>
   </body>
 </html>
