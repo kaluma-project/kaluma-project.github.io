@@ -1,6 +1,6 @@
 :root {
-  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'Roboto Mono', monospace;
+  --font-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Source Code Pro', monospace;
   --bg-light-gray: #f4f4f4;
   --border-color: #dddddd;
 }
@@ -13,11 +13,23 @@ body {
 
 code:not([class*='language-']) {
   font-family: var(--font-mono);
-  font-size: 0.9em;
+  font-size: 0.875em;
   background: var(--bg-light-gray);
   padding: 0.2em 0.5em;
   border-radius: 0.3em;
   color: gray;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+.front-content h3 {
+  margin-top: 4rem;
+}
+
+.front-content img {
+  width: 100%;
 }
 
 /* utility classes */
@@ -90,8 +102,9 @@ code:not([class*='language-']) {
 
 pre[class*='language-'] {
   background: var(--bg-light-gray);
-  padding: 0.7em 1em;
+  padding: 1rem 2rem;
   border-radius: 0.5rem;
+  font-size: 0.875em;
 }
 
 code[class*='language-'] {

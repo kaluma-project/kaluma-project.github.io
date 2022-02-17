@@ -14,7 +14,7 @@
 <!-- google fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <title>Kaluma</title>
   </head>
   <body>
@@ -67,27 +67,38 @@
       <div class="container text-center my-5">
         <h1 style="font-weight: 700">Kaluma</h1>
         <p style="color: #888; font-size: 18px;">A tiny JavaScript runtime for RP2040 (Raspberry Pi Pico)</p>
-        <a class="btn btn-primary btn-rounded" href="https://docs.kaluma.io/getting_started" target="_blank">Get Started</a>
+        <a class="btn btn-primary btn-rounded" href="#getting-started">Get Started</a>
         <span class="mx-1"></span>
         <a class="btn btn-outline-secondary btn-rounded" href="/download">Download</a>
       </div>
     </div>
     <main>
-      <div class="container my-5" style="max-width: 720px">
-        <p>Kaluma is a tiny and efficient JavaScript runtime for RP2040 (Raspberry Pi Pico). The main features are:</p>
+      <div class="container my-5 front-content" style="max-width: 640px">
+        <p><strong>Kaluma</strong> is a tiny and efficient JavaScript runtime for RP2040 (Raspberry Pi Pico). The main features are:</p>
 <ul>
-<li>Small footprint (Run minimally on 300KB ROM, 64KB RAM)</li>
-<li>ECMAScript 5/6/6+ (subset) standard compliant (Powered by <a href="https://jerryscript.net/">JerryScript</a>)</li>
-<li>Easy to port</li>
-<li>Event loop for Asynchronous</li>
-<li>API similar with Node.js and Arduino</li>
-<li>REPL mode</li>
-<li>File systems (LittleFS, FAT)</li>
-<li>Graphics API</li>
-<li>Networking (Socket, HTTP)</li>
-<li>Support PIO (Programmable I/O)</li>
-<li>Low-power mode</li>
+<li><u>Small footprint</u>. Runs minimally on microcontrollers with 300KB ROM with 64KB RAM.</li>
+<li>Support <u>modern JavaScript</u> standards (ECMAScript 5/6/6+). Powered by <a href="https://jerryscript.net/">JerryScript</a>.</li>
+<li>Has internal event loop like as Node.js for <u>asynchronous</u>.</li>
+<li>Has <u>built-in modules</u> including file systems (LittleFS, FAT), graphics, networking and more.</li>
+<li>Support RP2's <u>PIO (Programmable I/O) assembly</u> embeddable in JavaScript code.</li>
+<li>Provides very friendly API that resembles <u>Node.js</u> and <u>Arduino</u>.</li>
 </ul>
+<h3 id="installation" tabindex="-1">Installation</h3>
+<p><img src="images/pico.png" alt="Pico"></p>
+<ul>
+<li>Get a <a href="https://www.raspberrypi.org/products/raspberry-pi-pico/">Raspberry Pi Pico</a> board or other RP2040 board.</li>
+<li><a href="/download">Download</a> firmware <strong>.UF2</strong> file.</li>
+<li>Push and hold the <strong>BOOTSEL</strong> button and plug into USB port of your computer. It will mount as USB storage device named <code>RPI-RP2</code>.</li>
+<li>Drag and drop the downloaded <strong>.UF2</strong> onto the <code>RPI-RP2</code> volume. Your Pico will reboot automatically.</li>
+</ul>
+<h3 id="getting-started" tabindex="-1">Getting Started</h3>
+<p>Write the first blink code with any text editor.</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// main.js</span><br><span class="token keyword">const</span> led <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">;</span><br><span class="token function">pinMode</span><span class="token punctuation">(</span>led<span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token function">digitalToggle</span><span class="token punctuation">(</span>led<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>To upload code to your board, we need <a href="https://github.com/kaluma-project/kaluma-cli">Kaluma CLI</a>. Of course, it is assumed that <a href="https://nodejs.org">Node.js</a> is installed.</p>
+<pre class="language-shellsession"><code class="language-shellsession"><span class="token output">npm install -g @kaluma/cli</code></pre>
+<p>Use CLI to upload <code>main.js</code> to your board. You need to know which serial port is connected to your board using CLI: <code>kaluma ports</code>.</p>
+<pre class="language-shellsession"><code class="language-shellsession"><span class="token output">kaluma flash main.js --port &lt;port></code></pre>
+<p>After uploading successfully, you will see a blinking LED on the board.</p>
 
       </div>
     </main>

@@ -2,16 +2,47 @@
 layout: "front.njk"
 ---
 
-Kaluma is a tiny and efficient JavaScript runtime for RP2040 (Raspberry Pi Pico). The main features are:
+__Kaluma__ is a tiny and efficient JavaScript runtime for RP2040 (Raspberry Pi Pico). The main features are:
 
-- Small footprint (Run minimally on 300KB ROM, 64KB RAM)
-- ECMAScript 5/6/6+ (subset) standard compliant (Powered by [JerryScript](https://jerryscript.net/))
-- Easy to port
-- Event loop for Asynchronous
-- API similar with Node.js and Arduino
-- REPL mode
-- File systems (LittleFS, FAT)
-- Graphics API
-- Networking (Socket, HTTP)
-- Support PIO (Programmable I/O)
-- Low-power mode
+- <u>Small footprint</u>. Runs minimally on microcontrollers with 300KB ROM with 64KB RAM.
+- Support <u>modern JavaScript</u> standards (ECMAScript 5/6/6+). Powered by [JerryScript](https://jerryscript.net/).
+- Has internal event loop like as Node.js for <u>asynchronous</u>.
+- Has <u>built-in modules</u> including file systems (LittleFS, FAT), graphics, networking and more.
+- Support RP2's <u>PIO (Programmable I/O) assembly</u> embeddable in JavaScript code.
+- Provides very friendly API that resembles <u>Node.js</u> and <u>Arduino</u>.
+
+### Installation
+
+![Pico](images/pico.png)
+
+- Get a [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/) board or other RP2040 board.
+- [Download](/download) firmware __.UF2__ file.
+- Push and hold the __BOOTSEL__ button and plug into USB port of your computer. It will mount as USB storage device named `RPI-RP2`.
+- Drag and drop the downloaded __.UF2__ onto the `RPI-RP2` volume. Your Pico will reboot automatically.
+
+### Getting Started
+
+Write the first blink code with any text editor.
+
+```js
+// main.js
+const led = 25;
+pinMode(led, OUTPUT);
+setInterval(() => {
+  digitalToggle(led);
+}, 1000);
+```
+
+To upload code to your board, we need [Kaluma CLI](https://github.com/kaluma-project/kaluma-cli). Of course, it is assumed that [Node.js](https://nodejs.org) is installed.
+
+```shellsession
+npm install -g @kaluma/cli
+```
+
+Use CLI to upload `main.js` to your board. You need to know which serial port is connected to your board using CLI: `kaluma ports`.
+
+```shellsession
+kaluma flash main.js --port <port>
+```
+
+After uploading successfully, you will see a blinking LED on the board.
