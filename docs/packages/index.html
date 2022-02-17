@@ -26,7 +26,7 @@
       <a class="navbar-brand d-flex align-items-center" href="/">
         <img src="/images/kaluma-logo.png" width="32">
       </a>
-      <div>Packages</div>
+      <div class="fs-5">Packages</div>
       <button class="navbar-toggler collapsed border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-items" aria-controls="navbar-items" aria-expanded="false" aria-label="Toggle navigation">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
           <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -66,63 +66,319 @@
     </header>
     <main>
       
-<div class="container px-4 my-5">
-  <h1 class="mb-4">Packages</h1>
-  <p>
+<div class="container px-4 my-4">
+  <div class="alert alert-secondary">
   Github repository is prefered for package distribution (Don't need to publish to npmjs.org).<br>
   A package can be installed easily with <code>npm i https://github.com/(owner)/(repo)</code>.
-  </p>
-  <p><a href="#">How to register my package here?</a></p>
-  <div class="my-3"> 
-    Total: 4 packages
   </div>
-
+  <div class="text-end">
+    <p><a href="#">How to register my package here?</a></p>
+  <div>
+  <div class="text-start my-3"> 
+    Total: <b>14 packages</b>
+  </div>
   <div class="card">
     <ul class="list-group list-group-flush">
       
-        <li class="list-group-item">
+        <li class="list-group-item text-start">
           <div class="d-flex justify-content-between">
-            <div><a href="https://github.com/niklauslee/buzzer-music" target="_blank">buzzer-music</a></div>
-            <div><code>npm i https://github.com/niklauslee/buzzer-music</code></div>
+            <div><a href="https://github.com/niklauslee/active-buzzer" target="_blank">active-buzzer</a></div>
+            <div class="repo">
+              <code class="repo-install">npm i https://github.com/niklauslee/active-buzzer</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i https://github.com/niklauslee/active-buzzer')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
           </div>
           <div class="text-secondary">
-          Kaluma library to play a music for passive buzzer.
+          Kaluma library to generate beep sound with active buzzer
           </div>
         </li>
       
-        <li class="list-group-item">
+        <li class="list-group-item text-start">
+          <div class="d-flex justify-content-between">
+            <div><a href="https://github.com/niklauslee/buzzer-music" target="_blank">buzzer-music</a></div>
+            <div class="repo">
+              <code class="repo-install">npm i https://github.com/niklauslee/buzzer-music</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i https://github.com/niklauslee/buzzer-music')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div class="text-secondary">
+          Kaluma library to play music with passive buzzer.
+          </div>
+        </li>
+      
+        <li class="list-group-item text-start">
+          <div class="d-flex justify-content-between">
+            <div><a href="https://github.com/niklauslee/esp8266-http-client" target="_blank">esp8266-http-client</a></div>
+            <div class="repo">
+              <code class="repo-install">npm i https://github.com/niklauslee/esp8266-http-client</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i https://github.com/niklauslee/esp8266-http-client')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div class="text-secondary">
+          A simple Kaluma HTTP client library for ESP8266 module
+          </div>
+        </li>
+      
+        <li class="list-group-item text-start">
+          <div class="d-flex justify-content-between">
+            <div><a href="https://github.com/niklauslee/lm35" target="_blank">lm35</a></div>
+            <div class="repo">
+              <code class="repo-install">npm i https://github.com/niklauslee/lm35</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i https://github.com/niklauslee/lm35')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div class="text-secondary">
+          Kaluma library for LM35 temperature sensor
+          </div>
+        </li>
+      
+        <li class="list-group-item text-start">
+          <div class="d-flex justify-content-between">
+            <div><a href="https://github.com/niklauslee/mpu6050" target="_blank">mpu6050</a></div>
+            <div class="repo">
+              <code class="repo-install">npm i https://github.com/niklauslee/mpu6050</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i https://github.com/niklauslee/mpu6050')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div class="text-secondary">
+          Kaluma library for MPU6050 6-axis motion sensor
+          </div>
+        </li>
+      
+        <li class="list-group-item text-start">
+          <div class="d-flex justify-content-between">
+            <div><a href="https://github.com/niklauslee/neopixel" target="_blank">neopixel</a></div>
+            <div class="repo">
+              <code class="repo-install">npm i https://github.com/niklauslee/neopixel</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i https://github.com/niklauslee/neopixel')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div class="text-secondary">
+          Kaluma library for NeoPixel (ws2812) based on RP2 PIO (Programmable I/O)
+          </div>
+        </li>
+      
+        <li class="list-group-item text-start">
+          <div class="d-flex justify-content-between">
+            <div><a href="https://github.com/niklauslee/pcd8544" target="_blank">pcd8544</a></div>
+            <div class="repo">
+              <code class="repo-install">npm i https://github.com/niklauslee/pcd8544</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i https://github.com/niklauslee/pcd8544')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div class="text-secondary">
+          Kaluma library for PCD8544, a.k.a Nokia 5110 (Monochrome LCD Display)
+          </div>
+        </li>
+      
+        <li class="list-group-item text-start">
+          <div class="d-flex justify-content-between">
+            <div><a href="https://github.com/niklauslee/rotary-encoder" target="_blank">rotary-encoder</a></div>
+            <div class="repo">
+              <code class="repo-install">npm i https://github.com/niklauslee/rotary-encoder</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i https://github.com/niklauslee/rotary-encoder')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div class="text-secondary">
+          Kaluma library for rotary encoder with a push switch (KY-040)
+          </div>
+        </li>
+      
+        <li class="list-group-item text-start">
           <div class="d-flex justify-content-between">
             <div><a href="https://github.com/niklauslee/simple-fonts" target="_blank">simple-fonts</a></div>
-            <div><code>npm i https://github.com/niklauslee/simple-fonts</code></div>
+            <div class="repo">
+              <code class="repo-install">npm i https://github.com/niklauslee/simple-fonts</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i https://github.com/niklauslee/simple-fonts')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
           </div>
           <div class="text-secondary">
           Simple bitmap fonts for Kaluma
           </div>
         </li>
       
-        <li class="list-group-item">
+        <li class="list-group-item text-start">
           <div class="d-flex justify-content-between">
             <div><a href="https://github.com/niklauslee/ssd1306" target="_blank">ssd1306</a></div>
-            <div><code>npm i https://github.com/niklauslee/ssd1306</code></div>
+            <div class="repo">
+              <code class="repo-install">npm i https://github.com/niklauslee/ssd1306</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i https://github.com/niklauslee/ssd1306')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
           </div>
           <div class="text-secondary">
           Kaluma library for SSD1306 (Monochrome OLED Display)
           </div>
         </li>
       
-        <li class="list-group-item">
+        <li class="list-group-item text-start">
+          <div class="d-flex justify-content-between">
+            <div><a href="https://github.com/niklauslee/ssd1351" target="_blank">ssd1351</a></div>
+            <div class="repo">
+              <code class="repo-install">npm i https://github.com/niklauslee/ssd1351</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i https://github.com/niklauslee/ssd1351')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div class="text-secondary">
+          Kaluma library for SSD1351 (16-bit Color OLED Display)
+          </div>
+        </li>
+      
+        <li class="list-group-item text-start">
           <div class="d-flex justify-content-between">
             <div><a href="https://github.com/niklauslee/st7735" target="_blank">st7735</a></div>
-            <div><code>npm i https://github.com/niklauslee/st7735</code></div>
+            <div class="repo">
+              <code class="repo-install">npm i https://github.com/niklauslee/st7735</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i https://github.com/niklauslee/st7735')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
           </div>
           <div class="text-secondary">
           Kaluma library for ST7735 (Color TFT LCD Display)
           </div>
         </li>
       
+        <li class="list-group-item text-start">
+          <div class="d-flex justify-content-between">
+            <div><a href="https://github.com/niklauslee/st7789" target="_blank">st7789</a></div>
+            <div class="repo">
+              <code class="repo-install">npm i https://github.com/niklauslee/st7789</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i https://github.com/niklauslee/st7789')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div class="text-secondary">
+          Kaluma library for ST7789 (Color TFT/IPS LCD Display)
+          </div>
+        </li>
+      
+        <li class="list-group-item text-start">
+          <div class="d-flex justify-content-between">
+            <div><a href="https://github.com/niklauslee/tm1637" target="_blank">tm1637</a></div>
+            <div class="repo">
+              <code class="repo-install">npm i https://github.com/niklauslee/tm1637</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i https://github.com/niklauslee/tm1637')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div class="text-secondary">
+          Kaluma library for 7-segment LED Display
+          </div>
+        </li>
+      
     </ul>
   </div>
 </div>
+<script src="/js/packages.js"></script>
+
     </main>
   </body>
 </html>

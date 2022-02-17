@@ -4,24 +4,35 @@ title: Packages
 tags: pages
 ---
 
-<div class="container px-4 my-5">
-  <h1 class="mb-4">Packages</h1>
-  <p>
+<div class="container px-4 my-4">
+  <div class="alert alert-secondary">
   Github repository is prefered for package distribution (Don't need to publish to npmjs.org).<br>
   A package can be installed easily with <code>npm i https://github.com/(owner)/(repo)</code>.
-  </p>
-  <p><a href="#">How to register my package here?</a></p>
-  <div class="my-3"> 
-    Total: {{ packages | length }} packages
   </div>
-
+  <div class="text-end">
+    <p><a href="#">How to register my package here?</a></p>
+  <div>
+  <div class="text-start my-3"> 
+    Total: <b>{{ packages | length }} packages</b>
+  </div>
   <div class="card">
     <ul class="list-group list-group-flush">
       {% for name, item in packages %}
-        <li class="list-group-item">
+        <li class="list-group-item text-start">
           <div class="d-flex justify-content-between">
             <div><a href="{{item.repo}}" target="_blank">{{name}}</a></div>
-            <div><code>npm i {{item.repo}}</code></div>
+            <div class="repo">
+              <code class="repo-install">npm i {{item.repo}}</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i {{item.repo}}')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
           </div>
           <div class="text-secondary">
           {{item.description}}
@@ -31,3 +42,4 @@ tags: pages
     </ul>
   </div>
 </div>
+<script src="/js/packages.js"></script>

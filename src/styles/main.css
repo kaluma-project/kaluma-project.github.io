@@ -2,6 +2,7 @@
   --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'Roboto Mono', monospace;
   --bg-light-gray: #f4f4f4;
+  --border-color: #dddddd;
 }
 
 /* default elements */
@@ -23,7 +24,43 @@ code:not([class*='language-']) {
 
 .hero {
   background-color: var(--bg-light-gray);
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.repo {
+  background-color: var(--bg-light-gray);
+  border: 1px solid var(--border-color);
+  border-radius: 0.3em;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.repo .repo-install {
+  background-color: var(--bg-light-gray);
+  padding: 0.25em 0.8em;
+  border-right: 1px solid var(--border-color);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.repo .repo-copy {
+  color: grey;
+  cursor: pointer;
+  height: 100%;
+  border: 0;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.repo .repo-copy:hover {
+  background-color: #e9e9e9;
+}
+
+.repo .repo-copy:active {
+  background-color: var(--border-color);
+}
 }
 
 /* bootstrap styles */
@@ -41,6 +78,12 @@ code:not([class*='language-']) {
   border-radius: 5em;
   padding-left: 1.3em;
   padding-right: 1.3em;
+}
+
+.popover .popover-body {
+  padding: .4rem .8rem;
+  color: grey;
+  font-size: .9em;
 }
 
 /* prismjs styles */

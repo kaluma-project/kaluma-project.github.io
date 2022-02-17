@@ -1,0 +1,4 @@
+{
+  "repo": "https://github.com/niklauslee/esp8266-http-client",
+  "description": "A simple Kaluma HTTP client library for ESP8266 module"
+}
