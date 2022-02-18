@@ -67,15 +67,13 @@
     <main>
       
 <div class="container px-4 my-4">
-  <div class="alert alert-secondary">
-  Github repository is prefered for package distribution (Don't need to publish to npmjs.org).<br>
-  A package can be installed easily with <code>npm i https://github.com/(owner)/(repo)</code>.
-  </div>
+  A <b>Github repository</b> is prefered for package distribution (Don't need to publish to npmjs.org).<br>
+  A package can be installed easily with <code>npm install &lt;github-repo-url&gt;</code>.
   <div class="text-end">
-    <p><a href="#">How to register my package here?</a></p>
+    <p><a class="" href="https://github.com/kaluma-project/kaluma-project.github.io/issues/new?title=[Package Register Request]" target="_blank">Register my package</a></p>
   <div>
   <div class="text-start my-3"> 
-    Total: <b>24 packages</b>
+    Total: <b>25 packages</b>
   </div>
   <div class="card">
     <ul class="list-group list-group-flush">
@@ -397,6 +395,27 @@
       
         <li class="list-group-item text-start">
           <div class="d-flex justify-content-between">
+            <div><a href="https://github.com/niklauslee/picosystem" target="_blank">picosystem</a></div>
+            <div class="repo">
+              <code class="repo-install">npm i https://github.com/niklauslee/picosystem</code>
+              <button
+                role="button"
+                class="repo-copy"
+                onclick="copyToClipboard('npm i https://github.com/niklauslee/picosystem')"
+                data-bs-placement="top"
+                data-bs-toggle="popover"
+                data-bs-content="Copied!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div class="text-secondary">
+          Kaluma library for Pimoroni&#39;s PicoSystem
+          </div>
+        </li>
+      
+        <li class="list-group-item text-start">
+          <div class="d-flex justify-content-between">
             <div><a href="https://github.com/niklauslee/rotary-encoder" target="_blank">rotary-encoder</a></div>
             <div class="repo">
               <code class="repo-install">npm i https://github.com/niklauslee/rotary-encoder</code>
@@ -590,5 +609,14 @@
 <script src="/js/packages.js"></script>
 
     </main>
+    <div>
+      <div class="footer">
+  <div>
+    <a class="text-secondary text-decoration-none px-2" href="https://docs.kaluma.io" target="_blank">Docs</a>
+    <a class="text-secondary text-decoration-none px-2" href="https://github.com/kaluma-project/kaluma/discussions" target="_blank">Discussions</a>
+    <a class="text-secondary text-decoration-none px-2" href="https://github.com/kaluma-project/kaluma" target="_blank">Github</a>
+  </div>
+</div>
+    </div>
   </body>
 </html>

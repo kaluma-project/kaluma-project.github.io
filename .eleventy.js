@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/images');
   eleventyConfig.addPassthroughCopy('./src/styles');
   eleventyConfig.addPassthroughCopy('./src/js');
+  eleventyConfig.addPassthroughCopy('./src/favicon.ico');
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addWatchTarget('./src/js/*.js');
 
@@ -14,7 +15,9 @@ module.exports = function (eleventyConfig) {
     breaks: true,
     linkify: true,
   }).use(markdownItAnchor, {
-    permalink: false,
+    permalink: true,
+    permalinkClass: 'direct-link',
+    permalinkSymbol: '#',
   });
 
   eleventyConfig.setLibrary('md', markdownLibrary);
