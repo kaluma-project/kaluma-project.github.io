@@ -12,7 +12,7 @@ The `at` module supports sending AT commands and handling the responses. This mo
 
 ## Class: ATCommand
 
-An instances of `ATCommand` represents a AT command handler. This class is a subclass of [`EventEmitter`](events.md).
+An instances of `ATCommand` represents a AT command handler. This class is a subclass of [`EventEmitter`](/docs/api/events).
 
 ### new ATCommand(uart\[, options])
 

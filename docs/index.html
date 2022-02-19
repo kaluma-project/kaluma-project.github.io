@@ -67,7 +67,7 @@
       <div class="container text-center my-5">
         <h1 style="font-weight: 700">Kaluma</h1>
         <p style="color: #888; font-size: 18px;">A tiny JavaScript runtime for RP2040 (Raspberry Pi Pico)</p>
-        <a class="btn btn-primary btn-rounded" href="#getting-started">Get Started</a>
+        <a class="btn btn-primary btn-rounded" href="/docs/getting-started">Get Started</a>
         <span class="mx-1"></span>
         <a class="btn btn-outline-secondary btn-rounded" href="/download">Download</a>
       </div>
@@ -95,23 +95,14 @@
 <li>Push and hold the <strong>BOOTSEL</strong> button and plug into USB port of your computer, and then release the button. It will mount as USB storage device named <strong>RPI-RP2</strong>.</li>
 <li>Drag and drop the downloaded <strong>.UF2</strong> onto the <strong>RPI-RP2</strong> volume. Your Pico will reboot automatically.</li>
 </ul>
-<h3 id="getting-started" tabindex="-1">Getting Started <a class="direct-link" href="#getting-started">#</a></h3>
+<h3 id="quick-start" tabindex="-1">Quick Start <a class="direct-link" href="#quick-start">#</a></h3>
 <p>Write the first blink code with any text editor.</p>
 <pre class="language-js"><code class="language-js"><span class="token comment">// index.js</span><br><span class="token keyword">const</span> led <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">;</span><br><span class="token function">pinMode</span><span class="token punctuation">(</span>led<span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token function">digitalToggle</span><span class="token punctuation">(</span>led<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>To upload code to your board, we need <a href="https://github.com/kaluma-project/kaluma-cli">Kaluma CLI</a>. Of course, it is assumed that <a href="https://nodejs.org">Node.js</a> is installed.</p>
-<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g @kaluma/cli</code></pre>
+<pre class="language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> -g @kaluma/cli</code></pre>
 <p>Use CLI to upload <code>index.js</code> to your board. You need to know which serial port is connected to your board using CLI: <code>kaluma ports</code>.</p>
-<pre class="language-bash"><code class="language-bash">kaluma flash index.js --port <span class="token operator">&lt;</span>port<span class="token operator">></span></code></pre>
+<pre class="language-bash"><code class="language-bash">$ kaluma flash index.js --port <span class="token operator">&lt;</span>port<span class="token operator">></span></code></pre>
 <p>After uploading successfully, you will see a blinking LED on the board.</p>
-<h3 id="using-third-party-packages" tabindex="-1">Using third-party packages <a class="direct-link" href="#using-third-party-packages">#</a></h3>
-<p>You can install a Git repository directly with NPM. You can find third-party packages for Kaluma in <a href="/packages">Packages</a>.</p>
-<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> https://github.com/niklauslee/dht</code></pre>
-<p>Then you can import the package with <code>require()</code>.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">DHT</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'dht'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>If you are using third-party packages or using multie <code>.js</code> files, you have to bundle them into a single <code>.js</code>.</p>
-<pre class="language-bash"><code class="language-bash">kaluma bundle index.js<br>kaluma flash bundle.js --port <span class="token operator">&lt;</span>port<span class="token operator">></span></code></pre>
-<p>You can bundle and flash at once:</p>
-<pre class="language-bash"><code class="language-bash">kaluma flash index.js --bundle --port <span class="token operator">&lt;</span>port<span class="token operator">></span></code></pre>
 
       </div>
     </main>

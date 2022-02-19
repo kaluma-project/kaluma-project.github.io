@@ -23,7 +23,7 @@ var graphics = require('graphics') // Load a builtin module
 
 * **`...data`**  `<any>`Data which is shown in the console.
 
-Print out data to the console. The main difference from [console.log()](console.md#log) is that it do not print a carriage return and a new line character (`\r\n`) in the end.
+Print out data to the console. The main difference from [console.log()](/docs/api/console) is that it do not print a carriage return and a new line character (`\r\n`) in the end.
 
 ```javascript
 // print out "100 string value true 1,2,3"
@@ -121,43 +121,43 @@ Decodes URI (Uniform Resource Identifier) component using [percent-encoding](htt
 
 ### Digital I/O Functions
 
-All the functions in the [Digital I/O](digital\_io.md) are in the global scope.
+All the functions in the [Digital I/O](/docs/api/digital-io) are in the global scope.
 
 ### Analog I/O Functions
 
-All the functions in the [Analog I/O](analog\_io.md) are in the global scope.
+All the functions in the [Analog I/O](/docs/api/analog-io) are in the global scope.
 
 ### Timers Functions
 
-All the functions in the [Timers](timers.md) are in the global scope.
+All the functions in the [Timers](/docs/api/timers) are in the global scope.
 
 ### Interrupt Functions
 
-All the functions in the [Interrupts](interrupts.md) are in the global scope.
+All the functions in the [Interrupts](/docs/api/interrupts) are in the global scope.
 
 ### console
 
 * `<Object>`
 
-[Console](console.md) object is a global object.
+[Console](/docs/api/console) object is a global object.
 
 ### process
 
 * `<Object>`
 
-[process ](process.md)object is a global object.
+[process ](/docs/api/process)object is a global object.
 
 ### board object
 
 * `<Object>`
 
-[board ](board.md)object is a global object.
+[board ](/docs/api/board)object is a global object.
 
 ### storage object
 
 * `<Object>`
 
-[storage](storage.md) object is a global.
+[storage](/docs/api/storage) object is a global.
 
 ### Class: TextEncoder
 
@@ -202,7 +202,7 @@ Decodes the input buffer and returns the decoded string.
 
 Encoding type.
 
-### Class: [SystemError](errors.md#class-systemerror)
+### Class: [SystemError](/docs/api/errors/#class-systemerror)
 
 * Extends: `{Error}`
 

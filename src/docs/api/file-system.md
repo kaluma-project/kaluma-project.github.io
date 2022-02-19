@@ -21,7 +21,7 @@ const fs = require('fs');
 ### fs.register(fstype, fsctr)
 
 * **`fstype`** `<string>` File system type.
-* **`fsctr`** `<constructor>` Virtual file system constructor. See [Virtual File System](file-system.md#virtual-file-system).
+* **`fsctr`** `<constructor>` Virtual file system constructor. See [Virtual File System](#virtual-file-system).
 
 Register a file system type.
 
@@ -278,7 +278,7 @@ The size of the file.
 
 ## Virtual File System
 
-The architecture of file system is resembles Unix's virtual file system. So you can implements your own virtual file system and register. By default, Kaluma provides two file systems: [LittleFS](https://github.com/littlefs-project/littlefs) and [FAT](file-system.md#file-system).
+The architecture of file system is resembles Unix's virtual file system. So you can implements your own virtual file system and register. By default, Kaluma provides two file systems: [LittleFS](https://github.com/littlefs-project/littlefs) and [FAT](http://elm-chan.org/fsw/ff/00index_e.html).
 
 ```javascript
 const fs = require('fs');

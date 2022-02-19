@@ -24,7 +24,7 @@
         Kaluma Documentation
       </div>
       <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
           <ul class="list-unstyled">
             
               <li>
@@ -36,41 +36,25 @@
               </li>
             
               <li>
-                <a href="/docs/cli/">CLI</a>
-              </li>
-            
-              <li>
-                <a href="/docs/ecmascript-compatibility/">ECMAScript Compatibility</a>
-              </li>
-            
-              <li>
-                <a href="/docs/getting_started/">Get Start</a>
-              </li>
-            
-              <li>
-                <a href="/docs/ide/">IDE</a>
-              </li>
-            
-              <li>
                 <a href="/docs/repl/">REPL</a>
               </li>
             
             <br>
-            <h6>BOARDS</h6>
+            <b>BOARDS</b>
             
               <li>
-                <a href="/docs/boards/raspberry-pi-pico/">RP2040 (Raspberry Pi Pico)</a>
+                <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <h6>API</h6>
+            <b>API</b>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
               </li>
             
               <li>
-                <a href="/docs/api/analog_io/">Analog I/O</a>
+                <a href="/docs/api/analog-io/">Analog I/O</a>
               </li>
             
               <li>
@@ -90,11 +74,11 @@
               </li>
             
               <li>
-                <a href="/docs/api/device_driver/">Device Driver</a>
+                <a href="/docs/api/device-driver/">Device Driver</a>
               </li>
             
               <li>
-                <a href="/docs/api/digital_io/">Digital I/O</a>
+                <a href="/docs/api/digital-io/">Digital I/O</a>
               </li>
             
               <li>
@@ -199,10 +183,10 @@
     </nav>
     <div class="doc-body">
       <div class="text-end p-3 border-bottom">
-        Search, versions
+        v1.0
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
       </div>
-      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px">
+      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px; padding-bottom: 5rem;">
         <div><h1 id="digital-i%2Fo" tabindex="-1">Digital I/O <a class="direct-link" href="#digital-i%2Fo">#</a></h1>
 <h2 id="pinmode(pin%5B%2C-mode%5D)" tabindex="-1">pinMode(pin[, mode]) <a href="#pinmode" id="pinmode"></a> <a class="direct-link" href="#pinmode(pin%5B%2C-mode%5D)">#</a></h2>
 <ul>
@@ -252,7 +236,7 @@
 <li><strong><code>debounce</code></strong> <code>&lt;number&gt;</code> debounce time in ms (milliseconds). <strong>Default:</strong> <code>0</code>ms</li>
 <li><strong>Returns:</strong> <code>&lt;number&gt;</code> the ID of the watcher.</li>
 </ul>
-<p>Run the <strong><code>callback</code></strong> function when the <strong><code>events</code></strong> is triggered on the <strong><code>pin</code></strong>. There are five events. The <code>FALLING</code> event is triggered when the <strong><code>pin</code></strong> state is changed from <code>HIGH</code> to <code>LOW</code>. The <code>LOW_LEVEL (1)</code>event is triggered when the **<code>pin</code>**is <code>LOW</code> state and The <code>HIGH_LEVEL (2)</code> event is triggered when the <strong><code>pin</code></strong> is <code>HIGH</code> state.  The <code>RISING (1)</code> event is triggered when the <strong><code>pin</code></strong> state is changed from <code>LOW</code> to <code>HIGH</code>. The <code>CHANGE</code> event is triggered when the <strong><code>pin</code></strong> state is changed to any states, which means the <code>CHANGE</code> event is the same as the <code>FALLING</code> + <code>RISING</code> events. The <strong><code>debounce</code></strong> time can be set when you can see the bouncing on the GPIO <strong><code>pin</code></strong>. A <code>RangeError</code> will be thrown if <strong><code>pin</code></strong> does not support GPIO function.</p>
+<p>Run the <strong><code>callback</code></strong> function when the <strong><code>events</code></strong> is triggered on the <strong><code>pin</code></strong>. There are five events. The <code>FALLING</code> event is triggered when the <strong><code>pin</code></strong> state is changed from <code>HIGH</code> to <code>LOW</code>. The <code>LOW_LEVEL (1)</code>event is triggered when the <strong><code>pin</code></strong> is <code>LOW</code> state and The <code>HIGH_LEVEL (2)</code> event is triggered when the <strong><code>pin</code></strong> is <code>HIGH</code> state.  The <code>RISING (1)</code> event is triggered when the <strong><code>pin</code></strong> state is changed from <code>LOW</code> to <code>HIGH</code>. The <code>CHANGE</code> event is triggered when the <strong><code>pin</code></strong> state is changed to any states, which means the <code>CHANGE</code> event is the same as the <code>FALLING</code> + <code>RISING</code> events. The <strong><code>debounce</code></strong> time can be set when you can see the bouncing on the GPIO <strong><code>pin</code></strong>. A <code>RangeError</code> will be thrown if <strong><code>pin</code></strong> does not support GPIO function.</p>
 <p>Before calling this function, you have to set the pin mode as <code>INPUT</code> , <code>INPUT_PULLUP</code> or <code>INPUT_PULLDOWN</code>.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Print out 'click' string to the terminal when user press the button.</span><br><span class="token keyword">var</span> pin <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">// Pin to watch</span><br><span class="token function">pinMode</span><span class="token punctuation">(</span>pin<span class="token punctuation">,</span> <span class="token constant">INPUT_PULLDOWN</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Set the pin mode to INPUT_PULLDOWN.</span><br><span class="token keyword">var</span> id <span class="token operator">=</span> <span class="token function">setWatch</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Print out the 'click' to the terminal.</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span> pin<span class="token punctuation">,</span> <span class="token constant">RISING</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Set falling event with 10ms debouncing time.</span></code></pre>
 <h2 id="clearwatch(id)" tabindex="-1">clearWatch(id) <a href="#clearwatch" id="clearwatch"></a> <a class="direct-link" href="#clearwatch(id)">#</a></h2>
@@ -281,7 +265,7 @@
 </li>
 <li><strong>Returns:</strong> <code>&lt;number[]&gt;</code> Array of the pulse timing. It returns <code>null</code> if the pin state is not changed until <strong><code>timeout</code></strong></li>
 </ul>
-<p>Read the **<code>pin</code>**state change timing from <strong><code>startState</code></strong>. It returns the microseconds state changing timing if the state is changed <strong><code>count</code></strong> times or for <strong><code>timeout</code></strong> microseconds.</p>
+<p>Read the <strong><code>pin</code></strong> state change timing from <strong><code>startState</code></strong>. It returns the microseconds state changing timing if the state is changed <strong><code>count</code></strong> times or for <strong><code>timeout</code></strong> microseconds.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Read 10 pulse timing on the pin 0</span><br><span class="token function">pinMode</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">INPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> pulse <span class="token operator">=</span> <span class="token function">pulseRead</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>console<span class="token punctuation">.</span><span class="token function">log</span> <span class="token punctuation">(</span>pulse<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>If <strong><code>startState</code></strong> is <code>HIGH (1)</code> the system wait until the pin state to <code>HIGH</code> and start to measure pulse timing. The If <strong><code>startState</code></strong> is<code>undefined</code>, the system start to measure pulse timing immediately and user can't know which pulse timing is <code>HIGH</code> or <code>LOW</code>. Assume that the pulses are given as below timing diagram, you can get <code>[30, 20, 50]</code> with the below example code.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Read 10 pulse timing with 50ms timeout.</span><br><span class="token function">pinMode</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">INPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">// Wait until HIGH state detection</span><br><span class="token keyword">var</span> pulse <span class="token operator">=</span> <span class="token function">pulseRead</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">timeout</span><span class="token operator">:</span> <span class="token number">50000</span><span class="token punctuation">,</span> <span class="token literal-property property">startState</span><span class="token operator">:</span> <span class="token constant">HIGH</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>console<span class="token punctuation">.</span><span class="token function">log</span> <span class="token punctuation">(</span>pulse<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [30, 20, 50]</span></code></pre>
@@ -296,7 +280,7 @@
 <li><strong><code>interval</code></strong> <code>&lt;number[]&gt;</code> Pulse timing in microseconds.</li>
 <li><strong>Returns:</strong> <code>&lt;number&gt;</code> Length of the written pulse, it's the same as the length of the <strong><code>interval</code></strong> array.</li>
 </ul>
-<p>Generates the digital pulse on the **<code>pin</code>**with microseconds timing. The state change timing from <strong><code>startState</code></strong>. It returns the number of the written pulse.</p>
+<p>Generates the digital pulse on the <strong><code>pin</code></strong> with microseconds timing. The state change timing from <strong><code>startState</code></strong>. It returns the number of the written pulse.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Generates pulse on the pin 0</span><br><span class="token function">pinMode</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token function">pulseWrite</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">LOW</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">60</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p><img src="/images/doc-digital-io-pulse-write.png" alt="Pulse generated"></p>
 </div>

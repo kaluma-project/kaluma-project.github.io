@@ -24,7 +24,7 @@
         Kaluma Documentation
       </div>
       <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
           <ul class="list-unstyled">
             
               <li>
@@ -36,41 +36,25 @@
               </li>
             
               <li>
-                <a href="/docs/cli/">CLI</a>
-              </li>
-            
-              <li>
-                <a href="/docs/ecmascript-compatibility/">ECMAScript Compatibility</a>
-              </li>
-            
-              <li>
-                <a href="/docs/getting_started/">Get Start</a>
-              </li>
-            
-              <li>
-                <a href="/docs/ide/">IDE</a>
-              </li>
-            
-              <li>
                 <a href="/docs/repl/">REPL</a>
               </li>
             
             <br>
-            <h6>BOARDS</h6>
+            <b>BOARDS</b>
             
               <li>
-                <a href="/docs/boards/raspberry-pi-pico/">RP2040 (Raspberry Pi Pico)</a>
+                <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <h6>API</h6>
+            <b>API</b>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
               </li>
             
               <li>
-                <a href="/docs/api/analog_io/">Analog I/O</a>
+                <a href="/docs/api/analog-io/">Analog I/O</a>
               </li>
             
               <li>
@@ -90,11 +74,11 @@
               </li>
             
               <li>
-                <a href="/docs/api/device_driver/">Device Driver</a>
+                <a href="/docs/api/device-driver/">Device Driver</a>
               </li>
             
               <li>
-                <a href="/docs/api/digital_io/">Digital I/O</a>
+                <a href="/docs/api/digital-io/">Digital I/O</a>
               </li>
             
               <li>
@@ -199,10 +183,10 @@
     </nav>
     <div class="doc-body">
       <div class="text-end p-3 border-bottom">
-        Search, versions
+        v1.0
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
       </div>
-      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px">
+      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px; padding-bottom: 5rem;">
         <div><h1 id="stream" tabindex="-1">Stream <a class="direct-link" href="#stream">#</a></h1>
 <blockquote>
 <p><strong>THIS IS EXPERIMENTAL AND SUBJECT OF CHANGE</strong></p>
@@ -210,7 +194,7 @@
 <p>This <code>steam</code> module provides abstract interfaces for working with streaming data. Use <code>require('stream')</code> to access this module.</p>
 <h2 id="class%3A-stream" tabindex="-1">Class: Stream <a class="direct-link" href="#class%3A-stream">#</a></h2>
 <ul>
-<li>Extends: <a href="events.md#class-eventemitter"><code>EventEmitter</code></a> </li>
+<li>Extends: <a href="/docs/api/events/#class-eventemitter"><code>EventEmitter</code></a></li>
 </ul>
 <p>This is a class for stream.</p>
 <h3 id="stream.readable" tabindex="-1">stream.readable <a class="direct-link" href="#stream.readable">#</a></h3>
@@ -252,7 +236,7 @@
 <ul>
 <li><code>{boolean}</code></li>
 </ul>
-<p>Becomes <code>true</code> when <a href="stream.md#event-end"><code>'end'</code></a> event is emitted.</p>
+<p>Becomes <code>true</code> when <a href="#event-end"><code>'end'</code></a> event is emitted.</p>
 <h3 id="readable.push(chunk)" tabindex="-1">readable.push(chunk) <a class="direct-link" href="#readable.push(chunk)">#</a></h3>
 <ul>
 <li><strong><code>chunk</code></strong> <code>{Uint8Array}</code> </li>
@@ -286,26 +270,26 @@
 <ul>
 <li><code>{boolean}</code></li>
 </ul>
-<p>Becomes <code>true</code> when <a href="stream.md#writable-end-chunk-callback"><code>writable.end()</code></a> is called.</p>
+<p>Becomes <code>true</code> when <a href="#writable-end-chunk-callback"><code>writable.end()</code></a> is called.</p>
 <h3 id="writable.writablefinished" tabindex="-1">writable.writableFinished <a class="direct-link" href="#writable.writablefinished">#</a></h3>
 <ul>
 <li><code>{boolean}</code></li>
 </ul>
-<p>Becomes <code>true</code> when <a href="stream.md#event-finish"><code>'finish'</code></a> event is emitted.</p>
+<p>Becomes <code>true</code> when <a href="#event-finish"><code>'finish'</code></a> event is emitted.</p>
 <h3 id="writable.write(chunk%5B%2C-callback%5D)" tabindex="-1">writable.write(chunk[, callback]) <a class="direct-link" href="#writable.write(chunk%5B%2C-callback%5D)">#</a></h3>
 <ul>
 <li><strong><code>chunk</code></strong> <code>{Uint8Array|string}</code> A chunk of data to write.</li>
 <li><strong><code>callback</code></strong> <code>{Function}</code> Called when the chunk of data is handled.</li>
 <li>Returns: <code>{boolean}</code> </li>
 </ul>
-<p>Writes a chunk of data on the stream. It returns <code>true</code> if the stream is ready to handle the next chunk of data. It returns <code>false</code>, then the stream will emit <a href="stream.md#event-drain"><code>'drain'</code></a> event when the all data written are handled and the internal buffer is empty. If you write data before <a href="stream.md#event-drain"><code>'drain'</code></a> event emitted, the chunk of data will be appended to the internal buffer.</p>
+<p>Writes a chunk of data on the stream. It returns <code>true</code> if the stream is ready to handle the next chunk of data. It returns <code>false</code>, then the stream will emit <a href="#event-drain"><code>'drain'</code></a> event when the all data written are handled and the internal buffer is empty. If you write data before <a href="#event-drain"><code>'drain'</code></a> event emitted, the chunk of data will be appended to the internal buffer.</p>
 <h3 id="writable.end(%5Bchunk%5D%5B%2C-callback%5D)" tabindex="-1">writable.end([chunk][, callback]) <a class="direct-link" href="#writable.end(%5Bchunk%5D%5B%2C-callback%5D)">#</a></h3>
 <ul>
 <li><strong><code>chunk</code></strong> <code>{Uint8Array|string}</code> A chunk of data to write before finish.</li>
 <li><strong><code>callback</code></strong> <code>{Function}</code> Called when the stream is finished.</li>
 <li>Returns: <code>{this}</code> </li>
 </ul>
-<p>Finishes to write data on the stream. The event <a href="stream.md#event-finish"><code>'finish'</code></a> will be emitted after successfully finished.</p>
+<p>Finishes to write data on the stream. The event <a href="#event-finish"><code>'finish'</code></a> will be emitted after successfully finished.</p>
 <h3 id="writable._write(chunk%5B%2C-callback%5D)" tabindex="-1">writable._write(chunk[, callback]) <a class="direct-link" href="#writable._write(chunk%5B%2C-callback%5D)">#</a></h3>
 <ul>
 <li><strong><code>chunk</code></strong> <code>{Uint8Array|string}</code> </li>
@@ -334,11 +318,11 @@
 <h3 id="event%3A-'close'-1" tabindex="-1">Event: 'close' <a class="direct-link" href="#event%3A-'close'-1">#</a></h3>
 <p>Emitted when the stream is closed.</p>
 <h2 id="class%3A-stream.duplex" tabindex="-1">Class: stream.Duplex <a class="direct-link" href="#class%3A-stream.duplex">#</a></h2>
-<p>Extends: <a href="stream.md#class-readable"><code>stream.Readable</code></a>, <a href="stream.md#class-writable"><code>stream.Writable</code></a></p>
+<p>Extends: <a href="#class-readable"><code>stream.Readable</code></a>, <a href="#class-writable"><code>stream.Writable</code></a></p>
 <blockquote>
 <p>THIS CLASS WILL BE DEPRECATED</p>
 </blockquote>
-<p>Duplex streams are streams that implement both the <a href="stream.md#class-readable">Readable</a> and <a href="stream.md#class-writable">Writable</a> interfaces.</p>
+<p>Duplex streams are streams that implement both the <a href="#class-readable">Readable</a> and <a href="#class-writable">Writable</a> interfaces.</p>
 </div>
       </main>
     </div>

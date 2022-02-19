@@ -98,7 +98,7 @@ digitalToggle(1) // Toggle the pin 1, change the pin state to LOW from HIGH.
 * **`debounce`** `<number>` debounce time in ms (milliseconds). **Default:** `0`ms
 * **Returns:** `<number>` the ID of the watcher.
 
-Run the **`callback`** function when the **`events`** is triggered on the **`pin`**. There are five events. The `FALLING` event is triggered when the **`pin`** state is changed from `HIGH` to `LOW`. The `LOW_LEVEL (1)`event is triggered when the **`pin`**is `LOW` state and The `HIGH_LEVEL (2)` event is triggered when the **`pin`** is `HIGH` state.  The `RISING (1)` event is triggered when the **`pin`** state is changed from `LOW` to `HIGH`. The `CHANGE` event is triggered when the **`pin`** state is changed to any states, which means the `CHANGE` event is the same as the `FALLING` + `RISING` events. The **`debounce`** time can be set when you can see the bouncing on the GPIO **`pin`**. A `RangeError` will be thrown if **`pin`** does not support GPIO function.
+Run the **`callback`** function when the **`events`** is triggered on the **`pin`**. There are five events. The `FALLING` event is triggered when the **`pin`** state is changed from `HIGH` to `LOW`. The `LOW_LEVEL (1)`event is triggered when the **`pin`** is `LOW` state and The `HIGH_LEVEL (2)` event is triggered when the **`pin`** is `HIGH` state.  The `RISING (1)` event is triggered when the **`pin`** state is changed from `LOW` to `HIGH`. The `CHANGE` event is triggered when the **`pin`** state is changed to any states, which means the `CHANGE` event is the same as the `FALLING` + `RISING` events. The **`debounce`** time can be set when you can see the bouncing on the GPIO **`pin`**. A `RangeError` will be thrown if **`pin`** does not support GPIO function.
 
 Before calling this function, you have to set the pin mode as `INPUT` , `INPUT_PULLUP` or `INPUT_PULLDOWN`.
 
@@ -141,7 +141,7 @@ clearWatch(id); // Stop watching the on-board pin event.
     * **`interval`** `<number[]>` Pulse timing in microseconds. Refer to `pulseWrite`.
 * **Returns:** `<number[]>` Array of the pulse timing. It returns `null` if the pin state is not changed until **`timeout`**
 
-Read the **`pin`**state change timing from **`startState`**. It returns the microseconds state changing timing if the state is changed **`count`** times or for **`timeout`** microseconds.
+Read the **`pin`** state change timing from **`startState`**. It returns the microseconds state changing timing if the state is changed **`count`** times or for **`timeout`** microseconds.
 
 ```javascript
 // Read 10 pulse timing on the pin 0
@@ -186,7 +186,7 @@ You should be consider the CPU process time in the very first output array data.
 * **`interval`** `<number[]>` Pulse timing in microseconds.
 * **Returns:** `<number>` Length of the written pulse, it's the same as the length of the **`interval`** array.
 
-Generates the digital pulse on the **`pin`**with microseconds timing. The state change timing from **`startState`**. It returns the number of the written pulse.
+Generates the digital pulse on the **`pin`** with microseconds timing. The state change timing from **`startState`**. It returns the number of the written pulse.
 
 ```javascript
 // Generates pulse on the pin 0

@@ -10,7 +10,7 @@ tags: "api"
 
 The `net` module supports an asynchronous stream-based API for TCP clients and servers. Use `require('net')` to access this module.
 
-> This module is depends on the [network device driver](device\_driver.md#netdev) so the board should register a network device driver manually if your board is not builtin network capabilities.
+> This module is depends on the [network device driver](/docs/api/device-driver/#netdev) so the board should register a network device driver manually if your board is not builtin network capabilities.
 
 ## net.createConnection(options\[, connectListener])
 
@@ -41,7 +41,7 @@ client.on('end', () => {
 
 ## net.connect(options\[, connectListener])
 
-Alias to [net.createConnection(options\[, connectListener\])](net.md#net-createconnection-options-connectlistener).
+Alias to [net.createConnection(options\[, connectListener\])](#net-createconnection-options-connectlistener).
 
 ## net.createServer(\[connectionListener])
 
@@ -71,7 +71,7 @@ server.listen(8124, () => {
 
 ## Class: Server
 
-* Extends: [`EventEmitter`](events.md#class-eventemitter)
+* Extends: [`EventEmitter`](/docs/api/events/#class-eventemitter)
 
 This class is used to create a TCP server. This is a condensed version of Server class in [Node.js](https://nodejs.org).
 
@@ -116,7 +116,7 @@ Emitted when the server has started to listen for connections.
 
 ## Class: Socket
 
-* Extends: [`stream.Duplex`](stream.md#class-stream-duplex)
+* Extends: [`stream.Duplex`](/docs/api/stream/#class-stream-duplex)
 
 This class is an abstraction of a TCP socket. This is a condensed version of Socket class in [Node.js](https://nodejs.org).
 

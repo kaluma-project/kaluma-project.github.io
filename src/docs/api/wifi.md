@@ -10,7 +10,7 @@ tags: "api"
 
 The `wifi` module supports to scan, connect and disconnect Wi-Fi networks. Use `require('wifi')` to access this module.
 
-> This module requires a [IEEE 802.11 device driver](device\_driver.md#ieee-80211-dev). If the board you are using is not capable for Wi-Fi, you may need to inject external Wi-Fi device driver.
+> This module requires a [IEEE 802.11 device driver](/docs/api/device-driver/#ieee-80211-dev). If the board you are using is not capable for Wi-Fi, you may need to inject external Wi-Fi device driver.
 
 ## Class: WiFi
 

@@ -59,7 +59,7 @@ Returns an object describing memory usage.
 
 ### process.stdin
 
-* `<`[`Stream`](stream.md#class-stream)`>`&#x20;
+* `<`[`Stream`](/docs/api/stream/#class-stream)`>`&#x20;
 
 Returns a stream object connected to standard input.
 
@@ -78,7 +78,7 @@ while (size < 100) {
 
 ### process.stdout
 
-* `<`[`Stream`](stream.md#class-stream)`>`&#x20;
+* `<`[`Stream`](/docs/api/stream/#class-stream)`>`
 
 Returns a stream object connected to standard output.
 

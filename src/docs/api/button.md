@@ -10,7 +10,7 @@ The `button` module supports button. Use `require('button')` to access this modu
 
 ## Class: Button
 
-An instances of `Button` represents a button object. This class is a subclass of [`EventEmitter`](events.md).
+An instances of `Button` represents a button object. This class is a subclass of [`EventEmitter`](/docs/api/events).
 
 ### new Button(pin\[, options])
 

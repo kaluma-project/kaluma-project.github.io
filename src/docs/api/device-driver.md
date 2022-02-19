@@ -14,10 +14,10 @@ For example, if you want to use networking API with ESP8266 module externally co
 
 Below is supported device driver types:
 
-* `global.__netdev` : Network device driver. The [`net`](net.md), `dgram`, [`http`](http.md) modules require this device driver.
-* `global.__ieee80211dev` : IEEE 802.11 (WiFi) device driver. The [`wifi`](wifi.md) module requires this device driver.
+* `global.__netdev` : Network device driver. The [`net`](/docs/api/net), `dgram`, [`http`](/docs/api/http) modules require this device driver.
+* `global.__ieee80211dev` : IEEE 802.11 (WiFi) device driver. The [`wifi`](/docs/api/wifi) module requires this device driver.
 
-## Network Device Driver <a href="#netdev" id="netdev"></a>
+## Network Device Driver
 
 The interface of the network device driver is very similar to the linux socket interface.
 

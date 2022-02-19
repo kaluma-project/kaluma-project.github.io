@@ -28,7 +28,7 @@ The pin number of the on-board LED.
 
 ### board.gpio(pin\[, mode])
 
-Returns an instance of [GPIO](gpio.md) class. All arguments are passed to the constructor.
+Returns an instance of [GPIO](/docs/api/gpio) class. All arguments are passed to the constructor.
 
 ```javascript
 var gpio = board.gpio(0, OUTPUT);
@@ -37,7 +37,7 @@ gpio.high();
 
 ### board.led(pin)
 
-Returns an instance of [LED](led.md) class. All arguments are passed to the constructor.
+Returns an instance of [LED](/docs/api/led) class. All arguments are passed to the constructor.
 
 ```javascript
 var led = board.led(25);
@@ -46,7 +46,7 @@ led.on();
 
 ### board.button(pin\[, options])
 
-Returns an instance of [Button](button.md) class. All arguments are passed to the constructor.
+Returns an instance of [Button](/docs/api/button) class. All arguments are passed to the constructor.
 
 ```javascript
 var btn0 = board.button(0);
@@ -57,7 +57,7 @@ btn0.on('click', () => {
 
 ### board.pwm(pin\[, frequency\[, duty]])
 
-Returns an instance of [PWM](pwm.md) class. All arguments are passed to the constructor.
+Returns an instance of [PWM](/docs/api/pwm) class. All arguments are passed to the constructor.
 
 ```javascript
 var pwm1 = board.pwm(1, 100, 0.4);
@@ -66,7 +66,7 @@ pwm1.start();
 
 ### board.adc(pin)
 
-Returns an instance of [ADC](adc.md) class. All arguments are passed to the constructor.
+Returns an instance of [ADC](/docs/api/adc) class. All arguments are passed to the constructor.
 
 ```javascript
 var adc3 = board.adc(26);
@@ -75,7 +75,7 @@ adc.read(); // Read analog value from pin 26.
 
 ### board.i2c(bus\[, options])
 
-Returns an instance of [I2C](i2c.md) class. All arguments are passed to the constructor.
+Returns an instance of [I2C](/docs/api/i2c) class. All arguments are passed to the constructor.
 
 ```javascript
 var i2c0 = board.i2c(0); 
@@ -85,7 +85,7 @@ i2c0.close();
 
 ### board.spi(bus\[, options])
 
-Returns an instance of [SPI](spi.md) class. All arguments are passed to the constructor.
+Returns an instance of [SPI](/docs/api/spi) class. All arguments are passed to the constructor.
 
 ```javascript
 var spi0 = board.spi(0);
@@ -95,7 +95,7 @@ spi0.close();
 
 ### board.uart(port\[, options])
 
-Returns an instance of [UART](uart.md) class. All arguments are passed to the constructor.
+Returns an instance of [UART](/docs/api/uart) class. All arguments are passed to the constructor.
 
 ```javascript
 var serial0 = board.uart(0);

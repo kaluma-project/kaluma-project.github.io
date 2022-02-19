@@ -24,7 +24,7 @@
         Kaluma Documentation
       </div>
       <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
           <ul class="list-unstyled">
             
               <li>
@@ -36,41 +36,25 @@
               </li>
             
               <li>
-                <a href="/docs/cli/">CLI</a>
-              </li>
-            
-              <li>
-                <a href="/docs/ecmascript-compatibility/">ECMAScript Compatibility</a>
-              </li>
-            
-              <li>
-                <a href="/docs/getting_started/">Get Start</a>
-              </li>
-            
-              <li>
-                <a href="/docs/ide/">IDE</a>
-              </li>
-            
-              <li>
                 <a href="/docs/repl/">REPL</a>
               </li>
             
             <br>
-            <h6>BOARDS</h6>
+            <b>BOARDS</b>
             
               <li>
-                <a href="/docs/boards/raspberry-pi-pico/">RP2040 (Raspberry Pi Pico)</a>
+                <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <h6>API</h6>
+            <b>API</b>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
               </li>
             
               <li>
-                <a href="/docs/api/analog_io/">Analog I/O</a>
+                <a href="/docs/api/analog-io/">Analog I/O</a>
               </li>
             
               <li>
@@ -90,11 +74,11 @@
               </li>
             
               <li>
-                <a href="/docs/api/device_driver/">Device Driver</a>
+                <a href="/docs/api/device-driver/">Device Driver</a>
               </li>
             
               <li>
-                <a href="/docs/api/digital_io/">Digital I/O</a>
+                <a href="/docs/api/digital-io/">Digital I/O</a>
               </li>
             
               <li>
@@ -199,10 +183,10 @@
     </nav>
     <div class="doc-body">
       <div class="text-end p-3 border-bottom">
-        Search, versions
+        v1.0
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
       </div>
-      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px">
+      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px; padding-bottom: 5rem;">
         <div><h1 id="http" tabindex="-1">HTTP <a class="direct-link" href="#http">#</a></h1>
 <blockquote>
 <p><strong>THIS IS EXPERIMENTAL AND SUBJECT OF CHANGE</strong></p>
@@ -248,7 +232,7 @@
 </li>
 <li>Returns: <code>{ClientRequest}</code> </li>
 </ul>
-<p>This function is same with <a href="http.md#http-request-options-callback"><code>http.request()</code></a> except for the method is fixed to <code>'GET'</code> and automatically call <code>request.end()</code> with empty body content.</p>
+<p>This function is same with <code>http.request()</code> except for the method is fixed to <code>'GET'</code> and automatically call <code>request.end()</code> with empty body content.</p>
 <pre class="language-javascript"><code class="language-javascript">http<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'somewhere.com'</span><span class="token punctuation">,</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  response<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">chunk</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'received: '</span><span class="token punctuation">,</span> chunk<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h2 id="http.createserver(%5Brequestlistener%5D)" tabindex="-1">http.createServer([requestListener]) <a class="direct-link" href="#http.createserver(%5Brequestlistener%5D)">#</a></h2>
 <ul>
@@ -258,9 +242,9 @@
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> message <span class="token operator">=</span> <span class="token string">'&lt;h1>Hello&lt;/h1>'</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> port <span class="token operator">=</span> <span class="token number">80</span><span class="token punctuation">;</span><br><br><span class="token keyword">var</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Request path: '</span> <span class="token operator">+</span> req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  response<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token string">'OK'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><br>    <span class="token string-property property">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'text/html'</span><span class="token punctuation">,</span><br>    <span class="token string-property property">'Content-Length'</span><span class="token operator">:</span> message<span class="token punctuation">.</span>length<br>  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  response<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  response<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'HTTP server listening on port: '</span> <span class="token operator">+</span> port<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h2 id="class%3A-http.outgoingmessage" tabindex="-1">Class: http.OutgoingMessage <a class="direct-link" href="#class%3A-http.outgoingmessage">#</a></h2>
 <ul>
-<li>Extends: <a href="stream.md#class-writable"><code>{stream.Writable}</code></a> </li>
+<li>Extends: <a href="/docs/api/stream/#class-writable"><code>{stream.Writable}</code></a></li>
 </ul>
-<p>This is an abstract class for <a href="http.md#class-http-clientrequest"><code>http.ClientRequest</code></a> and <a href="http.md#class-http-serverresponse"><code>http.ServerResponse</code></a>.</p>
+<p>This is an abstract class for <a href="#class-http-clientrequest"><code>http.ClientRequest</code></a> and <a href="#class-http-serverresponse"><code>http.ServerResponse</code></a>.</p>
 <h3 id="message.setheader(name%2C-value)" tabindex="-1">message.setHeader(name, value) <a class="direct-link" href="#message.setheader(name%2C-value)">#</a></h3>
 <ul>
 <li><strong><code>name</code></strong> <code>{string}</code></li>
@@ -290,14 +274,14 @@
 <p>Indicates whether the headers were sent or not.</p>
 <h2 id="class%3A-http.clientrequest" tabindex="-1">Class: http.ClientRequest <a class="direct-link" href="#class%3A-http.clientrequest">#</a></h2>
 <ul>
-<li>Extends: <a href="http.md#class-http-outgoingmessage"><code>{http.OutgoingMessage}</code></a> </li>
+<li>Extends: <a href="#class-http-outgoingmessage"><code>{http.OutgoingMessage}</code></a></li>
 </ul>
 <p>This object is created internally and returned by <code>http.request()</code>. Before you calling <code>request.end()</code>, you can set HTTP request headers and body.</p>
 <h3 id="request.write(chunk%5B%2C-callback%5D)" tabindex="-1">request.write(chunk[, callback]) <a class="direct-link" href="#request.write(chunk%5B%2C-callback%5D)">#</a></h3>
 <ul>
 <li><strong><code>chunk</code></strong> <code>{Uint8Array|string}</code> A chunk of request body data to write.</li>
 <li><strong><code>callback</code></strong> <code>{Function}</code> Called when the chunk of data is handled.</li>
-<li>Returns: <code>{boolean}</code> </li>
+<li>Returns: <code>{boolean}</code></li>
 </ul>
 <p>Writes a chunk of HTTP body data. The chunk of data will be appended into the internal buffer, and actually transmitted to the server when you call <code>request.end()</code> function.</p>
 <h3 id="request.end(%5Bchunk%5D%5B%2C-callback%5D)" tabindex="-1">request.end([chunk][, callback]) <a class="direct-link" href="#request.end(%5Bchunk%5D%5B%2C-callback%5D)">#</a></h3>
@@ -314,7 +298,7 @@
 <p>Emitted when the response is arrived and the headers are parsed.</p>
 <h2 id="class%3A-http.server" tabindex="-1">Class: http.Server <a class="direct-link" href="#class%3A-http.server">#</a></h2>
 <ul>
-<li>Extends: <a href="net.md#class-server"><code>{net.Server}</code></a></li>
+<li>Extends: <a href="/docs/api/net"><code>{net.Server}</code></a></li>
 </ul>
 <p>This object is instantiated by <code>http.createServer()</code> and returned.</p>
 <h3 id="server.close(%5Bcallback%5D)" tabindex="-1">server.close([callback]) <a class="direct-link" href="#server.close(%5Bcallback%5D)">#</a></h3>
@@ -330,8 +314,8 @@
 <p>Starts to listening for HTTP requests.</p>
 <h3 id="event%3A-'request'" tabindex="-1">Event: 'request' <a class="direct-link" href="#event%3A-'request'">#</a></h3>
 <ul>
-<li><strong><code>request</code></strong> <code>{http.IncomingMessage}</code> </li>
-<li><strong><code>response</code></strong> <code>{http.ServerResponse}</code> </li>
+<li><strong><code>request</code></strong> <code>{http.IncomingMessage}</code></li>
+<li><strong><code>response</code></strong> <code>{http.ServerResponse}</code></li>
 </ul>
 <p>Emitted whenever a HTTP request is accepted. You need to send appropriate response.</p>
 <h3 id="event%3A-'close'" tabindex="-1">Event: 'close' <a class="direct-link" href="#event%3A-'close'">#</a></h3>
@@ -345,14 +329,14 @@
 <p>Emitted when the server has started to listen for HTTP requests.</p>
 <h2 id="class%3A-http.serverresponse" tabindex="-1">Class: http.ServerResponse <a class="direct-link" href="#class%3A-http.serverresponse">#</a></h2>
 <ul>
-<li>Extends: <a href="http.md#class-http-outgoingmessage"><code>{http.OutgoingMessage}</code></a> </li>
+<li>Extends: <a href="#class-http-outgoingmessage"><code>{http.OutgoingMessage}</code></a></li>
 </ul>
 <p>This object is created internally and passed to the event <code>'request'</code>.</p>
 <h3 id="response.writehead(statuscode%5B%2C-statusmessage%5D%5B%2C-headers%5D)" tabindex="-1">response.writeHead(statusCode[, statusMessage][, headers]) <a class="direct-link" href="#response.writehead(statuscode%5B%2C-statusmessage%5D%5B%2C-headers%5D)">#</a></h3>
 <ul>
-<li><strong><code>statusCode</code></strong> <code>{number}</code> </li>
-<li><strong><code>statusMessage</code></strong> <code>{string}</code> </li>
-<li><strong><code>headers</code></strong> <code>{Object}</code> </li>
+<li><strong><code>statusCode</code></strong> <code>{number}</code></li>
+<li><strong><code>statusMessage</code></strong> <code>{string}</code></li>
+<li><strong><code>headers</code></strong> <code>{Object}</code></li>
 <li>Returns: <code>{this}</code></li>
 </ul>
 <p>Sends the response headers to the HTTTP client. If there is no <code>'Content-Length'</code> in headers, the header <code>'Transfer-Encoding'</code> is automatically set to <code>'chunked'</code>.</p>
@@ -360,14 +344,14 @@
 <ul>
 <li><strong><code>chunk</code></strong> <code>{Uint8Array|string}</code> A chunk of response body data to write.</li>
 <li><strong><code>callback</code></strong> <code>{Function}</code> Called when the chunk of data is handled.</li>
-<li>Returns: <code>{boolean}</code> </li>
+<li>Returns: <code>{boolean}</code></li>
 </ul>
 <p>Writes a chunk of HTTP response body. The chunk of data is automatically encoded based on the header <code>'Transfer-Encoding'</code>.</p>
 <h3 id="response.end(%5Bchunk%5D%5B%2C-callback%5D)" tabindex="-1">response.end([chunk][, callback]) <a class="direct-link" href="#response.end(%5Bchunk%5D%5B%2C-callback%5D)">#</a></h3>
 <ul>
 <li><strong><code>chunk</code></strong> <code>{Uint8Array|string}</code> A chunk of data to write before finish.</li>
 <li><strong><code>callback</code></strong> <code>{Function}</code> Called when the response is finished.</li>
-<li>Returns: <code>{this}</code> </li>
+<li>Returns: <code>{this}</code></li>
 </ul>
 <p>Finishes to write HTTP response.</p>
 <h3 id="event%3A-'close'-1" tabindex="-1">Event: 'close' <a class="direct-link" href="#event%3A-'close'-1">#</a></h3>
@@ -376,7 +360,7 @@
 <p>Emitted when the response has been sent.</p>
 <h2 id="class%3A-http.incomingmessage" tabindex="-1">Class: http.IncomingMessage <a class="direct-link" href="#class%3A-http.incomingmessage">#</a></h2>
 <ul>
-<li>Extends: <a href="stream.md#class-readable"><code>{stream.Readable}</code></a></li>
+<li>Extends: <a href="/docs/api/stream/#class-readable"><code>{stream.Readable}</code></a></li>
 </ul>
 <p>This object is created by <code>http.ClientRequest</code> or <code>http.Server</code> and passed via the event <code>'response'</code> and <code>'request'</code> respectively.</p>
 <p>When you get this object via <code>'response'</code> event, you can get HTTP response headers and body. When you get this object via <code>'request'</code> event, you can get HTTP request headers and body.</p>

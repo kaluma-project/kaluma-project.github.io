@@ -11,7 +11,7 @@
         Kaluma Documentation
       </div>
       <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
           <ul class="list-unstyled">
             {% for doc in collections.docs %}
               <li>
@@ -19,14 +19,14 @@
               </li>
             {% endfor %}
             <br>
-            <h6>BOARDS</h6>
+            <b>BOARDS</b>
             {% for board in collections.boards %}
               <li>
                 <a href="{{board.url}}">{{board.data.title}}</a>
               </li>
             {% endfor %}
             <br>
-            <h6>API</h6>
+            <b>API</b>
             {% for api in collections.api %}
               <li>
                 <a href="{{api.url}}">{{api.data.title}}</a>
@@ -38,10 +38,10 @@
     </nav>
     <div class="doc-body">
       <div class="text-end p-3 border-bottom">
-        Search, versions
+        v1.0
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
       </div>
-      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px">
+      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px; padding-bottom: 5rem;">
         <div>{{ content | safe }}</div>
       </main>
     </div>

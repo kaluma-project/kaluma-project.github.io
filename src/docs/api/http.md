@@ -64,7 +64,7 @@ req.end();
   * **`response`** `{http.IncomingMessage}`&#x20;
 * Returns: `{ClientRequest}`&#x20;
 
-This function is same with [`http.request()`](http.md#http-request-options-callback) except for the method is fixed to `'GET'` and automatically call `request.end()` with empty body content.
+This function is same with `http.request()` except for the method is fixed to `'GET'` and automatically call `request.end()` with empty body content.
 
 ```javascript
 http.get({host: 'somewhere.com', path: '/'}, function(response) {
@@ -101,9 +101,9 @@ server.listen(port, function() {
 
 ## Class: http.OutgoingMessage
 
-* Extends: [`{stream.Writable}`](stream.md#class-writable)&#x20;
+* Extends: [`{stream.Writable}`](/docs/api/stream/#class-writable)
 
-This is an abstract class for [`http.ClientRequest`](http.md#class-http-clientrequest) and [`http.ServerResponse`](http.md#class-http-serverresponse).
+This is an abstract class for [`http.ClientRequest`](#class-http-clientrequest) and [`http.ServerResponse`](#class-http-serverresponse).
 
 ### message.setHeader(name, value)
 
@@ -139,7 +139,7 @@ Indicates whether the headers were sent or not.
 
 ## Class: http.ClientRequest
 
-* Extends: [`{http.OutgoingMessage}`](http.md#class-http-outgoingmessage)&#x20;
+* Extends: [`{http.OutgoingMessage}`](#class-http-outgoingmessage)
 
 This object is created internally and returned by `http.request()`. Before you calling `request.end()`, you can set HTTP request headers and body.
 
@@ -147,7 +147,7 @@ This object is created internally and returned by `http.request()`. Before you c
 
 * **`chunk`** `{Uint8Array|string}` A chunk of request body data to write.
 * **`callback`** `{Function}` Called when the chunk of data is handled.
-* Returns: `{boolean}`&#x20;
+* Returns: `{boolean}`
 
 Writes a chunk of HTTP body data. The chunk of data will be appended into the internal buffer, and actually transmitted to the server when you call `request.end()` function.
 
@@ -167,7 +167,7 @@ Emitted when the response is arrived and the headers are parsed.
 
 ## Class: http.Server
 
-* Extends: [`{net.Server}`](net.md#class-server)
+* Extends: [`{net.Server}`](/docs/api/net)
 
 This object is instantiated by `http.createServer()` and returned.
 
@@ -186,8 +186,8 @@ Starts to listening for HTTP requests.
 
 ### Event: 'request'
 
-* **`request`** `{http.IncomingMessage}`&#x20;
-* **`response`** `{http.ServerResponse}`&#x20;
+* **`request`** `{http.IncomingMessage}`
+* **`response`** `{http.ServerResponse}`
 
 Emitted whenever a HTTP request is accepted. You need to send appropriate response.
 
@@ -207,15 +207,15 @@ Emitted when the server has started to listen for HTTP requests.
 
 ## Class: http.ServerResponse
 
-* Extends: [`{http.OutgoingMessage}`](http.md#class-http-outgoingmessage)&#x20;
+* Extends: [`{http.OutgoingMessage}`](#class-http-outgoingmessage)
 
 This object is created internally and passed to the event `'request'`.
 
 ### response.writeHead(statusCode\[, statusMessage]\[, headers])
 
-* **`statusCode`** `{number}`&#x20;
-* **`statusMessage`** `{string}`&#x20;
-* **`headers`** `{Object}`&#x20;
+* **`statusCode`** `{number}`
+* **`statusMessage`** `{string}`
+* **`headers`** `{Object}`
 * Returns: `{this}`
 
 Sends the response headers to the HTTTP client. If there is no `'Content-Length'` in headers, the header `'Transfer-Encoding'` is automatically set to `'chunked'`.
@@ -224,7 +224,7 @@ Sends the response headers to the HTTTP client. If there is no `'Content-Length'
 
 * **`chunk`** `{Uint8Array|string}` A chunk of response body data to write.
 * **`callback`** `{Function}` Called when the chunk of data is handled.
-* Returns: `{boolean}`&#x20;
+* Returns: `{boolean}`
 
 Writes a chunk of HTTP response body. The chunk of data is automatically encoded based on the header `'Transfer-Encoding'`.
 
@@ -232,7 +232,7 @@ Writes a chunk of HTTP response body. The chunk of data is automatically encoded
 
 * **`chunk`** `{Uint8Array|string}` A chunk of data to write before finish.
 * **`callback`** `{Function}` Called when the response is finished.
-* Returns: `{this}`&#x20;
+* Returns: `{this}`
 
 Finishes to write HTTP response.
 
@@ -246,7 +246,7 @@ Emitted when the response has been sent.
 
 ## Class: http.IncomingMessage
 
-* Extends: [`{stream.Readable}`](stream.md#class-readable)
+* Extends: [`{stream.Readable}`](/docs/api/stream/#class-readable)
 
 This object is created by `http.ClientRequest` or `http.Server` and passed via the event `'response'` and `'request'` respectively.
 

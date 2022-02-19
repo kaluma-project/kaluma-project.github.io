@@ -8,7 +8,7 @@ tags: "api"
 
 The `i2c` module supports communication with I2C (Inter-Integrated Circuit) / TWI (Two Wire Interface) devices. Use `require('i2c')` to access this module.
 
-> * Slave Mode is NOT supported yet.
+> Slave Mode is NOT supported yet.
 
 ## Class: I2C
 

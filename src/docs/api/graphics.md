@@ -27,7 +27,7 @@ An instance of `GraphicsContext` provides basic graphic functions including draw
 Here is an example to use `GraphicsContext` of a graphic driver SSD1306.
 
 ```javascript
-const {SSD1306_I2C} = require('@niklauslee/ssd1306');
+const {SSD1306_I2C} = require('ssd1306');
 const {I2C} = require('i2c');
 const i2c0 = new I2C(0);
 const ssd1306 = new SSD1306_I2C(128, 32, i2c0, { rstPin: 19 });

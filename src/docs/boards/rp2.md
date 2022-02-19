@@ -1,6 +1,6 @@
 ---
 layout: "doc.njk"
-title: "RP2040 (Raspberry Pi Pico)"
+title: "RP2 (Raspberry Pi Pico)"
 tags: "boards"
 ---
 
@@ -109,7 +109,7 @@ Default values for UART functions.
 
 ## Storage
 
-Capacity for [Storage](../api-reference/storage.md) functions.
+Capacity for [Storage](/docs/api/storage) functions.
 
 | Capacity                    | Value                             |
 | --------------------------- | --------------------------------- |

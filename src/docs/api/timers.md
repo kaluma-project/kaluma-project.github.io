@@ -12,7 +12,7 @@ tags: "api"
 
 Waits for **`msec`** milliseconds.
 
-> This function would block all the process for **`msec`**  milliseconds, so please use it carefully. It will block the entire console. [`setTimeout`](timers.md#settimeout-callback-timeout), [`setInterval`](timers.md#setinterval-callback-interval) is strongly recommended instead of this function.
+> This function would block all the process for **`msec`**  milliseconds, so please use it carefully. It will block the entire console. `setTimeout`, `setInterval` is strongly recommended instead of this function.
 
 ```javascript
 delay(3000); // delay 3 seconds.

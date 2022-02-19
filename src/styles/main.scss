@@ -38,13 +38,20 @@ body {
   font-family: var(--font-sans);
 }
 
+code {
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+
 code:not([class*='language-']) {
   font-family: var(--font-mono);
   font-size: 0.875em;
   background: var(--bg-light-gray);
-  padding: 0.2em 0.5em;
+  padding: 0.1em 0.3em;
   border-radius: 0.3em;
-  color: #555;
 }
 
 .front-content h3 {
@@ -71,6 +78,7 @@ a.direct-link {
   h6 {
     margin-top: 1.5em;
     font-weight: 700;
+    padding-bottom: 0.3rem;
     border-bottom: 1px solid #f0f0f0;
   }
 
@@ -79,6 +87,35 @@ a.direct-link {
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
+  }
+
+  blockquote {
+    background-color: #e2f0f8;
+    padding: 1rem 1.5rem;
+    border-left: 5px solid rgb(175, 201, 240);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  table {
+    width: 100%;
+
+    thead {
+      background-color: var(--bg-light-gray);
+    }
+
+    tr {
+      border-bottom: 1px solid var(--bg-light-gray);
+
+      td,
+      th {
+        padding: 0.5rem 1rem;
+      }
+    }
   }
 }
 

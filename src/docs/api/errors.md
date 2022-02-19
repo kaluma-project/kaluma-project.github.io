@@ -10,13 +10,13 @@ tags: "api"
 
 * Extends: \<Error>
 
-This class represents internal system error. Please check all error codes in [errno.h](https://github.com/kameleon-project/kameleon/blob/master/include/errno.h).
+This class represents internal system error. Please check all error codes in [err.h](https://github.com/kameleon-project/kameleon/blob/master/include/err.h).
 
 ### error.errno
 
 * `<number>`
 
-An error code defined in [errno.h](https://github.com/kameleon-project/kameleon/blob/master/include/errno.h).
+An error code defined in [err.h](https://github.com/kameleon-project/kameleon/blob/master/include/err.h).
 
 ### error.code
 

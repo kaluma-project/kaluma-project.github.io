@@ -12,7 +12,7 @@ This `steam` module provides abstract interfaces for working with streaming data
 
 ## Class: Stream
 
-* Extends: [`EventEmitter`](events.md#class-eventemitter)&#x20;
+* Extends: [`EventEmitter`](/docs/api/events/#class-eventemitter)
 
 This is a class for stream.
 
@@ -64,7 +64,7 @@ Readable streams are an abstraction for a _source_ from which data is consumed. 
 
 * `{boolean}`
 
-Becomes `true` when [`'end'`](stream.md#event-end) event is emitted.
+Becomes `true` when [`'end'`](#event-end) event is emitted.
 
 ### readable.push(chunk)
 
@@ -108,13 +108,13 @@ Writable streams are an abstraction for a _destination_ to which data is written
 
 * `{boolean}`
 
-Becomes `true` when [`writable.end()`](stream.md#writable-end-chunk-callback) is called.
+Becomes `true` when [`writable.end()`](#writable-end-chunk-callback) is called.
 
 ### writable.writableFinished
 
 * `{boolean}`
 
-Becomes `true` when [`'finish'`](stream.md#event-finish) event is emitted.
+Becomes `true` when [`'finish'`](#event-finish) event is emitted.
 
 ### writable.write(chunk\[, callback])
 
@@ -122,7 +122,7 @@ Becomes `true` when [`'finish'`](stream.md#event-finish) event is emitted.
 * **`callback`** `{Function}` Called when the chunk of data is handled.
 * Returns: `{boolean}`&#x20;
 
-Writes a chunk of data on the stream. It returns `true` if the stream is ready to handle the next chunk of data. It returns `false`, then the stream will emit [`'drain'`](stream.md#event-drain) event when the all data written are handled and the internal buffer is empty. If you write data before [`'drain'`](stream.md#event-drain) event emitted, the chunk of data will be appended to the internal buffer.
+Writes a chunk of data on the stream. It returns `true` if the stream is ready to handle the next chunk of data. It returns `false`, then the stream will emit [`'drain'`](#event-drain) event when the all data written are handled and the internal buffer is empty. If you write data before [`'drain'`](#event-drain) event emitted, the chunk of data will be appended to the internal buffer.
 
 ### writable.end(\[chunk]\[, callback])
 
@@ -130,7 +130,7 @@ Writes a chunk of data on the stream. It returns `true` if the stream is ready t
 * **`callback`** `{Function}` Called when the stream is finished.
 * Returns: `{this}`&#x20;
 
-Finishes to write data on the stream. The event [`'finish'`](stream.md#event-finish) will be emitted after successfully finished.
+Finishes to write data on the stream. The event [`'finish'`](#event-finish) will be emitted after successfully finished.
 
 ### writable.\_write(chunk\[, callback])
 
@@ -171,9 +171,8 @@ Emitted when the stream is closed.
 
 ## Class: stream.Duplex
 
-Extends: [`stream.Readable`](stream.md#class-readable), [`stream.Writable`](stream.md#class-writable)
+Extends: [`stream.Readable`](#class-readable), [`stream.Writable`](#class-writable)
 
 > THIS CLASS WILL BE DEPRECATED
 
-Duplex streams are streams that implement both the [Readable](stream.md#class-readable) and [Writable](stream.md#class-writable) interfaces.
-
+Duplex streams are streams that implement both the [Readable](#class-readable) and [Writable](#class-writable) interfaces.

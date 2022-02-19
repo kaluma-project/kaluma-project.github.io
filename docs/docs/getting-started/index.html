@@ -24,7 +24,7 @@
         Kaluma Documentation
       </div>
       <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
           <ul class="list-unstyled">
             
               <li>
@@ -36,41 +36,25 @@
               </li>
             
               <li>
-                <a href="/docs/cli/">CLI</a>
-              </li>
-            
-              <li>
-                <a href="/docs/ecmascript-compatibility/">ECMAScript Compatibility</a>
-              </li>
-            
-              <li>
-                <a href="/docs/getting_started/">Get Start</a>
-              </li>
-            
-              <li>
-                <a href="/docs/ide/">IDE</a>
-              </li>
-            
-              <li>
                 <a href="/docs/repl/">REPL</a>
               </li>
             
             <br>
-            <h6>BOARDS</h6>
+            <b>BOARDS</b>
             
               <li>
-                <a href="/docs/boards/raspberry-pi-pico/">RP2040 (Raspberry Pi Pico)</a>
+                <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <h6>API</h6>
+            <b>API</b>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
               </li>
             
               <li>
-                <a href="/docs/api/analog_io/">Analog I/O</a>
+                <a href="/docs/api/analog-io/">Analog I/O</a>
               </li>
             
               <li>
@@ -90,11 +74,11 @@
               </li>
             
               <li>
-                <a href="/docs/api/device_driver/">Device Driver</a>
+                <a href="/docs/api/device-driver/">Device Driver</a>
               </li>
             
               <li>
-                <a href="/docs/api/digital_io/">Digital I/O</a>
+                <a href="/docs/api/digital-io/">Digital I/O</a>
               </li>
             
               <li>
@@ -199,36 +183,60 @@
     </nav>
     <div class="doc-body">
       <div class="text-end p-3 border-bottom">
-        Search, versions
+        v1.0
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
       </div>
-      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px">
+      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px; padding-bottom: 5rem;">
         <div><h1 id="getting-started" tabindex="-1">Getting Started <a class="direct-link" href="#getting-started">#</a></h1>
-<h2 id="installation" tabindex="-1">Installation <a class="direct-link" href="#installation">#</a></h2>
+<p>In this article we will give you a quick tutorial to get start within 10 minutes.</p>
+<h2 id="get-a-rasberry-pi-pico" tabindex="-1">Get a Rasberry Pi Pico <a class="direct-link" href="#get-a-rasberry-pi-pico">#</a></h2>
+<p>Get a <a href="https://www.raspberrypi.org/products/raspberry-pi-pico/">Raspberry Pi Pico</a> board or other RP2040 board.</p>
+<h2 id="install-firmware" tabindex="-1">Install firmware <a class="direct-link" href="#install-firmware">#</a></h2>
 <p><img src="/images/pico-bootsel.png" alt="Pico"></p>
 <ul>
-<li>Get a <a href="https://www.raspberrypi.org/products/raspberry-pi-pico/">Raspberry Pi Pico</a> board or other RP2040 board.</li>
-<li><a href="/download">Download</a> firmware <strong>.UF2</strong> file.</li>
+<li><a href="/download">Download</a> firmware (<strong>.UF2</strong>).</li>
 <li>Push and hold the <strong>BOOTSEL</strong> button and plug into USB port of your computer, and then release the button. It will mount as USB storage device named <strong>RPI-RP2</strong>.</li>
 <li>Drag and drop the downloaded <strong>.UF2</strong> onto the <strong>RPI-RP2</strong> volume. Your Pico will reboot automatically.</li>
 </ul>
-<h2 id="getting-started-1" tabindex="-1">Getting Started <a class="direct-link" href="#getting-started-1">#</a></h2>
-<p>Write the first blink code with any text editor.</p>
+<h2 id="connect-with-terminal" tabindex="-1">Connect with Terminal <a class="direct-link" href="#connect-with-terminal">#</a></h2>
+<p>Once you installed the firmware, you use the board in <a href="/docs/repl">REPL</a> mode with any ANSI/VT100 compatible serial terminals. In MacOS or Linux you can simply connect with <code>screen</code> command (Use other serial terminals in Windows like <a href="https://www.putty.org/">PuTTY</a>).</p>
+<pre class="language-bash"><code class="language-bash">$ <span class="token function">screen</span> <span class="token operator">&lt;</span>port<span class="token operator">></span> <span class="token operator">&lt;</span>baudrate<span class="token operator">></span><br><br><span class="token comment"># for MacOS</span><br>$ <span class="token function">screen</span> /dev/tty.usbmodem<span class="token punctuation">..</span> <span class="token number">115200</span><br><br><span class="token comment"># or for Linux</span><br>$ <span class="token function">sudo</span> <span class="token function">screen</span> /dev/ttyACM<span class="token punctuation">..</span> <span class="token number">115200</span></code></pre>
+<p>Then you can see prompt <code>&gt;</code> (If you cannot see the prompt, press <code>Enter</code> several times). On the prompt you can enter any JavaScript expressions or <a href="/docs/repl">REPL commands</a>. Type <code>.hi</code> command, you will see a welcome message.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token operator">></span> .hi</code></pre>
+<p>To see all available REPL commands, type <code>.help</code>.</p>
+<pre class="language-plain"><code class="language-plain">> .help</code></pre>
+<p>To exit the screen terminal, press <code>ctrl+a</code>, <code>k</code>, <code>y</code>.</p>
+<h2 id="setup-project" tabindex="-1">Setup project <a class="direct-link" href="#setup-project">#</a></h2>
+<p>To create a project, simply make a directory.</p>
+<pre class="language-bash"><code class="language-bash">$ <span class="token function">mkdir</span> kaluma-app<br>$ <span class="token builtin class-name">cd</span> kaluma-app</code></pre>
+<p>We recommend to initialize the project with NPM to create <code>package.json</code>.</p>
+<pre class="language-bash"><code class="language-bash">$ <span class="token function">npm</span> init -y</code></pre>
+<h2 id="write-your-code" tabindex="-1">Write your code <a class="direct-link" href="#write-your-code">#</a></h2>
+<p>Let's write the first blink code <code>index.js</code> in the project folder with any text editor (VSCode, Atom, Sublime Text, etc).</p>
 <pre class="language-js"><code class="language-js"><span class="token comment">// index.js</span><br><span class="token keyword">const</span> led <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">;</span><br><span class="token function">pinMode</span><span class="token punctuation">(</span>led<span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token function">digitalToggle</span><span class="token punctuation">(</span>led<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>To upload code to your board, we need <a href="https://github.com/kaluma-project/kaluma-cli">Kaluma CLI</a>. Of course, it is assumed that <a href="https://nodejs.org">Node.js</a> is installed.</p>
-<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g @kaluma/cli</code></pre>
-<p>Use CLI to upload <code>index.js</code> to your board. You need to know which serial port is connected to your board using CLI: <code>kaluma ports</code>.</p>
-<pre class="language-bash"><code class="language-bash">kaluma flash index.js --port <span class="token operator">&lt;</span>port<span class="token operator">></span></code></pre>
+<h2 id="flash-your-code" tabindex="-1">Flash your code <a class="direct-link" href="#flash-your-code">#</a></h2>
+<p>To flash the code to your board, we need <a href="https://github.com/kaluma-project/kaluma-cli">Kaluma CLI</a>. Of course, it is assumed that <a href="https://nodejs.org">Node.js</a> is installed.</p>
+<pre class="language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> -g @kaluma/cli</code></pre>
+<p>Use CLI to flash <code>index.js</code> to your board. You need to know which serial port is connected to your board using CLI: <code>kaluma ports</code>.</p>
+<pre class="language-bash"><code class="language-bash">$ kaluma flash index.js --port <span class="token operator">&lt;</span>port<span class="token operator">></span></code></pre>
 <p>After uploading successfully, you will see a blinking LED on the board.</p>
-<h2 id="using-third-party-packages" tabindex="-1">Using third-party packages <a class="direct-link" href="#using-third-party-packages">#</a></h2>
-<p>You can install a Git repository directly with NPM. You can find third-party packages for Kaluma in <a href="/packages">Packages</a>.</p>
-<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> https://github.com/niklauslee/dht</code></pre>
+<h2 id="install-third-party-packages" tabindex="-1">Install third-party packages <a class="direct-link" href="#install-third-party-packages">#</a></h2>
+<p>You can install third-party packages with NPM. You can find third-party packages for Kaluma in <a href="/packages">Packages</a>.</p>
+<pre class="language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> https://github.com/niklauslee/dht --save</code></pre>
 <p>Then you can import the package with <code>require()</code>.</p>
 <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">DHT</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'dht'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>If you are using third-party packages or using multie <code>.js</code> files, you have to bundle them into a single <code>.js</code>.</p>
-<pre class="language-bash"><code class="language-bash">kaluma bundle index.js<br>kaluma flash bundle.js --port <span class="token operator">&lt;</span>port<span class="token operator">></span></code></pre>
-<p>You can bundle and flash at once:</p>
-<pre class="language-bash"><code class="language-bash">kaluma flash index.js --bundle --port <span class="token operator">&lt;</span>port<span class="token operator">></span></code></pre>
+<h2 id="bunde-multiple-codes" tabindex="-1">Bunde multiple codes <a class="direct-link" href="#bunde-multiple-codes">#</a></h2>
+<p>Please remember that only a single <code>.js</code> file can be flashed in Kaluma. If you are using multiple <code>.js</code> files or using third-party modules installed by <code>npm install</code>, you have to bundle them into the a single <code>.js</code> file.</p>
+<pre class="language-bash"><code class="language-bash">$ kaluma bundle index.js</code></pre>
+<p>You can find <code>bundle.js</code> file and flash the bundled code.</p>
+<pre class="language-bash"><code class="language-bash">$ kaluma flash bundle.js --port <span class="token operator">&lt;</span>port<span class="token operator">></span></code></pre>
+<p>Or shorty, you can bundle and flash at once with <code>--bundle</code> option.</p>
+<pre class="language-bash"><code class="language-bash">$ kaluma flash index.js --port <span class="token operator">&lt;</span>port<span class="token operator">></span> --bundle</code></pre>
+<h2 id="debug" tabindex="-1">Debug <a class="direct-link" href="#debug">#</a></h2>
+<p>To check the errors raised during the code execution, you need to connect with serial terminal again. However CLI's <code>flash</code> command will load the code automatically so you can't see the error messages. So you have to use <code>--no-load</code> option of <code>flash</code> command to avoid code loading.</p>
+<pre class="language-bash"><code class="language-bash">$ kaluma flash index.js --port <span class="token operator">&lt;</span>port<span class="token operator">></span> --no-load</code></pre>
+<p>Then connect with terminal and type <code>.load</code> command in REPL mode. You will see the errors in console if any.</p>
+<pre class="language-plain"><code class="language-plain">> .load</code></pre>
 </div>
       </main>
     </div>

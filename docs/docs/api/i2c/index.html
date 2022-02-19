@@ -24,7 +24,7 @@
         Kaluma Documentation
       </div>
       <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
           <ul class="list-unstyled">
             
               <li>
@@ -36,41 +36,25 @@
               </li>
             
               <li>
-                <a href="/docs/cli/">CLI</a>
-              </li>
-            
-              <li>
-                <a href="/docs/ecmascript-compatibility/">ECMAScript Compatibility</a>
-              </li>
-            
-              <li>
-                <a href="/docs/getting_started/">Get Start</a>
-              </li>
-            
-              <li>
-                <a href="/docs/ide/">IDE</a>
-              </li>
-            
-              <li>
                 <a href="/docs/repl/">REPL</a>
               </li>
             
             <br>
-            <h6>BOARDS</h6>
+            <b>BOARDS</b>
             
               <li>
-                <a href="/docs/boards/raspberry-pi-pico/">RP2040 (Raspberry Pi Pico)</a>
+                <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <h6>API</h6>
+            <b>API</b>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
               </li>
             
               <li>
-                <a href="/docs/api/analog_io/">Analog I/O</a>
+                <a href="/docs/api/analog-io/">Analog I/O</a>
               </li>
             
               <li>
@@ -90,11 +74,11 @@
               </li>
             
               <li>
-                <a href="/docs/api/device_driver/">Device Driver</a>
+                <a href="/docs/api/device-driver/">Device Driver</a>
               </li>
             
               <li>
-                <a href="/docs/api/digital_io/">Digital I/O</a>
+                <a href="/docs/api/digital-io/">Digital I/O</a>
               </li>
             
               <li>
@@ -199,16 +183,14 @@
     </nav>
     <div class="doc-body">
       <div class="text-end p-3 border-bottom">
-        Search, versions
+        v1.0
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
       </div>
-      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px">
+      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px; padding-bottom: 5rem;">
         <div><h1 id="i2c" tabindex="-1">I2C <a class="direct-link" href="#i2c">#</a></h1>
 <p>The <code>i2c</code> module supports communication with I2C (Inter-Integrated Circuit) / TWI (Two Wire Interface) devices. Use <code>require('i2c')</code> to access this module.</p>
 <blockquote>
-<ul>
-<li>Slave Mode is NOT supported yet.</li>
-</ul>
+<p>Slave Mode is NOT supported yet.</p>
 </blockquote>
 <h2 id="class%3A-i2c" tabindex="-1">Class: I2C <a class="direct-link" href="#class%3A-i2c">#</a></h2>
 <p>An instances of <code>I2C</code> represents a I2C bus.</p>
