@@ -4,7 +4,7 @@ title: "RP2 (Raspberry Pi Pico)"
 tags: "boards"
 ---
 
-# Raspberry Pi Pico
+# RP2 (Raspberry Pi Pico)
 
 This page describes information about the Kaluma port for [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/).
 
@@ -47,9 +47,9 @@ Pico has 2MB flash size. 1008KB are used for firmware binary and the rest (1040K
 
 | Block    | Size  |                                                           |
 | -------- | ----- | --------------------------------------------------------- |
-| 0\~3     | 16KB  | [Storage](../api-reference/storage.md) (Key-Value)        |
+| 0\~3     | 16KB  | [Storage](/docs/api/storage) (Key-Value)        |
 | 4\~131   | 512KB | User Program                                              |
-| 132\~259 | 512KB | [File System](../api-reference/file-system.md) (LittleFS) |
+| 132\~259 | 512KB | [File System](/docs/api/file-system) (LittleFS) |
 
 ## PWM
 

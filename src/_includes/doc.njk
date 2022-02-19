@@ -41,8 +41,10 @@
         v1.0
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
       </div>
-      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px; padding-bottom: 5rem;">
-        <div>{{ content | safe }}</div>
+      <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
+        <div style="width: 100%">
+          {{ content | safe }}
+        </div>
       </main>
     </div>
   </body>

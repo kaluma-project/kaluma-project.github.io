@@ -4,7 +4,7 @@ const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
+  eleventyConfig.addPlugin(pluginSyntaxHighlight, {});
   eleventyConfig.addPlugin(pluginSass, {
     watch: ['./src/styles/*.scss'],
     outputDir: './docs/styles',
@@ -12,6 +12,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/images');
   eleventyConfig.addPassthroughCopy('./src/js');
   eleventyConfig.addPassthroughCopy('./src/favicon.ico');
+  eleventyConfig.addPassthroughCopy('./CNAME');
   eleventyConfig.addWatchTarget('./src/js/*.js');
 
   const markdownLibrary = markdownIt({
@@ -23,7 +24,6 @@ module.exports = function (eleventyConfig) {
     permalinkClass: 'direct-link',
     permalinkSymbol: '#',
   });
-
   eleventyConfig.setLibrary('md', markdownLibrary);
 
   return {
