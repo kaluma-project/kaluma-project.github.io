@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="https://unpkg.com/prismjs@1.20.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Kaluma</title>
+  </head>
+  <body>
+    <nav class="doc-sidebar">
+      <div class="p-3 border-bottom">
+        <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
+        Kaluma Documentation
+      </div>
+      <aside class="p-3" style="overflow-y: auto; height: 100%;">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
+          <ul class="list-unstyled">
+            
+              <li>
+                <a href="/docs/">Introduction</a>
+              </li>
+            
+              <li>
+                <a href="/docs/getting-started/">Getting Started</a>
+              </li>
+            
+              <li>
+                <a href="/docs/cli/">CLI</a>
+              </li>
+            
+              <li>
+                <a href="/docs/ecmascript-compatibility/">ECMAScript Compatibility</a>
+              </li>
+            
+              <li>
+                <a href="/docs/getting_started/">Get Start</a>
+              </li>
+            
+              <li>
+                <a href="/docs/ide/">IDE</a>
+              </li>
+            
+              <li>
+                <a href="/docs/repl/">REPL</a>
+              </li>
+            
+            <br>
+            <h6>BOARDS</h6>
+            
+              <li>
+                <a href="/docs/boards/raspberry-pi-pico/">RP2040 (Raspberry Pi Pico)</a>
+              </li>
+            
+            <br>
+            <h6>API</h6>
+            
+              <li>
+                <a href="/docs/api/adc/">ADC</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/analog_io/">Analog I/O</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/at-command/">AT Command</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/board/">Board</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/button/">Button</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/console/">Console</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/device_driver/">Device Driver</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/digital_io/">Digital I/O</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/errors/">Errors</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/events/">Events</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/file-system/">File system</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/flash/">Flash</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/global/">Global</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/gpio/">GPIO</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/graphics/">Graphics</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/http/">HTTP</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/i2c/">I2C</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/interrupts/">Interrupts</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/led/">LED</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/net/">Net</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/path/">Path</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/process/">Process</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/pwm/">PWM</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/rp2/">RP2</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/rtc/">RTC</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/spi/">SPI</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/storage/">Storage</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/stream/">Stream</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/timers/">Timers</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/uart/">UART</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/url/">URL</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/wifi/">Wi-Fi</a>
+              </li>
+            
+          </ul>
+        </nav>
+      </aside>
+    </nav>
+    <div class="doc-body">
+      <div class="text-end p-3 border-bottom">
+        Search, versions
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
+      </div>
+      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px">
+        <div><h1 id="net" tabindex="-1">Net <a class="direct-link" href="#net">#</a></h1>
+<blockquote>
+<p><strong>THIS IS EXPERIMENTAL AND SUBJECT OF CHANGE</strong></p>
+</blockquote>
+<p>The <code>net</code> module supports an asynchronous stream-based API for TCP clients and servers. Use <code>require('net')</code> to access this module.</p>
+<blockquote>
+<p>This module is depends on the <a href="device_driver.md#netdev">network device driver</a> so the board should register a network device driver manually if your board is not builtin network capabilities.</p>
+</blockquote>
+<h2 id="net.createconnection(options%5B%2C-connectlistener%5D)" tabindex="-1">net.createConnection(options[, connectListener]) <a class="direct-link" href="#net.createconnection(options%5B%2C-connectlistener%5D)">#</a></h2>
+<ul>
+<li><strong><code>options</code></strong> <code>{object}</code>
+<ul>
+<li><strong><code>host</code></strong> <code>{string}</code></li>
+<li><strong><code>port</code></strong> <code>{number}</code></li>
+</ul>
+</li>
+<li><strong><code>connectListener</code></strong> <code>{function}</code></li>
+<li>Returns: <code>{Socket}</code> </li>
+</ul>
+<p>Creates a socket and initiates a connection.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> net <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'net'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> conn <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> <span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">8124</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// enter valid host ip</span><br><span class="token keyword">var</span> client <span class="token operator">=</span> net<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span>conn<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token comment">// 'connect' listener.</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'connected to server!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  client<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'hello, world!\r\n'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>client<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  client<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>client<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'disconnected from server'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="net.connect(options%5B%2C-connectlistener%5D)" tabindex="-1">net.connect(options[, connectListener]) <a class="direct-link" href="#net.connect(options%5B%2C-connectlistener%5D)">#</a></h2>
+<p>Alias to <a href="net.md#net-createconnection-options-connectlistener">net.createConnection(options[, connectListener])</a>.</p>
+<h2 id="net.createserver(%5Bconnectionlistener%5D)" tabindex="-1">net.createServer([connectionListener]) <a class="direct-link" href="#net.createserver(%5Bconnectionlistener%5D)">#</a></h2>
+<ul>
+<li><strong><code>connectionListener</code></strong> <code>{Function}</code> </li>
+<li>Returns: <code>{Server}</code> </li>
+</ul>
+<p>Creates a new TCP server.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> net <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'net'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> server <span class="token operator">=</span> net<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">c</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token comment">// 'connection' listener.</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'client connected'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  c<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'client disconnected'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  c<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'hello, world\r\n'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  c<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token keyword">throw</span> err<span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8124</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'server bound'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="class%3A-server" tabindex="-1">Class: Server <a class="direct-link" href="#class%3A-server">#</a></h2>
+<ul>
+<li>Extends: <a href="events.md#class-eventemitter"><code>EventEmitter</code></a></li>
+</ul>
+<p>This class is used to create a TCP server. This is a condensed version of Server class in <a href="https://nodejs.org">Node.js</a>.</p>
+<h3 id="new-server(%5Bconnectionlistener%5D)" tabindex="-1">new Server([connectionListener]) <a class="direct-link" href="#new-server(%5Bconnectionlistener%5D)">#</a></h3>
+<ul>
+<li><strong><code>connectionListener</code></strong> <code>{Function}</code> Automatically set as a listener for the <code>'connection'</code> event.</li>
+</ul>
+<p>Creates a TCP server.</p>
+<h3 id="server.close(%5Bcallback%5D)" tabindex="-1">server.close([callback]) <a class="direct-link" href="#server.close(%5Bcallback%5D)">#</a></h3>
+<ul>
+<li><strong><code>callback</code></strong> <code>{Function}</code> Called when the server is closed.</li>
+</ul>
+<p>Closes the server.</p>
+<h3 id="server.listen(port%5B%2C-callback%5D)" tabindex="-1">server.listen(port[, callback]) <a class="direct-link" href="#server.listen(port%5B%2C-callback%5D)">#</a></h3>
+<ul>
+<li><strong><code>port</code></strong> <code>{number}</code> Port to listen.</li>
+<li><strong><code>callback</code></strong> <code>{Function}</code> Automatically added as a listener for the <code>'listening'</code> event.</li>
+</ul>
+<p>Starts to listening for connections.</p>
+<h3 id="event%3A-'close'" tabindex="-1">Event: 'close' <a class="direct-link" href="#event%3A-'close'">#</a></h3>
+<p>Emitted when the server closed.</p>
+<h3 id="event%3A-'connection'" tabindex="-1">Event: 'connection' <a class="direct-link" href="#event%3A-'connection'">#</a></h3>
+<ul>
+<li><strong><code>connection</code></strong> <code>{Socket}</code> A new connection.</li>
+</ul>
+<p>Emitted when a new connection is made.</p>
+<h3 id="event%3A-'error'" tabindex="-1">Event: 'error' <a class="direct-link" href="#event%3A-'error'">#</a></h3>
+<ul>
+<li><strong><code>err</code></strong> <code>{Error}</code></li>
+</ul>
+<p>Emitted when an error occurs.</p>
+<h3 id="event%3A-'listening'" tabindex="-1">Event: 'listening' <a class="direct-link" href="#event%3A-'listening'">#</a></h3>
+<p>Emitted when the server has started to listen for connections.</p>
+<h2 id="class%3A-socket" tabindex="-1">Class: Socket <a class="direct-link" href="#class%3A-socket">#</a></h2>
+<ul>
+<li>Extends: <a href="stream.md#class-stream-duplex"><code>stream.Duplex</code></a></li>
+</ul>
+<p>This class is an abstraction of a TCP socket. This is a condensed version of Socket class in <a href="https://nodejs.org">Node.js</a>.</p>
+<h3 id="new-socket()" tabindex="-1">new Socket() <a class="direct-link" href="#new-socket()">#</a></h3>
+<p>Create a new socket object.</p>
+<ul>
+<li>Returns: <code>{Socket}</code> </li>
+</ul>
+<h3 id="socket.localaddress" tabindex="-1">socket.localAddress <a class="direct-link" href="#socket.localaddress">#</a></h3>
+<ul>
+<li><code>{string}</code></li>
+</ul>
+<p>The string representation of the local IP address. (e.g. <code>'168.120.88.10'</code>, <code>'127.0.0.1'</code>)</p>
+<h3 id="socket.localport" tabindex="-1">socket.localPort <a class="direct-link" href="#socket.localport">#</a></h3>
+<ul>
+<li><code>{number}</code></li>
+</ul>
+<p>The numeric representation of the local port. (e.g. <code>80</code>, <code>8124</code>)</p>
+<h3 id="socket.remoteaddress" tabindex="-1">socket.remoteAddress <a class="direct-link" href="#socket.remoteaddress">#</a></h3>
+<ul>
+<li><code>{string}</code></li>
+</ul>
+<p>The string representation of the remote IP address.</p>
+<h3 id="socket.remoteport" tabindex="-1">socket.remotePort <a class="direct-link" href="#socket.remoteport">#</a></h3>
+<ul>
+<li><code>{number}</code></li>
+</ul>
+<p>The numeric representation of the remote port.</p>
+<h3 id="socket.connect(options%5B%2C-connectlistener%5D)" tabindex="-1">socket.connect(options[, connectListener]) <a class="direct-link" href="#socket.connect(options%5B%2C-connectlistener%5D)">#</a></h3>
+<ul>
+<li><strong><code>options</code></strong> <code>{object}</code>
+<ul>
+<li><strong><code>host</code></strong> <code>{string}</code> Host to connect.</li>
+<li><strong><code>port</code></strong> <code>{number}</code> Port of the host to connect.</li>
+</ul>
+</li>
+<li><strong><code>connectListener</code></strong> <code>{function}</code> A listener will be added to the <code>'connect'</code> event once.</li>
+<li>Returns: <code>{this}</code> </li>
+</ul>
+<p>Initiate a TCP connection on the given socket.</p>
+<h3 id="socket.destroy()" tabindex="-1">socket.destroy() <a class="direct-link" href="#socket.destroy()">#</a></h3>
+<ul>
+<li>Returns: <code>{this}</code> </li>
+</ul>
+<p>Closes the socket.</p>
+<h3 id="socket.end(%5Bdata%5D%5B%2C-callback%5D)" tabindex="-1">socket.end([data][, callback]) <a class="direct-link" href="#socket.end(%5Bdata%5D%5B%2C-callback%5D)">#</a></h3>
+<ul>
+<li><strong><code>data</code></strong> <code>{Uint8Array|string}</code></li>
+<li><strong><code>callback</code></strong> <code>{function}</code></li>
+<li>Returns: <code>{this}</code></li>
+</ul>
+<p>Half-closes the socket. Finishes to write data but the counter-side still can send some data.</p>
+<h3 id="socket.write(data%5B%2C-callback%5D)" tabindex="-1">socket.write(data[, callback]) <a class="direct-link" href="#socket.write(data%5B%2C-callback%5D)">#</a></h3>
+<ul>
+<li><strong><code>data</code></strong> <code>{Uint8Array|string}</code></li>
+<li><strong><code>callback</code></strong> <code>{function}</code> </li>
+<li>Returns: <code>{boolean}</code> </li>
+</ul>
+<p>Send data on the socket. Returns <code>true</code> if all of data successfully sent or <code>false</code> if part of data are not sent and added in buffer to send later. Event <code>'drain'</code> will be emitted when all buffered data are sent.</p>
+<h3 id="event%3A-'connect'" tabindex="-1">Event: 'connect' <a class="direct-link" href="#event%3A-'connect'">#</a></h3>
+<p>Emitted when a socket connection is established.</p>
+<h3 id="event%3A-'close'-1" tabindex="-1">Event: 'close' <a class="direct-link" href="#event%3A-'close'-1">#</a></h3>
+<p>Emitted when a socket connection is closed.</p>
+<h3 id="event%3A-'end'" tabindex="-1">Event: 'end' <a class="direct-link" href="#event%3A-'end'">#</a></h3>
+<p>Emitted when the counter-side half-closes the socket.</p>
+<h3 id="event%3A-'drain'" tabindex="-1">Event: 'drain' <a class="direct-link" href="#event%3A-'drain'">#</a></h3>
+<p>Emitted when the socket is ready to write.</p>
+<h3 id="event%3A-'finish'" tabindex="-1">Event: 'finish' <a class="direct-link" href="#event%3A-'finish'">#</a></h3>
+<p>Emitted when the socket is finished to write.</p>
+<h3 id="event%3A-'data'" tabindex="-1">Event: 'data' <a class="direct-link" href="#event%3A-'data'">#</a></h3>
+<ul>
+<li><strong><code>data</code></strong> <code>{Uint8Array}</code></li>
+</ul>
+<p>Emitted when data received.</p>
+<h3 id="event%3A-'error'-1" tabindex="-1">Event: 'error' <a class="direct-link" href="#event%3A-'error'-1">#</a></h3>
+<ul>
+<li><strong><code>err</code></strong> <code>{Error}</code> </li>
+</ul>
+<p>Emitted when an error occurs.</p>
+</div>
+      </main>
+    </div>
+  </body>
+</html>

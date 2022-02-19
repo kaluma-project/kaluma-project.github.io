@@ -18,7 +18,7 @@ __Useful Links__
 
 ### Installation
 
-![Pico](images/pico.png)
+![Pico](/images/pico-bootsel.png)
 
 - Get a [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/) board or other RP2040 board.
 - [Download](/download) firmware __.UF2__ file.

@@ -1,16 +1,20 @@
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const pluginSass = require('eleventy-plugin-sass');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(pluginSyntaxHighlight);
+  eleventyConfig.addPlugin(pluginSass, {
+    watch: ['./src/styles/*.scss'],
+    outputDir: './docs/styles',
+  });
   eleventyConfig.addPassthroughCopy('./src/images');
-  eleventyConfig.addPassthroughCopy('./src/styles');
   eleventyConfig.addPassthroughCopy('./src/js');
   eleventyConfig.addPassthroughCopy('./src/favicon.ico');
-  eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addWatchTarget('./src/js/*.js');
 
-  let markdownLibrary = markdownIt({
+  const markdownLibrary = markdownIt({
     html: true,
     breaks: true,
     linkify: true,

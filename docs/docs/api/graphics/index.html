@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="https://unpkg.com/prismjs@1.20.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Kaluma</title>
+  </head>
+  <body>
+    <nav class="doc-sidebar">
+      <div class="p-3 border-bottom">
+        <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
+        Kaluma Documentation
+      </div>
+      <aside class="p-3" style="overflow-y: auto; height: 100%;">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
+          <ul class="list-unstyled">
+            
+              <li>
+                <a href="/docs/">Introduction</a>
+              </li>
+            
+              <li>
+                <a href="/docs/getting-started/">Getting Started</a>
+              </li>
+            
+              <li>
+                <a href="/docs/cli/">CLI</a>
+              </li>
+            
+              <li>
+                <a href="/docs/ecmascript-compatibility/">ECMAScript Compatibility</a>
+              </li>
+            
+              <li>
+                <a href="/docs/getting_started/">Get Start</a>
+              </li>
+            
+              <li>
+                <a href="/docs/ide/">IDE</a>
+              </li>
+            
+              <li>
+                <a href="/docs/repl/">REPL</a>
+              </li>
+            
+            <br>
+            <h6>BOARDS</h6>
+            
+              <li>
+                <a href="/docs/boards/raspberry-pi-pico/">RP2040 (Raspberry Pi Pico)</a>
+              </li>
+            
+            <br>
+            <h6>API</h6>
+            
+              <li>
+                <a href="/docs/api/adc/">ADC</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/analog_io/">Analog I/O</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/at-command/">AT Command</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/board/">Board</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/button/">Button</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/console/">Console</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/device_driver/">Device Driver</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/digital_io/">Digital I/O</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/errors/">Errors</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/events/">Events</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/file-system/">File system</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/flash/">Flash</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/global/">Global</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/gpio/">GPIO</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/graphics/">Graphics</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/http/">HTTP</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/i2c/">I2C</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/interrupts/">Interrupts</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/led/">LED</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/net/">Net</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/path/">Path</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/process/">Process</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/pwm/">PWM</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/rp2/">RP2</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/rtc/">RTC</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/spi/">SPI</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/storage/">Storage</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/stream/">Stream</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/timers/">Timers</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/uart/">UART</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/url/">URL</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/wifi/">Wi-Fi</a>
+              </li>
+            
+          </ul>
+        </nav>
+      </aside>
+    </nav>
+    <div class="doc-body">
+      <div class="text-end p-3 border-bottom">
+        Search, versions
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
+      </div>
+      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px">
+        <div><h1 id="graphics" tabindex="-1">Graphics <a class="direct-link" href="#graphics">#</a></h1>
+<p>The <code>graphics</code> module supports graphic APIs. Use <code>require('graphics')</code> to access this module.</p>
+<h2 id="class%3A-graphicscontext" tabindex="-1">Class: GraphicsContext <a class="direct-link" href="#class%3A-graphicscontext">#</a></h2>
+<p>An instance of <code>GraphicsContext</code> provides basic graphic functions including drawing shapes, fonts, images, and etc. All graphic functions depend on the provided primitive drawing functions which draws directly to a graphic device.</p>
+<h3 id="new-graphicscontext(width%2C-height%5B%2C-options%5D)" tabindex="-1">new GraphicsContext(width, height[, options]) <a class="direct-link" href="#new-graphicscontext(width%2C-height%5B%2C-options%5D)">#</a></h3>
+<ul>
+<li><strong><code>width</code></strong> <code>&lt;number&gt;</code> Screen width of the graphic device in pixels.</li>
+<li><strong><code>height</code></strong> <code>&lt;number&gt;</code> Screen height of the graphic device in pixels.</li>
+<li><strong><code>options</code></strong> <code>&lt;object&gt;</code> Graphic context options.
+<ul>
+<li><strong><code>rotation</code></strong> <code>&lt;number&gt;</code> Rotation of screen. One of <code>0</code> (0 degree), <code>1</code> (90 degree in clockwise), <code>2</code> (180 degree in clockwise), and <code>3</code> (270 degree in clockwise).</li>
+<li><strong><code>setPixel</code></strong> <code>&lt;function(x: number, y:number, color:number)&gt;</code> A callback function to draw a pixel at <code>x</code>, <code>y</code> with color <code>color</code>.</li>
+<li><strong><code>getPixel</code></strong> <code>&lt;function(x:number, y:number): number&gt;</code> A callback function to get color value at a pixel <code>x</code>, <code>y</code>.</li>
+<li><strong><code>fillRect</code></strong> <code>&lt;function(x:number, y:number, w:number, h:number, color:number)&gt;</code> A callback function to draw filled rectangle <code>x</code>, <code>y</code> with width <code>w</code> and height <code>h</code> and color <code>color</code>. Optional. If not provided, <code>setPixel</code> is used to draw filled rectangle.</li>
+</ul>
+</li>
+</ul>
+<p><code>GraphicsContext</code> is instantiated by a <em>graphic driver</em> rather than a user. A graphic driver should provide a method (e.g. <code>driver.getContext()</code>) to get an appropriate instance of <code>GraphicsContext</code> so that user can draw something with APIs.</p>
+<p>Here is an example to use <code>GraphicsContext</code> of a graphic driver SSD1306.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">SSD1306_I2C</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@niklauslee/ssd1306'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">I2C</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'i2c'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> i2c0 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">I2C</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> ssd1306 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SSD1306_I2C</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> i2c0<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">rstPin</span><span class="token operator">:</span> <span class="token number">19</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> gc <span class="token operator">=</span> ssd1306<span class="token punctuation">.</span><span class="token function">getContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">// use APIs of gc</span></code></pre>
+<h3 id="gc.getwidth()" tabindex="-1">gc.getWidth() <a class="direct-link" href="#gc.getwidth()">#</a></h3>
+<ul>
+<li><strong>Returns:</strong> <code>&lt;number&gt;</code> Screen width of graphic device in pixels.</li>
+</ul>
+<p>Returns screen width in pixels.</p>
+<h3 id="gc.getheight()" tabindex="-1">gc.getHeight() <a class="direct-link" href="#gc.getheight()">#</a></h3>
+<ul>
+<li><strong>Returns:</strong> <code>&lt;number&gt;</code> Screen height of graphic device in pixels.</li>
+</ul>
+<p>Return screen height in pixels.</p>
+<h3 id="gc.clearscreen()" tabindex="-1">gc.clearScreen() <a class="direct-link" href="#gc.clearscreen()">#</a></h3>
+<p>Clear the screen buffer.</p>
+<h3 id="gc.color16(red%2C-green%2C-blue)" tabindex="-1">gc.color16(red, green, blue) <a class="direct-link" href="#gc.color16(red%2C-green%2C-blue)">#</a></h3>
+<ul>
+<li><strong><code>red</code></strong> <code>&lt;number&gt;</code> Red brightness between 0~255.</li>
+<li><strong><code>green</code></strong> <code>&lt;number&gt;</code> Green brightness between 0~255.</li>
+<li><strong><code>blue</code></strong> <code>&lt;number&gt;</code> Blue brightness between 0~255.</li>
+<li><strong>Returns</strong>: 16-bit color value.</li>
+</ul>
+<p>Return 16-bit color (5-bit for red, 6-bits for green, 5-bits for blue) value from RGB values.</p>
+<h3 id="gc.fillscreen(color)" tabindex="-1">gc.fillScreen(color) <a class="direct-link" href="#gc.fillscreen(color)">#</a></h3>
+<ul>
+<li><strong><code>color</code></strong> <code>&lt;number&gt;</code> Color value.</li>
+</ul>
+<p>Fill the screen buffer with the color.</p>
+<h3 id="gc.setrotation(rotation)" tabindex="-1">gc.setRotation(rotation) <a class="direct-link" href="#gc.setrotation(rotation)">#</a></h3>
+<ul>
+<li><strong><code>rotation</code></strong> <code>&lt;number&gt;</code> Rotation of screen.</li>
+</ul>
+<p>Set the rotation of screen.</p>
+<h3 id="gc.getrotation()" tabindex="-1">gc.getRotation() <a class="direct-link" href="#gc.getrotation()">#</a></h3>
+<ul>
+<li><strong>Returns:</strong> <code>&lt;number&gt;</code> Rotation of screen.</li>
+</ul>
+<p>Returns rotation of screen.</p>
+<h3 id="gc.setcolor(color)" tabindex="-1">gc.setColor(color) <a class="direct-link" href="#gc.setcolor(color)">#</a></h3>
+<ul>
+<li><strong><code>color</code></strong> <code>&lt;number&gt;</code> Pen color.</li>
+</ul>
+<p>Set pen color.</p>
+<h3 id="gc.getcolor()" tabindex="-1">gc.getColor() <a class="direct-link" href="#gc.getcolor()">#</a></h3>
+<ul>
+<li><strong>Returns:</strong> <code>&lt;number&gt;</code> Pen color.</li>
+</ul>
+<p>Returns pen color.</p>
+<h3 id="gc.setfillcolor(color)" tabindex="-1">gc.setFillColor(color) <a class="direct-link" href="#gc.setfillcolor(color)">#</a></h3>
+<ul>
+<li><strong><code>color</code></strong> <code>&lt;number&gt;</code> Fill color.</li>
+</ul>
+<p>Set fill color.</p>
+<h3 id="gc.getfillcolor()" tabindex="-1">gc.getFillColor() <a class="direct-link" href="#gc.getfillcolor()">#</a></h3>
+<ul>
+<li><strong>Returns:</strong> <code>&lt;number&gt;</code> Fill color.</li>
+</ul>
+<p>Returns fill color.</p>
+<h3 id="gc.setfontcolor(color)" tabindex="-1">gc.setFontColor(color) <a class="direct-link" href="#gc.setfontcolor(color)">#</a></h3>
+<ul>
+<li><strong><code>color</code></strong> <code>&lt;number&gt;</code> Font color.</li>
+</ul>
+<p>Set font color.</p>
+<h3 id="gc.getfontcolor()" tabindex="-1">gc.getFontColor() <a class="direct-link" href="#gc.getfontcolor()">#</a></h3>
+<ul>
+<li><strong>Returns:</strong> <code>&lt;number&gt;</code> Font color.</li>
+</ul>
+<p>Returns font color.</p>
+<h3 id="gc.setfont(font)" tabindex="-1">gc.setFont(font) <a class="direct-link" href="#gc.setfont(font)">#</a></h3>
+<ul>
+<li><strong><code>font</code></strong> <code>&lt;object|null&gt;</code> Custom font object. If <code>null</code> passed, default font is used.
+<ul>
+<li><strong><code>bitmap</code></strong> <code>&lt;Uint8Array&gt;</code> Font bitmap data.</li>
+<li><strong><code>glyphs</code></strong> <code>&lt;Uint8Array&gt;</code> Font glyph data.</li>
+<li><strong><code>width</code></strong> <code>&lt;number&gt;</code> Font character width.</li>
+<li><strong><code>height</code></strong> <code>&lt;number&gt;</code> Font character height.</li>
+<li><strong><code>first</code></strong> <code>&lt;number&gt;</code> ASCII code for first character in this font.</li>
+<li><strong><code>last</code></strong> <code>&lt;number&gt;</code> ASCII code for last character in this font.</li>
+<li><strong><code>advanceX</code></strong> <code>&lt;number&gt;</code> Horizontal advance to next character in pixels.</li>
+<li><strong><code>advanceY</code></strong> <code>&lt;number&gt;</code> Vertical advance to next line in pixels.</li>
+</ul>
+</li>
+</ul>
+<p>Set a custom font. If you are interested in developing custom font, please check the <a href="https://github.com/kaluma-project/kameleon-fontconv">font conversion tool</a>.</p>
+<h3 id="gc.setfontscale(scalex%2C-scaley)" tabindex="-1">gc.setFontScale(scaleX, scaleY) <a class="direct-link" href="#gc.setfontscale(scalex%2C-scaley)">#</a></h3>
+<ul>
+<li><strong><code>scaleX</code></strong> <code>&lt;number&gt;</code> Horizontal scale of font.</li>
+<li><strong><code>scaleY</code></strong> <code>&lt;number&gt;</code> Vertical scale of font.</li>
+</ul>
+<p>Set font scale.</p>
+<h3 id="gc.setpixel(x%2C-y%2C-color)" tabindex="-1">gc.setPixel(x, y, color) <a class="direct-link" href="#gc.setpixel(x%2C-y%2C-color)">#</a></h3>
+<ul>
+<li><strong><code>x</code></strong> <code>&lt;number&gt;</code> coordinate X.</li>
+<li><strong><code>y</code></strong> <code>&lt;number&gt;</code> coordinate Y.</li>
+<li><strong><code>color</code></strong> <code>&lt;number&gt;</code> Pixel color.</li>
+</ul>
+<p>Draw a pixel at (x, y) coordinate.</p>
+<h3 id="gc.getpixel(x%2C-y)" tabindex="-1">gc.getPixel(x, y) <a class="direct-link" href="#gc.getpixel(x%2C-y)">#</a></h3>
+<ul>
+<li><strong><code>x</code></strong> <code>&lt;number&gt;</code> coordinate X.</li>
+<li><strong><code>y</code></strong> <code>&lt;number&gt;</code> coordinate Y.</li>
+<li><strong>Returns:</strong> <code>&lt;number&gt;</code> Pixel color at (x, y) coordinate.</li>
+</ul>
+<p>Get pixel color at (x, y) coordinate.</p>
+<h3 id="gc.drawline(x0%2C-y0%2C-x1%2C-y1)" tabindex="-1">gc.drawLine(x0, y0, x1, y1) <a class="direct-link" href="#gc.drawline(x0%2C-y0%2C-x1%2C-y1)">#</a></h3>
+<ul>
+<li><strong><code>x0</code></strong> <code>&lt;number&gt;</code> coordinate X0.</li>
+<li><strong><code>y0</code></strong> <code>&lt;number&gt;</code> coordinate Y0.</li>
+<li><strong><code>x1</code></strong> <code>&lt;number&gt;</code> coordinate X1.</li>
+<li><strong><code>y1</code></strong> <code>&lt;number&gt;</code> coordinate Y1.</li>
+</ul>
+<p>Draw a line from (x0, y0) coordinate to (x1, y1) coordinate.</p>
+<h3 id="gc.drawrect(x%2C-y%2C-w%2C-h)" tabindex="-1">gc.drawRect(x, y, w, h) <a class="direct-link" href="#gc.drawrect(x%2C-y%2C-w%2C-h)">#</a></h3>
+<ul>
+<li><strong><code>x</code></strong> <code>&lt;number&gt;</code> coordinate X.</li>
+<li><strong><code>y</code></strong> <code>&lt;number&gt;</code> coordinate Y.</li>
+<li><strong><code>w</code></strong> <code>&lt;number&gt;</code> Width of rectangle.</li>
+<li><strong><code>h</code></strong> <code>&lt;number&gt;</code> Height of rectangle.</li>
+</ul>
+<p>Draw a rectangle at (x, y) coordinate of <code>w</code> width and <code>h</code> height.</p>
+<h3 id="gc.fillrect(x%2C-y%2C-w%2C-h)" tabindex="-1">gc.fillRect(x, y, w, h) <a class="direct-link" href="#gc.fillrect(x%2C-y%2C-w%2C-h)">#</a></h3>
+<ul>
+<li><strong><code>x</code></strong> <code>&lt;number&gt;</code> coordinate X.</li>
+<li><strong><code>y</code></strong> <code>&lt;number&gt;</code> coordinate Y.</li>
+<li><strong><code>w</code></strong> <code>&lt;number&gt;</code> Width of rectangle.</li>
+<li><strong><code>h</code></strong> <code>&lt;number&gt;</code> Height of rectangle.</li>
+</ul>
+<p>Draw a filled rectangle at (x, y) coordinate of <code>w</code> width and <code>h</code> height.</p>
+<h3 id="gc.drawcircle(x%2C-y%2C-r)" tabindex="-1">gc.drawCircle(x, y, r) <a class="direct-link" href="#gc.drawcircle(x%2C-y%2C-r)">#</a></h3>
+<ul>
+<li><strong><code>x</code></strong> <code>&lt;number&gt;</code> coordinate X.</li>
+<li><strong><code>y</code></strong> <code>&lt;number&gt;</code> coordinate Y.</li>
+<li><strong><code>r</code></strong> <code>&lt;number&gt;</code> Radius of circle.</li>
+</ul>
+<p>Draw a circle at (x, y) coordinate of <code>r</code> radius.</p>
+<h3 id="gc.fillcircle(x%2C-y%2C-r)" tabindex="-1">gc.fillCircle(x, y, r) <a class="direct-link" href="#gc.fillcircle(x%2C-y%2C-r)">#</a></h3>
+<ul>
+<li><strong><code>x</code></strong> <code>&lt;number&gt;</code> coordinate X.</li>
+<li><strong><code>y</code></strong> <code>&lt;number&gt;</code> coordinate Y.</li>
+<li><strong><code>r</code></strong> <code>&lt;number&gt;</code> Radius of circle.</li>
+</ul>
+<p>Draw a filled circle at (x, y) coordinate of <code>r</code> radius.</p>
+<h3 id="gc.drawroundrect(x%2C-y%2C-w%2C-h%2C-r)" tabindex="-1">gc.drawRoundRect(x, y, w, h, r) <a class="direct-link" href="#gc.drawroundrect(x%2C-y%2C-w%2C-h%2C-r)">#</a></h3>
+<ul>
+<li><strong><code>x</code></strong> <code>&lt;number&gt;</code> coordinate X.</li>
+<li><strong><code>y</code></strong> <code>&lt;number&gt;</code> coordinate Y.</li>
+<li><strong><code>w</code></strong> <code>&lt;number&gt;</code> Width of rectangle.</li>
+<li><strong><code>h</code></strong> <code>&lt;number&gt;</code> Height of rectangle.</li>
+<li><strong><code>r</code></strong> <code>&lt;number&gt;</code> Radius of corner.</li>
+</ul>
+<p>Draw a rounded rectangle at (x, y) coordinate of <code>w</code> width, <code>h</code> height and <code>r</code> radius corner.</p>
+<h3 id="gc.fillroundrect(x%2C-y%2C-w%2C-h%2C-r)" tabindex="-1">gc.fillRoundRect(x, y, w, h, r) <a class="direct-link" href="#gc.fillroundrect(x%2C-y%2C-w%2C-h%2C-r)">#</a></h3>
+<ul>
+<li><strong><code>x</code></strong> <code>&lt;number&gt;</code> coordinate X.</li>
+<li><strong><code>y</code></strong> <code>&lt;number&gt;</code> coordinate Y.</li>
+<li><strong><code>w</code></strong> <code>&lt;number&gt;</code> Width of rectangle.</li>
+<li><strong><code>h</code></strong> <code>&lt;number&gt;</code> Height of rectangle.</li>
+<li><strong><code>r</code></strong> <code>&lt;number&gt;</code> Radius of corner.</li>
+</ul>
+<p>Draw a filled and rounded rectangle at (x, y) coordinate of <code>w</code> width, <code>h</code> height and <code>r</code> radius corner.</p>
+<h3 id="gc.drawtext(x%2C-y%2C-text)" tabindex="-1">gc.drawText(x, y, text) <a class="direct-link" href="#gc.drawtext(x%2C-y%2C-text)">#</a></h3>
+<ul>
+<li><strong><code>x</code></strong> <code>&lt;number&gt;</code> coordinate X.</li>
+<li><strong><code>y</code></strong> <code>&lt;number&gt;</code> coordinate Y.</li>
+<li><strong><code>text</code></strong> <code>&lt;string&gt;</code> Text string to draw.</li>
+</ul>
+<p>Draw a text at (x, y) coordinate.</p>
+<h3 id="gc.measuretext(text)" tabindex="-1">gc.measureText(text) <a class="direct-link" href="#gc.measuretext(text)">#</a></h3>
+<ul>
+<li><strong><code>text</code></strong> <code>&lt;string&gt;</code> Text to get text bound.</li>
+<li><strong>Returns:</strong> <code>&lt;object&gt;</code> Text bound.
+<ul>
+<li><strong><code>width</code></strong> <code>&lt;number&gt;</code> Width of text.</li>
+<li><strong><code>height</code></strong> <code>&lt;number&gt;</code> Height of text.</li>
+</ul>
+</li>
+</ul>
+<p>Get text bound (width, height) of a given text string.</p>
+<h3 id="gc.drawbitmap(x%2C-y%2C-bitmap%5B%2C-options%5D)" tabindex="-1">gc.drawBitmap(x, y, bitmap[, options]) <a class="direct-link" href="#gc.drawbitmap(x%2C-y%2C-bitmap%5B%2C-options%5D)">#</a></h3>
+<ul>
+<li><strong><code>x</code></strong> <code>&lt;number&gt;</code> coordinate X.</li>
+<li><strong><code>y</code></strong> <code>&lt;number&gt;</code> coordinate Y.</li>
+<li><strong><code>bitmap</code></strong> <code>&lt;object&gt;</code> Bitmap image.
+<ul>
+<li><strong><code>width</code></strong> <code>&lt;number&gt;</code> Bitmap width.</li>
+<li><strong><code>height</code></strong> <code>&lt;number&gt;</code> Bitmap height.</li>
+<li><strong><code>bpp</code></strong> <code>&lt;number&gt;</code> Bits per pixel. Default: <code>1</code>.</li>
+<li><strong><code>data</code></strong> <code>&lt;Uint8Array|string&gt;</code> Bitmap data. If string type is given, it should be a base64-encoded string. <em>Note that <code>Uint8Array</code> type is much faster than base64-encoded string.</em></li>
+</ul>
+</li>
+<li><strong><code>options</code></strong> <code>&lt;object&gt;</code> Bitmap drawing options
+<ul>
+<li><strong><code>color</code></strong> <code>&lt;number&gt;</code> Color for 1-bit mono bitmap. Default: <code>1</code> for 1-bit bitmap and <code>0xffff</code> for 16-bit bitmap.</li>
+<li><strong><code>transparent</code></strong> <code>&lt;number&gt;</code> Color value to be treated as transparent if defined.</li>
+<li><strong><code>scaleX</code></strong> <code>&lt;number&gt;</code> Horizontal scale of bitmap. Default: <code>1</code>.</li>
+<li><strong><code>scaleY</code></strong> <code>&lt;number&gt;</code> Vertical scale of bitmap. Default: <code>1</code>.</li>
+<li><strong><code>flipX</code></strong> <code>&lt;boolean&gt;</code> Horizontal flip of bitmap. Default: <code>false</code>.</li>
+<li><strong><code>flipY</code></strong> <code>&lt;boolean&gt;</code> Vertical flip of bitmap. Default: <code>false</code>.</li>
+</ul>
+</li>
+</ul>
+<p>Draw a bitmap image at (x, y) coordinate. The bitmap is drawn with current color in case of 1-bit bitmap.</p>
+<h2 id="class%3A-bufferedgraphicscontext" tabindex="-1">Class: BufferedGraphicsContext <a class="direct-link" href="#class%3A-bufferedgraphicscontext">#</a></h2>
+<p>This class inherits from <code>GraphicsContext</code>.</p>
+<p>An instance of <code>BufferedGraphicsContext</code> provides graphic functions that effects to the an internal buffer, so you need to call <code>display()</code> finally to take effect on actual graphic device.</p>
+<h3 id="new-bufferedgraphicscontext(width%2C-height%5B%2C-options%5D)" tabindex="-1">new BufferedGraphicsContext(width, height[, options]) <a class="direct-link" href="#new-bufferedgraphicscontext(width%2C-height%5B%2C-options%5D)">#</a></h3>
+<ul>
+<li><strong><code>width</code></strong> <code>&lt;number&gt;</code> Screen width of the graphic device in pixels.</li>
+<li><strong><code>height</code></strong> <code>&lt;number&gt;</code> Screen height of the graphic device in pixels.</li>
+<li><strong><code>options</code></strong> <code>&lt;object&gt;</code> Graphic context options.
+<ul>
+<li><strong><code>rotation</code></strong> <code>&lt;number&gt;</code> Rotation of screen. One of <code>0</code> (0 degree), <code>1</code> (90 degree in clockwise), <code>2</code> (180 degree in clockwise), and <code>3</code> (270 degree in clockwise).</li>
+<li><strong><code>bpp</code></strong> <code>&lt;number&gt;</code> Bits per pixel. Currently <code>1</code> or <code>16</code> supported.</li>
+<li><strong><code>display</code></strong> <code>&lt;function(buffer: Uint8Array)&gt;</code> A callback function to display the buffer on the graphic device.</li>
+</ul>
+</li>
+</ul>
+<h3 id="bgc.buffer" tabindex="-1">bgc.buffer <a class="direct-link" href="#bgc.buffer">#</a></h3>
+<ul>
+<li><code>&lt;Uint8Array&gt;</code></li>
+</ul>
+<p>Internal graphic buffer.</p>
+<h3 id="bgc.display()" tabindex="-1">bgc.display() <a class="direct-link" href="#bgc.display()">#</a></h3>
+<p>Display the graphics by pushing the graphic buffer to the driver.</p>
+</div>
+      </main>
+    </div>
+  </body>
+</html>

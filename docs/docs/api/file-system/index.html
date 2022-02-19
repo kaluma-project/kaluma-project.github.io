@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="https://unpkg.com/prismjs@1.20.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Kaluma</title>
+  </head>
+  <body>
+    <nav class="doc-sidebar">
+      <div class="p-3 border-bottom">
+        <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
+        Kaluma Documentation
+      </div>
+      <aside class="p-3" style="overflow-y: auto; height: 100%;">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
+          <ul class="list-unstyled">
+            
+              <li>
+                <a href="/docs/">Introduction</a>
+              </li>
+            
+              <li>
+                <a href="/docs/getting-started/">Getting Started</a>
+              </li>
+            
+              <li>
+                <a href="/docs/cli/">CLI</a>
+              </li>
+            
+              <li>
+                <a href="/docs/ecmascript-compatibility/">ECMAScript Compatibility</a>
+              </li>
+            
+              <li>
+                <a href="/docs/getting_started/">Get Start</a>
+              </li>
+            
+              <li>
+                <a href="/docs/ide/">IDE</a>
+              </li>
+            
+              <li>
+                <a href="/docs/repl/">REPL</a>
+              </li>
+            
+            <br>
+            <h6>BOARDS</h6>
+            
+              <li>
+                <a href="/docs/boards/raspberry-pi-pico/">RP2040 (Raspberry Pi Pico)</a>
+              </li>
+            
+            <br>
+            <h6>API</h6>
+            
+              <li>
+                <a href="/docs/api/adc/">ADC</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/analog_io/">Analog I/O</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/at-command/">AT Command</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/board/">Board</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/button/">Button</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/console/">Console</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/device_driver/">Device Driver</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/digital_io/">Digital I/O</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/errors/">Errors</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/events/">Events</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/file-system/">File system</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/flash/">Flash</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/global/">Global</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/gpio/">GPIO</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/graphics/">Graphics</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/http/">HTTP</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/i2c/">I2C</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/interrupts/">Interrupts</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/led/">LED</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/net/">Net</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/path/">Path</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/process/">Process</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/pwm/">PWM</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/rp2/">RP2</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/rtc/">RTC</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/spi/">SPI</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/storage/">Storage</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/stream/">Stream</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/timers/">Timers</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/uart/">UART</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/url/">URL</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/wifi/">Wi-Fi</a>
+              </li>
+            
+          </ul>
+        </nav>
+      </aside>
+    </nav>
+    <div class="doc-body">
+      <div class="text-end p-3 border-bottom">
+        Search, versions
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
+      </div>
+      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px">
+        <div><h1 id="file-system" tabindex="-1">File system <a class="direct-link" href="#file-system">#</a></h1>
+<blockquote>
+<p><strong>THIS IS EXPERIMENTAL AND SUBJECT OF CHANGE</strong></p>
+</blockquote>
+<h2 id="file-system-1" tabindex="-1">File system <a class="direct-link" href="#file-system-1">#</a></h2>
+<p>The <code>fs</code> module supports file system API. Use <code>require('fs')</code> to access this module.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<blockquote>
+<p>All file I/O functions are synchronous. Currently do not support asynchronous file I/O.</p>
+</blockquote>
+<h3 id="fs.register(fstype%2C-fsctr)" tabindex="-1">fs.register(fstype, fsctr) <a class="direct-link" href="#fs.register(fstype%2C-fsctr)">#</a></h3>
+<ul>
+<li><strong><code>fstype</code></strong> <code>&lt;string&gt;</code> File system type.</li>
+<li><strong><code>fsctr</code></strong> <code>&lt;constructor&gt;</code> Virtual file system constructor. See <a href="file-system.md#virtual-file-system">Virtual File System</a>.</li>
+</ul>
+<p>Register a file system type.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span>VFSLittleFS<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vfs_lfs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// register lfs filesystem type</span><br>fs<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'lfs'</span><span class="token punctuation">,</span> VFSLittleFS<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// then you can mkfs or mount with a block device</span><br><span class="token keyword">const</span> blkdev <span class="token operator">=</span> <span class="token operator">...</span><br>fs<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> blkdev<span class="token punctuation">,</span> <span class="token string">'lfs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="fs.unregister(fstype)" tabindex="-1">fs.unregister(fstype) <a class="direct-link" href="#fs.unregister(fstype)">#</a></h3>
+<ul>
+<li><strong><code>fstype</code></strong> <code>&lt;string&gt;</code> File system type.</li>
+</ul>
+<p>Unregister a file system type.</p>
+<h3 id="fs.mkfs(blkdev%2C-fstype)" tabindex="-1">fs.mkfs(blkdev, fstype) <a class="direct-link" href="#fs.mkfs(blkdev%2C-fstype)">#</a></h3>
+<ul>
+<li><strong><code>blkdev</code></strong> <code>&lt;BlockDevice&gt;</code> Block device.</li>
+<li><strong><code>fstype</code></strong> <code>&lt;string&gt;</code> File system type.</li>
+</ul>
+<p>Make a file system (format) on the block device.</p>
+<blockquote>
+<p>Note that calling<code>mkfs()</code> will delete all files if there were already existed.</p>
+</blockquote>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span>VFSLittleFS<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vfs_lfs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// register lfs filesystem type</span><br>fs<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'lfs'</span><span class="token punctuation">,</span> VFSLittleFS<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// make lfs file system (format)</span><br><span class="token keyword">const</span> blkdev <span class="token operator">=</span> <span class="token operator">...</span><br>fs<span class="token punctuation">.</span><span class="token function">mkfs</span><span class="token punctuation">(</span>blkdev<span class="token punctuation">,</span> <span class="token string">'lfs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="fs.mount(path%2C-blkdev%2C-fstype%5B%2C-mkfs%5D)" tabindex="-1">fs.mount(path, blkdev, fstype[, mkfs]) <a class="direct-link" href="#fs.mount(path%2C-blkdev%2C-fstype%5B%2C-mkfs%5D)">#</a></h3>
+<ul>
+<li><strong><code>path</code></strong> <code>&lt;string&gt;</code> A path where the block device to mount.</li>
+<li><strong><code>blkdev</code></strong> <code>&lt;BlockDevice&gt;</code> Block device.</li>
+<li><strong><code>fstype</code></strong> <code>&lt;string&gt;</code> File system type.</li>
+<li><strong><code>mkfs</code></strong> <code>&lt;boolean&gt;</code> Optional. Try to call <code>mkfs()</code> first when mount failed. Default: <code>false</code>.</li>
+</ul>
+<p>Mount a block device to the given path. When mount is failed, try to call <code>mkfs()</code> before mount retry if you pass <code>true</code> to <code>mkfs</code> parameter.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span>VFSLittleFS<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vfs_lfs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// register lfs filesystem type</span><br>fs<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'lfs'</span><span class="token punctuation">,</span> VFSLittleFS<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// mount lfs with mkfs try</span><br><span class="token keyword">const</span> blkdev <span class="token operator">=</span> <span class="token operator">...</span><br>fs<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> blkdev<span class="token punctuation">,</span> <span class="token string">'lfs'</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="fs.unmount(path)" tabindex="-1">fs.unmount(path) <a class="direct-link" href="#fs.unmount(path)">#</a></h3>
+<ul>
+<li><strong><code>path</code></strong> <code>&lt;string&gt;</code> A path where the block device to mount.</li>
+</ul>
+<p>Unmount the block device on the given path.</p>
+<h3 id="fs.cwd()" tabindex="-1">fs.cwd() <a class="direct-link" href="#fs.cwd()">#</a></h3>
+<ul>
+<li><strong>Returns</strong>: <code>&lt;number&gt;</code> </li>
+</ul>
+<p>Return the current working directory.</p>
+<h3 id="fs.chdir(path)" tabindex="-1">fs.chdir(path) <a class="direct-link" href="#fs.chdir(path)">#</a></h3>
+<p><strong><code>path</code></strong> <code>&lt;string&gt;</code> A path to change.</p>
+<p>Change the current working directory.</p>
+<h3 id="fs.open(path%5B%2C-flags%5B%2C-mode%5D%5D)" tabindex="-1">fs.open(path[, flags[, mode]]) <a class="direct-link" href="#fs.open(path%5B%2C-flags%5B%2C-mode%5D%5D)">#</a></h3>
+<ul>
+<li><strong><code>path</code></strong> <code>&lt;string&gt;</code> A file path to openBinary data to encode.</li>
+<li><strong><code>flags</code></strong> <code>&lt;string&gt;</code> File system flags. <strong>Default:</strong> <code>'r'</code>.</li>
+<li><strong><code>mode</code></strong> <code>&lt;number&gt;</code> (Not supported yet).</li>
+<li><strong>Returns</strong>: <code>&lt;number&gt;</code>  a file descriptor.</li>
+</ul>
+<p>Open a file and returns an integer file descriptor.</p>
+<p>Following flags are available.</p>
+<ul>
+<li><code>'r'</code> : Open file for reading.</li>
+<li><code>'r+'</code> : Open file for reading and writing. The file is created if not exists.</li>
+<li><code>'w'</code> : Open file for writing. The file is created if not exists.</li>
+<li><code>'w+'</code> : Open file for reading and writing. The file is created if not exists.</li>
+<li><code>'wx'</code> : Open file for writing, but fails if exists.</li>
+<li><code>'wx+'</code> : Open file for reading and writing, but fails if exists.</li>
+<li><code>'a'</code> : Open file for appending.</li>
+<li><code>'a+'</code> : Open file for reading and appending.</li>
+<li><code>'ax'</code> : Open file for appending, but fails if exists.</li>
+<li><code>'ax+'</code> : Open file for reading and appending, but fails if exists.</li>
+</ul>
+<h3 id="fs.read(fd%2C-buffer%5B%2C-offset%5B%2C-length%5B%2C-position%5D%5D%5D)" tabindex="-1">fs.read(fd, buffer[, offset[, length[, position]]]) <a class="direct-link" href="#fs.read(fd%2C-buffer%5B%2C-offset%5B%2C-length%5B%2C-position%5D%5D%5D)">#</a></h3>
+<ul>
+<li><strong><code>fd</code></strong> <code>&lt;number&gt;</code> </li>
+<li><strong><code>buffer</code></strong> <code>&lt;TypedArray&gt;</code> The buffer will be written.</li>
+<li><strong><code>offset</code></strong> <code>&lt;number&gt;</code> The position in buffer to write. Default: <code>0</code>.</li>
+<li><strong><code>length</code></strong> <code>&lt;number&gt;</code> The number of bytes to read. Default: the length of <code>buffer</code>.</li>
+<li><strong><code>position</code></strong> <code>&lt;number&gt;</code> The position of the file to read from. Default is current position if not specified.</li>
+<li><strong>Returns</strong>: <code>&lt;number&gt;</code>  The number of bytes read.</li>
+</ul>
+<p>Read data from the file specified by <code>fd</code>.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">let</span> fd <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'file.txt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">let</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">// read 10 bytes from the start</span><br>fs<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> buffer<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> buffer<span class="token punctuation">.</span>length<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>fs<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="fs.write(fd%2C-buffer%5B%2C-offset%5B%2C-length%5B%2C-position%5D%5D%5D)" tabindex="-1">fs.write(fd, buffer[, offset[, length[, position]]]) <a class="direct-link" href="#fs.write(fd%2C-buffer%5B%2C-offset%5B%2C-length%5B%2C-position%5D%5D%5D)">#</a></h3>
+<ul>
+<li><strong><code>fd</code></strong> <code>&lt;number&gt;</code> </li>
+<li><strong><code>buffer</code></strong> <code>&lt;TypedArray&gt;</code> The buffer will be read.</li>
+<li><strong><code>offset</code></strong> <code>&lt;number&gt;</code> The position in buffer to read. Default: <code>0</code>.</li>
+<li><strong><code>length</code></strong> <code>&lt;number&gt;</code> The number of bytes to write. Default: the length of <code>buffer</code>.</li>
+<li><strong><code>position</code></strong> <code>&lt;number&gt;</code> The position of the file to write. Default is current position if not specified.</li>
+<li><strong>Returns</strong>: <code>&lt;number&gt;</code>  The number of bytes written.</li>
+</ul>
+<p>Write data to the file specified by <code>fd</code>.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">let</span> fd <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'file.txt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">let</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">// buffer[0] = ...</span><br><span class="token comment">// buffer[1] = ...</span><br><span class="token comment">// ...</span><br><br><span class="token comment">// write 10 bytes</span><br>fs<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> buffer<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> buffer<span class="token punctuation">.</span>length<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>fs<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="fs.close(fd)" tabindex="-1">fs.close(fd) <a class="direct-link" href="#fs.close(fd)">#</a></h3>
+<ul>
+<li><strong><code>fd</code></strong> <code>&lt;number&gt;</code> </li>
+</ul>
+<p>Close the file specified by <code>fd</code>.</p>
+<h3 id="fs.readfile(path)" tabindex="-1">fs.readFile(path) <a class="direct-link" href="#fs.readfile(path)">#</a></h3>
+<ul>
+<li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
+<li><strong>Returns</strong>: <code>&lt;Uint8Array&gt;</code> .</li>
+</ul>
+<p>Read data from the file and return the data.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">let</span> data <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'file.txt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="fs.writefile(path%2C-data)" tabindex="-1">fs.writeFile(path, data) <a class="direct-link" href="#fs.writefile(path%2C-data)">#</a></h3>
+<ul>
+<li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
+<li><strong><code>data</code></strong> <code>&lt;Uint8Array&gt;</code> </li>
+</ul>
+<p>Write data to the file specified by <code>path</code>.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">let</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">// buffer[0] = ...</span><br><span class="token comment">// buffer[1] = ...</span><br><span class="token comment">// ..</span><br>fs<span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span><span class="token string">'file.txt'</span><span class="token punctuation">,</span> buffer<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="fs.unlink(path)" tabindex="-1">fs.unlink(path) <a class="direct-link" href="#fs.unlink(path)">#</a></h3>
+<ul>
+<li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
+</ul>
+<p>Remove the file specified by <code>path</code>.</p>
+<h3 id="fs.stat(path)" tabindex="-1">fs.stat(path) <a class="direct-link" href="#fs.stat(path)">#</a></h3>
+<ul>
+<li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
+<li><strong>Returns</strong>: <code>&lt;fs.Stats&gt;</code> </li>
+</ul>
+<p>Return status of the file specified by <code>path</code>.</p>
+<h3 id="fs.rename(oldpath%2C-newpath)" tabindex="-1">fs.rename(oldPath, newPath) <a class="direct-link" href="#fs.rename(oldpath%2C-newpath)">#</a></h3>
+<ul>
+<li><strong><code>oldPath</code></strong> <code>&lt;string&gt;</code> </li>
+<li><strong><code>newPath</code></strong> <code>&lt;string&gt;</code> </li>
+</ul>
+<p>Rename the file or directory.</p>
+<h3 id="fs.exists(path)" tabindex="-1">fs.exists(path) <a class="direct-link" href="#fs.exists(path)">#</a></h3>
+<ul>
+<li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
+</ul>
+<p>Test whether or not the given path exists.</p>
+<h3 id="fs.mkdir(path)" tabindex="-1">fs.mkdir(path) <a class="direct-link" href="#fs.mkdir(path)">#</a></h3>
+<ul>
+<li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
+</ul>
+<p>Create a directory.</p>
+<h3 id="fs.rmdir(path)" tabindex="-1">fs.rmdir(path) <a class="direct-link" href="#fs.rmdir(path)">#</a></h3>
+<ul>
+<li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
+</ul>
+<p>Remove a directory.</p>
+<h3 id="fs.rm(path)" tabindex="-1">fs.rm(path) <a class="direct-link" href="#fs.rm(path)">#</a></h3>
+<ul>
+<li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
+</ul>
+<p>Remove a file or directory specified by the <code>path</code>.</p>
+<h3 id="fs.readdir(path)" tabindex="-1">fs.readdir(path) <a class="direct-link" href="#fs.readdir(path)">#</a></h3>
+<ul>
+<li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
+<li><strong>Returns:</strong> &lt;<code>string[]</code>&gt;</li>
+</ul>
+<p>Read the contents of a directory.</p>
+<h3 id="class%3A-fs.stats" tabindex="-1">Class: fs.Stats <a class="direct-link" href="#class%3A-fs.stats">#</a></h3>
+<p>A class representing file status. The objects returned by <code>fs.stat()</code> are of this type.</p>
+<h4 id="stats.isdirectory()" tabindex="-1">stats.isDirectory() <a class="direct-link" href="#stats.isdirectory()">#</a></h4>
+<ul>
+<li><strong>Returns</strong>: <code>&lt;boolean&gt;</code></li>
+</ul>
+<p>Test whether the file is directory or not.</p>
+<h4 id="stats.isfile()" tabindex="-1">stats.isFile() <a class="direct-link" href="#stats.isfile()">#</a></h4>
+<ul>
+<li><strong>Returns</strong>: <code>&lt;boolean&gt;</code></li>
+</ul>
+<p>Test whether the file is typical file or not.</p>
+<h4 id="stats.size" tabindex="-1">stats.size <a class="direct-link" href="#stats.size">#</a></h4>
+<ul>
+<li><code>&lt;number&gt;</code></li>
+</ul>
+<p>The size of the file.</p>
+<h2 id="virtual-file-system" tabindex="-1">Virtual File System <a class="direct-link" href="#virtual-file-system">#</a></h2>
+<p>The architecture of file system is resembles Unix's virtual file system. So you can implements your own virtual file system and register. By default, Kaluma provides two file systems: <a href="https://github.com/littlefs-project/littlefs">LittleFS</a> and <a href="file-system.md#file-system">FAT</a>.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// littlefs</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span>VFSLittleFS<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vfs_lfs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>fs<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'lfs'</span><span class="token punctuation">,</span> VFSLittleFS<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// fat</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span>VFSFatFS<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vfs_fat'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>fs<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'lfs'</span><span class="token punctuation">,</span> VFSFatFS<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="implementing-vfs" tabindex="-1">Implementing VFS <a class="direct-link" href="#implementing-vfs">#</a></h3>
+<p>You can also implements your own VFS and register it. The VFS class should implements below interface.</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">VFS</span></span> <span class="token punctuation">{</span><br>  <span class="token function">constructor</span><span class="token punctuation">(</span>blkdev<span class="token operator">:</span> BlockDevice<span class="token punctuation">)</span><br>  <span class="token function">mkfs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">mount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span> <span class="token comment">// throw exception if blkdev is not formatted</span><br>  <span class="token function">unmount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">open</span><span class="token punctuation">(</span>path<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> flags<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> mode<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">number</span><span class="token punctuation">;</span> <span class="token comment">// id</span><br>  <span class="token function">write</span><span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> buffer<span class="token operator">:</span> Uint8Array<span class="token punctuation">,</span> offset<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> length<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> position<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token comment">// bytes written</span><br>  <span class="token function">read</span><span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> buffer<span class="token operator">:</span> Uint8Array<span class="token punctuation">,</span> offset<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> length<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> position<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token comment">// bytes read</span><br>  <span class="token function">close</span><span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">stat</span><span class="token punctuation">(</span>path<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token punctuation">{</span>type<span class="token operator">:</span><span class="token builtin">number</span> <span class="token comment">/*1=file,2=dir*/</span><span class="token punctuation">,</span> size<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">}</span><br>  <span class="token function">mkdir</span><span class="token punctuation">(</span>path<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">rmdir</span><span class="token punctuation">(</span>path<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">readdir</span><span class="token punctuation">(</span>path<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>  <span class="token function">rename</span><span class="token punctuation">(</span>oldPath<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> newPath<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">unlink</span><span class="token punctuation">(</span>path<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<h3 id="block-device" tabindex="-1">Block Device <a class="direct-link" href="#block-device">#</a></h3>
+<p>Once you have registered file systems, you can mount block devices.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// block device for flash memory</span><br><span class="token keyword">const</span> blkdev <span class="token operator">=</span> <span class="token function">FlashBD</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br><br><span class="token comment">// format and mount littlefs</span><br>fs<span class="token punctuation">.</span><span class="token function">mkfs</span><span class="token punctuation">(</span>blkdev<span class="token punctuation">,</span> <span class="token string">'lfs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>fs<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> blkdev<span class="token punctuation">,</span> <span class="token string">'lfs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// shortly, mount (format first if not formatted)</span><br>fs<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> blkdev<span class="token punctuation">,</span> <span class="token string">'lfs'</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You can implement your own block devices based on RAM, SDCard, PSRAM, and more by implementing below interface.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">interface</span> <span class="token class-name">BlockDevice</span> <span class="token punctuation">{</span><br>  <span class="token function">read</span><span class="token punctuation">(</span>block<span class="token operator">:</span> number<span class="token punctuation">,</span> <span class="token literal-property property">buf</span><span class="token operator">:</span> Uint8Array<span class="token punctuation">,</span> <span class="token literal-property property">offset</span><span class="token operator">:</span> number<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">write</span><span class="token punctuation">(</span>block<span class="token operator">:</span> number<span class="token punctuation">,</span> <span class="token literal-property property">buf</span><span class="token operator">:</span> Uint8Array<span class="token punctuation">,</span> <span class="token literal-property property">offset</span><span class="token operator">:</span> number<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">ioctl</span><span class="token punctuation">(</span>op<span class="token operator">:</span> number<span class="token punctuation">,</span> <span class="token literal-property property">arg</span><span class="token operator">:</span> number<span class="token punctuation">)</span><span class="token operator">:</span> number<span class="token punctuation">;</span><br>   <span class="token comment">// op = 1: initialize the device</span><br>   <span class="token comment">// op = 2: shutdown the device</span><br>   <span class="token comment">// op = 3: synchronize the device</span><br>   <span class="token comment">// op = 4: returns the total number of blocks</span><br>   <span class="token comment">// op = 5: returns the number of bytes in a block</span><br>   <span class="token comment">// op = 6: erase a block (arg = block num)</span><br>   <span class="token comment">// op = 7: returns the buffer size</span><br><span class="token punctuation">}</span></code></pre>
+<p>Here is an RAMBlockDev example.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">RAMBlockDev</span> <span class="token punctuation">{</span><br>  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span>blocksize <span class="token operator">=</span> <span class="token number">4096</span><span class="token punctuation">;</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span>blockcount <span class="token operator">=</span> <span class="token number">16</span><span class="token punctuation">;</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span>buffersize <span class="token operator">=</span> <span class="token number">256</span><span class="token punctuation">;</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span>buf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>blocksize <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>blockcount<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span>buf<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br>  <span class="token function">read</span><span class="token punctuation">(</span><span class="token parameter">block<span class="token punctuation">,</span> buffer<span class="token punctuation">,</span> offset <span class="token operator">=</span> <span class="token number">0</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> buffer<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      buffer<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>buf<span class="token punctuation">[</span>block <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>blocksize <span class="token operator">+</span> offset <span class="token operator">+</span> i<span class="token punctuation">]</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br>  <span class="token function">write</span><span class="token punctuation">(</span><span class="token parameter">block<span class="token punctuation">,</span> buffer<span class="token punctuation">,</span> offset <span class="token operator">=</span> <span class="token number">0</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> buffer<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      <span class="token keyword">this</span><span class="token punctuation">.</span>buf<span class="token punctuation">[</span>block <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>blocksize <span class="token operator">+</span> offset <span class="token operator">+</span> i<span class="token punctuation">]</span> <span class="token operator">=</span> buffer<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br>  <span class="token function">ioctl</span><span class="token punctuation">(</span><span class="token parameter">op<span class="token punctuation">,</span> arg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">switch</span> <span class="token punctuation">(</span>op<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span> <span class="token comment">// init</span><br>        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><br>      <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span> <span class="token comment">// shutdown</span><br>        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><br>      <span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span> <span class="token comment">// sync</span><br>        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><br>      <span class="token keyword">case</span> <span class="token number">4</span><span class="token operator">:</span> <span class="token comment">// block count</span><br>        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>blockcount<span class="token punctuation">;</span><br>      <span class="token keyword">case</span> <span class="token number">5</span><span class="token operator">:</span> <span class="token comment">// block size</span><br>        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>blocksize<span class="token punctuation">;</span><br>      <span class="token keyword">case</span> <span class="token number">6</span><span class="token operator">:</span> <span class="token comment">// erase block</span><br>        <span class="token keyword">let</span> p <span class="token operator">=</span> arg <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>blocksize<span class="token punctuation">;</span><br>        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> p<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> p <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>blocksize<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>          <span class="token keyword">this</span><span class="token punctuation">.</span>buf<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>        <span class="token punctuation">}</span><br>        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><br>      <span class="token keyword">case</span> <span class="token number">7</span><span class="token operator">:</span> <span class="token comment">// buffer size</span><br>        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>buffersize<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// unknown op</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> blkdev <span class="token operator">=</span> <span class="token function">RAMBlockDev</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>fs<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'/ram'</span><span class="token punctuation">,</span> blkdev<span class="token punctuation">,</span> <span class="token string">'lfs'</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</div>
+      </main>
+    </div>
+  </body>
+</html>

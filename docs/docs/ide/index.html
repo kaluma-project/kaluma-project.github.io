@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="https://unpkg.com/prismjs@1.20.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Kaluma</title>
+  </head>
+  <body>
+    <nav class="doc-sidebar">
+      <div class="p-3 border-bottom">
+        <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
+        Kaluma Documentation
+      </div>
+      <aside class="p-3" style="overflow-y: auto; height: 100%;">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
+          <ul class="list-unstyled">
+            
+              <li>
+                <a href="/docs/">Introduction</a>
+              </li>
+            
+              <li>
+                <a href="/docs/getting-started/">Getting Started</a>
+              </li>
+            
+              <li>
+                <a href="/docs/cli/">CLI</a>
+              </li>
+            
+              <li>
+                <a href="/docs/ecmascript-compatibility/">ECMAScript Compatibility</a>
+              </li>
+            
+              <li>
+                <a href="/docs/getting_started/">Get Start</a>
+              </li>
+            
+              <li>
+                <a href="/docs/ide/">IDE</a>
+              </li>
+            
+              <li>
+                <a href="/docs/repl/">REPL</a>
+              </li>
+            
+            <br>
+            <h6>BOARDS</h6>
+            
+              <li>
+                <a href="/docs/boards/raspberry-pi-pico/">RP2040 (Raspberry Pi Pico)</a>
+              </li>
+            
+            <br>
+            <h6>API</h6>
+            
+              <li>
+                <a href="/docs/api/adc/">ADC</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/analog_io/">Analog I/O</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/at-command/">AT Command</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/board/">Board</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/button/">Button</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/console/">Console</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/device_driver/">Device Driver</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/digital_io/">Digital I/O</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/errors/">Errors</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/events/">Events</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/file-system/">File system</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/flash/">Flash</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/global/">Global</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/gpio/">GPIO</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/graphics/">Graphics</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/http/">HTTP</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/i2c/">I2C</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/interrupts/">Interrupts</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/led/">LED</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/net/">Net</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/path/">Path</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/process/">Process</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/pwm/">PWM</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/rp2/">RP2</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/rtc/">RTC</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/spi/">SPI</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/storage/">Storage</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/stream/">Stream</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/timers/">Timers</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/uart/">UART</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/url/">URL</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/wifi/">Wi-Fi</a>
+              </li>
+            
+          </ul>
+        </nav>
+      </aside>
+    </nav>
+    <div class="doc-body">
+      <div class="text-end p-3 border-bottom">
+        Search, versions
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
+      </div>
+      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px">
+        <div><h1 id="web-ide" tabindex="-1">Web IDE <a class="direct-link" href="#web-ide">#</a></h1>
+<h2 id="introduction" tabindex="-1">Introduction <a class="direct-link" href="#introduction">#</a></h2>
+<p><a href="https://kaluma.io/ide">Kaluma IDE</a> is a web-based code editor which allows you to edit code in a web browser. Kaluma IDE works with web browsers supporting Web Serial API including Google Chrome and Microsoft Edge (or other browsers with <a href="https://kaluma.io/agent">Kaluma Agent</a>).</p>
+<p>The main features are:</p>
+<ul>
+<li>A sophisticated web-based code editor</li>
+<li>Provide cloud-based free public repositories</li>
+<li>Automatic code bundling with Webpack</li>
+<li>Support code linting based on ESLint</li>
+<li>Project release management (publish and import reusable packages)</li>
+<li>Support project fork</li>
+</ul>
+<p><img src=".gitbook/assets/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-03-17%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%209.30.06.png" alt="Kaluma IDE"></p>
+<h2 id="connect-device" tabindex="-1">Connect Device <a class="direct-link" href="#connect-device">#</a></h2>
+<p>You can find connected boards by clicking at the device select dropdown in the top-right area. To connect a device, click the device select dropdown and select a port where your device is connected in the dialog showing a list of serial ports.</p>
+<blockquote>
+<p>If your device is not detected in your browser, please check below:</p>
+<ul>
+<li>Check whether your browser supports <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API">Web Serial API</a> or not? (recommend Chrome or Edge)</li>
+<li>Still not detected even with Chrome or Edge, install <a href="https://kaluma.io/agent">Kaluma Agent</a>.</li>
+</ul>
+</blockquote>
+<h2 id="code-uploading" tabindex="-1">Code Uploading <a class="direct-link" href="#code-uploading">#</a></h2>
+<p>To upload your code select <strong>Upload</strong> menu (or &quot;Up-arrow&quot; button in the top area). The entry file (specified in <code>package.json</code>'s <code>main</code> field. Default is <code>index.js</code> . See <a href="ide.md#project-configuration">Project Configuration</a>) will be uploaded and executed in the connected board. If you want to upload other than the entry file,  open the file to upload in Code Editor and then select <strong>Upload Current</strong> menu.</p>
+<h2 id="project-configuration" tabindex="-1">Project Configuration <a class="direct-link" href="#project-configuration">#</a></h2>
+<p>You can configure project with <code>package.json</code></p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">{</span><br>  <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"my-project"</span><span class="token punctuation">,</span><br>  <span class="token string-property property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token string-property property">"@niklauslee/ssd1306"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token string-property property">"main"</span><span class="token operator">:</span> <span class="token string">"index.js"</span><span class="token punctuation">,</span><br>  <span class="token string-property property">"bundle"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token string-property property">"mode"</span><span class="token operator">:</span> <span class="token string">"development"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<ul>
+<li><strong><code>name</code></strong> <code>&lt;string&gt;</code> Project name.</li>
+<li><strong><code>dependencies</code></strong> <code>&lt;Object&lt;string,string&gt;&gt;</code> Module dependencies with module name and version like <code>&quot;@owner/package&quot;: &quot;1.0.0&quot;</code>. If you want to bundle the currently working version not a released version, set the version to <code>&quot;current&quot;</code> like <code>&quot;@owner/package&quot;: &quot;current&quot;</code>.</li>
+<li><strong><code>main</code></strong> <code>&lt;string&gt;</code> The entry point of the module. The file specified by this property is loaded when this module is imported by <code>require()</code> form other products. Default: <code>index.js</code>.</li>
+<li><strong><code>bundle</code></strong> <code>&lt;object&gt;</code> Configuration for code bundling.
+<ul>
+<li><strong><code>mode</code></strong> <code>&lt;string&gt;</code> Bundling mode is <code>development</code> or <code>production</code>. In <code>development</code> mode, the code is bundled <em>as-is (not minified)</em> so it is readable and and easier to debug. Whereas in <code>production</code> mode, the bundled code is minified so it is smaller and faster but not useful for debugging. Default: <code>development</code>.</li>
+</ul>
+</li>
+</ul>
+</div>
+      </main>
+    </div>
+  </body>
+</html>

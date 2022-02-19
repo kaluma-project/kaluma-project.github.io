@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="https://unpkg.com/prismjs@1.20.0/themes/prism.css" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Kaluma</title>
+  </head>
+  <body>
+    <nav class="doc-sidebar">
+      <div class="p-3 border-bottom">
+        <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
+        Kaluma Documentation
+      </div>
+      <aside class="p-3" style="overflow-y: auto; height: 100%;">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
+          <ul class="list-unstyled">
+            
+              <li>
+                <a href="/docs/">Introduction</a>
+              </li>
+            
+              <li>
+                <a href="/docs/getting-started/">Getting Started</a>
+              </li>
+            
+              <li>
+                <a href="/docs/cli/">CLI</a>
+              </li>
+            
+              <li>
+                <a href="/docs/ecmascript-compatibility/">ECMAScript Compatibility</a>
+              </li>
+            
+              <li>
+                <a href="/docs/getting_started/">Get Start</a>
+              </li>
+            
+              <li>
+                <a href="/docs/ide/">IDE</a>
+              </li>
+            
+              <li>
+                <a href="/docs/repl/">REPL</a>
+              </li>
+            
+            <br>
+            <h6>BOARDS</h6>
+            
+              <li>
+                <a href="/docs/boards/raspberry-pi-pico/">RP2040 (Raspberry Pi Pico)</a>
+              </li>
+            
+            <br>
+            <h6>API</h6>
+            
+              <li>
+                <a href="/docs/api/adc/">ADC</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/analog_io/">Analog I/O</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/at-command/">AT Command</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/board/">Board</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/button/">Button</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/console/">Console</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/device_driver/">Device Driver</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/digital_io/">Digital I/O</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/errors/">Errors</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/events/">Events</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/file-system/">File system</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/flash/">Flash</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/global/">Global</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/gpio/">GPIO</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/graphics/">Graphics</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/http/">HTTP</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/i2c/">I2C</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/interrupts/">Interrupts</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/led/">LED</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/net/">Net</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/path/">Path</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/process/">Process</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/pwm/">PWM</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/rp2/">RP2</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/rtc/">RTC</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/spi/">SPI</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/storage/">Storage</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/stream/">Stream</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/timers/">Timers</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/uart/">UART</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/url/">URL</a>
+              </li>
+            
+              <li>
+                <a href="/docs/api/wifi/">Wi-Fi</a>
+              </li>
+            
+          </ul>
+        </nav>
+      </aside>
+    </nav>
+    <div class="doc-body">
+      <div class="text-end p-3 border-bottom">
+        Search, versions
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
+      </div>
+      <main class="container d-flex justify-content-center markdown-content" style="max-width: 640px">
+        <div><h1 id="stream" tabindex="-1">Stream <a class="direct-link" href="#stream">#</a></h1>
+<blockquote>
+<p><strong>THIS IS EXPERIMENTAL AND SUBJECT OF CHANGE</strong></p>
+</blockquote>
+<p>This <code>steam</code> module provides abstract interfaces for working with streaming data. Use <code>require('stream')</code> to access this module.</p>
+<h2 id="class%3A-stream" tabindex="-1">Class: Stream <a class="direct-link" href="#class%3A-stream">#</a></h2>
+<ul>
+<li>Extends: <a href="events.md#class-eventemitter"><code>EventEmitter</code></a> </li>
+</ul>
+<p>This is a class for stream.</p>
+<h3 id="stream.readable" tabindex="-1">stream.readable <a class="direct-link" href="#stream.readable">#</a></h3>
+<ul>
+<li><code>{boolean}</code></li>
+</ul>
+<p>Indicates whether the stream is readable or not.</p>
+<h3 id="stream.writable" tabindex="-1">stream.writable <a class="direct-link" href="#stream.writable">#</a></h3>
+<ul>
+<li><code>{boolean}</code></li>
+</ul>
+<p>Indicates whether the stream is writable.</p>
+<h3 id="stream.read(%5Bsize%5D)" tabindex="-1">stream.read([size]) <a class="direct-link" href="#stream.read(%5Bsize%5D)">#</a></h3>
+<ul>
+<li><strong><code>size</code></strong> <code>{number}</code> </li>
+<li><strong>Returns:</strong> <code>{Uint8Array|null}</code></li>
+</ul>
+<p>Read data as the specified <code>size</code> from the stream. If <code>size</code> not specified, reads all data in the stream buffer.</p>
+<p>If the size of data in the stream buffer is less then <code>size</code>, returns <code>null</code>.</p>
+<h3 id="stream.write(chunk)" tabindex="-1">stream.write(chunk) <a class="direct-link" href="#stream.write(chunk)">#</a></h3>
+<ul>
+<li><strong><code>chunk</code></strong> <code>{Uint8Array}</code> </li>
+<li><strong>Returns:</strong> <code>{number}</code> </li>
+</ul>
+<p>Writes <code>chuck</code> to the stream and returns the number of bytes written.</p>
+<h3 id="stream.end()" tabindex="-1">stream.end() <a class="direct-link" href="#stream.end()">#</a></h3>
+<p>Finishes to write.</p>
+<h3 id="stream.destroy()" tabindex="-1">stream.destroy() <a class="direct-link" href="#stream.destroy()">#</a></h3>
+<ul>
+<li>Returns: <code>{this}</code></li>
+</ul>
+<p>Closes the stream.</p>
+<h2 id="class%3A-readable" tabindex="-1">Class: Readable <a class="direct-link" href="#class%3A-readable">#</a></h2>
+<blockquote>
+<p>THIS CLASS WILL BE DEPRECATED</p>
+</blockquote>
+<p>Readable streams are an abstraction for a <em>source</em> from which data is consumed. This is a condensed version of Readable stream in <a href="https://nodejs.org">Node.js</a>.</p>
+<h3 id="readable.readableended" tabindex="-1">readable.readableEnded <a class="direct-link" href="#readable.readableended">#</a></h3>
+<ul>
+<li><code>{boolean}</code></li>
+</ul>
+<p>Becomes <code>true</code> when <a href="stream.md#event-end"><code>'end'</code></a> event is emitted.</p>
+<h3 id="readable.push(chunk)" tabindex="-1">readable.push(chunk) <a class="direct-link" href="#readable.push(chunk)">#</a></h3>
+<ul>
+<li><strong><code>chunk</code></strong> <code>{Uint8Array}</code> </li>
+</ul>
+<p><em>This function should not be called in application code. It is only for stream implementors.</em> This should be called when a chunk of data is arrived from the stream.</p>
+<h3 id="readable.destroy()" tabindex="-1">readable.destroy() <a class="direct-link" href="#readable.destroy()">#</a></h3>
+<ul>
+<li>Returns: <code>{this}</code></li>
+</ul>
+<p>Closes the stream.</p>
+<h3 id="event%3A-'data'" tabindex="-1">Event: 'data' <a class="direct-link" href="#event%3A-'data'">#</a></h3>
+<ul>
+<li><strong><code>chunk</code></strong> <code>{Uint8Array}</code> </li>
+</ul>
+<p>Emitted whenever a chunk of data is available to consume.</p>
+<h3 id="event%3A-'end'" tabindex="-1">Event: 'end' <a class="direct-link" href="#event%3A-'end'">#</a></h3>
+<p>Emitted when all data completely consumed and no more data to read.</p>
+<h3 id="event%3A-'error'" tabindex="-1">Event: 'error' <a class="direct-link" href="#event%3A-'error'">#</a></h3>
+<ul>
+<li><strong><code>err</code></strong> <code>{Error}</code></li>
+</ul>
+<p>Emitted when error occurred.</p>
+<h3 id="event%3A-'close'" tabindex="-1">Event: 'close' <a class="direct-link" href="#event%3A-'close'">#</a></h3>
+<p>Emitted when the stream is closed.</p>
+<h2 id="class%3A-writable" tabindex="-1">Class: Writable <a class="direct-link" href="#class%3A-writable">#</a></h2>
+<blockquote>
+<p>THIS CLASS WILL BE DEPRECATED</p>
+</blockquote>
+<p>Writable streams are an abstraction for a <em>destination</em> to which data is written. This is a condensed version of Writable stream in <a href="https://nodejs.org">Node.js</a>.</p>
+<h3 id="writable.writableended" tabindex="-1">writable.writableEnded <a class="direct-link" href="#writable.writableended">#</a></h3>
+<ul>
+<li><code>{boolean}</code></li>
+</ul>
+<p>Becomes <code>true</code> when <a href="stream.md#writable-end-chunk-callback"><code>writable.end()</code></a> is called.</p>
+<h3 id="writable.writablefinished" tabindex="-1">writable.writableFinished <a class="direct-link" href="#writable.writablefinished">#</a></h3>
+<ul>
+<li><code>{boolean}</code></li>
+</ul>
+<p>Becomes <code>true</code> when <a href="stream.md#event-finish"><code>'finish'</code></a> event is emitted.</p>
+<h3 id="writable.write(chunk%5B%2C-callback%5D)" tabindex="-1">writable.write(chunk[, callback]) <a class="direct-link" href="#writable.write(chunk%5B%2C-callback%5D)">#</a></h3>
+<ul>
+<li><strong><code>chunk</code></strong> <code>{Uint8Array|string}</code> A chunk of data to write.</li>
+<li><strong><code>callback</code></strong> <code>{Function}</code> Called when the chunk of data is handled.</li>
+<li>Returns: <code>{boolean}</code> </li>
+</ul>
+<p>Writes a chunk of data on the stream. It returns <code>true</code> if the stream is ready to handle the next chunk of data. It returns <code>false</code>, then the stream will emit <a href="stream.md#event-drain"><code>'drain'</code></a> event when the all data written are handled and the internal buffer is empty. If you write data before <a href="stream.md#event-drain"><code>'drain'</code></a> event emitted, the chunk of data will be appended to the internal buffer.</p>
+<h3 id="writable.end(%5Bchunk%5D%5B%2C-callback%5D)" tabindex="-1">writable.end([chunk][, callback]) <a class="direct-link" href="#writable.end(%5Bchunk%5D%5B%2C-callback%5D)">#</a></h3>
+<ul>
+<li><strong><code>chunk</code></strong> <code>{Uint8Array|string}</code> A chunk of data to write before finish.</li>
+<li><strong><code>callback</code></strong> <code>{Function}</code> Called when the stream is finished.</li>
+<li>Returns: <code>{this}</code> </li>
+</ul>
+<p>Finishes to write data on the stream. The event <a href="stream.md#event-finish"><code>'finish'</code></a> will be emitted after successfully finished.</p>
+<h3 id="writable._write(chunk%5B%2C-callback%5D)" tabindex="-1">writable._write(chunk[, callback]) <a class="direct-link" href="#writable._write(chunk%5B%2C-callback%5D)">#</a></h3>
+<ul>
+<li><strong><code>chunk</code></strong> <code>{Uint8Array|string}</code> </li>
+<li><strong><code>callback</code></strong> <code>{Function}</code> </li>
+</ul>
+<p><em>This function should not be called in application code. It is only for stream implementors.</em> This function must be implemented in the inherited stream classes.</p>
+<h3 id="writable._final(%5Bcallback%5D)" tabindex="-1">writable._final([callback]) <a class="direct-link" href="#writable._final(%5Bcallback%5D)">#</a></h3>
+<ul>
+<li><strong><code>callback</code></strong> <code>{Function}</code> </li>
+</ul>
+<p><em>This function should not be called in application code. It is only for stream implementors.</em> This function must be implemented in the inherited stream classes. </p>
+<h3 id="writable.destroy()" tabindex="-1">writable.destroy() <a class="direct-link" href="#writable.destroy()">#</a></h3>
+<ul>
+<li>Returns: <code>{this}</code></li>
+</ul>
+<p>Closes the stream.</p>
+<h3 id="event%3A-'drain'" tabindex="-1">Event: 'drain' <a class="direct-link" href="#event%3A-'drain'">#</a></h3>
+<p>Emitted when the stream is ready to write and the internal buffer is empty.</p>
+<h3 id="event%3A-'finish'" tabindex="-1">Event: 'finish' <a class="direct-link" href="#event%3A-'finish'">#</a></h3>
+<p>Emitted when the stream is finished.</p>
+<h3 id="event%3A-'error'-1" tabindex="-1">Event: 'error' <a class="direct-link" href="#event%3A-'error'-1">#</a></h3>
+<ul>
+<li><strong><code>err</code></strong> <code>{Error}</code></li>
+</ul>
+<p>Emitted when error occurred.</p>
+<h3 id="event%3A-'close'-1" tabindex="-1">Event: 'close' <a class="direct-link" href="#event%3A-'close'-1">#</a></h3>
+<p>Emitted when the stream is closed.</p>
+<h2 id="class%3A-stream.duplex" tabindex="-1">Class: stream.Duplex <a class="direct-link" href="#class%3A-stream.duplex">#</a></h2>
+<p>Extends: <a href="stream.md#class-readable"><code>stream.Readable</code></a>, <a href="stream.md#class-writable"><code>stream.Writable</code></a></p>
+<blockquote>
+<p>THIS CLASS WILL BE DEPRECATED</p>
+</blockquote>
+<p>Duplex streams are streams that implement both the <a href="stream.md#class-readable">Readable</a> and <a href="stream.md#class-writable">Writable</a> interfaces.</p>
+</div>
+      </main>
+    </div>
+  </body>
+</html>
