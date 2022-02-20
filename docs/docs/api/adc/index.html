@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,29 +187,26 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="adc" tabindex="-1">ADC <a class="direct-link" href="#adc">#</a></h1>
 <p>The <code>adc</code> module provides the ADC class which supports analog-digital conversion. Use <code>require('adc')</code> to access this module.</p>
-<h2 id="class%3A-adc" tabindex="-1">Class: ADC <a class="direct-link" href="#class%3A-adc">#</a></h2>
+<h2 id="class-adc" tabindex="-1">Class: ADC <a class="direct-link" href="#class-adc">#</a></h2>
 <p>An instances of <code>ADC</code> represents a ADC object.</p>
-<h3 id="new-adc(pin)" tabindex="-1">new ADC(pin) <a class="direct-link" href="#new-adc(pin)">#</a></h3>
+<h3 id="new-adcpin" tabindex="-1">new ADC(pin) <a class="direct-link" href="#new-adcpin">#</a></h3>
 <ul>
 <li><strong><code>pin</code></strong> <code>&lt;number&gt;</code> The pin number which can support ADC function.</li>
 <li><strong>Returns:</strong> <code>&lt;object&gt;</code> The return value is <code>ADC</code> object.</li>
 </ul>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">ADC</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'adc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ADC</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="adc.read()" tabindex="-1">adc.read() <a class="direct-link" href="#adc.read()">#</a></h3>
+<h3 id="adcread" tabindex="-1">adc.read() <a class="direct-link" href="#adcread">#</a></h3>
 <ul>
 <li><strong>Returns:</strong> <code>&lt;number&gt;</code> The return value is ADC object.</li>
 </ul>
 <p>This method returns the analog value read from the pin. A <code>RangeError</code> will be thrown if <strong><code>adc.pin</code></strong> does not support ADC function.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">ADC</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'adc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ADC</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> value <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Read the ADC value at the pin 26.</span></code></pre>
-<h3 id="adc.pin" tabindex="-1">adc.pin <a class="direct-link" href="#adc.pin">#</a></h3>
+<h3 id="adcpin" tabindex="-1">adc.pin <a class="direct-link" href="#adcpin">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code> The pin number which can support ADC function.</li>
 </ul>

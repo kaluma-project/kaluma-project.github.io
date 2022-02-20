@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,10 +187,7 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="repl" tabindex="-1">REPL <a class="direct-link" href="#repl">#</a></h1>

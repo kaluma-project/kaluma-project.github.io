@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,40 +187,37 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="global" tabindex="-1">Global <a class="direct-link" href="#global">#</a></h1>
 <p>The objects are available in a global scope. The objects in the Global are not need to have a require function call before using it.</p>
-<h2 id="object%3A-global" tabindex="-1">Object: global <a class="direct-link" href="#object%3A-global">#</a></h2>
-<h3 id="require(module_name)" tabindex="-1">require(module_name) <a class="direct-link" href="#require(module_name)">#</a></h3>
+<h2 id="object-global" tabindex="-1">Object: global <a class="direct-link" href="#object-global">#</a></h2>
+<h3 id="requiremodulename" tabindex="-1">require(module_name) <a class="direct-link" href="#requiremodulename">#</a></h3>
 <ul>
 <li><strong><code>module_name</code></strong> <code>&lt;string&gt;</code>Module Name which would be used in the script.</li>
 <li><strong>Returns:</strong> <code>&lt;any&gt;</code> Return <code>exports</code> object of the loaded module.</li>
 </ul>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> graphics <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'graphics'</span><span class="token punctuation">)</span> <span class="token comment">// Load a builtin module</span></code></pre>
-<h3 id="print(%5B...data%5D)" tabindex="-1">print([...data]) <a class="direct-link" href="#print(%5B...data%5D)">#</a></h3>
+<h3 id="printdata" tabindex="-1">print([...data]) <a class="direct-link" href="#printdata">#</a></h3>
 <ul>
 <li><strong><code>...data</code></strong>  <code>&lt;any&gt;</code>Data which is shown in the console.</li>
 </ul>
 <p>Print out data to the console. The main difference from <a href="/docs/api/console">console.log()</a> is that it do not print a carriage return and a new line character (<code>\r\n</code>) in the end.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// print out "100 string value true 1,2,3"</span><br><span class="token keyword">var</span> number <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br><span class="token function">print</span> <span class="token punctuation">(</span>number<span class="token punctuation">,</span> <span class="token string">"string value"</span><span class="token punctuation">,</span> result<span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="seed(seed)" tabindex="-1">seed(seed) <a class="direct-link" href="#seed(seed)">#</a></h3>
+<h3 id="seedseed" tabindex="-1">seed(seed) <a class="direct-link" href="#seedseed">#</a></h3>
 <ul>
 <li><strong><code>seed</code></strong> <code>&lt;number&gt;</code> A seed number to initialize.</li>
 </ul>
 <p>Initializes the pseudo-random number generator. When you use <code>Math.random()</code>, it generate always the same random sequence. If you want to generate different random number sequence, you need to provide different seed number.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Seeding by millisecond time</span><br><span class="token function">seed</span><span class="token punctuation">(</span><span class="token function">millis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// Seeding by analog input</span><br><span class="token function">seed</span><span class="token punctuation">(</span><span class="token function">analogRead</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// GPIO26 = ADC0</span></code></pre>
-<h3 id="btoa(data)" tabindex="-1">btoa(data) <a class="direct-link" href="#btoa(data)">#</a></h3>
+<h3 id="btoadata" tabindex="-1">btoa(data) <a class="direct-link" href="#btoadata">#</a></h3>
 <ul>
 <li><strong><code>data</code></strong> <code>&lt;Uint8Array|string&gt;</code> Binary data to encode.</li>
 <li><strong>Returns</strong>: <code>&lt;string&gt;</code>  Base64 encoded string.</li>
 </ul>
 <p>Returns a base64 encoded string from binary data.</p>
-<h3 id="atob(encodeddata)" tabindex="-1">atob(encodedData) <a class="direct-link" href="#atob(encodeddata)">#</a></h3>
+<h3 id="atobencodeddata" tabindex="-1">atob(encodedData) <a class="direct-link" href="#atobencodeddata">#</a></h3>
 <ul>
 <li><strong><code>encodedData</code></strong> <code>&lt;string&gt;</code> Base64 encoded string data.</li>
 <li><strong>Returns</strong>: <code>&lt;Uint8Array&gt;</code>  Decoded binary data.</li>
@@ -254,19 +251,19 @@
 <ul>
 <li><code>&lt;number&gt;</code> = <code>1</code></li>
 </ul>
-<h3 id="input_pullup" tabindex="-1">INPUT_PULLUP <a class="direct-link" href="#input_pullup">#</a></h3>
+<h3 id="inputpullup" tabindex="-1">INPUT_PULLUP <a class="direct-link" href="#inputpullup">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code> = <code>2</code></li>
 </ul>
-<h3 id="input_pulldown" tabindex="-1">INPUT_PULLDOWN <a class="direct-link" href="#input_pulldown">#</a></h3>
+<h3 id="inputpulldown" tabindex="-1">INPUT_PULLDOWN <a class="direct-link" href="#inputpulldown">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code> = <code>3</code></li>
 </ul>
-<h3 id="low_level" tabindex="-1">LOW_LEVEL <a class="direct-link" href="#low_level">#</a></h3>
+<h3 id="lowlevel" tabindex="-1">LOW_LEVEL <a class="direct-link" href="#lowlevel">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code> = <code>1</code></li>
 </ul>
-<h3 id="high_level" tabindex="-1">HIGH_LEVEL <a class="direct-link" href="#high_level">#</a></h3>
+<h3 id="highlevel" tabindex="-1">HIGH_LEVEL <a class="direct-link" href="#highlevel">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code> = <code>2</code></li>
 </ul>
@@ -282,9 +279,9 @@
 <ul>
 <li><code>&lt;number&gt;</code> = <code>12</code></li>
 </ul>
-<h3 id="digital-i%2Fo-functions" tabindex="-1">Digital I/O Functions <a class="direct-link" href="#digital-i%2Fo-functions">#</a></h3>
+<h3 id="digital-io-functions" tabindex="-1">Digital I/O Functions <a class="direct-link" href="#digital-io-functions">#</a></h3>
 <p>All the functions in the <a href="/docs/api/digital-io">Digital I/O</a> are in the global scope.</p>
-<h3 id="analog-i%2Fo-functions" tabindex="-1">Analog I/O Functions <a class="direct-link" href="#analog-i%2Fo-functions">#</a></h3>
+<h3 id="analog-io-functions" tabindex="-1">Analog I/O Functions <a class="direct-link" href="#analog-io-functions">#</a></h3>
 <p>All the functions in the <a href="/docs/api/analog-io">Analog I/O</a> are in the global scope.</p>
 <h3 id="timers-functions" tabindex="-1">Timers Functions <a class="direct-link" href="#timers-functions">#</a></h3>
 <p>All the functions in the <a href="/docs/api/timers">Timers</a> are in the global scope.</p>
@@ -310,40 +307,40 @@
 <li><code>&lt;Object&gt;</code></li>
 </ul>
 <p><a href="/docs/api/storage">storage</a> object is a global.</p>
-<h3 id="class%3A-textencoder" tabindex="-1">Class: TextEncoder <a class="direct-link" href="#class%3A-textencoder">#</a></h3>
-<h4 id="new-textencoder(%5Blabel%5D)" tabindex="-1">new TextEncoder([label]) <a class="direct-link" href="#new-textencoder(%5Blabel%5D)">#</a></h4>
+<h3 id="class-textencoder" tabindex="-1">Class: TextEncoder <a class="direct-link" href="#class-textencoder">#</a></h3>
+<h4 id="new-textencoderlabel" tabindex="-1">new TextEncoder([label]) <a class="direct-link" href="#new-textencoderlabel">#</a></h4>
 <ul>
 <li><strong><code>label</code></strong> <code>&lt;string&gt;</code> Encoding type. Default: <code>'utf-8'</code>. Currently supported encoding types are <code>'ascii'</code> and <code>'utf-8'</code>.</li>
 </ul>
-<h4 id="textencoder.encode(input)" tabindex="-1">textEncoder.encode(input) <a class="direct-link" href="#textencoder.encode(input)">#</a></h4>
+<h4 id="textencoderencodeinput" tabindex="-1">textEncoder.encode(input) <a class="direct-link" href="#textencoderencodeinput">#</a></h4>
 <ul>
 <li><strong><code>input</code></strong> <code>&lt;string&gt;</code> </li>
 <li>Returns: <code>&lt;Uint8Array&gt;</code> </li>
 </ul>
 <p>Encodes the input string and returns the encoded buffer.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> encoder <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TextEncoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> buf <span class="token operator">=</span> encoder<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [97, 98, 99]</span></code></pre>
-<h3 id="textencoder.encoding" tabindex="-1">textEncoder.encoding <a class="direct-link" href="#textencoder.encoding">#</a></h3>
+<h3 id="textencoderencoding" tabindex="-1">textEncoder.encoding <a class="direct-link" href="#textencoderencoding">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code> </li>
 </ul>
 <p>Encoding type.</p>
-<h3 id="class%3A-textdecoder" tabindex="-1">Class: TextDecoder <a class="direct-link" href="#class%3A-textdecoder">#</a></h3>
-<h4 id="new-textdecoder(%5Blabel%5D)" tabindex="-1">new TextDecoder([label]) <a class="direct-link" href="#new-textdecoder(%5Blabel%5D)">#</a></h4>
+<h3 id="class-textdecoder" tabindex="-1">Class: TextDecoder <a class="direct-link" href="#class-textdecoder">#</a></h3>
+<h4 id="new-textdecoderlabel" tabindex="-1">new TextDecoder([label]) <a class="direct-link" href="#new-textdecoderlabel">#</a></h4>
 <ul>
 <li><strong><code>label</code></strong> <code>&lt;string&gt;</code> Encoding type. Default: <code>'utf-8'</code>. Currently supported encoding types are <code>'ascii'</code> and <code>'utf-8'</code>.</li>
 </ul>
-<h4 id="textdecoder.decode(input)" tabindex="-1">textDecoder.decode(input) <a class="direct-link" href="#textdecoder.decode(input)">#</a></h4>
+<h4 id="textdecoderdecodeinput" tabindex="-1">textDecoder.decode(input) <a class="direct-link" href="#textdecoderdecodeinput">#</a></h4>
 <ul>
 <li><strong><code>input</code></strong> <code>&lt;Uint8Array&gt;</code> </li>
 <li>Returns: <code>&lt;string&gt;</code> </li>
 </ul>
 <p>Decodes the input buffer and returns the decoded string.</p>
-<h3 id="textdecoder.encoding" tabindex="-1">textDecoder.encoding <a class="direct-link" href="#textdecoder.encoding">#</a></h3>
+<h3 id="textdecoderencoding" tabindex="-1">textDecoder.encoding <a class="direct-link" href="#textdecoderencoding">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code> </li>
 </ul>
 <p>Encoding type.</p>
-<h3 id="class%3A-systemerror" tabindex="-1">Class: <a href="/docs/api/errors/#class-systemerror">SystemError</a> <a class="direct-link" href="#class%3A-systemerror">#</a></h3>
+<h3 id="class-systemerror" tabindex="-1">Class: <a href="/docs/api/errors/#class-systemerror">SystemError</a> <a class="direct-link" href="#class-systemerror">#</a></h3>
 <ul>
 <li>Extends: <code>{Error}</code></li>
 </ul>

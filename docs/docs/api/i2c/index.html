@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,10 +187,7 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="i2c" tabindex="-1">I2C <a class="direct-link" href="#i2c">#</a></h1>
@@ -198,17 +195,17 @@
 <blockquote>
 <p>Slave Mode is NOT supported yet.</p>
 </blockquote>
-<h2 id="class%3A-i2c" tabindex="-1">Class: I2C <a class="direct-link" href="#class%3A-i2c">#</a></h2>
+<h2 id="class-i2c" tabindex="-1">Class: I2C <a class="direct-link" href="#class-i2c">#</a></h2>
 <p>An instances of <code>I2C</code> represents a I2C bus.</p>
-<h3 id="i2c.master" tabindex="-1">I2C.MASTER <a class="direct-link" href="#i2c.master">#</a></h3>
+<h3 id="i2cmaster" tabindex="-1">I2C.MASTER <a class="direct-link" href="#i2cmaster">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code> = <code>0</code></li>
 </ul>
-<h3 id="i2c.slave" tabindex="-1">I2C.SLAVE <a class="direct-link" href="#i2c.slave">#</a></h3>
+<h3 id="i2cslave" tabindex="-1">I2C.SLAVE <a class="direct-link" href="#i2cslave">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code> = <code>1</code></li>
 </ul>
-<h3 id="new-i2c(bus%5B%2C-options%5D)" tabindex="-1">new I2C(bus[, options]) <a class="direct-link" href="#new-i2c(bus%5B%2C-options%5D)">#</a></h3>
+<h3 id="new-i2cbus-options" tabindex="-1">new I2C(bus[, options]) <a class="direct-link" href="#new-i2cbus-options">#</a></h3>
 <ul>
 <li><strong><code>bus</code></strong> <code>&lt;number&gt;</code> I2C bus number.</li>
 <li>**<code>options</code>  **  <code>&lt;object&gt;</code> The object of I2C options. <em>Default values are depends on board (Check in a board page).</em>
@@ -223,7 +220,7 @@
 </ul>
 <p>Instances of the <code>I2C</code> class can be created using the <code>new</code> keyword or by calling <code>i2c.I2C()</code> as a function. A <code>RangeError</code> will be thrown if <strong><code>bus</code></strong> exceeds max bus number.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Create the I2C instance with master mode </span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">I2C</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'i2c'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// open bus 0 in master mode</span><br><span class="token keyword">const</span> i2c0 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">I2C</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">// read or write ...</span><br>i2c0<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// open bus 1 in master mode, full speed</span><br><span class="token keyword">const</span> i2c1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">I2C</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token constant">I2C</span><span class="token punctuation">.</span><span class="token constant">MASTER</span><span class="token punctuation">,</span> <span class="token literal-property property">baudrate</span><span class="token operator">:</span> <span class="token number">400000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">// read or write ...</span><br>i2c1<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="i2c.write(data%2C-address%5B%2C-timeout%5B%2C-count%5D%5D)" tabindex="-1">i2c.write(data, address[, timeout[, count]]) <a class="direct-link" href="#i2c.write(data%2C-address%5B%2C-timeout%5B%2C-count%5D%5D)">#</a></h3>
+<h3 id="i2cwritedata-address-timeout-count" tabindex="-1">i2c.write(data, address[, timeout[, count]]) <a class="direct-link" href="#i2cwritedata-address-timeout-count">#</a></h3>
 <ul>
 <li><strong><code>data</code></strong> <code>&lt;Uint8Array|string&gt;</code> Data to write.</li>
 <li><strong><code>address</code></strong> <code>&lt;number&gt;</code> I2C slave address. (7bit)</li>
@@ -233,7 +230,7 @@
 </ul>
 <p>This method writes data to the specified address (slave device) and returns the number of bytes written. This method can be called only in master mode.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">I2C</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'i2c'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> i2c0 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">I2C</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">baudrate</span><span class="token operator">:</span> <span class="token number">50000</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// master mode 50 kbits/s</span><br><br><span class="token comment">// Writes 2 bytes as a Uint8Array</span><br><span class="token keyword">var</span> array <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0x6b</span><span class="token punctuation">,</span> <span class="token number">0x00</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>i2c0<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> <span class="token number">0x68</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// Writes 5 bytes as a string</span><br>i2c0<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'Hello'</span><span class="token punctuation">,</span> <span class="token number">0x68</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>i2c0<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="i2c.read(length%2C-address%5B%2C-timeout%5D)" tabindex="-1">i2c.read(length, address[, timeout]) <a class="direct-link" href="#i2c.read(length%2C-address%5B%2C-timeout%5D)">#</a></h3>
+<h3 id="i2creadlength-address-timeout" tabindex="-1">i2c.read(length, address[, timeout]) <a class="direct-link" href="#i2creadlength-address-timeout">#</a></h3>
 <ul>
 <li><strong><code>length</code></strong> <code>&lt;number&gt;</code> Data length to read.</li>
 <li><strong><code>address</code></strong> <code>&lt;number&gt;</code> I2C slave address. (7bit)</li>
@@ -242,7 +239,7 @@
 </ul>
 <p>This method read data from the specified address (slave device) and returns an array buffer object. This method can be called only in master mode.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">I2C</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'i2c'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> i2c0 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">I2C</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br><br><span class="token comment">// Read 14 bytes from the address 0x68.</span><br><span class="token keyword">var</span> buf <span class="token operator">=</span> i2c0<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">0x68</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">if</span> <span class="token punctuation">(</span>buf<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 14</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// first byte</span><br><span class="token punctuation">}</span><br>i2c0<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="i2c.memwrite(data%2C-address%2C-memaddress%5B%2C-memaddresssize%5B%2C-timeout%5B%2C-count%5D%5D%5D)" tabindex="-1">i2c.memWrite(data, address, memAddress[, memAddressSize[, timeout[, count]]]) <a class="direct-link" href="#i2c.memwrite(data%2C-address%2C-memaddress%5B%2C-memaddresssize%5B%2C-timeout%5B%2C-count%5D%5D%5D)">#</a></h3>
+<h3 id="i2cmemwritedata-address-memaddress-memaddresssize-timeout-count" tabindex="-1">i2c.memWrite(data, address, memAddress[, memAddressSize[, timeout[, count]]]) <a class="direct-link" href="#i2cmemwritedata-address-memaddress-memaddresssize-timeout-count">#</a></h3>
 <ul>
 <li><strong><code>data</code></strong> <code>&lt;Uint8Array|string&gt;</code> Data to write.</li>
 <li><strong><code>address</code></strong> <code>&lt;number&gt;</code> I2C slave address. (7bit)</li>
@@ -254,7 +251,7 @@
 </ul>
 <p>This method writes data to the memory address in the specified slave device and returns the number of bytes written. This method can be called only in master mode.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">I2C</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'i2c'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> i2c0 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">I2C</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// Writes 2 bytes at memory address 0x10 of slave 0x68</span><br><span class="token keyword">var</span> array <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0x6b</span><span class="token punctuation">,</span> <span class="token number">0x00</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>i2c0<span class="token punctuation">.</span><span class="token function">memWrite</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> <span class="token number">0x68</span><span class="token punctuation">,</span> <span class="token number">0x10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>i2c0<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="i2c.memread(length%2C-address%2C-memaddress%5B%2C-memaddresssize%5B%2C-timeout%5D%5D)" tabindex="-1">i2c.memRead(length, address, memAddress[, memAddressSize[, timeout]]) <a class="direct-link" href="#i2c.memread(length%2C-address%2C-memaddress%5B%2C-memaddresssize%5B%2C-timeout%5D%5D)">#</a></h3>
+<h3 id="i2cmemreadlength-address-memaddress-memaddresssize-timeout" tabindex="-1">i2c.memRead(length, address, memAddress[, memAddressSize[, timeout]]) <a class="direct-link" href="#i2cmemreadlength-address-memaddress-memaddresssize-timeout">#</a></h3>
 <ul>
 <li><strong><code>length</code></strong> <code>&lt;number&gt;</code> Data length to read.</li>
 <li><strong><code>address</code></strong> <code>&lt;number&gt;</code> I2C slave address. (7bit)</li>
@@ -265,7 +262,7 @@
 </ul>
 <p>This method read data at memory address from the specified slave device and returns an array buffer object. This method can be called only in master mode.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">I2C</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'i2c'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> i2c0 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">I2C</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br><br><span class="token comment">// Read 14 bytes at memory address 0x0100 from slave 0x68</span><br><span class="token keyword">var</span> buf <span class="token operator">=</span> i2c0<span class="token punctuation">.</span><span class="token function">memRead</span><span class="token punctuation">(</span><span class="token number">0x0100</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">0x68</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">if</span> <span class="token punctuation">(</span>buf<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 14</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// first byte</span><br><span class="token punctuation">}</span><br>i2c0<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="i2c.close()" tabindex="-1">i2c.close() <a class="direct-link" href="#i2c.close()">#</a></h3>
+<h3 id="i2cclose" tabindex="-1">i2c.close() <a class="direct-link" href="#i2cclose">#</a></h3>
 <p>This method closes the I2C bus.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">I2C</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'i2c'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> i2c0 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">I2C</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br><br><span class="token comment">// Write or read from I2C ...</span><br><br>i2c0<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Close i2c device</span></code></pre>
 

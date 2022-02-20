@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,22 +187,19 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="path" tabindex="-1">Path <a class="direct-link" href="#path">#</a></h1>
 <h2 id="path-1" tabindex="-1">Path <a class="direct-link" href="#path-1">#</a></h2>
 <p>The <code>path</code> module provides functions for file and directory paths. Use <code>require('path')</code> to access this module.</p>
-<h3 id="isabsolute(path)" tabindex="-1">isAbsolute(path) <a class="direct-link" href="#isabsolute(path)">#</a></h3>
+<h3 id="isabsolutepath" tabindex="-1">isAbsolute(path) <a class="direct-link" href="#isabsolutepath">#</a></h3>
 <ul>
 <li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
 <li><strong>Returns:</strong> <code>&lt;boolean&gt;</code> </li>
 </ul>
 <p>Determines if the given path is absolute or not.</p>
-<h3 id="format(pathobj)" tabindex="-1">format(pathObj) <a class="direct-link" href="#format(pathobj)">#</a></h3>
+<h3 id="formatpathobj" tabindex="-1">format(pathObj) <a class="direct-link" href="#formatpathobj">#</a></h3>
 <ul>
 <li><strong><code>pathObj</code></strong> <code>&lt;object&gt;</code> 
 <ul>
@@ -216,7 +213,7 @@
 <li><strong>Returns:</strong> <code>&lt;string&gt;</code> </li>
 </ul>
 <p>Returns a formatted path string from a given path object.</p>
-<h3 id="parse(path)" tabindex="-1">parse(path) <a class="direct-link" href="#parse(path)">#</a></h3>
+<h3 id="parsepath" tabindex="-1">parse(path) <a class="direct-link" href="#parsepath">#</a></h3>
 <ul>
 <li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
 <li><strong>Returns:</strong> <code>&lt;object&gt;</code>
@@ -230,19 +227,19 @@
 </li>
 </ul>
 <p>Returns a path object parsed from a given path string.</p>
-<h3 id="normalize(path)" tabindex="-1">normalize(path) <a class="direct-link" href="#normalize(path)">#</a></h3>
+<h3 id="normalizepath" tabindex="-1">normalize(path) <a class="direct-link" href="#normalizepath">#</a></h3>
 <ul>
 <li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
 <li><strong>Returns:</strong> <code>&lt;string&gt;</code></li>
 </ul>
 <p>Normalizes the given path, resolving <code>'.'</code> and <code>'..'</code> segments.</p>
-<h3 id="join(...paths)" tabindex="-1">join(...paths) <a class="direct-link" href="#join(...paths)">#</a></h3>
+<h3 id="joinpaths" tabindex="-1">join(...paths) <a class="direct-link" href="#joinpaths">#</a></h3>
 <ul>
 <li><strong><code>...paths</code></strong> <code>&lt;string[]&gt;</code> </li>
 <li><strong>Returns:</strong> <code>&lt;string&gt;</code></li>
 </ul>
 <p>Joins all path segments together.</p>
-<h3 id="resolve(...paths)" tabindex="-1">resolve(...paths) <a class="direct-link" href="#resolve(...paths)">#</a></h3>
+<h3 id="resolvepaths" tabindex="-1">resolve(...paths) <a class="direct-link" href="#resolvepaths">#</a></h3>
 <ul>
 <li><strong><code>...paths</code></strong> <code>&lt;string[]&gt;</code> </li>
 <li><strong>Returns:</strong> <code>&lt;string&gt;</code></li>

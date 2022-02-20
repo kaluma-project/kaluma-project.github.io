@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,10 +187,7 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="flash" tabindex="-1">Flash <a class="direct-link" href="#flash">#</a></h1>
@@ -198,29 +195,29 @@
 <blockquote>
 <p>Do not use this class without knowing about flash allocation map. Writing and erasing blocks in flash memory may broke your code, files, storage items in flash.</p>
 </blockquote>
-<h2 id="class%3A-flash" tabindex="-1">Class: Flash <a class="direct-link" href="#class%3A-flash">#</a></h2>
+<h2 id="class-flash" tabindex="-1">Class: Flash <a class="direct-link" href="#class-flash">#</a></h2>
 <p>An instance of <code>Flash</code> represents a block device.</p>
-<h3 id="new-flash(base%2C-count)" tabindex="-1">new Flash(base, count) <a class="direct-link" href="#new-flash(base%2C-count)">#</a></h3>
+<h3 id="new-flashbase-count" tabindex="-1">new Flash(base, count) <a class="direct-link" href="#new-flashbase-count">#</a></h3>
 <ul>
 <li><strong><code>base</code></strong> <code>&lt;number&gt;</code> Starting block number.</li>
 <li><strong><code>count</code></strong> <code>&lt;number&gt;</code> Number of blocks.</li>
 </ul>
 <p>Returns a block device instance.</p>
-<h3 id="flash.read(block%2C-buffer%5B%2C-offset%5D)" tabindex="-1">flash.read(block, buffer[, offset]) <a class="direct-link" href="#flash.read(block%2C-buffer%5B%2C-offset%5D)">#</a></h3>
+<h3 id="flashreadblock-buffer-offset" tabindex="-1">flash.read(block, buffer[, offset]) <a class="direct-link" href="#flashreadblock-buffer-offset">#</a></h3>
 <ul>
 <li><strong><code>block</code></strong> <code>&lt;number&gt;</code> Block number to read.</li>
 <li><strong><code>buffer</code></strong> <code>&lt;Uint8Array&gt;</code> Buffer where the read data to be stored.</li>
 <li><strong><code>offset</code></strong> <code>&lt;number&gt;</code> Offset of <code>buffer</code>.</li>
 </ul>
 <p>Read the block data and store in <code>buffer</code>.</p>
-<h3 id="flash.write(block%2C-buffer%5B%2C-offset%5D)" tabindex="-1">flash.write(block, buffer[, offset]) <a class="direct-link" href="#flash.write(block%2C-buffer%5B%2C-offset%5D)">#</a></h3>
+<h3 id="flashwriteblock-buffer-offset" tabindex="-1">flash.write(block, buffer[, offset]) <a class="direct-link" href="#flashwriteblock-buffer-offset">#</a></h3>
 <ul>
 <li><strong><code>block</code></strong> <code>&lt;number&gt;</code> Block number to write.</li>
 <li><strong><code>buffer</code></strong> <code>&lt;Uint8Array&gt;</code> Data to write.</li>
 <li><strong><code>offset</code></strong> <code>&lt;number&gt;</code> Offset of <code>buffer</code>.</li>
 </ul>
 <p>Write the <code>buffer</code> data at the block.</p>
-<h3 id="flash.ioctl(op%5B%2C-arg%5D)" tabindex="-1">flash.ioctl(op[, arg]) <a class="direct-link" href="#flash.ioctl(op%5B%2C-arg%5D)">#</a></h3>
+<h3 id="flashioctlop-arg" tabindex="-1">flash.ioctl(op[, arg]) <a class="direct-link" href="#flashioctlop-arg">#</a></h3>
 <ul>
 <li><strong><code>op</code></strong> <code>&lt;number&gt;</code> I/O operation.</li>
 <li><strong><code>arg</code></strong> <code>&lt;number&gt;</code> Argument of the <code>op</code>.</li>

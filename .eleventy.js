@@ -20,6 +20,16 @@ module.exports = function (eleventyConfig) {
     breaks: true,
     linkify: true,
   }).use(markdownItAnchor, {
+    slugify: (s) => {
+      return encodeURIComponent(
+        // String(s).trim().toLowerCase().replace(':', '-').replace(/\s+/g, '-')
+        String(s)
+          .trim()
+          .toLowerCase()
+          .replace(/\s+/g, '-')
+          .replace(/[^A-Za-z0-9\-]/g, '')
+      );
+    },
     permalink: true,
     permalinkClass: 'direct-link',
     permalinkSymbol: '#',

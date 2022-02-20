@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,15 +187,12 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="url" tabindex="-1">URL <a class="direct-link" href="#url">#</a></h1>
 <p>The <code>url</code> module supports URL parsing and formatting. Use <code>require('url')</code> to access this module.</p>
-<h2 id="class%3A-url" tabindex="-1">Class: URL <a class="direct-link" href="#class%3A-url">#</a></h2>
+<h2 id="class-url" tabindex="-1">Class: URL <a class="direct-link" href="#class-url">#</a></h2>
 <p>A URL string is a structured string containing multiple meaningful components. For example <code>https://user:pass@sub.example.com:8080/p/a/t/h?query=string#hash</code> is consists of below components:</p>
 <ul>
 <li>protocol: <code>https:</code></li>
@@ -207,139 +204,139 @@
 <li>search: <code>?query=string</code></li>
 <li>hash: <code>hash</code></li>
 </ul>
-<h3 id="new-url(input)" tabindex="-1">new URL(input) <a class="direct-link" href="#new-url(input)">#</a></h3>
+<h3 id="new-urlinput" tabindex="-1">new URL(input) <a class="direct-link" href="#new-urlinput">#</a></h3>
 <ul>
 <li><strong><code>input</code></strong> <code>&lt;string&gt;</code></li>
 </ul>
 <p>Creates a URL object by parsing the input string.</p>
-<h3 id="url.hash" tabindex="-1">url.hash <a class="direct-link" href="#url.hash">#</a></h3>
+<h3 id="urlhash" tabindex="-1">url.hash <a class="direct-link" href="#urlhash">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code> </li>
 </ul>
 <p>Gets and sets the fragment portion of the URL.</p>
-<h3 id="url.host" tabindex="-1">url.host <a class="direct-link" href="#url.host">#</a></h3>
+<h3 id="urlhost" tabindex="-1">url.host <a class="direct-link" href="#urlhost">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code> </li>
 </ul>
 <p>Returns readonly host portion of the URL.</p>
-<h3 id="url.hostname" tabindex="-1">url.hostname <a class="direct-link" href="#url.hostname">#</a></h3>
+<h3 id="urlhostname" tabindex="-1">url.hostname <a class="direct-link" href="#urlhostname">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code> </li>
 </ul>
 <p>Gets and sets the hostname portion of the URL.</p>
-<h3 id="url.href" tabindex="-1">url.href <a class="direct-link" href="#url.href">#</a></h3>
+<h3 id="urlhref" tabindex="-1">url.href <a class="direct-link" href="#urlhref">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code> </li>
 </ul>
 <p>Returns serialized URL string.</p>
-<h3 id="url.origin" tabindex="-1">url.origin <a class="direct-link" href="#url.origin">#</a></h3>
+<h3 id="urlorigin" tabindex="-1">url.origin <a class="direct-link" href="#urlorigin">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code> </li>
 </ul>
 <p>Returns readonly origin portion of the URL.</p>
-<h3 id="url.password" tabindex="-1">url.password <a class="direct-link" href="#url.password">#</a></h3>
+<h3 id="urlpassword" tabindex="-1">url.password <a class="direct-link" href="#urlpassword">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code> </li>
 </ul>
 <p>Gets and sets the password portion of the URL.</p>
-<h3 id="url.pathname" tabindex="-1">url.pathname <a class="direct-link" href="#url.pathname">#</a></h3>
+<h3 id="urlpathname" tabindex="-1">url.pathname <a class="direct-link" href="#urlpathname">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code> </li>
 </ul>
 <p>Gets and sets the pathname portion of the URL.</p>
-<h3 id="url.port" tabindex="-1">url.port <a class="direct-link" href="#url.port">#</a></h3>
+<h3 id="urlport" tabindex="-1">url.port <a class="direct-link" href="#urlport">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code> </li>
 </ul>
 <p>Gets and sets the port portion of the URL.</p>
-<h3 id="url.protocol" tabindex="-1">url.protocol <a class="direct-link" href="#url.protocol">#</a></h3>
+<h3 id="urlprotocol" tabindex="-1">url.protocol <a class="direct-link" href="#urlprotocol">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code> </li>
 </ul>
 <p>Gets and sets the protocol portion of the URL.</p>
-<h3 id="url.search" tabindex="-1">url.search <a class="direct-link" href="#url.search">#</a></h3>
+<h3 id="urlsearch" tabindex="-1">url.search <a class="direct-link" href="#urlsearch">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code> </li>
 </ul>
 <p>Gets and sets the search string portion of the URL.</p>
-<h3 id="url.searchparams" tabindex="-1">url.searchParams <a class="direct-link" href="#url.searchparams">#</a></h3>
+<h3 id="urlsearchparams" tabindex="-1">url.searchParams <a class="direct-link" href="#urlsearchparams">#</a></h3>
 <ul>
 <li><code>&lt;URLSearchParams&gt;</code> </li>
 </ul>
 <p>Returns <a href="url.md#class-urlsearchparams">URLSearchParams</a> object constructed from <code>search</code> property.</p>
-<h3 id="url.username" tabindex="-1">url.username  <a class="direct-link" href="#url.username">#</a></h3>
+<h3 id="urlusername" tabindex="-1">url.username  <a class="direct-link" href="#urlusername">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code> </li>
 </ul>
 <p>Gets and sets the username portion of the URL.</p>
-<h3 id="url.tostring()" tabindex="-1">url.toString() <a class="direct-link" href="#url.tostring()">#</a></h3>
+<h3 id="urltostring" tabindex="-1">url.toString() <a class="direct-link" href="#urltostring">#</a></h3>
 <ul>
 <li><strong>Returns:</strong> <code>&lt;string&gt;</code> </li>
 </ul>
 <p>Returns serialized URL string.</p>
-<h3 id="url.tojson()" tabindex="-1">url.toJSON() <a class="direct-link" href="#url.tojson()">#</a></h3>
+<h3 id="urltojson" tabindex="-1">url.toJSON() <a class="direct-link" href="#urltojson">#</a></h3>
 <ul>
 <li><strong>Returns:</strong> <code>&lt;string&gt;</code> </li>
 </ul>
 <p>Returns serialized URL string.</p>
-<h2 id="class%3A-urlsearchparams" tabindex="-1">Class: URLSearchParams <a class="direct-link" href="#class%3A-urlsearchparams">#</a></h2>
+<h2 id="class-urlsearchparams" tabindex="-1">Class: URLSearchParams <a class="direct-link" href="#class-urlsearchparams">#</a></h2>
 <p>This class allows to read and write access to the query string of a URL.</p>
-<h3 id="new-urlsearchparams(input)" tabindex="-1">new URLSearchParams(input) <a class="direct-link" href="#new-urlsearchparams(input)">#</a></h3>
+<h3 id="new-urlsearchparamsinput" tabindex="-1">new URLSearchParams(input) <a class="direct-link" href="#new-urlsearchparamsinput">#</a></h3>
 <ul>
 <li><strong><code>input</code></strong> <code>&lt;string&gt;</code> A query string</li>
 </ul>
 <p>Parses the input query string. A leading <code>'?'</code> characters is ignored.</p>
-<h3 id="urlsearchparams.append(name%2C-value)" tabindex="-1">urlSearchParams.append(name, value) <a class="direct-link" href="#urlsearchparams.append(name%2C-value)">#</a></h3>
+<h3 id="urlsearchparamsappendname-value" tabindex="-1">urlSearchParams.append(name, value) <a class="direct-link" href="#urlsearchparamsappendname-value">#</a></h3>
 <ul>
 <li><strong><code>name</code></strong> <code>&lt;string&gt;</code></li>
 <li><strong><code>value</code></strong> <code>&lt;string&gt;</code></li>
 </ul>
 <p>Append a name-value pair.</p>
-<h3 id="urlsearchparams.delete(name)" tabindex="-1">urlSearchParams.delete(name) <a class="direct-link" href="#urlsearchparams.delete(name)">#</a></h3>
+<h3 id="urlsearchparamsdeletename" tabindex="-1">urlSearchParams.delete(name) <a class="direct-link" href="#urlsearchparamsdeletename">#</a></h3>
 <ul>
 <li><strong><code>name</code></strong> <code>&lt;string&gt;</code></li>
 </ul>
 <p>Delete all name-value pairs whose name is <code>name</code>.</p>
-<h3 id="urlsearchparams.entries()" tabindex="-1">urlSearchParams.entries() <a class="direct-link" href="#urlsearchparams.entries()">#</a></h3>
+<h3 id="urlsearchparamsentries" tabindex="-1">urlSearchParams.entries() <a class="direct-link" href="#urlsearchparamsentries">#</a></h3>
 <ul>
 <li><strong>Returns:</strong> <code>&lt;Array&gt;</code> </li>
 </ul>
 <p>Returns all name-value pairs as an array.</p>
-<h3 id="urlsearchparams.get(name)" tabindex="-1">urlSearchParams.get(name) <a class="direct-link" href="#urlsearchparams.get(name)">#</a></h3>
+<h3 id="urlsearchparamsgetname" tabindex="-1">urlSearchParams.get(name) <a class="direct-link" href="#urlsearchparamsgetname">#</a></h3>
 <ul>
 <li><strong><code>name</code></strong> <code>&lt;string&gt;</code></li>
 <li><strong>Returns:</strong> <code>&lt;string&gt;</code></li>
 </ul>
 <p>Returns the value of first name-value pairs whose name is <code>name</code>.</p>
-<h3 id="urlsearchparams.getall(name)" tabindex="-1">urlSearchParams.getAll(name) <a class="direct-link" href="#urlsearchparams.getall(name)">#</a></h3>
+<h3 id="urlsearchparamsgetallname" tabindex="-1">urlSearchParams.getAll(name) <a class="direct-link" href="#urlsearchparamsgetallname">#</a></h3>
 <ul>
 <li><strong><code>name</code></strong> <code>&lt;string&gt;</code></li>
 <li><strong>Returns:</strong> <code>&lt;string[]&gt;</code></li>
 </ul>
 <p>Returns the values of all name-value pairs whose name is <code>name</code>.</p>
-<h3 id="urlsearchparams.has(name)" tabindex="-1">urlSearchParams.has(name) <a class="direct-link" href="#urlsearchparams.has(name)">#</a></h3>
+<h3 id="urlsearchparamshasname" tabindex="-1">urlSearchParams.has(name) <a class="direct-link" href="#urlsearchparamshasname">#</a></h3>
 <ul>
 <li><strong><code>name</code></strong> <code>&lt;string&gt;</code></li>
 <li><strong>Returns:</strong> <code>&lt;boolean&gt;</code></li>
 </ul>
 <p>Returns <code>true</code> if there is at least one of name-value pair whose name is <code>name</code>.</p>
-<h3 id="urlsearchparams.keys()" tabindex="-1">urlSearchParams.keys() <a class="direct-link" href="#urlsearchparams.keys()">#</a></h3>
+<h3 id="urlsearchparamskeys" tabindex="-1">urlSearchParams.keys() <a class="direct-link" href="#urlsearchparamskeys">#</a></h3>
 <ul>
 <li><strong>Returns:</strong> <code>&lt;string[]&gt;</code></li>
 </ul>
 <p>Returns all names of all name-value pairs.</p>
-<h3 id="urlsearchparams.set(name%2C-value)" tabindex="-1">urlSearchParams.set(name, value) <a class="direct-link" href="#urlsearchparams.set(name%2C-value)">#</a></h3>
+<h3 id="urlsearchparamssetname-value" tabindex="-1">urlSearchParams.set(name, value) <a class="direct-link" href="#urlsearchparamssetname-value">#</a></h3>
 <ul>
 <li><strong><code>name</code></strong> <code>&lt;string&gt;</code></li>
 <li><strong><code>value</code></strong> <code>&lt;string&gt;</code></li>
 </ul>
 <p>Set the value of first name-value pair and deletes all other name-value pairs whose name is <code>name</code>. If not exists, append a name-value pair.</p>
-<h3 id="urlsearchparams.values()" tabindex="-1">urlSearchParams.values() <a class="direct-link" href="#urlsearchparams.values()">#</a></h3>
+<h3 id="urlsearchparamsvalues" tabindex="-1">urlSearchParams.values() <a class="direct-link" href="#urlsearchparamsvalues">#</a></h3>
 <ul>
 <li><strong>Returns:</strong> <code>&lt;string[]&gt;</code></li>
 </ul>
 <p>Returns all values of all name-value pairs.</p>
-<h3 id="urlsearchparams.tostring()" tabindex="-1">urlSearchParams.toString() <a class="direct-link" href="#urlsearchparams.tostring()">#</a></h3>
+<h3 id="urlsearchparamstostring" tabindex="-1">urlSearchParams.toString() <a class="direct-link" href="#urlsearchparamstostring">#</a></h3>
 <ul>
 <li><strong>Returns:</strong> <code>&lt;string&gt;</code></li>
 </ul>

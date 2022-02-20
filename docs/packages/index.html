@@ -72,11 +72,21 @@
     <main>
       
 <div class="container px-4 my-4">
-  A <b>Github repository</b> is prefered for package distribution (Don't need to publish to npmjs.org).<br>
-  A package can be installed easily with <code>npm install &lt;github-repo-url&gt;</code>.
+  <div class="mb-4">
+    <div>
+      <h3>Installing a package</h3>
+      A Github repository is prefered for package distribution (<i>Don't need to publish to npmjs.org</i>).
+      A package can be installed easily with NPM: <code>npm install &lt;github-repo-url&gt;</code>.
+      For more detail, please check <a href="https://docs.npmjs.com/cli/v8/commands/npm-install" target="_blank"><code>npm install</code></a>.
+    </div>
+    <div class="mt-4">
+      <b>Examples</b>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Install a package from github</span><br>$ <span class="token function">npm</span> <span class="token function">install</span> https://github.com/niklauslee/dht<br><br><span class="token comment"># Install specific branch or tag</span><br>$ <span class="token function">npm</span> <span class="token function">install</span> https://github.com/niklauslee/dht<span class="token comment">#v1.0.0</span></code></pre>
+    </div>
+  </div>
   <div class="text-end">
-    <p><a class="" href="https://github.com/kaluma-project/kaluma-project.github.io/issues/new?title=[Package Register Request]" target="_blank">Register my package</a></p>
-  <div>
+    <p><a class="btn btn-outline-secondary" href="https://github.com/kaluma-project/kaluma-project.github.io/issues/new?template=publish-package-template.md&title=[Publish Package]" target="_blank">Publish my package</a></p>
+  </div>
   <div class="text-start my-3"> 
     Total: <b>25 packages</b>
   </div>
@@ -617,6 +627,11 @@
     <div>
       <div class="footer">
   <div>
+    
+      <a class="text-secondary text-decoration-none px-2" href="/download/" target="_blank">Download</a>
+    
+      <a class="text-secondary text-decoration-none px-2" href="/packages/" target="_blank">Packages</a>
+    
     <a class="text-secondary text-decoration-none px-2" href="https://docs.kaluma.io" target="_blank">Docs</a>
     <a class="text-secondary text-decoration-none px-2" href="https://github.com/kaluma-project/kaluma/discussions" target="_blank">Discussions</a>
     <a class="text-secondary text-decoration-none px-2" href="https://github.com/kaluma-project/kaluma" target="_blank">Github</a>

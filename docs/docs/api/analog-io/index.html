@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,21 +187,18 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
-          <h1 id="analog-i%2Fo" tabindex="-1">Analog I/O <a class="direct-link" href="#analog-i%2Fo">#</a></h1>
-<h2 id="analogread(pin)" tabindex="-1">analogRead(pin) <a href="#analogread" id="analogread"></a> <a class="direct-link" href="#analogread(pin)">#</a></h2>
+          <h1 id="analog-io" tabindex="-1">Analog I/O <a class="direct-link" href="#analog-io">#</a></h1>
+<h2 id="analogreadpin" tabindex="-1">analogRead(pin) <a href="#analogread" id="analogread"></a> <a class="direct-link" href="#analogreadpin">#</a></h2>
 <ul>
 <li><strong><code>pin</code></strong> <code>&lt;number&gt;</code> The pin number which can support ADC function.</li>
 <li><strong>Returns:</strong> <code>&lt;number&gt;</code>, the value is in between <code>0.0</code> ~ <code>1.0</code></li>
 </ul>
 <p>Read and return analog signal value from the ADC <strong><code>pin</code></strong>. A <code>RangeError</code> will be thrown if the <strong><code>pin</code></strong> does not support ADC function.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Read analog value on pin 26.</span><br><span class="token keyword">var</span> pin <span class="token operator">=</span> <span class="token number">26</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token function">analogRead</span><span class="token punctuation">(</span>pin<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h2 id="analogwrite(pin%5B%2C-duty%5B%2C-frequency%5D%5D)" tabindex="-1">analogWrite(pin[, duty[, frequency]]) <a href="#analogwrite" id="analogwrite"></a> <a class="direct-link" href="#analogwrite(pin%5B%2C-duty%5B%2C-frequency%5D%5D)">#</a></h2>
+<h2 id="analogwritepin-duty-frequency" tabindex="-1">analogWrite(pin[, duty[, frequency]]) <a href="#analogwrite" id="analogwrite"></a> <a class="direct-link" href="#analogwritepin-duty-frequency">#</a></h2>
 <ul>
 <li><strong><code>pin</code></strong> <code>&lt;number&gt;</code> The pin number which can support PWM function.</li>
 <li><strong><code>duty</code></strong> <code>&lt;number&gt;</code> The PWM duty cycle between <code>0.0</code> and <code>1.0</code>. <strong>Default:</strong> <code>0.5</code></li>
@@ -209,7 +206,7 @@
 </ul>
 <p>Generate PWM signal with specific <strong><code>frequency</code></strong> and <strong><code>duty</code></strong> to the PWM <strong><code>pin</code></strong>. A <code>RangeError</code> will be thrown if <strong><code>pin</code></strong> does not support PWM function.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Generate 490 Hz 50% duth PWM signal.</span><br><span class="token keyword">var</span> pin <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br><span class="token function">analogWrite</span><span class="token punctuation">(</span>pin<span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h2 id="tone(pin%5B%2C-frequency%5B%2C-options%5D%5D)" tabindex="-1">tone(pin[, frequency[, options]]) <a href="#tone" id="tone"></a> <a class="direct-link" href="#tone(pin%5B%2C-frequency%5B%2C-options%5D%5D)">#</a></h2>
+<h2 id="tonepin-frequency-options" tabindex="-1">tone(pin[, frequency[, options]]) <a href="#tone" id="tone"></a> <a class="direct-link" href="#tonepin-frequency-options">#</a></h2>
 <ul>
 <li><strong><code>pin</code></strong> <code>&lt;number&gt;</code> The pin number which can support PWM function.</li>
 <li><strong><code>frequency</code></strong> <code>&lt;number&gt;</code> The PWM frequency in Hz. <strong>Default:</strong> <code>261.626</code>Hz (C Key)</li>
@@ -228,7 +225,7 @@
 <p>Note that the inversion pin should be the different channel of the same slice. For example, pin 9 can be used for inversion for the pin 8. See <a href="../boards/raspberry-pi-pico.md#pwm">here</a> for more about PWM slide and channels.</p>
 </blockquote>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Generate 300 Hz tone on the pin 8 and the inverted signal on the pin 9.</span><br><span class="token function">tone</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">inversion</span><span class="token operator">:</span> <span class="token number">9</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h2 id="notone(pin)" tabindex="-1">noTone(pin) <a href="#notone" id="notone"></a> <a class="direct-link" href="#notone(pin)">#</a></h2>
+<h2 id="notonepin" tabindex="-1">noTone(pin) <a href="#notone" id="notone"></a> <a class="direct-link" href="#notonepin">#</a></h2>
 <ul>
 <li><strong><code>pin</code></strong> <code>&lt;number&gt;</code> The pin number which can support PWM function.</li>
 </ul>

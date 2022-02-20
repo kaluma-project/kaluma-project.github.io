@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,17 +187,14 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
-          <h1 id="rp2-(raspberry-pi-pico)" tabindex="-1">RP2 (Raspberry Pi Pico) <a class="direct-link" href="#rp2-(raspberry-pi-pico)">#</a></h1>
+          <h1 id="rp2-raspberry-pi-pico" tabindex="-1">RP2 (Raspberry Pi Pico) <a class="direct-link" href="#rp2-raspberry-pi-pico">#</a></h1>
 <p>This page describes information about the Kaluma port for <a href="https://www.raspberrypi.org/products/raspberry-pi-pico/">Raspberry Pi Pico</a>.</p>
 <h2 id="pinout" tabindex="-1">Pinout <a class="direct-link" href="#pinout">#</a></h2>
 <p><img src="/images/doc-pico-pinout.svg" alt="Raspberry Pi Pico (from https://raspberrypi.org)"></p>
-<h2 id="upload-firmware-(.uf2)" tabindex="-1">Upload firmware (.UF2) <a class="direct-link" href="#upload-firmware-(.uf2)">#</a></h2>
+<h2 id="upload-firmware-uf2" tabindex="-1">Upload firmware (.UF2) <a class="direct-link" href="#upload-firmware-uf2">#</a></h2>
 <p>You can upload Kaluma firmware to your Raspberry Pi Pico board by following steps.</p>
 <ol>
 <li>Download Kaluma firmware <code>.UF2</code> file from <a href="https://kaluma.io/download">https://kaluma.io/download</a>.</li>
@@ -208,9 +205,9 @@
 <h2 id="skip-code-loading-on-boot" tabindex="-1">Skip code loading on boot <a class="direct-link" href="#skip-code-loading-on-boot">#</a></h2>
 <p>Sometimes you need to skip loading the code stored in the internal flash on boot. You can skip code loading by setting <code>GP22</code> to <code>GND</code>.</p>
 <p><img src="/images/doc-skip-loading.png" alt="Skip code loading by set GP22 to GND"></p>
-<h2 id="object%3A-board" tabindex="-1">Object: board <a class="direct-link" href="#object%3A-board">#</a></h2>
+<h2 id="object-board" tabindex="-1">Object: board <a class="direct-link" href="#object-board">#</a></h2>
 <p>This section shows the Raspberry Pi Pico specific properties of the global <a href="../api-reference/board.md">board</a> object.</p>
-<h3 id="board.led" tabindex="-1">board.LED <a class="direct-link" href="#board.led">#</a></h3>
+<h3 id="boardled" tabindex="-1">board.LED <a class="direct-link" href="#boardled">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code> </li>
 </ul>

@@ -5,11 +5,27 @@ tags: pages
 ---
 
 <div class="container px-4 my-4">
-  A <b>Github repository</b> is prefered for package distribution (Don't need to publish to npmjs.org).<br>
-  A package can be installed easily with <code>npm install &lt;github-repo-url&gt;</code>.
+  <div class="mb-4">
+    <div>
+      <h3>Installing a package</h3>
+      A Github repository is prefered for package distribution (<i>Don't need to publish to npmjs.org</i>).
+      A package can be installed easily with NPM: <code>npm install &lt;github-repo-url&gt;</code>.
+      For more detail, please check <a href="https://docs.npmjs.com/cli/v8/commands/npm-install" target="_blank"><code>npm install</code></a>.
+    </div>
+    <div class="mt-4">
+      <b>Examples</b>
+{% highlight "bash" %}
+# Install a package from github
+$ npm install https://github.com/niklauslee/dht
+
+# Install specific branch or tag
+$ npm install https://github.com/niklauslee/dht#v1.0.0
+{% endhighlight %}
+    </div>
+  </div>
   <div class="text-end">
-    <p><a class="" href="https://github.com/kaluma-project/kaluma-project.github.io/issues/new?title=[Package Register Request]" target="_blank">Register my package</a></p>
-  <div>
+    <p><a class="btn btn-outline-secondary" href="https://github.com/kaluma-project/kaluma-project.github.io/issues/new?template=publish-package-template.md&title=[Publish Package]" target="_blank">Publish my package</a></p>
+  </div>
   <div class="text-start my-3"> 
     Total: <b>{{ packages | length }} packages</b>
   </div>

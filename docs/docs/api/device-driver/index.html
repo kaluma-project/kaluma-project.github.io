@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,10 +187,7 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="device-driver" tabindex="-1">Device Driver <a class="direct-link" href="#device-driver">#</a></h1>
@@ -207,28 +204,28 @@
 <h2 id="network-device-driver" tabindex="-1">Network Device Driver <a class="direct-link" href="#network-device-driver">#</a></h2>
 <p>The interface of the network device driver is very similar to the linux socket interface.</p>
 <pre class="language-typescript"><code class="language-typescript"><span class="token comment">// Interface of a socket object</span><br><span class="token keyword">interface</span> <span class="token class-name">socket</span> <span class="token punctuation">{</span><br>  fd<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span> <span class="token comment">// socket file descriptor</span><br>  ptcl<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> <span class="token comment">// 'STREAM' || 'DGRAM'</span><br>  state<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span> <span class="token comment">// 0=closed, 1=bind, 2=connected, 3=listening</span><br>  laddr<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span><br>  lport<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span><br>  raddr<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span><br>  rport<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span><br>  <span class="token function-variable function">connect_cb</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function-variable function">close_cb</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function-variable function">read_cb</span><span class="token operator">:</span> <span class="token punctuation">(</span>data<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function-variable function">accept_cb</span><span class="token operator">:</span> <span class="token punctuation">(</span>fd<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function-variable function">shutdown_cb</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">// Interface of a network device driver</span><br><span class="token keyword">interface</span> <span class="token class-name">netdev</span> <span class="token punctuation">{</span><br>  errno<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span><br>  mac<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> <span class="token comment">// mac address</span><br>  ip<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> <span class="token comment">// local ip address</span><br>  <span class="token function">socket</span><span class="token punctuation">(</span>domain<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> protocol<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span><br>  <span class="token function">get</span><span class="token punctuation">(</span>fd<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> socket<span class="token punctuation">;</span>  <br>  <span class="token function">connect</span><span class="token punctuation">(</span>fd<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> addr<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> port<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> <span class="token function-variable function">callback</span><span class="token operator">:</span> <span class="token punctuation">(</span>err<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">write</span><span class="token punctuation">(</span>fd<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> data<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token function-variable function">callback</span><span class="token operator">:</span> <span class="token punctuation">(</span>err<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> <span class="token function-variable function">callback</span><span class="token operator">:</span> <span class="token punctuation">(</span>err<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">shutdown</span><span class="token punctuation">(</span>fd<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> how<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> <span class="token function-variable function">callback</span><span class="token operator">:</span> <span class="token punctuation">(</span>err<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">bind</span><span class="token punctuation">(</span>fd<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> addr<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> port<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> <span class="token function-variable function">callback</span><span class="token operator">:</span> <span class="token punctuation">(</span>err<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">listen</span><span class="token punctuation">(</span>fd<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> <span class="token function-variable function">callback</span><span class="token operator">:</span> <span class="token punctuation">(</span>err<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-<h3 id="netdev.errno" tabindex="-1">netdev.errno <a class="direct-link" href="#netdev.errno">#</a></h3>
+<h3 id="netdeverrno" tabindex="-1">netdev.errno <a class="direct-link" href="#netdeverrno">#</a></h3>
 <ul>
 <li><code>{number}</code></li>
 </ul>
 <p>The numeric representation of error code.</p>
-<h3 id="netdev.mac" tabindex="-1">netdev.mac <a class="direct-link" href="#netdev.mac">#</a></h3>
+<h3 id="netdevmac" tabindex="-1">netdev.mac <a class="direct-link" href="#netdevmac">#</a></h3>
 <ul>
 <li><code>{string}</code></li>
 </ul>
 <p>The string representation of mac address.</p>
-<h3 id="netdev.ip" tabindex="-1">netdev.ip <a class="direct-link" href="#netdev.ip">#</a></h3>
+<h3 id="netdevip" tabindex="-1">netdev.ip <a class="direct-link" href="#netdevip">#</a></h3>
 <ul>
 <li><code>{string}</code></li>
 </ul>
 <p>The string representation of IP address.</p>
-<h3 id="netdev.socket(domain%2C-protocol)" tabindex="-1">netdev.socket(domain, protocol) <a class="direct-link" href="#netdev.socket(domain%2C-protocol)">#</a></h3>
+<h3 id="netdevsocketdomain-protocol" tabindex="-1">netdev.socket(domain, protocol) <a class="direct-link" href="#netdevsocketdomain-protocol">#</a></h3>
 <ul>
 <li><strong><code>domain</code></strong> <code>{string}</code> Communication domain.</li>
 <li><strong><code>protocol</code></strong> <code>{string}</code> Protocol <code>'STREAM'</code> or <code>'DGRAM'</code>.</li>
 <li>Returns: <code>{number}</code> A socket file descriptor. <code>-1</code> on error. Error code is set to <code>errno</code>.</li>
 </ul>
-<h3 id="netdev.get(fd)" tabindex="-1">netdev.get(fd) <a class="direct-link" href="#netdev.get(fd)">#</a></h3>
+<h3 id="netdevgetfd" tabindex="-1">netdev.get(fd) <a class="direct-link" href="#netdevgetfd">#</a></h3>
 <ul>
 <li><strong><code>fd</code></strong> <code>{number}</code> A socket file descriptor.</li>
 <li>Returns: <code>{Object}</code> A socket object.
@@ -257,7 +254,7 @@
 </li>
 </ul>
 <p>Returns the socket object correspond to the given <code>fd</code>.</p>
-<h3 id="netdev.connect(fd%2C-addr%2C-port%5B%2C-callback%5D)" tabindex="-1">netdev.connect(fd, addr, port[, callback]) <a class="direct-link" href="#netdev.connect(fd%2C-addr%2C-port%5B%2C-callback%5D)">#</a></h3>
+<h3 id="netdevconnectfd-addr-port-callback" tabindex="-1">netdev.connect(fd, addr, port[, callback]) <a class="direct-link" href="#netdevconnectfd-addr-port-callback">#</a></h3>
 <ul>
 <li><strong><code>fd</code></strong> <code>{number}</code> socket file descriptor.</li>
 <li><strong><code>addr</code></strong> <code>{string}</code> Host address.</li>
@@ -269,7 +266,7 @@
 </li>
 </ul>
 <p>Establishes a socket connect. When successfully connected, the socket's <code>connect_cb</code> is called.</p>
-<h3 id="netdev.write(fd%2C-data%5B%2C-callback%5D)" tabindex="-1">netdev.write(fd, data[, callback]) <a class="direct-link" href="#netdev.write(fd%2C-data%5B%2C-callback%5D)">#</a></h3>
+<h3 id="netdevwritefd-data-callback" tabindex="-1">netdev.write(fd, data[, callback]) <a class="direct-link" href="#netdevwritefd-data-callback">#</a></h3>
 <ul>
 <li><strong><code>fd</code></strong> <code>{number}</code> socket file descriptor.</li>
 <li><strong><code>data</code></strong> <code>{Uint8Array|string}</code> Data to send.</li>
@@ -280,7 +277,7 @@
 </li>
 </ul>
 <p>Sends data on the socket connection.</p>
-<h3 id="netdev.close(fd%5B%2C-callback%5D)" tabindex="-1">netdev.close(fd[, callback]) <a class="direct-link" href="#netdev.close(fd%5B%2C-callback%5D)">#</a></h3>
+<h3 id="netdevclosefd-callback" tabindex="-1">netdev.close(fd[, callback]) <a class="direct-link" href="#netdevclosefd-callback">#</a></h3>
 <ul>
 <li><strong><code>fd</code></strong> <code>{number}</code> A socket file descriptor.</li>
 <li><strong><code>callback</code></strong> <code>{Function}</code> Called when the socket is closed.
@@ -290,7 +287,7 @@
 </li>
 </ul>
 <p>Closes the socket connection. When successfully closed, the socket's <code>close_cb</code> is called.</p>
-<h3 id="netdev.shutdown(fd%2C-how%5B%2C-callback%5D)" tabindex="-1">netdev.shutdown(fd, how[, callback]) <a class="direct-link" href="#netdev.shutdown(fd%2C-how%5B%2C-callback%5D)">#</a></h3>
+<h3 id="netdevshutdownfd-how-callback" tabindex="-1">netdev.shutdown(fd, how[, callback]) <a class="direct-link" href="#netdevshutdownfd-how-callback">#</a></h3>
 <ul>
 <li><strong><code>fd</code></strong> <code>{number}</code> A socket file descriptor.</li>
 <li><strong><code>how</code></strong> <code>{number}</code> <code>0</code> is to shut read, <code>1</code> is to shut write, and <code>2</code> is to shut both.</li>
@@ -301,7 +298,7 @@
 </li>
 </ul>
 <p>Shutdown the socket. When successfully shutdown, the socket's <code>shutdown_cb</code> is called.</p>
-<h3 id="netdev.bind(fd%2C-addr%2C-port%5B%2C-callback%5D)" tabindex="-1">netdev.bind(fd, addr, port[, callback]) <a class="direct-link" href="#netdev.bind(fd%2C-addr%2C-port%5B%2C-callback%5D)">#</a></h3>
+<h3 id="netdevbindfd-addr-port-callback" tabindex="-1">netdev.bind(fd, addr, port[, callback]) <a class="direct-link" href="#netdevbindfd-addr-port-callback">#</a></h3>
 <ul>
 <li><strong><code>fd</code></strong> <code>{number}</code> A socket file descriptor.</li>
 <li><strong><code>addr</code></strong> <code>{string}</code> Host address.</li>
@@ -313,7 +310,7 @@
 </li>
 </ul>
 <p>Bind the socket to the given address and port.</p>
-<h3 id="netdev.listen(fd%5B%2C-callback%5D)" tabindex="-1">netdev.listen(fd[, callback]) <a class="direct-link" href="#netdev.listen(fd%5B%2C-callback%5D)">#</a></h3>
+<h3 id="netdevlistenfd-callback" tabindex="-1">netdev.listen(fd[, callback]) <a class="direct-link" href="#netdevlistenfd-callback">#</a></h3>
 <ul>
 <li><strong><code>fd</code></strong> <code>{number}</code> A socket file descriptor.</li>
 <li><strong><code>callback</code></strong> <code>{Function}</code> Called when listening started.
@@ -323,25 +320,25 @@
 </li>
 </ul>
 <p>Starts to listening for connections. When a new connection is accepted, the socket's <code>accept_cb</code> is called.</p>
-<h2 id="ieee-802.11-(wifi)-device-driver" tabindex="-1">IEEE 802.11 (WiFi) Device Driver <a href="#ieee-80211-dev" id="ieee-80211-dev"></a> <a class="direct-link" href="#ieee-802.11-(wifi)-device-driver">#</a></h2>
+<h2 id="ieee-80211-wifi-device-driver" tabindex="-1">IEEE 802.11 (WiFi) Device Driver <a href="#ieee-80211-dev" id="ieee-80211-dev"></a> <a class="direct-link" href="#ieee-80211-wifi-device-driver">#</a></h2>
 <p>The IEEE 802.11 (Wi-Fi) device driver should provide the interface described in this section.</p>
 <pre class="language-typescript"><code class="language-typescript"><span class="token comment">// Interface for IEEE 802.11 device driver</span><br><span class="token keyword">interface</span> <span class="token class-name">ieee80211dev</span> <span class="token punctuation">{</span><br>  errno<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span><br>  <span class="token function-variable function">assoc_cb</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function-variable function">connect_cb</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function-variable function">disconnect_cb</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">reset</span><span class="token punctuation">(</span><span class="token function-variable function">cb</span><span class="token operator">:</span> <span class="token punctuation">(</span>err<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">scan</span><span class="token punctuation">(</span><span class="token function-variable function">cb</span><span class="token operator">:</span> <span class="token punctuation">(</span>err<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> scan_info<span class="token operator">:</span> <span class="token builtin">Array</span><span class="token operator">&lt;</span>scan_info<span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">connect</span><span class="token punctuation">(</span><span class="token function-variable function">cb</span><span class="token operator">:</span> <span class="token punctuation">(</span>err<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">disconnect</span><span class="token punctuation">(</span><span class="token function-variable function">cb</span><span class="token operator">:</span> <span class="token punctuation">(</span>err<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br>  <span class="token function">get_connection</span><span class="token punctuation">(</span><span class="token function-variable function">cb</span><span class="token operator">:</span> <span class="token punctuation">(</span>err<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> conn<span class="token operator">:</span> connection_info<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">interface</span> <span class="token class-name">scan_info</span> <span class="token punctuation">{</span><br>  bssid<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span><br>  ssid<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span><br>  security<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span><br>  rssi<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span><br>  channel<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">interface</span> <span class="token class-name">connection_info</span> <span class="token punctuation">{</span><br>  ssid<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span><br>  bssid<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-<h3 id="ieee80211dev.assoc_cb" tabindex="-1">ieee80211dev.assoc_cb <a class="direct-link" href="#ieee80211dev.assoc_cb">#</a></h3>
+<h3 id="ieee80211devassoccb" tabindex="-1">ieee80211dev.assoc_cb <a class="direct-link" href="#ieee80211devassoccb">#</a></h3>
 <ul>
 <li><code>{Function}</code></li>
 </ul>
 <p>This callback is called when wireless network is associated.</p>
-<h3 id="ieee80211dev.connect_cb" tabindex="-1">ieee80211dev.connect_cb <a class="direct-link" href="#ieee80211dev.connect_cb">#</a></h3>
+<h3 id="ieee80211devconnectcb" tabindex="-1">ieee80211dev.connect_cb <a class="direct-link" href="#ieee80211devconnectcb">#</a></h3>
 <ul>
 <li><code>{Function}</code></li>
 </ul>
 <p>This callback is called when wireless network is connected (IP assigned).</p>
-<h3 id="ieee80211dev.disconnect_cb" tabindex="-1">ieee80211dev.disconnect_cb <a class="direct-link" href="#ieee80211dev.disconnect_cb">#</a></h3>
+<h3 id="ieee80211devdisconnectcb" tabindex="-1">ieee80211dev.disconnect_cb <a class="direct-link" href="#ieee80211devdisconnectcb">#</a></h3>
 <ul>
 <li><code>{Function}</code></li>
 </ul>
 <p>This callback is called when current wireless network is disconnected.</p>
-<h3 id="ieee80211dev.reset(%5Bcallback%5D)" tabindex="-1">ieee80211dev.reset([callback]) <a class="direct-link" href="#ieee80211dev.reset(%5Bcallback%5D)">#</a></h3>
+<h3 id="ieee80211devresetcallback" tabindex="-1">ieee80211dev.reset([callback]) <a class="direct-link" href="#ieee80211devresetcallback">#</a></h3>
 <ul>
 <li><strong><code>callback</code></strong> <code>{Function}</code> Called when reset complete.
 <ul>
@@ -350,7 +347,7 @@
 </li>
 </ul>
 <p>Reset the device.</p>
-<h3 id="ieee80211dev.scan(%5Bcallback%5D)" tabindex="-1">ieee80211dev.scan([callback]) <a class="direct-link" href="#ieee80211dev.scan(%5Bcallback%5D)">#</a></h3>
+<h3 id="ieee80211devscancallback" tabindex="-1">ieee80211dev.scan([callback]) <a class="direct-link" href="#ieee80211devscancallback">#</a></h3>
 <ul>
 <li><strong><code>callback</code></strong> <code>{Function}</code> A callback function to be called when scan complete.
 <ul>
@@ -368,7 +365,7 @@
 </li>
 </ul>
 <p>Scan wireless networks.</p>
-<h3 id="ieee80211dev.connect(connectinfo%5B%2C-callback%5D)" tabindex="-1">ieee80211dev.connect(connectInfo[, callback]) <a class="direct-link" href="#ieee80211dev.connect(connectinfo%5B%2C-callback%5D)">#</a></h3>
+<h3 id="ieee80211devconnectconnectinfo-callback" tabindex="-1">ieee80211dev.connect(connectInfo[, callback]) <a class="direct-link" href="#ieee80211devconnectconnectinfo-callback">#</a></h3>
 <ul>
 <li><strong><code>connectInfo</code></strong> <code>{object}</code> Information of the wireless network to connect .
 <ul>
@@ -383,7 +380,7 @@
 </li>
 </ul>
 <p>Connect to a wireless network. The callback <code>onConnected</code> should be called when successfully disconnected.</p>
-<h3 id="ieee80211dev.disconnect(%5Bcallback%5D)" tabindex="-1">ieee80211dev.disconnect([callback]) <a class="direct-link" href="#ieee80211dev.disconnect(%5Bcallback%5D)">#</a></h3>
+<h3 id="ieee80211devdisconnectcallback" tabindex="-1">ieee80211dev.disconnect([callback]) <a class="direct-link" href="#ieee80211devdisconnectcallback">#</a></h3>
 <ul>
 <li><strong><code>callback</code></strong> <code>{Function}</code>
 <ul>
@@ -392,7 +389,7 @@
 </li>
 </ul>
 <p>Disconnect from the currently connected wireless network. The callback <code>onDisconnected</code> should be called when successfully disconnected.</p>
-<h3 id="ieee80211dev.get_connection(%5Bcallback%5D)" tabindex="-1">ieee80211dev.get_connection([callback]) <a class="direct-link" href="#ieee80211dev.get_connection(%5Bcallback%5D)">#</a></h3>
+<h3 id="ieee80211devgetconnectioncallback" tabindex="-1">ieee80211dev.get_connection([callback]) <a class="direct-link" href="#ieee80211devgetconnectioncallback">#</a></h3>
 <ul>
 <li><strong><code>callback</code></strong> <code>{Function}</code>
 <ul>

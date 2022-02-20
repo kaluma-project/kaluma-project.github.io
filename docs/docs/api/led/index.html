@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,31 +187,28 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="led" tabindex="-1">LED <a class="direct-link" href="#led">#</a></h1>
 <p>The <code>led</code> module supports LED which connect to GPIO pins. Use <code>require('led')</code> to access this module.</p>
-<h2 id="class%3A-led" tabindex="-1">Class: LED <a class="direct-link" href="#class%3A-led">#</a></h2>
+<h2 id="class-led" tabindex="-1">Class: LED <a class="direct-link" href="#class-led">#</a></h2>
 <p>An instances of <code>LED</code> represents a LED.</p>
-<h3 id="new-led(pin)" tabindex="-1">new LED(pin) <a class="direct-link" href="#new-led(pin)">#</a></h3>
+<h3 id="new-ledpin" tabindex="-1">new LED(pin) <a class="direct-link" href="#new-ledpin">#</a></h3>
 <ul>
 <li><strong><code>pin</code></strong> <code>&lt;number&gt;</code> Pin number where LED connected.</li>
 </ul>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Create the LED instance </span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">LED</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'led'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> led <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LED</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// LED connected to pin 0.</span></code></pre>
-<h3 id="on()" tabindex="-1">on() <a class="direct-link" href="#on()">#</a></h3>
+<h3 id="on" tabindex="-1">on() <a class="direct-link" href="#on">#</a></h3>
 <p>Turns on the LED.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Turn on the LED.</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">LED</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'led'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> led <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LED</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// LED connected to pin 0.</span><br>led<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="off()" tabindex="-1">off() <a class="direct-link" href="#off()">#</a></h3>
+<h3 id="off" tabindex="-1">off() <a class="direct-link" href="#off">#</a></h3>
 <p>Turns off the LED.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Turn off the LED.</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">LED</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'led'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> led <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LED</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// LED connected to pin 0.</span><br>led<span class="token punctuation">.</span><span class="token function">off</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="toggle()" tabindex="-1">toggle() <a class="direct-link" href="#toggle()">#</a></h3>
+<h3 id="toggle" tabindex="-1">toggle() <a class="direct-link" href="#toggle">#</a></h3>
 <p>This method toggles the LED.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Toggle the LED.</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">LED</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'led'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> led <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LED</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// LED connected to pin 0.</span><br>led<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// wait for 1sec</span><br>led<span class="token punctuation">.</span><span class="token function">off</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// wait for 1sec</span><br>led<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// on</span><br><span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// wait for 1sec</span><br>led<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// off</span></code></pre>
-<h3 id="read()" tabindex="-1">read() <a class="direct-link" href="#read()">#</a></h3>
+<h3 id="read" tabindex="-1">read() <a class="direct-link" href="#read">#</a></h3>
 <ul>
 <li>Returns: <code>&lt;number&gt;</code> State of the LED. 1 means LED ON and 0 means LED OFF state.</li>
 </ul>

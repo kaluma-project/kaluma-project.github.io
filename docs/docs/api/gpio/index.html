@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,45 +187,42 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="gpio" tabindex="-1">GPIO <a class="direct-link" href="#gpio">#</a></h1>
 <p>The <code>gpio</code> module supports GPIO pin abstraction. Use <code>require('gpio')</code> to access this module.</p>
-<h2 id="class%3A-gpio" tabindex="-1">Class: GPIO <a class="direct-link" href="#class%3A-gpio">#</a></h2>
+<h2 id="class-gpio" tabindex="-1">Class: GPIO <a class="direct-link" href="#class-gpio">#</a></h2>
 <p>An instances of <code>GPIO</code> represents a GPIO pin.</p>
-<h3 id="new-gpio(pin%5B%2C-mode%5D)" tabindex="-1">new GPIO(pin[, mode]) <a class="direct-link" href="#new-gpio(pin%5B%2C-mode%5D)">#</a></h3>
+<h3 id="new-gpiopin-mode" tabindex="-1">new GPIO(pin[, mode]) <a class="direct-link" href="#new-gpiopin-mode">#</a></h3>
 <ul>
 <li><strong><code>pin</code></strong> <code>&lt;number&gt;</code> The pin number which can support GPIO function.</li>
 <li><strong><code>mode</code></strong> <code>&lt;number&gt;</code> The pin mode <code>INPUT (0)</code> , <code>OUTPUT (1)</code> , <code>INPUT_PULLUP (2)</code> or <code>INPUT_PULLDOWN (3)</code> . <strong>Default:</strong> <code>INPUT</code></li>
 </ul>
 <p>Instances of the GPIO class can be created using the new keyword.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Create the GPIO instance </span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">GPIO</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gpio'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> pin <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GPIO</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="gpio.read()" tabindex="-1">gpio.read() <a class="direct-link" href="#gpio.read()">#</a></h3>
+<h3 id="gpioread" tabindex="-1">gpio.read() <a class="direct-link" href="#gpioread">#</a></h3>
 <ul>
 <li><strong>Returns:</strong> <code>&lt;number&gt;</code> The return value is <code>HIGH (1)</code> or <code>LOW (0)</code></li>
 </ul>
 <p>Read the value from the GPIO pin.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Read value from the pin 0.</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">GPIO</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gpio'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> pin <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GPIO</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">INPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> value <span class="token operator">=</span> pin<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="gpio.write(value)" tabindex="-1">gpio.write(value) <a class="direct-link" href="#gpio.write(value)">#</a></h3>
+<h3 id="gpiowritevalue" tabindex="-1">gpio.write(value) <a class="direct-link" href="#gpiowritevalue">#</a></h3>
 <ul>
 <li><strong><code>value</code></strong> <code>&lt;number&gt;</code> The value could be <code>HIGH (1)</code> or <code>LOW (0)</code>.</li>
 </ul>
 <p>Writes a value to the GPIO pin.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Write HIGH to the pin 0.</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">GPIO</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gpio'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> pin <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GPIO</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>pin<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token constant">HIGH</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="gpio.toggle()" tabindex="-1">gpio.toggle() <a class="direct-link" href="#gpio.toggle()">#</a></h3>
+<h3 id="gpiotoggle" tabindex="-1">gpio.toggle() <a class="direct-link" href="#gpiotoggle">#</a></h3>
 <p>Toggles the output value of the GPIO pin.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Write LOW to the pin 0 and toggling it.</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">GPIO</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gpio'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> pin <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GPIO</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>pin<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token constant">LOW</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Set to LOW</span><br>pin<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// HIGH</span><br>pin<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// LOW</span></code></pre>
-<h3 id="gpio.low()" tabindex="-1">gpio.low() <a class="direct-link" href="#gpio.low()">#</a></h3>
+<h3 id="gpiolow" tabindex="-1">gpio.low() <a class="direct-link" href="#gpiolow">#</a></h3>
 <p>Set the GPIO pin to <code>LOW</code>.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">GPIO</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gpio'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> pin <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GPIO</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>pin<span class="token punctuation">.</span><span class="token function">low</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="gpio.high()" tabindex="-1">gpio.high() <a class="direct-link" href="#gpio.high()">#</a></h3>
+<h3 id="gpiohigh" tabindex="-1">gpio.high() <a class="direct-link" href="#gpiohigh">#</a></h3>
 <p>Set the GPIO pin to <code>HIGH</code>.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">GPIO</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gpio'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> pin <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GPIO</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>pin<span class="token punctuation">.</span><span class="token function">high</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="gpio.irq(callback%5B%2C-event%5D)" tabindex="-1">gpio.irq(callback[, event]) <a class="direct-link" href="#gpio.irq(callback%5B%2C-event%5D)">#</a></h3>
+<h3 id="gpioirqcallback-event" tabindex="-1">gpio.irq(callback[, event]) <a class="direct-link" href="#gpioirqcallback-event">#</a></h3>
 <ul>
 <li><strong><code>callback</code></strong> <code>&lt;function&gt;(pin, event)</code> The function is called when the <strong><code>event</code></strong> is triggered on the <strong><code>pin</code></strong>. the pin and event are the arguments of the callback function.</li>
 <li><strong><code>event</code></strong> <code>&lt;number&gt;</code> set the event of the <code>pin</code>. There are three events,<code>FALLING (4)</code>, <code>RISING (8)</code>, and <code>CHANGE (12)</code>. <strong>Default:</strong> <code>CHANGE</code>.</li>
@@ -233,13 +230,13 @@
 <p>Add interrupt on the GPIO pin. Run the <strong><code>callback</code></strong> function when the <strong><code>event</code></strong> is triggered on the <strong><code>pin</code></strong>. There are three events for the interrupts. The <code>FALLING (4)</code> event is triggered when the <strong><code>pin</code></strong> state is changed from <code>HIGH</code> to <code>LOW</code>. The <code>RISING (8)</code> event is triggered when the <strong><code>pin</code></strong> state is changed from <code>LOW</code> to <code>HIGH</code>. The <code>CHANGE (12)</code> event is triggered when the <strong><code>pin</code></strong> state is changed to any states, which means the <code>CHANGE</code> event is the same as the <code>FALLING</code> + <code>RISING</code> events.</p>
 <p>The interrupt does not support level triggering, you can use setWatch() function when you want to use level triggering events (<code>LOW_LEVEL</code>, <code>HIGH_LEVEL</code>).</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Set interrupt on the GPIO0</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">GPIO</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gpio'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">// GPIO0 and GPIO1 are connected together</span><br><span class="token keyword">const</span> pin0 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GPIO</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">INPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// GPIO0 is input port which check the state change of GPIO1</span><br><span class="token keyword">const</span> pin1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GPIO</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// GPIO 1 is output</span><br>pin1<span class="token punctuation">.</span><span class="token function">low</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Set LOW on the GPIO1</span><br><br><span class="token comment">// Callback function for the GPIO0</span><br><span class="token keyword">function</span> <span class="token function">callback0</span><span class="token punctuation">(</span><span class="token parameter">pin<span class="token punctuation">,</span> mode</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Event "</span> <span class="token operator">+</span> mode <span class="token operator">+</span> <span class="token string">" is triggered on the GPIO"</span> <span class="token operator">+</span> pin<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">// Set interrupt callback function on GPIO01</span><br>pin0<span class="token punctuation">.</span><span class="token function">irq</span><span class="token punctuation">(</span>callback0<span class="token punctuation">,</span> <span class="token constant">CHANGE</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>pin1<span class="token punctuation">.</span><span class="token function">high</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Callback is called bcause GPIO0 is changed from LOW to HIGH</span><br><span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>pin0<span class="token punctuation">.</span><span class="token function">low</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Callback is called bcause GPIO0 is changed from HIGH to LOW</span></code></pre>
-<h3 id="gpio.pin" tabindex="-1">gpio.pin <a class="direct-link" href="#gpio.pin">#</a></h3>
+<h3 id="gpiopin" tabindex="-1">gpio.pin <a class="direct-link" href="#gpiopin">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code></li>
 </ul>
 <p>Pin number of the GPIO object.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Write LOW to the pin 0 and print the pin number.</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">GPIO</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gpio'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> gpio0 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GPIO</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>gpio0<span class="token punctuation">.</span>pin<span class="token punctuation">)</span> <span class="token comment">// Print pin number 0.</span></code></pre>
-<h3 id="gpio.mode" tabindex="-1">gpio.mode <a class="direct-link" href="#gpio.mode">#</a></h3>
+<h3 id="gpiomode" tabindex="-1">gpio.mode <a class="direct-link" href="#gpiomode">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code></li>
 </ul>

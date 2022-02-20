@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,24 +187,21 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="errors" tabindex="-1">Errors <a class="direct-link" href="#errors">#</a></h1>
-<h2 id="class%3A-systemerror" tabindex="-1">Class: SystemError <a class="direct-link" href="#class%3A-systemerror">#</a></h2>
+<h2 id="class-systemerror" tabindex="-1">Class: SystemError <a class="direct-link" href="#class-systemerror">#</a></h2>
 <ul>
 <li>Extends: &lt;Error&gt;</li>
 </ul>
 <p>This class represents internal system error. Please check all error codes in <a href="https://github.com/kameleon-project/kameleon/blob/master/include/err.h">err.h</a>.</p>
-<h3 id="error.errno" tabindex="-1">error.errno <a class="direct-link" href="#error.errno">#</a></h3>
+<h3 id="errorerrno" tabindex="-1">error.errno <a class="direct-link" href="#errorerrno">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code></li>
 </ul>
 <p>An error code defined in <a href="https://github.com/kameleon-project/kameleon/blob/master/include/err.h">err.h</a>.</p>
-<h3 id="error.code" tabindex="-1">error.code <a class="direct-link" href="#error.code">#</a></h3>
+<h3 id="errorcode" tabindex="-1">error.code <a class="direct-link" href="#errorcode">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code></li>
 </ul>

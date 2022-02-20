@@ -5,6 +5,13 @@
 @import '../../node_modules/bootstrap/scss/functions';
 
 // 2. Include any default variable overrides here
+$font-size-base: 1rem !default;
+$h1-font-size: $font-size-base * 2 !default;
+$h2-font-size: $font-size-base * 1.7 !default;
+$h3-font-size: $font-size-base * 1.4 !default;
+$h4-font-size: $font-size-base * 1.25 !default;
+$h5-font-size: $font-size-base * 1.1 !default;
+$h6-font-size: $font-size-base !default;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import '../../node_modules/bootstrap/scss/variables';
@@ -78,6 +85,18 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.5em;
+  font-weight: 600;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
 code:not([class*='language-']) {
   font-family: var(--font-mono);
   font-size: 0.875em;
@@ -105,18 +124,6 @@ $markdown-content-max-width: 680px;
 
 .markdown-content {
   max-width: $markdown-content-max-width;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-top: 1.5em;
-    font-weight: 700;
-    padding-bottom: 0.3rem;
-    border-bottom: 1px solid #f0f0f0;
-  }
 
   img {
     display: block;
@@ -153,19 +160,21 @@ $markdown-content-max-width: 680px;
       }
     }
   }
+}
 
-  pre[class*='language-'] {
-    width: 100%;
-    background: var(--bg-light-gray);
-    padding: 1rem 1.5rem;
-    border-radius: 0.5rem;
-    font-size: 0.875em;
+/* prism syntax highlight */
 
-    code[class*='language-'] {
-      font-family: var(--font-mono);
-      line-height: 0;
-      text-shadow: none;
-    }
+pre[class*='language-'] {
+  width: 100%;
+  background: var(--bg-light-gray);
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.875em;
+
+  code[class*='language-'] {
+    font-family: var(--font-mono);
+    line-height: 0;
+    text-shadow: none;
   }
 }
 
@@ -219,7 +228,7 @@ $markdown-content-max-width: 680px;
 }
 
 .footer {
-  border-top: 1px solid var(--border-color);
+  // border-top: 1px solid var(--border-color);
   text-align: center;
   margin-top: 3rem;
   padding-top: 3rem;
@@ -261,7 +270,38 @@ $doc-sidebar-width: 250px;
   left: 0;
   bottom: 0;
   top: 0;
-  background-color: #eee;
+  background-color: rgb(245, 245, 245);
+  border-right: 1px solid var(--border-color);
+
+  .doc-sidebar-header {
+    background-color: rgb(236, 233, 233);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .doc-sidebar-nav {
+    padding-bottom: 4rem;
+    overflow-y: auto;
+    height: 100%;
+    padding: 1rem;
+
+    .doc-section {
+      font-weight: 700;
+      padding-bottom: 0.5rem;
+    }
+
+    nav {
+      padding-bottom: 3rem;
+
+      a {
+        color: #555;
+        text-decoration: none;
+
+        &:hover {
+          color: #777;
+        }
+      }
+    }
+  }
 }
 
 .doc-body {
@@ -272,6 +312,13 @@ $doc-sidebar-width: 250px;
   .doc-sidebar {
     position: static;
     width: 100%;
+    border-right: none;
+
+    .doc-sidebar-nav {
+      nav {
+        padding-bottom: 0px;
+      }
+    }
   }
 
   .doc-body {

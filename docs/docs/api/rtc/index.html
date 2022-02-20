@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,20 +187,17 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="rtc" tabindex="-1">RTC <a class="direct-link" href="#rtc">#</a></h1>
 <p>The <code>rtc</code> module supports RTC (Real Time Clock). Use <code>require('rtc')</code> to access this module.</p>
-<h2 id="settime(time)" tabindex="-1">setTime(time) <a class="direct-link" href="#settime(time)">#</a></h2>
+<h2 id="settimetime" tabindex="-1">setTime(time) <a class="direct-link" href="#settimetime">#</a></h2>
 <ul>
 <li><strong><code>time</code></strong> <code>&lt;number&gt;</code></li>
 </ul>
 <p>Set RTC time to the number of milliseconds since Unix Epoch (UTC 1970/1/1-00:00).</p>
-<h2 id="gettime()" tabindex="-1">getTime() <a class="direct-link" href="#gettime()">#</a></h2>
+<h2 id="gettime" tabindex="-1">getTime() <a class="direct-link" href="#gettime">#</a></h2>
 <ul>
 <li><strong>Returns</strong> <code>&lt;number&gt;</code> </li>
 </ul>

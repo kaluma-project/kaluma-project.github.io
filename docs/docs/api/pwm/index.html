@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,54 +187,51 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="pwm" tabindex="-1">PWM <a class="direct-link" href="#pwm">#</a></h1>
 <p>The <code>pwm</code> module supports PWM(Pulse Width Modulation). Use <code>require('pwm')</code> to access this module.</p>
-<h2 id="class%3A-pwm" tabindex="-1">Class: PWM <a class="direct-link" href="#class%3A-pwm">#</a></h2>
+<h2 id="class-pwm" tabindex="-1">Class: PWM <a class="direct-link" href="#class-pwm">#</a></h2>
 <p>An instances of <code>PWM</code> represents a PWM object.</p>
-<h3 id="new-pwm(pin%5B%2C-frequency%5B%2C-duty%5D%5D)" tabindex="-1">new PWM(pin[, frequency[, duty]]) <a class="direct-link" href="#new-pwm(pin%5B%2C-frequency%5B%2C-duty%5D%5D)">#</a></h3>
+<h3 id="new-pwmpin-frequency-duty" tabindex="-1">new PWM(pin[, frequency[, duty]]) <a class="direct-link" href="#new-pwmpin-frequency-duty">#</a></h3>
 <ul>
 <li><strong><code>pin</code></strong> <code>&lt;number&gt;</code> The pin number which can support PWM function.</li>
 <li><strong><code>frequency</code></strong> <code>&lt;number&gt;</code> The PWM frequency in Hz. <strong>Default:</strong> <code>490</code>Hz</li>
 <li><strong><code>duty</code></strong> <code>&lt;number&gt;</code> The PWM duty cycle between <code>0.0</code> and <code>1.0</code>. <strong>Default:</strong> <code>1.0</code></li>
 </ul>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Generate 1000 Hz 50% duth PWM signal on the pin 1.</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">PWM</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'pwm'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br><span class="token keyword">const</span> pwm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PWM</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Create the PWM instance with pin 1</span><br>pwm<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Generate PWM signal</span><br><span class="token comment">// ...</span><br>pwm<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Stop PWM signal</span><br>pwm<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Close PWM port.</span></code></pre>
-<h3 id="pwm.start()" tabindex="-1">pwm.start() <a class="direct-link" href="#pwm.start()">#</a></h3>
+<h3 id="pwmstart" tabindex="-1">pwm.start() <a class="direct-link" href="#pwmstart">#</a></h3>
 <p>Start to generate PWM signal.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Generate 1000 Hz 30% duth PWM signal on the pin 1.</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">PWM</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'pwm'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br><span class="token keyword">const</span> pwm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PWM</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Create the PWM instance with pin 1</span><br>pwm<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Generate PWM signal</span></code></pre>
-<h3 id="pwm.stop()" tabindex="-1">pwm.stop() <a class="direct-link" href="#pwm.stop()">#</a></h3>
+<h3 id="pwmstop" tabindex="-1">pwm.stop() <a class="direct-link" href="#pwmstop">#</a></h3>
 <p>Stop to generate PWM signal.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Generate 1000 Hz 50% duth PWM signal on the pin 1.</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">PWM</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'pwm'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br><span class="token keyword">const</span> pwm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PWM</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Create the PWM instance with pin 1</span><br>pwm<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Generate PWM signal</span><br><span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Wait 100ms.</span><br>pwm<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Stop PWM signal</span></code></pre>
-<h3 id="pwm.getfrequency()" tabindex="-1">pwm.getFrequency() <a class="direct-link" href="#pwm.getfrequency()">#</a></h3>
+<h3 id="pwmgetfrequency" tabindex="-1">pwm.getFrequency() <a class="direct-link" href="#pwmgetfrequency">#</a></h3>
 <ul>
 <li><strong>Returns:</strong> <code>&lt;number&gt;</code> PWM frequency of the PWM instance.</li>
 </ul>
 <p>Get the PWM frequency.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Generate 1000 Hz 50% duth PWM signal on the pin 1 and print the frequency</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">PWM</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'pwm'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br><span class="token keyword">const</span> pwm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PWM</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Create the PWM instance with pin 1</span><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>pwm<span class="token punctuation">.</span><span class="token function">getFrequency</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Print current PWM frequency.</span></code></pre>
-<h3 id="pwm.setfrequency(frequency)" tabindex="-1">pwm.setFrequency(frequency) <a class="direct-link" href="#pwm.setfrequency(frequency)">#</a></h3>
+<h3 id="pwmsetfrequencyfrequency" tabindex="-1">pwm.setFrequency(frequency) <a class="direct-link" href="#pwmsetfrequencyfrequency">#</a></h3>
 <ul>
 <li><strong><code>frequency</code></strong> <code>&lt;number&gt;</code> PWM frequency of the PWM instance.</li>
 </ul>
 <p>Set the new PWM frequency.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Generate 1000 Hz 50% duth PWM signal on the pin 1 and print the frequency</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">PWM</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'pwm'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br><span class="token keyword">const</span> pwm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PWM</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Create the 1000 Hz PWM instance with pin 1</span><br>pwm<span class="token punctuation">.</span><span class="token function">setFrequency</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Change the PWM frequency to 500 Hz.</span></code></pre>
-<h3 id="pwm.getduty()" tabindex="-1">pwm.getDuty() <a class="direct-link" href="#pwm.getduty()">#</a></h3>
+<h3 id="pwmgetduty" tabindex="-1">pwm.getDuty() <a class="direct-link" href="#pwmgetduty">#</a></h3>
 <ul>
 <li><strong>Returns:</strong> <code>&lt;number&gt;</code> PWM duty of the PWM instance.</li>
 </ul>
 <p>Get the PWM duty.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Generate 1000 Hz 50% duth PWM signal on the pin 1 and print the duty</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">PWM</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'pwm'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br><span class="token keyword">const</span> pwm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PWM</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Create the PWM instance with pin 1</span><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>pwm<span class="token punctuation">.</span><span class="token function">getDuty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Print current PWM duty.</span></code></pre>
-<h3 id="pwm.setduty(duty)" tabindex="-1">pwm.setDuty(duty) <a class="direct-link" href="#pwm.setduty(duty)">#</a></h3>
+<h3 id="pwmsetdutyduty" tabindex="-1">pwm.setDuty(duty) <a class="direct-link" href="#pwmsetdutyduty">#</a></h3>
 <ul>
 <li><strong><code>duty</code></strong> <code>&lt;number&gt;</code> PWM duty of the PWM instance.</li>
 </ul>
 <p>Set the new PWM duty.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Generate 1000 Hz 50% duth PWM signal on the pin 1 and print the duty</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">PWM</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'pwm'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br><span class="token keyword">const</span> pwm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PWM</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Create the PWM instance with pin 1</span><br>pwm<span class="token punctuation">.</span><span class="token function">setDuty</span><span class="token punctuation">(</span><span class="token number">0.7</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Change the PWM duty to 70%.</span></code></pre>
-<h3 id="pwm.close()" tabindex="-1">pwm.close() <a class="direct-link" href="#pwm.close()">#</a></h3>
+<h3 id="pwmclose" tabindex="-1">pwm.close() <a class="direct-link" href="#pwmclose">#</a></h3>
 <p>Close the PWM port.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Generate 1000 Hz 50% duth PWM signal on the pin 1.</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">PWM</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'pwm'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br><span class="token keyword">const</span> pwm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PWM</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Create the PWM instance with pin 3</span><br>pwm<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Generate PWM signal</span><br><span class="token comment">// ...</span><br>pwm<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Stop PWM signal</span><br>pwm<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Close PWM port.</span></code></pre>
 

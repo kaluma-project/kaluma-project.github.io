@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,72 +187,69 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="events" tabindex="-1">Events <a class="direct-link" href="#events">#</a></h1>
 <ul>
 <li>The <code>events</code> module supports events. Use <code>require('events')</code> to access this module.</li>
 </ul>
-<h2 id="class%3A-eventemitter" tabindex="-1">Class: EventEmitter <a class="direct-link" href="#class%3A-eventemitter">#</a></h2>
+<h2 id="class-eventemitter" tabindex="-1">Class: EventEmitter <a class="direct-link" href="#class-eventemitter">#</a></h2>
 <p>An instance of <code>EventEmitter</code> class will emits events. If you need to define a class emitting events, you can defined a class by extending from <code>EventEmitter</code>.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span>EventEmitter<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'events'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token keyword">class</span> <span class="token class-name">MyEmitter</span> <span class="token keyword">extends</span> <span class="token class-name">EventEmitter</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><br><br><span class="token keyword">var</span> myEmitter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyEmitter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>myEmitter<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'event'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'event occurred!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>myEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'event'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="emitter.addlistener(eventname%2C-listener)" tabindex="-1">emitter.addListener(eventName, listener) <a class="direct-link" href="#emitter.addlistener(eventname%2C-listener)">#</a></h3>
+<h3 id="emitteraddlistenereventname-listener" tabindex="-1">emitter.addListener(eventName, listener) <a class="direct-link" href="#emitteraddlistenereventname-listener">#</a></h3>
 <ul>
 <li><strong><code>eventName</code></strong> <code>{string}</code> The name of event</li>
 <li><strong><code>listener</code></strong> <code>{function}</code> The callback function</li>
 </ul>
 <p>Add the <code>listener</code> function to the end of the listener array for the event named <code>eventName</code>.</p>
 <pre class="language-javascript"><code class="language-javascript">server<span class="token punctuation">.</span><span class="token function">addListener</span><span class="token punctuation">(</span><span class="token string">'connect'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// equivalent to server.on</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'server connected'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="emitter.emit(eventname%5B%2C-...args%5D)" tabindex="-1">emitter.emit(eventName[, ...args]) <a class="direct-link" href="#emitter.emit(eventname%5B%2C-...args%5D)">#</a></h3>
+<h3 id="emitteremiteventname-args" tabindex="-1">emitter.emit(eventName[, ...args]) <a class="direct-link" href="#emitteremiteventname-args">#</a></h3>
 <ul>
 <li><strong><code>eventName</code></strong> <code>{string}</code> The name of event</li>
 <li><strong><code>...args</code></strong> <code>{any}</code> Arguments to be passed to the listener functions.</li>
 </ul>
 <p>Synchronously calls each of the listeners registered for the event named <code>eventName</code>, in the order they were registered, passing the supplied arguments to each.</p>
 <pre class="language-javascript"><code class="language-javascript">server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "data received"</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><br><br><span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token string">"data recived"</span><br>server<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="emitter.on(eventname%2C-listener)" tabindex="-1">emitter.on(eventName, listener) <a class="direct-link" href="#emitter.on(eventname%2C-listener)">#</a></h3>
+<h3 id="emitteroneventname-listener" tabindex="-1">emitter.on(eventName, listener) <a class="direct-link" href="#emitteroneventname-listener">#</a></h3>
 <ul>
 <li><strong><code>eventName</code></strong> <code>{string}</code> The name of event.</li>
 <li><strong><code>listener</code></strong> <code>{function}</code> The callback function.</li>
 </ul>
 <p>Alias for <code>emitter.addListener(eventName, listener)</code>.</p>
 <pre class="language-javascript"><code class="language-javascript">server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'connect'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'server connected'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="emitter.once(eventname%2C-listener)" tabindex="-1">emitter.once(eventName, listener) <a class="direct-link" href="#emitter.once(eventname%2C-listener)">#</a></h3>
+<h3 id="emitteronceeventname-listener" tabindex="-1">emitter.once(eventName, listener) <a class="direct-link" href="#emitteronceeventname-listener">#</a></h3>
 <ul>
 <li><strong><code>eventName</code></strong> <code>{string}</code> The name of event.</li>
 <li><strong><code>listener</code></strong> <code>{function}</code> The callback function.</li>
 </ul>
 <p>Add one-time <code>listener</code> for the event named <code>eventName</code>. When the event is triggered, the <code>listener</code> function is called and then removed from the listener array of the event.</p>
 <pre class="language-javascript"><code class="language-javascript">server<span class="token punctuation">.</span><span class="token function">once</span><span class="token punctuation">(</span><span class="token string">'connect'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'connected'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><br><br>server<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'connect'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'connected' printed</span><br>server<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'connect'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// nothing printed</span></code></pre>
-<h3 id="emitter.removelistener(eventname%2C-listener)" tabindex="-1">emitter.removeListener(eventName, listener) <a class="direct-link" href="#emitter.removelistener(eventname%2C-listener)">#</a></h3>
+<h3 id="emitterremovelistenereventname-listener" tabindex="-1">emitter.removeListener(eventName, listener) <a class="direct-link" href="#emitterremovelistenereventname-listener">#</a></h3>
 <ul>
 <li><strong><code>eventName</code></strong> <code>{string}</code> The name of event.</li>
 <li><strong><code>listener</code></strong> <code>{function}</code> The callback function.</li>
 </ul>
 <p>Remove the <code>listener</code> function from the listener array of the event name <code>eventName</code>.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">connectListener</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'connected'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br>server<span class="token punctuation">.</span><span class="token function">addListener</span><span class="token punctuation">(</span><span class="token string">'connect'</span><span class="token punctuation">,</span> connectListener<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// eq to server.on</span><br>server<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'connect'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'connected' printed</span><br><br>server<span class="token punctuation">.</span><span class="token function">removeListener</span><span class="token punctuation">(</span><span class="token string">'connect'</span> connectListener<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// eq to server.off</span><br>server<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'connect'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// nothing printed</span></code></pre>
-<h3 id="emitter.removealllisteners(%5Beventname%5D)" tabindex="-1">emitter.removeAllListeners([eventName]) <a class="direct-link" href="#emitter.removealllisteners(%5Beventname%5D)">#</a></h3>
+<h3 id="emitterremovealllistenerseventname" tabindex="-1">emitter.removeAllListeners([eventName]) <a class="direct-link" href="#emitterremovealllistenerseventname">#</a></h3>
 <ul>
 <li><strong><code>eventName</code></strong> <code>{string}</code></li>
 </ul>
 <p>Remove all listeners of the event named <code>eventName</code>. </p>
-<h3 id="emitter.off(eventname%2C-listener)" tabindex="-1">emitter.off(eventName, listener) <a class="direct-link" href="#emitter.off(eventname%2C-listener)">#</a></h3>
+<h3 id="emitteroffeventname-listener" tabindex="-1">emitter.off(eventName, listener) <a class="direct-link" href="#emitteroffeventname-listener">#</a></h3>
 <ul>
 <li><strong><code>eventName</code></strong> <code>{string}</code> The name of event.</li>
 <li><strong><code>listener</code></strong> <code>{function}</code> The callback function</li>
 </ul>
 <p>Alias for <code>emitter.removeListener(eventName, listener)</code>.</p>
-<h3 id="emitter.listeners(eventname)" tabindex="-1">emitter.listeners(eventName) <a class="direct-link" href="#emitter.listeners(eventname)">#</a></h3>
+<h3 id="emitterlistenerseventname" tabindex="-1">emitter.listeners(eventName) <a class="direct-link" href="#emitterlistenerseventname">#</a></h3>
 <ul>
 <li><strong><code>eventName</code></strong> <code>{string}</code> The name of event.</li>
 <li><strong>Returns:</strong> <code>{Array&lt;Function&gt;}</code></li>
 </ul>
 <p>Return all listeners of the given event.</p>
-<h3 id="emitter.listenercount(eventname)" tabindex="-1">emitter.listenerCount(eventName) <a class="direct-link" href="#emitter.listenercount(eventname)">#</a></h3>
+<h3 id="emitterlistenercounteventname" tabindex="-1">emitter.listenerCount(eventName) <a class="direct-link" href="#emitterlistenercounteventname">#</a></h3>
 <ul>
 <li><strong><code>eventName</code></strong> <code>{string}</code> The name of event.</li>
 <li><strong>Returns:</strong> <code>{number}</code></li>

@@ -11,11 +11,6 @@ __Kaluma__ is a tiny and efficient JavaScript runtime for RP2040 (Raspberry Pi P
 - Support RP2's <u>PIO (Programmable I/O) assembly</u> embeddable in JavaScript code.
 - Provides very friendly API that resembles <u>Node.js</u> and <u>Arduino</u>.
 
-__Useful Links__
-
-- [Kaluma On-line Emulator](https://wokwi.com/projects/new/kaluma-pi-pico) (Wokwi)
-
-
 ### Installation
 
 ![Pico](/images/pico-bootsel.png)

@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,10 +187,7 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="storage" tabindex="-1">Storage <a class="direct-link" href="#storage">#</a></h1>
@@ -198,36 +195,36 @@
 <blockquote>
 <p>Please note that typically internal flash memory is used to store data items. As you know flash memory has finite number of write/erase cycles (less than tens of thousands), so please do not use this storage API for the jobs need frequently write/erase cycles.</p>
 </blockquote>
-<h2 id="object%3A-storage" tabindex="-1">Object: Storage <a class="direct-link" href="#object%3A-storage">#</a></h2>
-<h3 id="storage.length" tabindex="-1">storage.length <a class="direct-link" href="#storage.length">#</a></h3>
+<h2 id="object-storage" tabindex="-1">Object: Storage <a class="direct-link" href="#object-storage">#</a></h2>
+<h3 id="storagelength" tabindex="-1">storage.length <a class="direct-link" href="#storagelength">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code></li>
 </ul>
 <p>Returns the number of data items in the storage.</p>
 <pre class="language-javascript"><code class="language-javascript">storage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">,</span> <span class="token string">"value1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>storage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"key2"</span><span class="token punctuation">,</span> <span class="token string">"value2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>storage<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span></code></pre>
-<h3 id="storage.getitem(key)" tabindex="-1">storage.getItem(key) <a class="direct-link" href="#storage.getitem(key)">#</a></h3>
+<h3 id="storagegetitemkey" tabindex="-1">storage.getItem(key) <a class="direct-link" href="#storagegetitemkey">#</a></h3>
 <ul>
 <li><strong><code>key</code></strong> <code>&lt;string&gt;</code> </li>
 </ul>
 <p>Return the value associated with the given key.</p>
 <pre class="language-javascript"><code class="language-javascript">storage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">,</span> <span class="token string">"value1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> value1 <span class="token operator">=</span> storage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> value2 <span class="token operator">=</span> storage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"key2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// null</span><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "value1"</span></code></pre>
-<h3 id="storage.setitem(key%2C-value)" tabindex="-1">storage.setItem(key, value) <a class="direct-link" href="#storage.setitem(key%2C-value)">#</a></h3>
+<h3 id="storagesetitemkey-value" tabindex="-1">storage.setItem(key, value) <a class="direct-link" href="#storagesetitemkey-value">#</a></h3>
 <ul>
 <li><code>key</code> <code>&lt;string&gt;</code> </li>
 <li><code>value</code> <code>&lt;string&gt;</code> </li>
 </ul>
 <p>Add the key with the value to the storage.</p>
 <pre class="language-javascript"><code class="language-javascript">storage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">,</span> <span class="token string">"value1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> value1 <span class="token operator">=</span> storage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "value1"</span><br>storage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">,</span> <span class="token string">"new value"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>value1 <span class="token operator">=</span> storage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "new value"</span></code></pre>
-<h3 id="storage.removeitem(key)" tabindex="-1">storage.removeItem(key) <a class="direct-link" href="#storage.removeitem(key)">#</a></h3>
+<h3 id="storageremoveitemkey" tabindex="-1">storage.removeItem(key) <a class="direct-link" href="#storageremoveitemkey">#</a></h3>
 <ul>
 <li><strong><code>key</code></strong> <code>&lt;string&gt;</code> </li>
 </ul>
 <p>Remove the data item associated with the given key.</p>
 <pre class="language-javascript"><code class="language-javascript">storage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">,</span> <span class="token string">"value1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>storage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> value1 <span class="token operator">=</span> storage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// null</span></code></pre>
-<h3 id="storage.clear()" tabindex="-1">storage.clear() <a class="direct-link" href="#storage.clear()">#</a></h3>
+<h3 id="storageclear" tabindex="-1">storage.clear() <a class="direct-link" href="#storageclear">#</a></h3>
 <p>Remove all the data items in the storage.</p>
 <pre class="language-javascript"><code class="language-javascript">storage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">,</span> <span class="token string">"value1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>storage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"key2"</span><span class="token punctuation">,</span> <span class="token string">"value2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>storage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> value1 <span class="token operator">=</span> storage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"key1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// null</span><br><span class="token keyword">var</span> value2 <span class="token operator">=</span> storage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"ket2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// null</span></code></pre>
-<h3 id="storage.key(index)" tabindex="-1">storage.key(index) <a class="direct-link" href="#storage.key(index)">#</a></h3>
+<h3 id="storagekeyindex" tabindex="-1">storage.key(index) <a class="direct-link" href="#storagekeyindex">#</a></h3>
 <ul>
 <li><strong><code>index</code></strong> <code>&lt;number&gt;</code> </li>
 <li><strong>Returns:</strong> <code>&lt;string&gt;</code> </li>

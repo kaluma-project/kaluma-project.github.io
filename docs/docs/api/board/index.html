@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,46 +187,43 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="board" tabindex="-1">Board <a class="direct-link" href="#board">#</a></h1>
 <p>The <code>board</code> object provide the board specific properties which you are currently using.</p>
-<h2 id="object%3A-board" tabindex="-1">Object: board <a class="direct-link" href="#object%3A-board">#</a></h2>
-<h3 id="board.name" tabindex="-1"><a href="http://board.name">board.name</a> <a class="direct-link" href="#board.name">#</a></h3>
+<h2 id="object-board" tabindex="-1">Object: board <a class="direct-link" href="#object-board">#</a></h2>
+<h3 id="boardname" tabindex="-1"><a href="http://board.name">board.name</a> <a class="direct-link" href="#boardname">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code></li>
 </ul>
 <p>The ID of the target board. ex) <code>pico</code>, ...</p>
 <pre class="language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>board<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// e.g.) 'pico' for Raspberry Pi Pico.</span></code></pre>
 <p>For more properties, please check the page for each board.</p>
-<h3 id="board.led" tabindex="-1">board.LED <a class="direct-link" href="#board.led">#</a></h3>
+<h3 id="boardled" tabindex="-1">board.LED <a class="direct-link" href="#boardled">#</a></h3>
 <p>The pin number of the on-board LED.</p>
-<h3 id="board.gpio(pin%5B%2C-mode%5D)" tabindex="-1">board.gpio(pin[, mode]) <a class="direct-link" href="#board.gpio(pin%5B%2C-mode%5D)">#</a></h3>
+<h3 id="boardgpiopin-mode" tabindex="-1">board.gpio(pin[, mode]) <a class="direct-link" href="#boardgpiopin-mode">#</a></h3>
 <p>Returns an instance of <a href="/docs/api/gpio">GPIO</a> class. All arguments are passed to the constructor.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> gpio <span class="token operator">=</span> board<span class="token punctuation">.</span><span class="token function">gpio</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>gpio<span class="token punctuation">.</span><span class="token function">high</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="board.led(pin)" tabindex="-1">board.led(pin) <a class="direct-link" href="#board.led(pin)">#</a></h3>
+<h3 id="boardledpin" tabindex="-1">board.led(pin) <a class="direct-link" href="#boardledpin">#</a></h3>
 <p>Returns an instance of <a href="/docs/api/led">LED</a> class. All arguments are passed to the constructor.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> led <span class="token operator">=</span> board<span class="token punctuation">.</span><span class="token function">led</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>led<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="board.button(pin%5B%2C-options%5D)" tabindex="-1">board.button(pin[, options]) <a class="direct-link" href="#board.button(pin%5B%2C-options%5D)">#</a></h3>
+<h3 id="boardbuttonpin-options" tabindex="-1">board.button(pin[, options]) <a class="direct-link" href="#boardbuttonpin-options">#</a></h3>
 <p>Returns an instance of <a href="/docs/api/button">Button</a> class. All arguments are passed to the constructor.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> btn0 <span class="token operator">=</span> board<span class="token punctuation">.</span><span class="token function">button</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>btn0<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'button clicked'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="board.pwm(pin%5B%2C-frequency%5B%2C-duty%5D%5D)" tabindex="-1">board.pwm(pin[, frequency[, duty]]) <a class="direct-link" href="#board.pwm(pin%5B%2C-frequency%5B%2C-duty%5D%5D)">#</a></h3>
+<h3 id="boardpwmpin-frequency-duty" tabindex="-1">board.pwm(pin[, frequency[, duty]]) <a class="direct-link" href="#boardpwmpin-frequency-duty">#</a></h3>
 <p>Returns an instance of <a href="/docs/api/pwm">PWM</a> class. All arguments are passed to the constructor.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> pwm1 <span class="token operator">=</span> board<span class="token punctuation">.</span><span class="token function">pwm</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>pwm1<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="board.adc(pin)" tabindex="-1">board.adc(pin) <a class="direct-link" href="#board.adc(pin)">#</a></h3>
+<h3 id="boardadcpin" tabindex="-1">board.adc(pin) <a class="direct-link" href="#boardadcpin">#</a></h3>
 <p>Returns an instance of <a href="/docs/api/adc">ADC</a> class. All arguments are passed to the constructor.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> adc3 <span class="token operator">=</span> board<span class="token punctuation">.</span><span class="token function">adc</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>adc<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Read analog value from pin 26.</span></code></pre>
-<h3 id="board.i2c(bus%5B%2C-options%5D)" tabindex="-1">board.i2c(bus[, options]) <a class="direct-link" href="#board.i2c(bus%5B%2C-options%5D)">#</a></h3>
+<h3 id="boardi2cbus-options" tabindex="-1">board.i2c(bus[, options]) <a class="direct-link" href="#boardi2cbus-options">#</a></h3>
 <p>Returns an instance of <a href="/docs/api/i2c">I2C</a> class. All arguments are passed to the constructor.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> i2c0 <span class="token operator">=</span> board<span class="token punctuation">.</span><span class="token function">i2c</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <br>i2c0<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0x6b</span><span class="token punctuation">,</span> <span class="token number">0x00</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0x68</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>i2c0<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="board.spi(bus%5B%2C-options%5D)" tabindex="-1">board.spi(bus[, options]) <a class="direct-link" href="#board.spi(bus%5B%2C-options%5D)">#</a></h3>
+<h3 id="boardspibus-options" tabindex="-1">board.spi(bus[, options]) <a class="direct-link" href="#boardspibus-options">#</a></h3>
 <p>Returns an instance of <a href="/docs/api/spi">SPI</a> class. All arguments are passed to the constructor.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> spi0 <span class="token operator">=</span> board<span class="token punctuation">.</span><span class="token function">spi</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>spi0<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0x6b</span><span class="token punctuation">,</span> <span class="token number">0x00</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>spi0<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="board.uart(port%5B%2C-options%5D)" tabindex="-1">board.uart(port[, options]) <a class="direct-link" href="#board.uart(port%5B%2C-options%5D)">#</a></h3>
+<h3 id="boarduartport-options" tabindex="-1">board.uart(port[, options]) <a class="direct-link" href="#boarduartport-options">#</a></h3>
 <p>Returns an instance of <a href="/docs/api/uart">UART</a> class. All arguments are passed to the constructor.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> serial0 <span class="token operator">=</span> board<span class="token punctuation">.</span><span class="token function">uart</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>serial0<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'Hello, world\n'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>serial0<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 

@@ -24,12 +24,12 @@
   </head>
   <body>
     <nav class="doc-sidebar">
-      <div class="p-3 border-bottom">
+      <div class="doc-sidebar-header p-3 border-bottom">
         <a href="/"><img src="/images/kaluma-logo.png" width="32px"></a>
-        Kaluma Documentation
+        <span class="ms-2 fw-bold">Kaluma Docs</span>
       </div>
-      <aside class="p-3" style="overflow-y: auto; height: 100%;">
-        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav" style="padding-bottom: 5rem;">
+      <aside class="doc-sidebar-nav">
+        <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
             
               <li>
@@ -45,14 +45,14 @@
               </li>
             
             <br>
-            <b>BOARDS</b>
+            <div class="doc-section">Boards</div>
             
               <li>
                 <a href="/docs/boards/rp2/">RP2 (Raspberry Pi Pico)</a>
               </li>
             
             <br>
-            <b>API</b>
+            <div class="doc-section">API</div>
             
               <li>
                 <a href="/docs/api/adc/">ADC</a>
@@ -187,23 +187,20 @@
       </aside>
     </nav>
     <div class="doc-body">
-      <div class="text-end p-3 border-bottom">
-        v1.0
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button>
-      </div>
+      <!-- <div class="text-end p-3 border-bottom"> v1.0 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docs-nav" aria-expanded="false">=</button> </div> -->
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="console" tabindex="-1">Console <a class="direct-link" href="#console">#</a></h1>
 <p>The <code>console</code> object provide the simple debugging console which provide a log and error message.</p>
-<h2 id="object%3A-console" tabindex="-1">Object: console <a class="direct-link" href="#object%3A-console">#</a></h2>
+<h2 id="object-console" tabindex="-1">Object: console <a class="direct-link" href="#object-console">#</a></h2>
 <p>Console object is a global object.</p>
-<h3 id="console.log(%5B...data%5D)" tabindex="-1">console.log([...data]) <a class="direct-link" href="#console.log(%5B...data%5D)">#</a></h3>
+<h3 id="consolelogdata" tabindex="-1">console.log([...data]) <a class="direct-link" href="#consolelogdata">#</a></h3>
 <ul>
 <li><strong><code>...data</code></strong>  <code>&lt;any&gt;</code>Data which is shown in the console.</li>
 </ul>
 <p>Print out the data. to the console. The all data are converted to String object automatically so there's no need to change it to String object.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// print out "100 string value true 1,2,3"</span><br><span class="token keyword">var</span> number <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>number<span class="token punctuation">,</span> <span class="token string">"string value"</span><span class="token punctuation">,</span> result<span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="console.error(%5B...data%5D)" tabindex="-1">console.error([...data]) <a class="direct-link" href="#console.error(%5B...data%5D)">#</a></h3>
+<h3 id="consoleerrordata" tabindex="-1">console.error([...data]) <a class="direct-link" href="#consoleerrordata">#</a></h3>
 <ul>
 <li><strong><code>...data</code></strong>  <code>&lt;any&gt;</code>Data which is shown in the console.</li>
 </ul>
