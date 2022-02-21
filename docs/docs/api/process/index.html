@@ -44,6 +44,9 @@
                 <a href="/docs/repl/">REPL</a>
               </li>
             
+            <li>
+              <a href="https://github.com/kaluma-project/examples" target="_blank">Examples</a>
+            </li>
             <br>
             <div class="doc-section">Boards</div>
             
@@ -195,39 +198,39 @@
 <li>The <code>process</code> object provide the information about the process.</li>
 </ul>
 <h2 id="object-process" tabindex="-1">Object: process <a class="direct-link" href="#object-process">#</a></h2>
-<h3 id="processarch" tabindex="-1">process.arch <a class="direct-link" href="#processarch">#</a></h3>
+<h3 id="process-arch" tabindex="-1">process.arch <a class="direct-link" href="#process-arch">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code>ex) 'arm', 'x64', ...</li>
 </ul>
 <p>The system architecture which the Kaluma firmware is compiled. </p>
-<h3 id="processplatform" tabindex="-1">process.platform <a class="direct-link" href="#processplatform">#</a></h3>
+<h3 id="process-platform" tabindex="-1">process.platform <a class="direct-link" href="#process-platform">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code>ex) 'linux', 'darwin', 'unknown', ...</li>
 </ul>
 <p>The OS system which the Kaluma firmware is running.</p>
-<h3 id="processversion" tabindex="-1">process.version <a class="direct-link" href="#processversion">#</a></h3>
+<h3 id="process-version" tabindex="-1">process.version <a class="direct-link" href="#process-version">#</a></h3>
 <ul>
 <li><code>&lt;string&gt;</code>version number, semver format. ex) '0.1.0', ...</li>
 </ul>
-<h3 id="processbuiltinmodules" tabindex="-1">process.builtin_modules <a class="direct-link" href="#processbuiltinmodules">#</a></h3>
+<h3 id="process-builtin-modules" tabindex="-1">process.builtin_modules <a class="direct-link" href="#process-builtin-modules">#</a></h3>
 <ul>
 <li><code>&lt;string[]&gt;</code>array of built-in module names. </li>
 </ul>
 <p>There's no need to use <code>require</code> before using the built-in module.</p>
-<h3 id="processgetbuiltinmodulebuiltinmodulename" tabindex="-1">process.getBuiltinModule(builtin_module_name) <a class="direct-link" href="#processgetbuiltinmodulebuiltinmodulename">#</a></h3>
+<h3 id="process-getbuiltinmodule" tabindex="-1">process.getBuiltinModule(builtin_module_name) <a class="direct-link" href="#process-getbuiltinmodule">#</a></h3>
 <ul>
 <li><strong><code>builtin_module_name</code></strong> <code>&lt;string&gt;</code></li>
 <li><strong>Returns:</strong> <code>&lt;function&gt;</code> </li>
 </ul>
 <p>load the builtin module and return the module as a function</p>
-<h3 id="processbindingnativemodulename" tabindex="-1">process.binding(native_module_name) <a class="direct-link" href="#processbindingnativemodulename">#</a></h3>
+<h3 id="process-binding" tabindex="-1">process.binding(native_module_name) <a class="direct-link" href="#process-binding">#</a></h3>
 <ul>
 <li><strong><code>native_module_name</code></strong> <code>&lt;string&gt;</code></li>
 <li><strong>Returns:</strong> <code>&lt;function&gt;</code></li>
 </ul>
 <p>load a native module</p>
 <p>Has properties  : binding has native module names as properties</p>
-<h3 id="processmemoryusage" tabindex="-1">process.memoryUsage() <a class="direct-link" href="#processmemoryusage">#</a></h3>
+<h3 id="process-memoryusage" tabindex="-1">process.memoryUsage() <a class="direct-link" href="#process-memoryusage">#</a></h3>
 <ul>
 <li><strong>Returns:</strong> <code>&lt;object&gt;</code> 
 <ul>
@@ -238,13 +241,13 @@
 </li>
 </ul>
 <p>Returns an object describing memory usage.</p>
-<h3 id="processstdin" tabindex="-1">process.stdin <a class="direct-link" href="#processstdin">#</a></h3>
+<h3 id="process-stdin" tabindex="-1">process.stdin <a class="direct-link" href="#process-stdin">#</a></h3>
 <ul>
 <li><code>&lt;</code><a href="/docs/api/stream/#class-stream"><code>Stream</code></a><code>&gt;</code> </li>
 </ul>
 <p>Returns a stream object connected to standard input.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// reads 100 bytes from standard in</span><br><span class="token keyword">let</span> size <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br><span class="token keyword">while</span> <span class="token punctuation">(</span>size <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">let</span> chunk <span class="token operator">=</span> process<span class="token punctuation">.</span>stdin<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>chunk<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">let</span> s <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> chunk<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'data = '</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    size <span class="token operator">+=</span> chunk<span class="token punctuation">.</span>length<span class="token punctuation">;</span><br>  <span class="token punctuation">}</span>  <br><span class="token punctuation">}</span></code></pre>
-<h3 id="processstdout" tabindex="-1">process.stdout <a class="direct-link" href="#processstdout">#</a></h3>
+<h3 id="process-stdout" tabindex="-1">process.stdout <a class="direct-link" href="#process-stdout">#</a></h3>
 <ul>
 <li><code>&lt;</code><a href="/docs/api/stream/#class-stream"><code>Stream</code></a><code>&gt;</code></li>
 </ul>

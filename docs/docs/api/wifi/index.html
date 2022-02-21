@@ -44,6 +44,9 @@
                 <a href="/docs/repl/">REPL</a>
               </li>
             
+            <li>
+              <a href="https://github.com/kaluma-project/examples" target="_blank">Examples</a>
+            </li>
             <br>
             <div class="doc-section">Boards</div>
             
@@ -203,12 +206,12 @@
 <h3 id="new-wifi" tabindex="-1">new WiFi() <a class="direct-link" href="#new-wifi">#</a></h3>
 <p>Create an instance of <code>Wi-Fi</code> class.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> WiFi <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'wifi'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>WiFi<span class="token punctuation">;</span><br><span class="token keyword">var</span> wifi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WiFi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="wifiresetcallback" tabindex="-1">wifi.reset([callback]) <a class="direct-link" href="#wifiresetcallback">#</a></h3>
+<h3 id="wifi-reset" tabindex="-1">wifi.reset([callback]) <a class="direct-link" href="#wifi-reset">#</a></h3>
 <ul>
 <li><strong><code>callback</code></strong> <code>{Function}</code> Called when reset complete.</li>
 </ul>
 <p>Reset the Wi-Fi device.</p>
-<h3 id="wifiscancallback" tabindex="-1">wifi.scan([callback]) <a class="direct-link" href="#wifiscancallback">#</a></h3>
+<h3 id="wifi-scan" tabindex="-1">wifi.scan([callback]) <a class="direct-link" href="#wifi-scan">#</a></h3>
 <ul>
 <li><strong><code>callback</code></strong><code>{Function}</code> 
 <ul>
@@ -227,7 +230,7 @@
 </ul>
 <p>Scan Wi-Fi networks.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span>WiFi<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'wifi'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> wifi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WiFi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>wifi<span class="token punctuation">.</span><span class="token function">scan</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> scanResults</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>scanResults<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="wificonnectconnectinfo-callback" tabindex="-1">wifi.connect([connectInfo][, callback]) <a class="direct-link" href="#wificonnectconnectinfo-callback">#</a></h3>
+<h3 id="wifi-connect" tabindex="-1">wifi.connect([connectInfo][, callback]) <a class="direct-link" href="#wifi-connect">#</a></h3>
 <ul>
 <li><strong><code>connectInfo</code></strong> <code>{object}</code> Information to connect a Wi-Fi network.
 <ul>
@@ -249,7 +252,7 @@
 <pre class="language-javascript"><code class="language-javascript">storage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'WIFI_SSID'</span><span class="token punctuation">,</span> <span class="token string">'MyHome'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>storage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'WIFI_PASSWORD'</span><span class="token punctuation">,</span> <span class="token string">'12345678'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>And then, call <code>connect</code> method without <code>connectInfo</code> argument as below.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span>WiFi<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'wifi'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> wifi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WiFi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>wifi<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span><br>    <span class="token comment">// add your code using Wi-fi connection</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="wifidisconnectcallback" tabindex="-1">wifi.disconnect([callback]) <a class="direct-link" href="#wifidisconnectcallback">#</a></h3>
+<h3 id="wifi-disconnect" tabindex="-1">wifi.disconnect([callback]) <a class="direct-link" href="#wifi-disconnect">#</a></h3>
 <ul>
 <li><strong><code>callback</code></strong> <code>{Function}</code>
 <ul>
@@ -258,7 +261,7 @@
 </li>
 </ul>
 <p>Disconnect from currently connected Wi-Fi network.</p>
-<h3 id="wifigetconnectioncallback" tabindex="-1">wifi.getConnection([callback]) <a class="direct-link" href="#wifigetconnectioncallback">#</a></h3>
+<h3 id="wifi-getconnection" tabindex="-1">wifi.getConnection([callback]) <a class="direct-link" href="#wifi-getconnection">#</a></h3>
 <ul>
 <li><strong><code>callback</code></strong> <code>{Function}</code>
 <ul>
@@ -273,11 +276,11 @@
 </li>
 </ul>
 <p>Get connection information of currently connected Wi-Fi network.</p>
-<h3 id="event-associated" tabindex="-1">Event: 'associated' <a class="direct-link" href="#event-associated">#</a></h3>
+<h3 id="event--associated-" tabindex="-1">Event: 'associated' <a class="direct-link" href="#event--associated-">#</a></h3>
 <p>This event is emitted when Wi-Fi network is connected. IP may not be assigned.</p>
-<h3 id="event-connected" tabindex="-1">Event: 'connected' <a class="direct-link" href="#event-connected">#</a></h3>
+<h3 id="event--connected-" tabindex="-1">Event: 'connected' <a class="direct-link" href="#event--connected-">#</a></h3>
 <p>This event is emitted when Wi-Fi network is connected with IP assignment.</p>
-<h3 id="event-disconnected" tabindex="-1">Event: 'disconnected' <a class="direct-link" href="#event-disconnected">#</a></h3>
+<h3 id="event--disconnected-" tabindex="-1">Event: 'disconnected' <a class="direct-link" href="#event--disconnected-">#</a></h3>
 <p>This event is emitted when Wi-Fi network is disconnected.</p>
 
         </div>

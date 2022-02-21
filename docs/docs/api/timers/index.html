@@ -44,6 +44,9 @@
                 <a href="/docs/repl/">REPL</a>
               </li>
             
+            <li>
+              <a href="https://github.com/kaluma-project/examples" target="_blank">Examples</a>
+            </li>
             <br>
             <div class="doc-section">Boards</div>
             
@@ -191,7 +194,7 @@
       <main class="container d-flex justify-content-center markdown-content" style="padding-bottom: 5rem;">
         <div style="width: 100%">
           <h1 id="timers" tabindex="-1">Timers <a class="direct-link" href="#timers">#</a></h1>
-<h2 id="delaymsec" tabindex="-1">delay(msec) <a href="#delay" id="delay"></a> <a class="direct-link" href="#delaymsec">#</a></h2>
+<h2 id="delay" tabindex="-1">delay(msec) <a href="#delay" id="delay"></a> <a class="direct-link" href="#delay">#</a></h2>
 <ul>
 <li><strong><code>msec</code></strong> <code>&lt;number&gt;</code> The delay value in milliseconds.</li>
 </ul>
@@ -206,7 +209,7 @@
 </ul>
 <p>Returns the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Show the processing time of the function.</span><br><span class="token keyword">var</span> startTime <span class="token operator">=</span> <span class="token function">millis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// store start time.</span><br><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><br>  console<span class="token punctuation">.</span><span class="token function">log</span> <span class="token punctuation">(</span><span class="token string">"Processing..."</span><span class="token punctuation">,</span> i <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">"%"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">var</span> endTime <span class="token operator">=</span> <span class="token function">millis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//store end time.</span><br>console<span class="token punctuation">.</span><span class="token function">log</span> <span class="token punctuation">(</span><span class="token string">"Processing time is "</span><span class="token punctuation">,</span> endTime <span class="token operator">-</span> startTime<span class="token punctuation">,</span> <span class="token string">"ms."</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h2 id="delaymicrosecondsusec" tabindex="-1">delayMicroseconds(usec) <a href="#delaymicroseconds" id="delaymicroseconds"></a> <a class="direct-link" href="#delaymicrosecondsusec">#</a></h2>
+<h2 id="delaymicroseconds" tabindex="-1">delayMicroseconds(usec) <a href="#delaymicroseconds" id="delaymicroseconds"></a> <a class="direct-link" href="#delaymicroseconds">#</a></h2>
 <ul>
 <li><strong><code>usec</code></strong> <code>&lt;number&gt;</code> The delay value in microseconds.</li>
 </ul>
@@ -222,7 +225,7 @@
 <blockquote>
 <p>This function is not so time correct, so don't use it for time critical job.</p>
 </blockquote>
-<h2 id="settimeoutcallback-timeout" tabindex="-1">setTimeout(callback, timeout) <a href="#settimeout" id="settimeout"></a> <a class="direct-link" href="#settimeoutcallback-timeout">#</a></h2>
+<h2 id="settimeout" tabindex="-1">setTimeout(callback, timeout) <a href="#settimeout" id="settimeout"></a> <a class="direct-link" href="#settimeout">#</a></h2>
 <ul>
 <li><strong><code>callback</code></strong> <code>&lt;function&gt;</code> The function which is called after <strong><code>timeout</code></strong> milliseconds</li>
 <li><strong><code>timeout</code></strong> <code>&lt;number&gt;</code> The timeout value in milliseconds.</li>
@@ -230,7 +233,7 @@
 </ul>
 <p>Set the timeout event which call the <strong><code>callback</code></strong> function after <strong><code>delay</code></strong> milliseconds.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Show the message after 1 sec.</span><br><span class="token keyword">var</span> timerId <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'done.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1sec timeout</span></code></pre>
-<h2 id="setintervalcallback-interval" tabindex="-1">setInterval(callback, interval) <a href="#setinterval" id="setinterval"></a> <a class="direct-link" href="#setintervalcallback-interval">#</a></h2>
+<h2 id="setinterval" tabindex="-1">setInterval(callback, interval) <a href="#setinterval" id="setinterval"></a> <a class="direct-link" href="#setinterval">#</a></h2>
 <ul>
 <li><strong><code>callback</code></strong> <code>&lt;function&gt;</code> The function which is called at every <strong><code>interval</code></strong> milliseconds.</li>
 <li><strong><code>interval</code></strong> <code>&lt;number&gt;</code> The time interval value in milliseconds.</li>
@@ -238,13 +241,13 @@
 </ul>
 <p>Set the interval event which call the <strong><code>callback</code></strong> function every**<code>interval</code>** milliseconds.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Print "tick" for every seconds</span><br><span class="token keyword">var</span> timerId <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'tick'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1sec interval</span><br><span class="token comment">// ...</span><br><span class="token function">clearInterval</span><span class="token punctuation">(</span>timerId<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// To stop printing "tick"</span></code></pre>
-<h2 id="cleartimeoutid" tabindex="-1">clearTimeout(id) <a href="#cleartimeout" id="cleartimeout"></a> <a class="direct-link" href="#cleartimeoutid">#</a></h2>
+<h2 id="cleartimeout" tabindex="-1">clearTimeout(id) <a href="#cleartimeout" id="cleartimeout"></a> <a class="direct-link" href="#cleartimeout">#</a></h2>
 <ul>
 <li><strong><code>id</code></strong> <code>&lt;number&gt;</code> Timer id.</li>
 </ul>
 <p>Clear timeout event which is set using <code>setTimeout()</code>.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Show the message after 1 sec.</span><br><span class="token keyword">var</span> timerId <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'done.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1sec timeout</span><br><span class="token comment">// ...</span><br><span class="token function">clearTimeout</span><span class="token punctuation">(</span>timerId<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// clear it after the timeout event.</span></code></pre>
-<h2 id="clearintervalid" tabindex="-1">clearInterval(id) <a href="#clearinterval" id="clearinterval"></a> <a class="direct-link" href="#clearintervalid">#</a></h2>
+<h2 id="clearinterval" tabindex="-1">clearInterval(id) <a href="#clearinterval" id="clearinterval"></a> <a class="direct-link" href="#clearinterval">#</a></h2>
 <ul>
 <li><strong><code>id</code></strong> <code>&lt;number&gt;</code> Timer id.</li>
 </ul>

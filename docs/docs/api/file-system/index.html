@@ -44,6 +44,9 @@
                 <a href="/docs/repl/">REPL</a>
               </li>
             
+            <li>
+              <a href="https://github.com/kaluma-project/examples" target="_blank">Examples</a>
+            </li>
             <br>
             <div class="doc-section">Boards</div>
             
@@ -200,19 +203,19 @@
 <blockquote>
 <p>All file I/O functions are synchronous. Currently do not support asynchronous file I/O.</p>
 </blockquote>
-<h3 id="fsregisterfstype-fsctr" tabindex="-1">fs.register(fstype, fsctr) <a class="direct-link" href="#fsregisterfstype-fsctr">#</a></h3>
+<h3 id="fs-register" tabindex="-1">fs.register(fstype, fsctr) <a class="direct-link" href="#fs-register">#</a></h3>
 <ul>
 <li><strong><code>fstype</code></strong> <code>&lt;string&gt;</code> File system type.</li>
 <li><strong><code>fsctr</code></strong> <code>&lt;constructor&gt;</code> Virtual file system constructor. See <a href="#virtual-file-system">Virtual File System</a>.</li>
 </ul>
 <p>Register a file system type.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span>VFSLittleFS<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vfs_lfs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// register lfs filesystem type</span><br>fs<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'lfs'</span><span class="token punctuation">,</span> VFSLittleFS<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// then you can mkfs or mount with a block device</span><br><span class="token keyword">const</span> blkdev <span class="token operator">=</span> <span class="token operator">...</span><br>fs<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> blkdev<span class="token punctuation">,</span> <span class="token string">'lfs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="fsunregisterfstype" tabindex="-1">fs.unregister(fstype) <a class="direct-link" href="#fsunregisterfstype">#</a></h3>
+<h3 id="fs-unregister" tabindex="-1">fs.unregister(fstype) <a class="direct-link" href="#fs-unregister">#</a></h3>
 <ul>
 <li><strong><code>fstype</code></strong> <code>&lt;string&gt;</code> File system type.</li>
 </ul>
 <p>Unregister a file system type.</p>
-<h3 id="fsmkfsblkdev-fstype" tabindex="-1">fs.mkfs(blkdev, fstype) <a class="direct-link" href="#fsmkfsblkdev-fstype">#</a></h3>
+<h3 id="fs-mkfs" tabindex="-1">fs.mkfs(blkdev, fstype) <a class="direct-link" href="#fs-mkfs">#</a></h3>
 <ul>
 <li><strong><code>blkdev</code></strong> <code>&lt;BlockDevice&gt;</code> Block device.</li>
 <li><strong><code>fstype</code></strong> <code>&lt;string&gt;</code> File system type.</li>
@@ -222,7 +225,7 @@
 <p>Note that calling<code>mkfs()</code> will delete all files if there were already existed.</p>
 </blockquote>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span>VFSLittleFS<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vfs_lfs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// register lfs filesystem type</span><br>fs<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'lfs'</span><span class="token punctuation">,</span> VFSLittleFS<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// make lfs file system (format)</span><br><span class="token keyword">const</span> blkdev <span class="token operator">=</span> <span class="token operator">...</span><br>fs<span class="token punctuation">.</span><span class="token function">mkfs</span><span class="token punctuation">(</span>blkdev<span class="token punctuation">,</span> <span class="token string">'lfs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="fsmountpath-blkdev-fstype-mkfs" tabindex="-1">fs.mount(path, blkdev, fstype[, mkfs]) <a class="direct-link" href="#fsmountpath-blkdev-fstype-mkfs">#</a></h3>
+<h3 id="fs-mount" tabindex="-1">fs.mount(path, blkdev, fstype[, mkfs]) <a class="direct-link" href="#fs-mount">#</a></h3>
 <ul>
 <li><strong><code>path</code></strong> <code>&lt;string&gt;</code> A path where the block device to mount.</li>
 <li><strong><code>blkdev</code></strong> <code>&lt;BlockDevice&gt;</code> Block device.</li>
@@ -231,20 +234,20 @@
 </ul>
 <p>Mount a block device to the given path. When mount is failed, try to call <code>mkfs()</code> before mount retry if you pass <code>true</code> to <code>mkfs</code> parameter.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> <span class="token punctuation">{</span>VFSLittleFS<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vfs_lfs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// register lfs filesystem type</span><br>fs<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'lfs'</span><span class="token punctuation">,</span> VFSLittleFS<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// mount lfs with mkfs try</span><br><span class="token keyword">const</span> blkdev <span class="token operator">=</span> <span class="token operator">...</span><br>fs<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> blkdev<span class="token punctuation">,</span> <span class="token string">'lfs'</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="fsunmountpath" tabindex="-1">fs.unmount(path) <a class="direct-link" href="#fsunmountpath">#</a></h3>
+<h3 id="fs-unmount" tabindex="-1">fs.unmount(path) <a class="direct-link" href="#fs-unmount">#</a></h3>
 <ul>
 <li><strong><code>path</code></strong> <code>&lt;string&gt;</code> A path where the block device to mount.</li>
 </ul>
 <p>Unmount the block device on the given path.</p>
-<h3 id="fscwd" tabindex="-1">fs.cwd() <a class="direct-link" href="#fscwd">#</a></h3>
+<h3 id="fs-cwd" tabindex="-1">fs.cwd() <a class="direct-link" href="#fs-cwd">#</a></h3>
 <ul>
 <li><strong>Returns</strong>: <code>&lt;number&gt;</code> </li>
 </ul>
 <p>Return the current working directory.</p>
-<h3 id="fschdirpath" tabindex="-1">fs.chdir(path) <a class="direct-link" href="#fschdirpath">#</a></h3>
+<h3 id="fs-chdir" tabindex="-1">fs.chdir(path) <a class="direct-link" href="#fs-chdir">#</a></h3>
 <p><strong><code>path</code></strong> <code>&lt;string&gt;</code> A path to change.</p>
 <p>Change the current working directory.</p>
-<h3 id="fsopenpath-flags-mode" tabindex="-1">fs.open(path[, flags[, mode]]) <a class="direct-link" href="#fsopenpath-flags-mode">#</a></h3>
+<h3 id="fs-open" tabindex="-1">fs.open(path[, flags[, mode]]) <a class="direct-link" href="#fs-open">#</a></h3>
 <ul>
 <li><strong><code>path</code></strong> <code>&lt;string&gt;</code> A file path to openBinary data to encode.</li>
 <li><strong><code>flags</code></strong> <code>&lt;string&gt;</code> File system flags. <strong>Default:</strong> <code>'r'</code>.</li>
@@ -265,7 +268,7 @@
 <li><code>'ax'</code> : Open file for appending, but fails if exists.</li>
 <li><code>'ax+'</code> : Open file for reading and appending, but fails if exists.</li>
 </ul>
-<h3 id="fsreadfd-buffer-offset-length-position" tabindex="-1">fs.read(fd, buffer[, offset[, length[, position]]]) <a class="direct-link" href="#fsreadfd-buffer-offset-length-position">#</a></h3>
+<h3 id="fs-read" tabindex="-1">fs.read(fd, buffer[, offset[, length[, position]]]) <a class="direct-link" href="#fs-read">#</a></h3>
 <ul>
 <li><strong><code>fd</code></strong> <code>&lt;number&gt;</code> </li>
 <li><strong><code>buffer</code></strong> <code>&lt;TypedArray&gt;</code> The buffer will be written.</li>
@@ -276,7 +279,7 @@
 </ul>
 <p>Read data from the file specified by <code>fd</code>.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">let</span> fd <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'file.txt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">let</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">// read 10 bytes from the start</span><br>fs<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> buffer<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> buffer<span class="token punctuation">.</span>length<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>fs<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="fswritefd-buffer-offset-length-position" tabindex="-1">fs.write(fd, buffer[, offset[, length[, position]]]) <a class="direct-link" href="#fswritefd-buffer-offset-length-position">#</a></h3>
+<h3 id="fs-write" tabindex="-1">fs.write(fd, buffer[, offset[, length[, position]]]) <a class="direct-link" href="#fs-write">#</a></h3>
 <ul>
 <li><strong><code>fd</code></strong> <code>&lt;number&gt;</code> </li>
 <li><strong><code>buffer</code></strong> <code>&lt;TypedArray&gt;</code> The buffer will be read.</li>
@@ -287,81 +290,81 @@
 </ul>
 <p>Write data to the file specified by <code>fd</code>.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">let</span> fd <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'file.txt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">let</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">// buffer[0] = ...</span><br><span class="token comment">// buffer[1] = ...</span><br><span class="token comment">// ...</span><br><br><span class="token comment">// write 10 bytes</span><br>fs<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> buffer<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> buffer<span class="token punctuation">.</span>length<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>fs<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="fsclosefd" tabindex="-1">fs.close(fd) <a class="direct-link" href="#fsclosefd">#</a></h3>
+<h3 id="fs-close" tabindex="-1">fs.close(fd) <a class="direct-link" href="#fs-close">#</a></h3>
 <ul>
 <li><strong><code>fd</code></strong> <code>&lt;number&gt;</code> </li>
 </ul>
 <p>Close the file specified by <code>fd</code>.</p>
-<h3 id="fsreadfilepath" tabindex="-1">fs.readFile(path) <a class="direct-link" href="#fsreadfilepath">#</a></h3>
+<h3 id="fs-readfile" tabindex="-1">fs.readFile(path) <a class="direct-link" href="#fs-readfile">#</a></h3>
 <ul>
 <li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
 <li><strong>Returns</strong>: <code>&lt;Uint8Array&gt;</code> .</li>
 </ul>
 <p>Read data from the file and return the data.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">let</span> data <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'file.txt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="fswritefilepath-data" tabindex="-1">fs.writeFile(path, data) <a class="direct-link" href="#fswritefilepath-data">#</a></h3>
+<h3 id="fs-writefile" tabindex="-1">fs.writeFile(path, data) <a class="direct-link" href="#fs-writefile">#</a></h3>
 <ul>
 <li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
 <li><strong><code>data</code></strong> <code>&lt;Uint8Array&gt;</code> </li>
 </ul>
 <p>Write data to the file specified by <code>path</code>.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">let</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">// buffer[0] = ...</span><br><span class="token comment">// buffer[1] = ...</span><br><span class="token comment">// ..</span><br>fs<span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span><span class="token string">'file.txt'</span><span class="token punctuation">,</span> buffer<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="fsunlinkpath" tabindex="-1">fs.unlink(path) <a class="direct-link" href="#fsunlinkpath">#</a></h3>
+<h3 id="fs-unlink" tabindex="-1">fs.unlink(path) <a class="direct-link" href="#fs-unlink">#</a></h3>
 <ul>
 <li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
 </ul>
 <p>Remove the file specified by <code>path</code>.</p>
-<h3 id="fsstatpath" tabindex="-1">fs.stat(path) <a class="direct-link" href="#fsstatpath">#</a></h3>
+<h3 id="fs-stat" tabindex="-1">fs.stat(path) <a class="direct-link" href="#fs-stat">#</a></h3>
 <ul>
 <li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
 <li><strong>Returns</strong>: <code>&lt;fs.Stats&gt;</code> </li>
 </ul>
 <p>Return status of the file specified by <code>path</code>.</p>
-<h3 id="fsrenameoldpath-newpath" tabindex="-1">fs.rename(oldPath, newPath) <a class="direct-link" href="#fsrenameoldpath-newpath">#</a></h3>
+<h3 id="fs-rename" tabindex="-1">fs.rename(oldPath, newPath) <a class="direct-link" href="#fs-rename">#</a></h3>
 <ul>
 <li><strong><code>oldPath</code></strong> <code>&lt;string&gt;</code> </li>
 <li><strong><code>newPath</code></strong> <code>&lt;string&gt;</code> </li>
 </ul>
 <p>Rename the file or directory.</p>
-<h3 id="fsexistspath" tabindex="-1">fs.exists(path) <a class="direct-link" href="#fsexistspath">#</a></h3>
+<h3 id="fs-exists" tabindex="-1">fs.exists(path) <a class="direct-link" href="#fs-exists">#</a></h3>
 <ul>
 <li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
 </ul>
 <p>Test whether or not the given path exists.</p>
-<h3 id="fsmkdirpath" tabindex="-1">fs.mkdir(path) <a class="direct-link" href="#fsmkdirpath">#</a></h3>
+<h3 id="fs-mkdir" tabindex="-1">fs.mkdir(path) <a class="direct-link" href="#fs-mkdir">#</a></h3>
 <ul>
 <li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
 </ul>
 <p>Create a directory.</p>
-<h3 id="fsrmdirpath" tabindex="-1">fs.rmdir(path) <a class="direct-link" href="#fsrmdirpath">#</a></h3>
+<h3 id="fs-rmdir" tabindex="-1">fs.rmdir(path) <a class="direct-link" href="#fs-rmdir">#</a></h3>
 <ul>
 <li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
 </ul>
 <p>Remove a directory.</p>
-<h3 id="fsrmpath" tabindex="-1">fs.rm(path) <a class="direct-link" href="#fsrmpath">#</a></h3>
+<h3 id="fs-rm" tabindex="-1">fs.rm(path) <a class="direct-link" href="#fs-rm">#</a></h3>
 <ul>
 <li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
 </ul>
 <p>Remove a file or directory specified by the <code>path</code>.</p>
-<h3 id="fsreaddirpath" tabindex="-1">fs.readdir(path) <a class="direct-link" href="#fsreaddirpath">#</a></h3>
+<h3 id="fs-readdir" tabindex="-1">fs.readdir(path) <a class="direct-link" href="#fs-readdir">#</a></h3>
 <ul>
 <li><strong><code>path</code></strong> <code>&lt;string&gt;</code> </li>
 <li><strong>Returns:</strong> &lt;<code>string[]</code>&gt;</li>
 </ul>
 <p>Read the contents of a directory.</p>
-<h3 id="class-fsstats" tabindex="-1">Class: fs.Stats <a class="direct-link" href="#class-fsstats">#</a></h3>
+<h3 id="class-fs-stats" tabindex="-1">Class: fs.Stats <a class="direct-link" href="#class-fs-stats">#</a></h3>
 <p>A class representing file status. The objects returned by <code>fs.stat()</code> are of this type.</p>
-<h4 id="statsisdirectory" tabindex="-1">stats.isDirectory() <a class="direct-link" href="#statsisdirectory">#</a></h4>
+<h4 id="stats-isdirectory" tabindex="-1">stats.isDirectory() <a class="direct-link" href="#stats-isdirectory">#</a></h4>
 <ul>
 <li><strong>Returns</strong>: <code>&lt;boolean&gt;</code></li>
 </ul>
 <p>Test whether the file is directory or not.</p>
-<h4 id="statsisfile" tabindex="-1">stats.isFile() <a class="direct-link" href="#statsisfile">#</a></h4>
+<h4 id="stats-isfile" tabindex="-1">stats.isFile() <a class="direct-link" href="#stats-isfile">#</a></h4>
 <ul>
 <li><strong>Returns</strong>: <code>&lt;boolean&gt;</code></li>
 </ul>
 <p>Test whether the file is typical file or not.</p>
-<h4 id="statssize" tabindex="-1">stats.size <a class="direct-link" href="#statssize">#</a></h4>
+<h4 id="stats-size" tabindex="-1">stats.size <a class="direct-link" href="#stats-size">#</a></h4>
 <ul>
 <li><code>&lt;number&gt;</code></li>
 </ul>

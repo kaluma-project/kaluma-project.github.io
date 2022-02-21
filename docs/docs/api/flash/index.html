@@ -44,6 +44,9 @@
                 <a href="/docs/repl/">REPL</a>
               </li>
             
+            <li>
+              <a href="https://github.com/kaluma-project/examples" target="_blank">Examples</a>
+            </li>
             <br>
             <div class="doc-section">Boards</div>
             
@@ -197,27 +200,27 @@
 </blockquote>
 <h2 id="class-flash" tabindex="-1">Class: Flash <a class="direct-link" href="#class-flash">#</a></h2>
 <p>An instance of <code>Flash</code> represents a block device.</p>
-<h3 id="new-flashbase-count" tabindex="-1">new Flash(base, count) <a class="direct-link" href="#new-flashbase-count">#</a></h3>
+<h3 id="new-flash" tabindex="-1">new Flash(base, count) <a class="direct-link" href="#new-flash">#</a></h3>
 <ul>
 <li><strong><code>base</code></strong> <code>&lt;number&gt;</code> Starting block number.</li>
 <li><strong><code>count</code></strong> <code>&lt;number&gt;</code> Number of blocks.</li>
 </ul>
 <p>Returns a block device instance.</p>
-<h3 id="flashreadblock-buffer-offset" tabindex="-1">flash.read(block, buffer[, offset]) <a class="direct-link" href="#flashreadblock-buffer-offset">#</a></h3>
+<h3 id="flash-read" tabindex="-1">flash.read(block, buffer[, offset]) <a class="direct-link" href="#flash-read">#</a></h3>
 <ul>
 <li><strong><code>block</code></strong> <code>&lt;number&gt;</code> Block number to read.</li>
 <li><strong><code>buffer</code></strong> <code>&lt;Uint8Array&gt;</code> Buffer where the read data to be stored.</li>
 <li><strong><code>offset</code></strong> <code>&lt;number&gt;</code> Offset of <code>buffer</code>.</li>
 </ul>
 <p>Read the block data and store in <code>buffer</code>.</p>
-<h3 id="flashwriteblock-buffer-offset" tabindex="-1">flash.write(block, buffer[, offset]) <a class="direct-link" href="#flashwriteblock-buffer-offset">#</a></h3>
+<h3 id="flash-write" tabindex="-1">flash.write(block, buffer[, offset]) <a class="direct-link" href="#flash-write">#</a></h3>
 <ul>
 <li><strong><code>block</code></strong> <code>&lt;number&gt;</code> Block number to write.</li>
 <li><strong><code>buffer</code></strong> <code>&lt;Uint8Array&gt;</code> Data to write.</li>
 <li><strong><code>offset</code></strong> <code>&lt;number&gt;</code> Offset of <code>buffer</code>.</li>
 </ul>
 <p>Write the <code>buffer</code> data at the block.</p>
-<h3 id="flashioctlop-arg" tabindex="-1">flash.ioctl(op[, arg]) <a class="direct-link" href="#flashioctlop-arg">#</a></h3>
+<h3 id="flash-ioctl" tabindex="-1">flash.ioctl(op[, arg]) <a class="direct-link" href="#flash-ioctl">#</a></h3>
 <ul>
 <li><strong><code>op</code></strong> <code>&lt;number&gt;</code> I/O operation.</li>
 <li><strong><code>arg</code></strong> <code>&lt;number&gt;</code> Argument of the <code>op</code>.</li>

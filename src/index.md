@@ -8,7 +8,7 @@ __Kaluma__ is a tiny and efficient JavaScript runtime for RP2040 (Raspberry Pi P
 - Support <u>modern JavaScript</u> standards (ECMAScript 5/6/6+). Powered by [JerryScript](https://jerryscript.net/).
 - Has internal event loop like as Node.js for <u>asynchronous</u>.
 - Has <u>built-in modules</u> including file systems (LittleFS, FAT), graphics, networking and more.
-- Support RP2's <u>PIO (Programmable I/O) assembly</u> embeddable in JavaScript code.
+- Support RP2's <u>PIO (Programmable I/O) inline assembly</u> in JavaScript code.
 - Provides very friendly API that resembles <u>Node.js</u> and <u>Arduino</u>.
 
 ### Installation

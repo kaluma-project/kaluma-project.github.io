@@ -26,8 +26,10 @@ module.exports = function (eleventyConfig) {
         String(s)
           .trim()
           .toLowerCase()
+          .replace(/\(.*\)/, '')
           .replace(/\s+/g, '-')
-          .replace(/[^A-Za-z0-9\-]/g, '')
+          .replace(/[^A-Za-z0-9\-]/g, '-')
+          .replace('--', '-')
       );
     },
     permalink: true,

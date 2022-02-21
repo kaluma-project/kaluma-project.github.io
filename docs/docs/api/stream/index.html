@@ -44,6 +44,9 @@
                 <a href="/docs/repl/">REPL</a>
               </li>
             
+            <li>
+              <a href="https://github.com/kaluma-project/examples" target="_blank">Examples</a>
+            </li>
             <br>
             <div class="doc-section">Boards</div>
             
@@ -200,32 +203,32 @@
 <li>Extends: <a href="/docs/api/events/#class-eventemitter"><code>EventEmitter</code></a></li>
 </ul>
 <p>This is a class for stream.</p>
-<h3 id="streamreadable" tabindex="-1">stream.readable <a class="direct-link" href="#streamreadable">#</a></h3>
+<h3 id="stream-readable" tabindex="-1">stream.readable <a class="direct-link" href="#stream-readable">#</a></h3>
 <ul>
 <li><code>{boolean}</code></li>
 </ul>
 <p>Indicates whether the stream is readable or not.</p>
-<h3 id="streamwritable" tabindex="-1">stream.writable <a class="direct-link" href="#streamwritable">#</a></h3>
+<h3 id="stream-writable" tabindex="-1">stream.writable <a class="direct-link" href="#stream-writable">#</a></h3>
 <ul>
 <li><code>{boolean}</code></li>
 </ul>
 <p>Indicates whether the stream is writable.</p>
-<h3 id="streamreadsize" tabindex="-1">stream.read([size]) <a class="direct-link" href="#streamreadsize">#</a></h3>
+<h3 id="stream-read" tabindex="-1">stream.read([size]) <a class="direct-link" href="#stream-read">#</a></h3>
 <ul>
 <li><strong><code>size</code></strong> <code>{number}</code> </li>
 <li><strong>Returns:</strong> <code>{Uint8Array|null}</code></li>
 </ul>
 <p>Read data as the specified <code>size</code> from the stream. If <code>size</code> not specified, reads all data in the stream buffer.</p>
 <p>If the size of data in the stream buffer is less then <code>size</code>, returns <code>null</code>.</p>
-<h3 id="streamwritechunk" tabindex="-1">stream.write(chunk) <a class="direct-link" href="#streamwritechunk">#</a></h3>
+<h3 id="stream-write" tabindex="-1">stream.write(chunk) <a class="direct-link" href="#stream-write">#</a></h3>
 <ul>
 <li><strong><code>chunk</code></strong> <code>{Uint8Array}</code> </li>
 <li><strong>Returns:</strong> <code>{number}</code> </li>
 </ul>
 <p>Writes <code>chuck</code> to the stream and returns the number of bytes written.</p>
-<h3 id="streamend" tabindex="-1">stream.end() <a class="direct-link" href="#streamend">#</a></h3>
+<h3 id="stream-end" tabindex="-1">stream.end() <a class="direct-link" href="#stream-end">#</a></h3>
 <p>Finishes to write.</p>
-<h3 id="streamdestroy" tabindex="-1">stream.destroy() <a class="direct-link" href="#streamdestroy">#</a></h3>
+<h3 id="stream-destroy" tabindex="-1">stream.destroy() <a class="direct-link" href="#stream-destroy">#</a></h3>
 <ul>
 <li>Returns: <code>{this}</code></li>
 </ul>
@@ -235,92 +238,92 @@
 <p>THIS CLASS WILL BE DEPRECATED</p>
 </blockquote>
 <p>Readable streams are an abstraction for a <em>source</em> from which data is consumed. This is a condensed version of Readable stream in <a href="https://nodejs.org">Node.js</a>.</p>
-<h3 id="readablereadableended" tabindex="-1">readable.readableEnded <a class="direct-link" href="#readablereadableended">#</a></h3>
+<h3 id="readable-readableended" tabindex="-1">readable.readableEnded <a class="direct-link" href="#readable-readableended">#</a></h3>
 <ul>
 <li><code>{boolean}</code></li>
 </ul>
 <p>Becomes <code>true</code> when <a href="#event-end"><code>'end'</code></a> event is emitted.</p>
-<h3 id="readablepushchunk" tabindex="-1">readable.push(chunk) <a class="direct-link" href="#readablepushchunk">#</a></h3>
+<h3 id="readable-push" tabindex="-1">readable.push(chunk) <a class="direct-link" href="#readable-push">#</a></h3>
 <ul>
 <li><strong><code>chunk</code></strong> <code>{Uint8Array}</code> </li>
 </ul>
 <p><em>This function should not be called in application code. It is only for stream implementors.</em> This should be called when a chunk of data is arrived from the stream.</p>
-<h3 id="readabledestroy" tabindex="-1">readable.destroy() <a class="direct-link" href="#readabledestroy">#</a></h3>
+<h3 id="readable-destroy" tabindex="-1">readable.destroy() <a class="direct-link" href="#readable-destroy">#</a></h3>
 <ul>
 <li>Returns: <code>{this}</code></li>
 </ul>
 <p>Closes the stream.</p>
-<h3 id="event-data" tabindex="-1">Event: 'data' <a class="direct-link" href="#event-data">#</a></h3>
+<h3 id="event--data-" tabindex="-1">Event: 'data' <a class="direct-link" href="#event--data-">#</a></h3>
 <ul>
 <li><strong><code>chunk</code></strong> <code>{Uint8Array}</code> </li>
 </ul>
 <p>Emitted whenever a chunk of data is available to consume.</p>
-<h3 id="event-end" tabindex="-1">Event: 'end' <a class="direct-link" href="#event-end">#</a></h3>
+<h3 id="event--end-" tabindex="-1">Event: 'end' <a class="direct-link" href="#event--end-">#</a></h3>
 <p>Emitted when all data completely consumed and no more data to read.</p>
-<h3 id="event-error" tabindex="-1">Event: 'error' <a class="direct-link" href="#event-error">#</a></h3>
+<h3 id="event--error-" tabindex="-1">Event: 'error' <a class="direct-link" href="#event--error-">#</a></h3>
 <ul>
 <li><strong><code>err</code></strong> <code>{Error}</code></li>
 </ul>
 <p>Emitted when error occurred.</p>
-<h3 id="event-close" tabindex="-1">Event: 'close' <a class="direct-link" href="#event-close">#</a></h3>
+<h3 id="event--close-" tabindex="-1">Event: 'close' <a class="direct-link" href="#event--close-">#</a></h3>
 <p>Emitted when the stream is closed.</p>
 <h2 id="class-writable" tabindex="-1">Class: Writable <a class="direct-link" href="#class-writable">#</a></h2>
 <blockquote>
 <p>THIS CLASS WILL BE DEPRECATED</p>
 </blockquote>
 <p>Writable streams are an abstraction for a <em>destination</em> to which data is written. This is a condensed version of Writable stream in <a href="https://nodejs.org">Node.js</a>.</p>
-<h3 id="writablewritableended" tabindex="-1">writable.writableEnded <a class="direct-link" href="#writablewritableended">#</a></h3>
+<h3 id="writable-writableended" tabindex="-1">writable.writableEnded <a class="direct-link" href="#writable-writableended">#</a></h3>
 <ul>
 <li><code>{boolean}</code></li>
 </ul>
 <p>Becomes <code>true</code> when <a href="#writable-end-chunk-callback"><code>writable.end()</code></a> is called.</p>
-<h3 id="writablewritablefinished" tabindex="-1">writable.writableFinished <a class="direct-link" href="#writablewritablefinished">#</a></h3>
+<h3 id="writable-writablefinished" tabindex="-1">writable.writableFinished <a class="direct-link" href="#writable-writablefinished">#</a></h3>
 <ul>
 <li><code>{boolean}</code></li>
 </ul>
 <p>Becomes <code>true</code> when <a href="#event-finish"><code>'finish'</code></a> event is emitted.</p>
-<h3 id="writablewritechunk-callback" tabindex="-1">writable.write(chunk[, callback]) <a class="direct-link" href="#writablewritechunk-callback">#</a></h3>
+<h3 id="writable-write" tabindex="-1">writable.write(chunk[, callback]) <a class="direct-link" href="#writable-write">#</a></h3>
 <ul>
 <li><strong><code>chunk</code></strong> <code>{Uint8Array|string}</code> A chunk of data to write.</li>
 <li><strong><code>callback</code></strong> <code>{Function}</code> Called when the chunk of data is handled.</li>
 <li>Returns: <code>{boolean}</code> </li>
 </ul>
 <p>Writes a chunk of data on the stream. It returns <code>true</code> if the stream is ready to handle the next chunk of data. It returns <code>false</code>, then the stream will emit <a href="#event-drain"><code>'drain'</code></a> event when the all data written are handled and the internal buffer is empty. If you write data before <a href="#event-drain"><code>'drain'</code></a> event emitted, the chunk of data will be appended to the internal buffer.</p>
-<h3 id="writableendchunk-callback" tabindex="-1">writable.end([chunk][, callback]) <a class="direct-link" href="#writableendchunk-callback">#</a></h3>
+<h3 id="writable-end" tabindex="-1">writable.end([chunk][, callback]) <a class="direct-link" href="#writable-end">#</a></h3>
 <ul>
 <li><strong><code>chunk</code></strong> <code>{Uint8Array|string}</code> A chunk of data to write before finish.</li>
 <li><strong><code>callback</code></strong> <code>{Function}</code> Called when the stream is finished.</li>
 <li>Returns: <code>{this}</code> </li>
 </ul>
 <p>Finishes to write data on the stream. The event <a href="#event-finish"><code>'finish'</code></a> will be emitted after successfully finished.</p>
-<h3 id="writablewritechunk-callback-1" tabindex="-1">writable._write(chunk[, callback]) <a class="direct-link" href="#writablewritechunk-callback-1">#</a></h3>
+<h3 id="writable-write-1" tabindex="-1">writable._write(chunk[, callback]) <a class="direct-link" href="#writable-write-1">#</a></h3>
 <ul>
 <li><strong><code>chunk</code></strong> <code>{Uint8Array|string}</code> </li>
 <li><strong><code>callback</code></strong> <code>{Function}</code> </li>
 </ul>
 <p><em>This function should not be called in application code. It is only for stream implementors.</em> This function must be implemented in the inherited stream classes.</p>
-<h3 id="writablefinalcallback" tabindex="-1">writable._final([callback]) <a class="direct-link" href="#writablefinalcallback">#</a></h3>
+<h3 id="writable-final" tabindex="-1">writable._final([callback]) <a class="direct-link" href="#writable-final">#</a></h3>
 <ul>
 <li><strong><code>callback</code></strong> <code>{Function}</code> </li>
 </ul>
 <p><em>This function should not be called in application code. It is only for stream implementors.</em> This function must be implemented in the inherited stream classes. </p>
-<h3 id="writabledestroy" tabindex="-1">writable.destroy() <a class="direct-link" href="#writabledestroy">#</a></h3>
+<h3 id="writable-destroy" tabindex="-1">writable.destroy() <a class="direct-link" href="#writable-destroy">#</a></h3>
 <ul>
 <li>Returns: <code>{this}</code></li>
 </ul>
 <p>Closes the stream.</p>
-<h3 id="event-drain" tabindex="-1">Event: 'drain' <a class="direct-link" href="#event-drain">#</a></h3>
+<h3 id="event--drain-" tabindex="-1">Event: 'drain' <a class="direct-link" href="#event--drain-">#</a></h3>
 <p>Emitted when the stream is ready to write and the internal buffer is empty.</p>
-<h3 id="event-finish" tabindex="-1">Event: 'finish' <a class="direct-link" href="#event-finish">#</a></h3>
+<h3 id="event--finish-" tabindex="-1">Event: 'finish' <a class="direct-link" href="#event--finish-">#</a></h3>
 <p>Emitted when the stream is finished.</p>
-<h3 id="event-error-1" tabindex="-1">Event: 'error' <a class="direct-link" href="#event-error-1">#</a></h3>
+<h3 id="event--error--1" tabindex="-1">Event: 'error' <a class="direct-link" href="#event--error--1">#</a></h3>
 <ul>
 <li><strong><code>err</code></strong> <code>{Error}</code></li>
 </ul>
 <p>Emitted when error occurred.</p>
-<h3 id="event-close-1" tabindex="-1">Event: 'close' <a class="direct-link" href="#event-close-1">#</a></h3>
+<h3 id="event--close--1" tabindex="-1">Event: 'close' <a class="direct-link" href="#event--close--1">#</a></h3>
 <p>Emitted when the stream is closed.</p>
-<h2 id="class-streamduplex" tabindex="-1">Class: stream.Duplex <a class="direct-link" href="#class-streamduplex">#</a></h2>
+<h2 id="class-stream-duplex" tabindex="-1">Class: stream.Duplex <a class="direct-link" href="#class-stream-duplex">#</a></h2>
 <p>Extends: <a href="#class-readable"><code>stream.Readable</code></a>, <a href="#class-writable"><code>stream.Writable</code></a></p>
 <blockquote>
 <p>THIS CLASS WILL BE DEPRECATED</p>

@@ -44,6 +44,9 @@
                 <a href="/docs/repl/">REPL</a>
               </li>
             
+            <li>
+              <a href="https://github.com/kaluma-project/examples" target="_blank">Examples</a>
+            </li>
             <br>
             <div class="doc-section">Boards</div>
             
@@ -194,42 +197,42 @@
 <p>The <code>uart</code> module supports communication with computers or devices using serial ports (UART). Use <code>require('uart')</code> to access this module.</p>
 <h2 id="class-uart" tabindex="-1">Class: UART <a class="direct-link" href="#class-uart">#</a></h2>
 <p>An instances of <code>UART</code> represents a UART port.</p>
-<h3 id="uartparitynone" tabindex="-1">UART.PARITY_NONE <a class="direct-link" href="#uartparitynone">#</a></h3>
+<h3 id="uart-parity-none" tabindex="-1">UART.PARITY_NONE <a class="direct-link" href="#uart-parity-none">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code> = <code>0</code>.</li>
 </ul>
 <p>Do not use a parity bit.</p>
-<h3 id="uartparityodd" tabindex="-1">UART.PARITY_ODD <a class="direct-link" href="#uartparityodd">#</a></h3>
+<h3 id="uart-parity-odd" tabindex="-1">UART.PARITY_ODD <a class="direct-link" href="#uart-parity-odd">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code> = <code>1</code>.</li>
 </ul>
 <p>Use odd parity bit</p>
-<h3 id="uartparityeven" tabindex="-1">UART.PARITY_EVEN <a class="direct-link" href="#uartparityeven">#</a></h3>
+<h3 id="uart-parity-even" tabindex="-1">UART.PARITY_EVEN <a class="direct-link" href="#uart-parity-even">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code> = <code>2</code>.</li>
 </ul>
 <p>Use even parity bit</p>
-<h3 id="uartflownone" tabindex="-1">UART.FLOW_NONE <a class="direct-link" href="#uartflownone">#</a></h3>
+<h3 id="uart-flow-none" tabindex="-1">UART.FLOW_NONE <a class="direct-link" href="#uart-flow-none">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code> = <code>0</code>.</li>
 </ul>
 <p>Do not use flow control.</p>
-<h3 id="uartflowrts" tabindex="-1">UART.FLOW_RTS <a class="direct-link" href="#uartflowrts">#</a></h3>
+<h3 id="uart-flow-rts" tabindex="-1">UART.FLOW_RTS <a class="direct-link" href="#uart-flow-rts">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code> = <code>1</code>.</li>
 </ul>
 <p>Use RTS flow control.</p>
-<h3 id="uartflowcts" tabindex="-1">UART.FLOW_CTS <a class="direct-link" href="#uartflowcts">#</a></h3>
+<h3 id="uart-flow-cts" tabindex="-1">UART.FLOW_CTS <a class="direct-link" href="#uart-flow-cts">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code> = <code>2</code>.</li>
 </ul>
 <p>Use CTS flow control.</p>
-<h3 id="uartflowrtscts" tabindex="-1">UART.FLOW_RTS_CTS <a class="direct-link" href="#uartflowrtscts">#</a></h3>
+<h3 id="uart-flow-rts-cts" tabindex="-1">UART.FLOW_RTS_CTS <a class="direct-link" href="#uart-flow-rts-cts">#</a></h3>
 <ul>
 <li><code>&lt;number&gt;</code> = <code>3</code>.</li>
 </ul>
 <p>Use both RTS and CTS flow control.</p>
-<h3 id="new-uartport-options" tabindex="-1">new UART(port[, options]) <a class="direct-link" href="#new-uartport-options">#</a></h3>
+<h3 id="new-uart" tabindex="-1">new UART(port[, options]) <a class="direct-link" href="#new-uart">#</a></h3>
 <ul>
 <li><strong><code>port</code></strong> <code>&lt;number&gt;</code> UART port number. This value should be less than max port number.</li>
 <li><strong><code>options</code></strong> <code>&lt;object&gt;</code> The object of UART options. <em>Default values are depends on board (Check in a board page).</em>
@@ -246,7 +249,7 @@
 </li>
 </ul>
 <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Create the UART instance and close it </span><br><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">UART</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'uart'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token literal-property property">baudrate</span><span class="token operator">:</span> <span class="token number">9600</span><span class="token punctuation">,</span><br>  <span class="token literal-property property">bits</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span><br>  <span class="token literal-property property">partity</span><span class="token operator">:</span> <span class="token constant">UART</span><span class="token punctuation">.</span><span class="token constant">PARTIY_NONE</span><span class="token punctuation">,</span><br>  <span class="token literal-property property">stop</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>  <span class="token literal-property property">flow</span><span class="token operator">:</span> <span class="token constant">UART</span><span class="token punctuation">.</span><span class="token constant">FLOW_NONE</span><span class="token punctuation">,</span><br>  <span class="token literal-property property">bufferSize</span><span class="token operator">:</span> <span class="token number">2048</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> serial0 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UART</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">// read or write data...</span><br>serial0<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="writedata-options" tabindex="-1">write(data[, options]) <a class="direct-link" href="#writedata-options">#</a></h3>
+<h3 id="write" tabindex="-1">write(data[, options]) <a class="direct-link" href="#write">#</a></h3>
 <ul>
 <li><strong><code>data</code></strong> <code>&lt;Uint8Array|string&gt;</code> Data to write.</li>
 <li><strong><code>options</code></strong> <code>&lt;object&gt;</code> 
@@ -259,7 +262,7 @@
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">UART</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'uart'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> serial0 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UART</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">baudrate</span><span class="token operator">:</span> <span class="token number">38400</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// Write a string</span><br>serial0<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'Hello, world\n'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// Write Uint8Array</span><br>serial0<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0x00</span><span class="token punctuation">,</span> <span class="token number">0x7f</span><span class="token punctuation">,</span> <span class="token number">0x80</span><span class="token punctuation">,</span> <span class="token number">0xff</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>serial0<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h3 id="close" tabindex="-1">close() <a class="direct-link" href="#close">#</a></h3>
 <p>Close the UART port.</p>
-<h3 id="event-data" tabindex="-1">Event: 'data' <a class="direct-link" href="#event-data">#</a></h3>
+<h3 id="event--data-" tabindex="-1">Event: 'data' <a class="direct-link" href="#event--data-">#</a></h3>
 <ul>
 <li><strong><code>data</code></strong> <code>&lt;Uint8Array&gt;</code> Received data.</li>
 </ul>
