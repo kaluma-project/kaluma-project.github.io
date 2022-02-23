@@ -1,7 +1,8 @@
 ---
-layout: "doc.njk"
-title: "Getting Started"
-tags: "docs"
+layout: 'doc.njk'
+title: 'Getting Started'
+tags: 'docs'
+order: 2
 ---
 
 # Getting Started
@@ -16,9 +17,9 @@ Get a [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico
 
 ![Pico](/images/pico-bootsel.png)
 
-- [Download](/download) firmware (__.UF2__).
-- Push and hold the __BOOTSEL__ button and plug into USB port of your computer, and then release the button. It will mount as USB storage device named __RPI-RP2__.
-- Drag and drop the downloaded __.UF2__ onto the __RPI-RP2__ volume. Your Pico will reboot automatically.
+- [Download](/download) firmware (**.UF2**).
+- Push and hold the **BOOTSEL** button and plug into USB port of your computer, and then release the button. It will mount as USB storage device named **RPI-RP2**.
+- Drag and drop the downloaded **.UF2** onto the **RPI-RP2** volume. Your Pico will reboot automatically.
 
 ## Connect with Terminal
 
@@ -103,10 +104,10 @@ $ npm install https://github.com/niklauslee/dht --save
 Then you can import the package with `require()`.
 
 ```js
-const {DHT} = require('dht');
+const { DHT } = require('dht');
 ```
 
-## Bunde multiple codes
+## Bundle multiple files
 
 Please remember that only a single `.js` file can be flashed in Kaluma. If you are using multiple `.js` files or using third-party modules installed by `npm install`, you have to bundle them into the a single `.js` file.
 
@@ -139,4 +140,3 @@ Then connect with terminal and type `.load` command in REPL mode. You will see t
 ```plain
 > .load
 ```
-

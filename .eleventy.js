@@ -4,17 +4,28 @@ const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 
 module.exports = function (eleventyConfig) {
+  // plugins
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {});
   eleventyConfig.addPlugin(pluginSass, {
     watch: ['./src/styles/*.scss'],
     outputDir: './docs/styles',
   });
+
+  // passthrough files
   eleventyConfig.addPassthroughCopy('./src/images');
   eleventyConfig.addPassthroughCopy('./src/js');
   eleventyConfig.addPassthroughCopy('./src/favicon.ico');
   eleventyConfig.addPassthroughCopy('./CNAME');
+
+  // watch files
   eleventyConfig.addWatchTarget('./src/js/*.js');
 
+  // filters
+  eleventyConfig.addFilter('sortByOrder', (values) => {
+    return values.slice().sort((a, b) => a.data.order - b.data.order);
+  });
+
+  // enhance markdown to generate 'id' attr for heading tags (h1, h2, ...)
   const markdownLibrary = markdownIt({
     html: true,
     breaks: true,
@@ -22,7 +33,6 @@ module.exports = function (eleventyConfig) {
   }).use(markdownItAnchor, {
     slugify: (s) => {
       return encodeURIComponent(
-        // String(s).trim().toLowerCase().replace(':', '-').replace(/\s+/g, '-')
         String(s)
           .trim()
           .toLowerCase()

@@ -13,7 +13,7 @@
       <aside class="doc-sidebar-nav">
         <nav class="navbar-collapse collapse collapse-horizontal show" id="docs-nav">
           <ul class="list-unstyled">
-            {% for doc in collections.docs %}
+            {% for doc in collections.docs | sortByOrder %}
               <li>
                 <a href="{{doc.url}}">{{doc.data.title}}</a>
               </li>

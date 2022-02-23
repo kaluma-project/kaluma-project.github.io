@@ -1,7 +1,8 @@
 ---
-layout: "doc.njk"
-title: "Introduction"
-tags: "docs"
+layout: 'doc.njk'
+title: 'Introduction'
+tags: 'docs'
+order: 1
 ---
 
 # Introduction
@@ -26,33 +27,33 @@ Welcome to Kaluma! Kaluma is a tiny and efficient JavaScript runtime for [RP2040
 
 Kaluma supporting full [ES (ECMAScript) 5.1](https://www.ecma-international.org/ecma-262/5.1/) and the most of [ES2015+](http://www.ecma-international.org/ecma-262/6.0/) standards as below:
 
-* Arrow Functions
-* Typed Arrays
-  * `Int8Array`
-  * `Uint8Array`
-  * `Uint8ClampedArray`
-  * `Int16Array`
-  * `Uint16Array`
-  * `Int32Array`
-  * `Uint32Array`
-  * `Float32Array`
-  * `Float64Array`
-  * `ArrayBuffer`
-  * `DataView`
-* Set
-* Map
-* Promise
-* Symbol
-* Constants
-* Async Functions (`async` and `await`)
-* `for-await-of` language element
-* Iterator and `for-of` operator
-* Generator Functions
-* Classes
-* Default Parameter Values
-* Destructuring Assignment&#x20;
-* Rest Parameter
-* Object Initializer
-* Template String
-* Numeric Separators
-* Nullish Coalescing Operator
+- Arrow Functions
+- Typed Arrays
+  - `Int8Array`
+  - `Uint8Array`
+  - `Uint8ClampedArray`
+  - `Int16Array`
+  - `Uint16Array`
+  - `Int32Array`
+  - `Uint32Array`
+  - `Float32Array`
+  - `Float64Array`
+  - `ArrayBuffer`
+  - `DataView`
+- Set
+- Map
+- Promise
+- Symbol
+- Constants
+- Async Functions (`async` and `await`)
+- `for-await-of` language element
+- Iterator and `for-of` operator
+- Generator Functions
+- Classes
+- Default Parameter Values
+- Destructuring Assignment&#x20;
+- Rest Parameter
+- Object Initializer
+- Template String
+- Numeric Separators
+- Nullish Coalescing Operator

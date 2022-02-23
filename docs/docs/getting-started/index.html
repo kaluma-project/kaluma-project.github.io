@@ -230,8 +230,8 @@
 <p>You can install third-party packages with NPM. You can find third-party packages for Kaluma in <a href="/packages">Packages</a>.</p>
 <pre class="language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> https://github.com/niklauslee/dht --save</code></pre>
 <p>Then you can import the package with <code>require()</code>.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token constant">DHT</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'dht'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h2 id="bunde-multiple-codes" tabindex="-1">Bunde multiple codes <a class="direct-link" href="#bunde-multiple-codes">#</a></h2>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token constant">DHT</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'dht'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="bundle-multiple-files" tabindex="-1">Bundle multiple files <a class="direct-link" href="#bundle-multiple-files">#</a></h2>
 <p>Please remember that only a single <code>.js</code> file can be flashed in Kaluma. If you are using multiple <code>.js</code> files or using third-party modules installed by <code>npm install</code>, you have to bundle them into the a single <code>.js</code> file.</p>
 <pre class="language-bash"><code class="language-bash">$ kaluma bundle index.js</code></pre>
 <p>You can find <code>bundle.js</code> file and flash the bundled code.</p>
