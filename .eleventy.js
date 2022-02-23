@@ -1,5 +1,6 @@
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginSass = require('eleventy-plugin-sass');
+const pluginWebpack = require('@jamshop/eleventy-plugin-webpack');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 
@@ -10,10 +11,18 @@ module.exports = function (eleventyConfig) {
     watch: ['./src/styles/*.scss'],
     outputDir: './docs/styles',
   });
+  eleventyConfig.addPlugin(pluginWebpack, {
+    entryPoints: {
+      packages: './src/js/packages.js',
+      ide: './src/js/ide.js',
+    },
+    output: './docs/js',
+    // configFunction, // A function that recieves a webpack config to modify and return
+  });
 
   // passthrough files
   eleventyConfig.addPassthroughCopy('./src/images');
-  eleventyConfig.addPassthroughCopy('./src/js');
+  // eleventyConfig.addPassthroughCopy('./src/js');
   eleventyConfig.addPassthroughCopy('./src/favicon.ico');
   eleventyConfig.addPassthroughCopy('./CNAME');
 

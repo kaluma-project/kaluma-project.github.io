@@ -22,3 +22,5 @@ function copyToClipboard(val) {
     closeAllPopover();
   }, 1000);
 }
+
+window.copyToClipboard = copyToClipboard;

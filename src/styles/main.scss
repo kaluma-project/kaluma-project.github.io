@@ -325,3 +325,45 @@ $doc-sidebar-width: 250px;
     margin-left: 0px;
   }
 }
+
+/* ide layout and styles */
+$ide-header-height: 50px;
+$ide-border: 1px solid #dddddd;
+
+main.ide {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: $ide-header-height;
+    border-bottom: $ide-border;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+
+  aside {
+    position: absolute;
+    left: 0;
+    top: $ide-header-height;
+    bottom: 0;
+    width: 50%;
+    border-right: $ide-border;
+  }
+
+  section {
+    position: absolute;
+    right: 0;
+    top: $ide-header-height;
+    bottom: 0;
+    width: 50%;
+  }
+}
