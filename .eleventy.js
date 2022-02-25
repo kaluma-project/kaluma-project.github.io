@@ -14,9 +14,22 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginWebpack, {
     entryPoints: {
       packages: './src/js/packages.js',
-      ide: './src/js/ide.js',
+      ide: './src/js/ide.jsx',
     },
     output: './docs/js',
+    configFunction: (config) => {
+      return Object.assign(config, {
+        module: {
+          rules: [
+            {
+              test: /\.(js|jsx)$/,
+              exclude: /node_modules/,
+              use: 'babel-loader',
+            },
+          ],
+        },
+      });
+    },
     // configFunction, // A function that recieves a webpack config to modify and return
   });
 
