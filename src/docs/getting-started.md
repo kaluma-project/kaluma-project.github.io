@@ -21,33 +21,43 @@ Get a [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico
 - Push and hold the **BOOTSEL** button and plug into USB port of your computer, and then release the button. It will mount as USB storage device named **RPI-RP2**.
 - Drag and drop the downloaded **.UF2** onto the **RPI-RP2** volume. Your Pico will reboot automatically.
 
+## Install CLI (Command-Line Interface)
+
+First of all, we have to install [Kaluma CLI](https://github.com/kaluma-project/kaluma-cli) in your local computer to work with boards Kaluma installed. Of course, it is assumed that [Node.js](https://nodejs.org) is installed.
+
+```bash
+$ npm install -g @kaluma/cli
+```
+
+After installation you can see help message with `help` command.
+
+```bash
+$ kaluma help
+```
+
 ## Connect with Terminal
 
-Once you installed the firmware, you use the board in [REPL](/docs/repl) mode with any ANSI/VT100 compatible serial terminals. In MacOS or Linux you can simply connect with `screen` command (Use other serial terminals in Windows like [PuTTY](https://www.putty.org/)).
+Once you installed the firmware, you can use the board in [REPL](/docs/repl) mode with any ANSI/VT100 compatible serial terminals. CLI provides a simple serial terminal feature with `shell` command:
 
 ```bash
-$ screen <port> <baudrate>
+$ kaluma shell
 
-# for MacOS
-$ screen /dev/tty.usbmodem.. 115200
+# you can specify a serial port
+$ kaluma shell --port /dev/tty.usbmodem0000000000001
 
-# or for Linux
-$ sudo screen /dev/ttyACM.. 115200
+# to see all available serial ports
+$ kaluma ports
 ```
 
-Then you can see prompt `>` (If you cannot see the prompt, press `Enter` several times). On the prompt you can enter any JavaScript expressions or [REPL commands](/docs/repl). Type `.hi` command, you will see a welcome message.
-
-```bash
-> .hi
-```
-
-To see all available REPL commands, type `.help`.
+Then you will see a welcome message and the prompt `>` (If you cannot see the prompt, press `Enter` several times). On the prompt you can enter any JavaScript expressions or [REPL commands](/docs/repl). Type `.help` command, you will see all available REPL commands.
 
 ```plain
 > .help
 ```
 
-To exit the screen terminal, press `ctrl+a`, `k`, `y`.
+You can exit the CLI shell connection by pressing `ctrl+z`.
+
+You can use other serial terminal programs including `screen` command in macOS and Linux, or [PuTTY](https://www.putty.org/)) in Windows.
 
 ## Setup project
 
@@ -79,16 +89,10 @@ setInterval(() => {
 
 ## Flash your code
 
-To flash the code to your board, we need [Kaluma CLI](https://github.com/kaluma-project/kaluma-cli). Of course, it is assumed that [Node.js](https://nodejs.org) is installed.
+Use CLI to flash `index.js` to your board.
 
 ```bash
-$ npm install -g @kaluma/cli
-```
-
-Use CLI to flash `index.js` to your board. You need to know which serial port is connected to your board using CLI: `kaluma ports`.
-
-```bash
-$ kaluma flash index.js --port <port>
+$ kaluma flash index.js
 ```
 
 After uploading successfully, you will see a blinking LED on the board.
@@ -112,31 +116,33 @@ const { DHT } = require('dht');
 Please remember that only a single `.js` file can be flashed in Kaluma. If you are using multiple `.js` files or using third-party modules installed by `npm install`, you have to bundle them into the a single `.js` file.
 
 ```bash
-$ kaluma bundle index.js
+$ kaluma bundle ./index.js
 ```
 
 You can find `bundle.js` file and flash the bundled code.
 
 ```bash
-$ kaluma flash bundle.js --port <port>
+$ kaluma flash ./bundle.js
 ```
 
 Or shorty, you can bundle and flash at once with `--bundle` option.
 
 ```bash
-$ kaluma flash index.js --port <port> --bundle
+$ kaluma flash ./index.js --bundle
 ```
 
 ## Debug
 
-To check the errors raised during the code execution, you need to connect with serial terminal again. However CLI's `flash` command will load the code automatically so you can't see the error messages. So you have to use `--no-load` option of `flash` command to avoid code loading.
+To check the errors raised during the code execution, you need to connect with serial terminal again. However CLI's `flash` command will load the code automatically so you can't see the error messages. So you have to use `--shell` option to flash code with shell connection.
 
 ```bash
-$ kaluma flash index.js --port <port> --no-load
+$ kaluma flash ./index.js --bundle --shell
 ```
 
-Then connect with terminal and type `.load` command in REPL mode. You will see the errors in console if any.
+Then you can see all console logs and errors because shell connection still alive even after flashing code. Hit `ctrl+z` to quit.
+
+Sometimes the flashed code can crash the board. Because Kaluma automatically execute the code in flash on boot, you have no way to recover the board in software manner. In this case you can skip code loading on boot by wiring `GP22` pin and `GND` pin (See [Skip code loading on boot](/docs/boards/rp2/#skip-code-loading-on-boot)). And then remove the code from the internal flash in REPL mode.
 
 ```plain
-> .load
+> .flash -e
 ```

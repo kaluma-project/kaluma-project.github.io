@@ -9,7 +9,21 @@ order: 3
 
 Kaluma provides REPL (Read-Eval-Print-Loop) mode that can be used by connecting with any ANSI/VT100 serial terminal programs.
 
-## Connect with Terminal
+## Using CLI
+
+If you installed [Kaluma CLI](https://github.com/kaluma-project/kaluma-cli), you can connect with CLI's `shell` command.
+
+```bash
+$ kaluma shell
+
+# or specify a serial port
+$ kaluma shell --port /dev/tty.usbmodem0000000000001
+
+# to see all available serial ports
+$ kaluma ports
+```
+
+## Using External Terminal Programs
 
 In MacOS or Linux you can simply connect with `screen` command (Use other serial terminals in Windows like [PuTTY](https://www.putty.org/)).
 

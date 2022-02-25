@@ -39,10 +39,10 @@ To upload code to your board, we need [Kaluma CLI](https://github.com/kaluma-pro
 $ npm install -g @kaluma/cli
 ```
 
-Use CLI to upload `index.js` to your board. You need to know which serial port is connected to your board using CLI: `kaluma ports`.
+Use `flash` command of CLI to upload `index.js` to your board. CLI automatically finds a serial port which Raspberry Pi Pico is connected. If you want to specify a serial port to upload code, use `--port` option.
 
 ```bash
-$ kaluma flash index.js --port <port>
+$ kaluma flash index.js
 ```
 
 After uploading successfully, you will see a blinking LED on the board.

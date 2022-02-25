@@ -199,7 +199,10 @@
         <div style="width: 100%">
           <h1 id="repl" tabindex="-1">REPL <a class="direct-link" href="#repl">#</a></h1>
 <p>Kaluma provides REPL (Read-Eval-Print-Loop) mode that can be used by connecting with any ANSI/VT100 serial terminal programs.</p>
-<h2 id="connect-with-terminal" tabindex="-1">Connect with Terminal <a class="direct-link" href="#connect-with-terminal">#</a></h2>
+<h2 id="using-cli" tabindex="-1">Using CLI <a class="direct-link" href="#using-cli">#</a></h2>
+<p>If you installed <a href="https://github.com/kaluma-project/kaluma-cli">Kaluma CLI</a>, you can connect with CLI's <code>shell</code> command.</p>
+<pre class="language-bash"><code class="language-bash">$ kaluma shell<br><br><span class="token comment"># or specify a serial port</span><br>$ kaluma shell --port /dev/tty.usbmodem0000000000001<br><br><span class="token comment"># to see all available serial ports</span><br>$ kaluma ports</code></pre>
+<h2 id="using-external-terminal-programs" tabindex="-1">Using External Terminal Programs <a class="direct-link" href="#using-external-terminal-programs">#</a></h2>
 <p>In MacOS or Linux you can simply connect with <code>screen</code> command (Use other serial terminals in Windows like <a href="https://www.putty.org/">PuTTY</a>).</p>
 <pre class="language-bash"><code class="language-bash"><span class="token comment"># for MacOS</span><br>$ <span class="token function">screen</span> /dev/tty.usbmodem<span class="token punctuation">..</span> <span class="token number">115200</span><br><br><span class="token comment"># or for Linux</span><br>$ <span class="token function">sudo</span> <span class="token function">screen</span> /dev/ttyACM<span class="token punctuation">..</span> <span class="token number">115200</span></code></pre>
 <p>When successfully connected you can see the prompt <code>&gt;</code> (If you cannot see the prompt, press <code>Enter</code> several times).</p>

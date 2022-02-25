@@ -29,7 +29,7 @@ Sometimes you need to skip loading the code stored in the internal flash on boot
 
 ## Object: board
 
-This section shows the Raspberry Pi Pico specific properties of the global [board](../api-reference/board.md) object.
+This section shows the Raspberry Pi Pico specific properties of the global [board](/docs/api/board/) object.
 
 ### board.LED
 
