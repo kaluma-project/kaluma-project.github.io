@@ -1,0 +1,184 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import '../../node_modules/bootstrap/scss/functions';
+
+// 2. Include any default variable overrides here
+$font-size-base: 0.75rem !default;
+$h1-font-size: $font-size-base * 2 !default;
+$h2-font-size: $font-size-base * 1.7 !default;
+$h3-font-size: $font-size-base * 1.4 !default;
+$h4-font-size: $font-size-base * 1.25 !default;
+$h5-font-size: $font-size-base * 1.1 !default;
+$h6-font-size: $font-size-base !default;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+@import '../../node_modules/bootstrap/scss/root';
+
+// 4. Include any optional Bootstrap CSS as needed
+@import '../../node_modules/bootstrap/scss/utilities';
+@import '../../node_modules/bootstrap/scss/reboot';
+@import '../../node_modules/bootstrap/scss/type';
+@import '../../node_modules/bootstrap/scss/images';
+@import '../../node_modules/bootstrap/scss/containers';
+@import '../../node_modules/bootstrap/scss/grid';
+
+// Layout & components
+@import '../../node_modules/bootstrap/scss/tables';
+@import '../../node_modules/bootstrap/scss/forms';
+@import '../../node_modules/bootstrap/scss/buttons';
+@import '../../node_modules/bootstrap/scss/transitions';
+@import '../../node_modules/bootstrap/scss/dropdown';
+@import '../../node_modules/bootstrap/scss/button-group';
+@import '../../node_modules/bootstrap/scss/nav';
+@import '../../node_modules/bootstrap/scss/navbar';
+@import '../../node_modules/bootstrap/scss/card';
+@import '../../node_modules/bootstrap/scss/accordion';
+@import '../../node_modules/bootstrap/scss/breadcrumb';
+@import '../../node_modules/bootstrap/scss/pagination';
+@import '../../node_modules/bootstrap/scss/badge';
+@import '../../node_modules/bootstrap/scss/alert';
+@import '../../node_modules/bootstrap/scss/progress';
+@import '../../node_modules/bootstrap/scss/list-group';
+@import '../../node_modules/bootstrap/scss/close';
+@import '../../node_modules/bootstrap/scss/toasts';
+@import '../../node_modules/bootstrap/scss/modal';
+@import '../../node_modules/bootstrap/scss/tooltip';
+@import '../../node_modules/bootstrap/scss/popover';
+@import '../../node_modules/bootstrap/scss/carousel';
+@import '../../node_modules/bootstrap/scss/spinners';
+@import '../../node_modules/bootstrap/scss/offcanvas';
+@import '../../node_modules/bootstrap/scss/placeholders';
+
+// Helpers
+@import '../../node_modules/bootstrap/scss/helpers';
+
+// 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import '../../node_modules/bootstrap/scss/utilities/api';
+
+// 6. Add additional custom code here
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --font-mono: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+  --bg: #000;
+  --border-color: #505050;
+}
+
+/* xterm */
+
+@import '../../node_modules/xterm/css/xterm.css';
+
+/* default elements */
+
+body {
+  font-family: var(--font-sans);
+  font-size: $font-size-base;
+  background-color: var(--bg);
+  color: #e6e6e6;
+}
+
+.btn {
+  padding: 0.15rem 0.7rem;
+}
+
+/* ide layout and styles */
+
+$ide-header-height: 42px;
+$ide-border: 1px solid #303030;
+
+main.ide {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: $ide-header-height;
+    border-bottom: $ide-border;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+
+    & > div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .device {
+      color: $primary;
+
+      .vendor {
+        font-size: 0.5rem;
+        margin: 0px;
+        padding: 0px;
+        margin-top: -4px;
+      }
+    }
+  }
+
+  aside {
+    position: absolute;
+    left: 0;
+    top: $ide-header-height;
+    bottom: 0;
+    width: 50%;
+    border-right: $ide-border;
+
+    .head {
+      padding-left: 0.5rem;
+      padding-top: 0.5rem;
+      color: #777;
+    }
+
+    .body {
+      position: absolute;
+      top: 1.8rem;
+      bottom: 0.5rem;
+      left: 0.5rem;
+      right: 0.5rem;
+      overflow: hidden;
+    }
+  }
+
+  section {
+    position: absolute;
+    right: 0;
+    top: $ide-header-height;
+    bottom: 0;
+    width: 50%;
+
+    .head {
+      padding-left: 0.5rem;
+      padding-top: 0.5rem;
+      color: #777;
+    }
+
+    .terminal-container {
+      position: absolute;
+      top: 1.8rem;
+      bottom: 0.5rem;
+      left: 0.5rem;
+      right: 0.5rem;
+      overflow: hidden;
+
+      & > .xterm {
+        height: 100%;
+      }
+    }
+  }
+}

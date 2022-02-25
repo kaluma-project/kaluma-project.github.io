@@ -14,7 +14,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginWebpack, {
     entryPoints: {
       packages: './src/js/packages.js',
-      ide: './src/js/ide.jsx',
+      ide: './src/js/ide/index.jsx',
     },
     output: './docs/js',
     configFunction: (config) => {
@@ -41,6 +41,7 @@ module.exports = function (eleventyConfig) {
 
   // watch files
   eleventyConfig.addWatchTarget('./src/js/*.js');
+  eleventyConfig.addWatchTarget('./src/js/*.jsx');
 
   // filters
   eleventyConfig.addFilter('sortByOrder', (values) => {
