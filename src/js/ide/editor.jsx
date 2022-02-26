@@ -23,7 +23,6 @@ import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/htmlmixed/htmlmixed';
 import 'codemirror/mode/css/css';
 import 'codemirror/mode/markdown/markdown';
-// import 'codemirror/theme/monokai.css';
 
 window.JSHINT = JSHINT;
 
@@ -95,11 +94,6 @@ const lintOptions = {
   ],
 };
 
-const PREP_KEY_SHOW_LINE_NUMBER = 'editor.show-line-numbers';
-const PREP_KEY_FONT_SIZE = 'editor.font-size';
-const PREP_KEY_INDENTATION = 'editor.indentation';
-const PREP_KEY_LINT = 'editor.lint';
-
 export class Editor extends Component {
   constructor(props) {
     super(props);
@@ -108,11 +102,6 @@ export class Editor extends Component {
   }
 
   componentDidMount() {
-    // const { editorState } = this.props;
-
-    // Set editorRef in editorState
-    // editorState.editorRef = this;
-
     this.codeMirror = new CodeMirror(this.editorContainerRef.current, {
       // value: editorState.file.content,
       mode: 'javascript',
@@ -140,36 +129,12 @@ export class Editor extends Component {
         },
       },
     });
-    /*
-    this.codeMirror.on('cursorActivity', (cm) => {
-      const cursor = cm.doc.getCursor();
-      app.store.dispatch({
-        type: actions.CODE_EDITOR_CURSOR,
-        line: cursor.line + 1,
-        col: cursor.ch + 1,
-      });
+
+    this.doc = this.codeMirror.getDoc();
+    this.doc.on('change', (doc, changeObj) => {
+      // console.log(doc, changeObj);
     });
-    */
-
-    const editorDoc = this.codeMirror.getDoc();
-    editorDoc.on('change', (doc, changeObj) => {
-      // app.editorManager.setModified(editorState, !doc.isClean());
-    });
-
-    /*
-    editorState.getContent = () => {
-      return editorDoc.getValue();
-    };
-    */
-
-    // this.setFontSize(app.preferences.get(PREP_KEY_FONT_SIZE));
   }
-
-  /*
-  setFontSize(size) {
-    this.codeMirror.getWrapperElement().style['font-size'] = `${size}px`;
-  }
-  */
 
   setCursor(pos) {
     this.codeMirror.setCursor(pos);
