@@ -33,6 +33,7 @@ class App extends Component {
         product: null,
         vendor: null,
       },
+      flashing: false,
       code: '',
     };
 
@@ -94,7 +95,19 @@ class App extends Component {
     this.handleFlash = async () => {
       const code = this.editor.current.doc.getValue();
       this.terminal.current.focus();
+      this.setState((prev) => {
+        return {
+          ...prev,
+          flashing: true,
+        };
+      });
       await this.flash(code);
+      this.setState((prev) => {
+        return {
+          ...prev,
+          flashing: false,
+        };
+      });
     };
   }
 
@@ -111,8 +124,14 @@ class App extends Component {
     serial.write('\r.load\r');
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     // ...
+    console.log(window.location.search);
+    const params = new URLSearchParams(window.location.search);
+    const load = params.get('load');
+    const res = await fetch(load);
+    const text = await res.text();
+    console.log(text);
   }
 
   render() {
@@ -126,15 +145,23 @@ class App extends Component {
           </div>
           <div>
             <button
-              className="btn btn-primary me-2"
+              className="btn btn-primary d-flex align-items-center me-2 "
               disabled={!this.state.target.serial}
               onClick={this.handleFlash}
             >
-              Flash
+              {this.state.flashing && (
+                <div class="lds-ring me-1">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              )}
+              <span>Flash</span>
             </button>
             {!this.state.target.serial && (
               <button
-                className="btn btn-outline-secondary"
+                className="btn btn-secondary"
                 onClick={this.handleConnect}
               >
                 Connect
@@ -146,7 +173,7 @@ class App extends Component {
             </div>
             {this.state.target.serial && (
               <button
-                className="btn btn-outline-secondary ms-2 px-1"
+                className="btn btn-secondary ms-2 px-1"
                 onClick={this.handleDisconnect}
               >
                 <svg
@@ -169,18 +196,26 @@ class App extends Component {
           </div>
         </header>
         <aside>
-          <div className="head">CODE</div>
+          <div className="head">
+            <div>CODE</div>
+            <div></div>
+          </div>
           <div className="body">
             <Editor ref={this.editor} />
           </div>
         </aside>
         <section>
-          <div className="head">TERMINAL</div>
-          <Terminal
-            ref={this.terminal}
-            platform={this.platform}
-            onData={this.handleData}
-          />
+          <div className="head">
+            <div>TERMINAL</div>
+            <div></div>
+          </div>
+          <div className="body">
+            <Terminal
+              ref={this.terminal}
+              platform={this.platform}
+              onData={this.handleData}
+            />
+          </div>
         </section>
       </>
     );

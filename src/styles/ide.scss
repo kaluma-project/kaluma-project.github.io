@@ -134,8 +134,8 @@ body {
 /* ide layout and styles */
 
 $ide-header-height: 42px;
-$ide-border: 1px solid #303030;
-$ide-section-padding: 0.5rem;
+$ide-border: 1px solid #282828;
+$ide-section-head-height: 2rem;
 
 main.ide {
   position: absolute;
@@ -184,14 +184,21 @@ main.ide {
     border-right: $ide-border;
 
     .head {
-      padding-left: $ide-section-padding;
-      padding-top: $ide-section-padding;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: $ide-section-head-height;
       color: #777;
+      display: flex;
+      align-items: center;
+      padding: 0 0.7rem;
+      justify-content: space-between;
     }
 
     .body {
       position: absolute;
-      top: 1.8rem;
+      top: $ide-section-head-height;
       bottom: 0px;
       left: 0px;
       right: 0px;
@@ -207,22 +214,77 @@ main.ide {
     width: 50%;
 
     .head {
-      padding-left: $ide-section-padding;
-      padding-top: $ide-section-padding;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: $ide-section-head-height;
       color: #777;
+      display: flex;
+      align-items: center;
+      padding: 0 0.7rem;
+      justify-content: space-between;
     }
 
-    .terminal-container {
+    .body {
       position: absolute;
-      top: 1.8rem;
-      bottom: $ide-section-padding;
-      left: $ide-section-padding;
-      right: $ide-section-padding;
-      overflow: hidden;
+      top: $ide-section-head-height;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
 
-      & > .xterm {
-        height: 100%;
+      .terminal-container {
+        position: absolute;
+        top: 0px;
+        bottom: 0.3rem;
+        left: 0.7rem;
+        right: 0.7rem;
+        overflow: hidden;
+
+        & > .xterm {
+          height: 100%;
+        }
       }
     }
+  }
+}
+
+/* loading spinner */
+
+$lds-ring-color: #fff;
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin: 2px;
+  border: 2px solid $lds-ring-color;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: $lds-ring-color transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
