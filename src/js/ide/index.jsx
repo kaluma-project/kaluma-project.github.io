@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Serial } from './serial';
 import { Terminal } from './terminal.jsx';
+import { Editor } from './editor.jsx';
 
 const supportedDevices = [
   { vendorId: 11914, productId: 10, vendor: 'Raspberry Pi', product: 'Pico' },
@@ -139,7 +140,9 @@ class App extends Component {
         </header>
         <aside>
           <div className="head">CODE</div>
-          <div className="body">aside</div>
+          <div className="body">
+            <Editor />
+          </div>
         </aside>
         <section>
           <div className="head">TERMINAL</div>
