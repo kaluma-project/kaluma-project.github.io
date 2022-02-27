@@ -5,10 +5,22 @@ import { Terminal } from './terminal.jsx';
 import { Editor } from './editor.jsx';
 import { transfer } from './ymodem';
 import { delay } from './utils';
+import examples from '../../_data/examples.json';
 
 const supportedDevices = [
   { vendorId: 11914, productId: 10, vendor: 'Raspberry Pi', product: 'Pico' },
 ];
+
+function Spinner() {
+  return (
+    <div class="lds-ring me-1">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  );
+}
 
 class App extends Component {
   constructor(props) {
@@ -124,14 +136,21 @@ class App extends Component {
     serial.write('\r.load\r');
   }
 
+  async load(url) {
+    const res = await fetch(url);
+    const text = await res.text();
+    this.editor.current.setValue(text);
+  }
+
   async componentDidMount() {
-    // ...
+    /*
     console.log(window.location.search);
     const params = new URLSearchParams(window.location.search);
     const load = params.get('load');
     const res = await fetch(load);
     const text = await res.text();
     console.log(text);
+    */
   }
 
   render() {
@@ -149,14 +168,7 @@ class App extends Component {
               disabled={!this.state.target.serial}
               onClick={this.handleFlash}
             >
-              {this.state.flashing && (
-                <div class="lds-ring me-1">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div>
-              )}
+              {this.state.flashing && <Spinner />}
               <span>Flash</span>
             </button>
             {!this.state.target.serial && (
@@ -175,6 +187,7 @@ class App extends Component {
               <button
                 className="btn btn-secondary ms-2 px-1"
                 onClick={this.handleDisconnect}
+                title="Disconnect"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -197,8 +210,34 @@ class App extends Component {
         </header>
         <aside>
           <div className="head">
-            <div>CODE</div>
-            <div></div>
+            <div className="px-2">CODE</div>
+            <div>
+              <div class="dropdown">
+                <button
+                  class="btn btn-text dropdown-toggle"
+                  type="button"
+                  id="examples-dropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Examples
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="examples-dropdown">
+                  {examples.map((ex) => (
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        onClick={() => {
+                          this.load(ex.url);
+                        }}
+                      >
+                        {ex.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
           <div className="body">
             <Editor ref={this.editor} />
@@ -206,7 +245,7 @@ class App extends Component {
         </aside>
         <section>
           <div className="head">
-            <div>TERMINAL</div>
+            <div className="px-2">TERMINAL</div>
             <div></div>
           </div>
           <div className="body">

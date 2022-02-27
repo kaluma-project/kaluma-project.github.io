@@ -248,7 +248,7 @@
 <p>To check the errors raised during the code execution, you need to connect with serial terminal again. However CLI's <code>flash</code> command will load the code automatically so you can't see the error messages. So you have to use <code>--shell</code> option to flash code with shell connection.</p>
 <pre class="language-bash"><code class="language-bash">$ kaluma flash ./index.js --bundle --shell</code></pre>
 <p>Then you can see all console logs and errors because shell connection still alive even after flashing code. Hit <code>ctrl+z</code> to quit.</p>
-<p>Sometimes the flashed code can crash the board. Because Kaluma automatically execute the code in flash on boot, you have no way to recover the board in software manner. In this case you can skip code loading on boot by wiring <code>GP22</code> pin and <code>GND</code> pin (See <a href="/docs/boards/rp2/#skip-code-loading-on-boot">Skip code loading on boot</a>). And then remove the code from the internal flash in REPL mode.</p>
+<p>Sometimes the flashed code can crash the board. Because Kaluma automatically execute the code in flash on boot, you have no way to recover the board in software manner. In this case you can skip code loading on boot by wiring <code>GP22</code> pin and <code>GND</code> pin (See <a href="/docs/boards/rp2/#skip-code-loading-on-boot">Skip code loading on boot</a>). Then you can connect with terminal and you can erase the code from the internal flash in REPL mode.</p>
 <pre class="language-plain"><code class="language-plain">> .flash -e</code></pre>
 
         </div>

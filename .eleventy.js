@@ -35,13 +35,13 @@ module.exports = function (eleventyConfig) {
 
   // passthrough files
   eleventyConfig.addPassthroughCopy('./src/images');
-  // eleventyConfig.addPassthroughCopy('./src/js');
+  eleventyConfig.addPassthroughCopy('./src/examples');
   eleventyConfig.addPassthroughCopy('./src/favicon.ico');
   eleventyConfig.addPassthroughCopy('./CNAME');
 
   // watch files
-  eleventyConfig.addWatchTarget('./src/js/*.js');
-  eleventyConfig.addWatchTarget('./src/js/*.jsx');
+  eleventyConfig.addWatchTarget('./src/js/**/*.js');
+  eleventyConfig.addWatchTarget('./src/js/**/*.jsx');
 
   // filters
   eleventyConfig.addFilter('sortByOrder', (values) => {

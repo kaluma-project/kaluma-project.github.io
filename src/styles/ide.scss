@@ -71,6 +71,11 @@ $h6-font-size: $font-size-base !default;
   --border-color: #505050;
 }
 
+$bg-color: #000;
+$border-color: #282828;
+$text-color: #e6e6e6;
+$widget-color: #888;
+
 /* xterm */
 
 @import '../../node_modules/xterm/css/xterm.css';
@@ -92,10 +97,10 @@ $h6-font-size: $font-size-base !default;
     width: 100%;
     height: 100%;
     font-family: var(--font-mono);
-    background-color: #000;
+    background-color: $bg-color;
 
     .CodeMirror-gutters {
-      background-color: #000;
+      background-color: $bg-color;
       // border-right: 1px solid #333;
     }
 
@@ -108,7 +113,7 @@ $h6-font-size: $font-size-base !default;
     }
 
     .CodeMirror-activeline-background {
-      background-color: #1c1c1c;
+      background-color: lighten($bg-color, 5%);
     }
   }
 }
@@ -124,17 +129,33 @@ body {
   font-family: var(--font-sans);
   font-size: $font-size-base;
   background-color: var(--bg);
-  color: #e6e6e6;
+  color: $text-color;
 }
 
 .btn {
   padding: 0.15rem 0.7rem;
 }
 
+.btn-text {
+  border: 0;
+  background: transparent;
+  color: $widget-color;
+  outline: 0;
+
+  &:hover {
+    color: $text-color;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
 /* ide layout and styles */
 
 $ide-header-height: 42px;
-$ide-border: 1px solid #282828;
+$ide-border: 1px solid $border-color;
 $ide-section-head-height: 2rem;
 
 main.ide {
@@ -189,10 +210,9 @@ main.ide {
       right: 0;
       top: 0;
       height: $ide-section-head-height;
-      color: #777;
+      color: $widget-color;
       display: flex;
       align-items: center;
-      padding: 0 0.7rem;
       justify-content: space-between;
     }
 
@@ -219,10 +239,9 @@ main.ide {
       right: 0;
       top: 0;
       height: $ide-section-head-height;
-      color: #777;
+      color: $widget-color;
       display: flex;
       align-items: center;
-      padding: 0 0.7rem;
       justify-content: space-between;
     }
 

@@ -23,6 +23,7 @@ import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/htmlmixed/htmlmixed';
 import 'codemirror/mode/css/css';
 import 'codemirror/mode/markdown/markdown';
+import { val } from 'jshint/src/options';
 
 window.JSHINT = JSHINT;
 
@@ -134,6 +135,10 @@ export class Editor extends Component {
     this.doc.on('change', (doc, changeObj) => {
       // console.log(doc, changeObj);
     });
+  }
+
+  setValue(value) {
+    this.doc.setValue(value);
   }
 
   setCursor(pos) {
