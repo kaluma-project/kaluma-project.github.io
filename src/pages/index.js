@@ -9,7 +9,7 @@ export default function Home({ data }) {
   const { navs } = data.site.siteMetadata;
   const { html } = data.markdownRemark;
   return (
-    <Layout title="Kaluma" navs={navs}>
+    <Layout title="Kaluma">
       <div class="hero">
         <header>
           <Nav title="" navs={navs} />

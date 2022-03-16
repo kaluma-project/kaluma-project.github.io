@@ -1,7 +1,9 @@
 ---
 layout: 'doc.js'
 title: 'REPL'
-tags: 'docs/repl'
+slug: 'docs/repl'
+category: 'root'
+order: 2
 ---
 
 # REPL

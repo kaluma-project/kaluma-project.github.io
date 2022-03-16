@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function Footer({ navs }) {
   return (
@@ -27,6 +27,7 @@ export default function Footer({ navs }) {
           className="text-secondary text-decoration-none px-2"
           href="https://github.com/kaluma-project/kaluma"
           target="_blank"
+          rel="noreferrer"
         >
           Github
         </a>

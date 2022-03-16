@@ -2,6 +2,8 @@
 layout: 'doc.js'
 title: 'Introduction'
 slug: 'docs'
+category: 'root'
+order: 0
 ---
 
 # Introduction

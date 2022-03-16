@@ -2,6 +2,8 @@
 layout: 'doc.js'
 title: 'Getting Started'
 slug: 'docs/getting-started'
+category: 'root'
+order: 1
 ---
 
 # Getting Started

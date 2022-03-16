@@ -2,6 +2,8 @@
 layout: 'page.js'
 title: 'Home'
 slug: '__home'
+category: ''
+order: 0
 ---
 
 **Kaluma** is a tiny and efficient JavaScript runtime for RP2040 (Raspberry Pi Pico). The main features are:

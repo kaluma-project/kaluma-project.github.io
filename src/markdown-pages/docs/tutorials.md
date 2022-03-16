@@ -1,7 +1,9 @@
 ---
 layout: 'doc.js'
 title: 'Tutorials'
-tags: 'docs/tutorials'
+slug: 'docs/tutorials'
+category: 'root'
+order: 3
 ---
 
 # Tutorials
