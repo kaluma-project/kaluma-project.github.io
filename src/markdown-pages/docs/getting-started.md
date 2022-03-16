@@ -1,8 +1,7 @@
 ---
-layout: 'doc.njk'
+layout: 'doc.js'
 title: 'Getting Started'
-tags: 'docs'
-order: 2
+slug: 'docs/getting-started'
 ---
 
 # Getting Started

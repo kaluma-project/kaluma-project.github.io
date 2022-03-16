@@ -1,8 +1,7 @@
 ---
-layout: 'doc.njk'
+layout: 'doc.js'
 title: 'Tutorials'
-tags: 'docs'
-order: 4
+tags: 'docs/tutorials'
 ---
 
 # Tutorials
@@ -19,4 +18,3 @@ order: 4
 6. [Showing Temperature on 7-Segment Display](https://niklauslee.medium.com/physical-computing-with-javascript-6-8-showing-temperature-on-7-segment-display-b670f11fa36e)
 7. [Using Graphic Display](https://niklauslee.medium.com/physical-computing-with-javascript-7-8-using-graphic-display-fc57580fc37)
 8. [Connecting to Internet](https://niklauslee.medium.com/physical-computing-with-javascript-8-8-connecting-to-internet-151ba3dfce59)
-

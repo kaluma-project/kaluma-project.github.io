@@ -1,8 +1,7 @@
 ---
-layout: 'doc.njk'
+layout: 'doc.js'
 title: 'Introduction'
-tags: 'docs'
-order: 1
+slug: 'docs'
 ---
 
 # Introduction

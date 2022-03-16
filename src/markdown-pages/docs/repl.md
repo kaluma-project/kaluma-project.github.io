@@ -1,8 +1,7 @@
 ---
-layout: 'doc.njk'
+layout: 'doc.js'
 title: 'REPL'
-tags: 'docs'
-order: 3
+tags: 'docs/repl'
 ---
 
 # REPL
