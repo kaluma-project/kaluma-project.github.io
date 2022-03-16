@@ -2,31 +2,26 @@
   "name": "kaluma-website",
   "version": "1.0.0",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy"
+    "dev": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
-    "@babel/core": "^7.17.5",
-    "@babel/preset-react": "^7.16.7",
-    "@jamshop/eleventy-plugin-webpack": "^1.0.0",
-    "babel-loader": "^8.2.3",
-    "eleventy-plugin-sass": "^1.2.0",
-    "markdown-it": "^12.3.2",
-    "markdown-it-anchor": "^8.4.1",
-    "prettier": "2.5.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.1"
+    "prettier": "^2.5.1"
   },
   "dependencies": {
     "bootstrap": "^5.1.3",
-    "codemirror": "^5.65.2",
-    "crc": "^4.1.0",
-    "jshint": "^2.13.4",
-    "xterm": "^4.5.0",
-    "xterm-addon-fit": "^0.3.0",
-    "xterm-addon-web-links": "^0.3.0"
+    "gatsby": "^4.9.3",
+    "gatsby-plugin-react-helmet": "^5.9.0",
+    "gatsby-plugin-sass": "^5.9.0",
+    "gatsby-remark-prismjs": "^6.9.0",
+    "gatsby-source-filesystem": "^4.9.1",
+    "gatsby-transformer-remark": "^5.9.1",
+    "prismjs": "^1.27.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "sass": "^1.49.9"
   }
 }

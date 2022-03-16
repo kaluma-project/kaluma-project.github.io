@@ -164,7 +164,9 @@ $markdown-content-max-width: 680px;
 
 /* prism syntax highlight */
 
-pre[class*='language-'] {
+@import '../../node_modules/prismjs/themes/prism.css';
+
+pre {
   width: 100%;
   background: var(--bg-light-gray);
   padding: 1rem 1.5rem;
@@ -172,12 +174,12 @@ pre[class*='language-'] {
   font-size: 0.875em;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
 
-  code[class*='language-'] {
-    font-family: var(--font-mono);
-    line-height: 0;
-    text-shadow: none;
-  }
+code[class*='language-'] {
+  font-family: var(--font-mono);
+  line-height: 0;
+  text-shadow: none;
 }
 
 /* utility classes */
