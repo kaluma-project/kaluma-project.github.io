@@ -1,4 +1,5 @@
 {
+  "name": "hc-sr04",
   "repo": "https://github.com/niklauslee/hc-sr04",
   "description": "Kaluma library for HC-SR04 ultrasonic distance measurement module"
 }

@@ -3,32 +3,40 @@ module.exports = {
     title: `Kaluma`,
     siteUrl: `https://kalumajs.org`,
     navs: [
-      { name: 'Download', url: '/download', blank: false },
-      { name: 'Packages', url: '/packages', blank: false },
-      { name: 'Docs', url: '/docs', blank: false },
+      { name: "Download", url: "/download", blank: false },
+      { name: "Packages", url: "/packages", blank: false },
+      { name: "Docs", url: "/docs", blank: false },
       {
-        name: 'Discussions',
-        url: 'https://discord.gg/5dvKfMnXhU',
+        name: "Discussions",
+        url: "https://discord.gg/5dvKfMnXhU",
         blank: true,
       },
-      { name: 'IDE', url: '/ide', blank: false },
+      { name: "IDE", url: "/ide", blank: false },
     ],
   },
   plugins: [
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         name: `markdown-pages`,
         path: `${__dirname}/src/markdown-pages/`,
       },
     },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: "gatsby-source-filesystem",
       options: {
-        plugins: ['gatsby-remark-prismjs'],
+        name: `packages`,
+        path: `${__dirname}/src/packages/`,
       },
     },
-    'gatsby-plugin-sass',
-    'gatsby-plugin-react-helmet',
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: ["gatsby-remark-prismjs"],
+      },
+    },
+    "gatsby-transformer-json",
+    "gatsby-plugin-sass",
+    "gatsby-plugin-react-helmet",
   ],
 };

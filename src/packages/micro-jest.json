@@ -1,4 +1,5 @@
 {
+  "name": "micro-jest",
   "repo": "https://github.com/niklauslee/micro-jest",
   "description": "A tiny testing framework for Kaluma"
 }

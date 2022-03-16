@@ -1,4 +1,5 @@
 {
+  "name": "buzzer-music",
   "repo": "https://github.com/niklauslee/buzzer-music",
   "description": "Kaluma library to play music with passive buzzer."
 }
