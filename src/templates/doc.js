@@ -5,15 +5,15 @@ import "../styles/page.scss";
 
 export default function Doc({ data }) {
   const { html } = data.markdownRemark;
-  const roots = data.allMarkdownRemark.nodes.filter(
-    (n) => n.frontmatter.category === "root"
-  );
-  const boards = data.allMarkdownRemark.nodes.filter(
-    (n) => n.frontmatter.category === "board"
-  );
-  const apis = data.allMarkdownRemark.nodes.filter(
-    (n) => n.frontmatter.category === "api"
-  );
+  const roots = data.allMarkdownRemark.nodes
+    .filter((n) => n.frontmatter.category === "root")
+    .sort((a, b) => a.frontmatter.order - b.frontmatter.order);
+  const boards = data.allMarkdownRemark.nodes
+    .filter((n) => n.frontmatter.category === "board")
+    .sort((a, b) => a.frontmatter.title.localeCompare(b.frontmatter.title));
+  const apis = data.allMarkdownRemark.nodes
+    .filter((n) => n.frontmatter.category === "api")
+    .sort((a, b) => a.frontmatter.title.localeCompare(b.frontmatter.title));
   return (
     <Layout title="Docs | Kaluma">
       <nav className="doc-sidebar">
