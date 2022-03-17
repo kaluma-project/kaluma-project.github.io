@@ -30,7 +30,7 @@ export default function Doc({ data }) {
           >
             <ul className="list-unstyled">
               {roots.map((node) => (
-                <li>
+                <li key={node.frontmatter.slug}>
                   <a href={"/" + node.frontmatter.slug}>
                     {node.frontmatter.title}
                   </a>
@@ -48,7 +48,7 @@ export default function Doc({ data }) {
               <br />
               <div className="doc-section">Boards</div>
               {boards.map((node) => (
-                <li>
+                <li key={node.frontmatter.slug}>
                   <a href={"/" + node.frontmatter.slug}>
                     {node.frontmatter.title}
                   </a>
@@ -57,7 +57,7 @@ export default function Doc({ data }) {
               <br />
               <div className="doc-section">API</div>
               {apis.map((node) => (
-                <li>
+                <li key={node.frontmatter.slug}>
                   <a href={"/" + node.frontmatter.slug}>
                     {node.frontmatter.title}
                   </a>

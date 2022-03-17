@@ -6,35 +6,24 @@ import Footer from "../components/footer";
 import "../styles/page.scss";
 
 export default class Packages extends React.Component {
-  componentDidMount() {
-    /*
-    var popoverTriggerList = [].slice.call(
-      document.querySelectorAll('[data-bs-toggle="popover"]')
-    );
-    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-      return new window.bootstrap.Popover(popoverTriggerEl);
-    });
-
-    function closeAllPopover() {
-      popoverList.map((popover) => {
-        popover.hide();
-      });
-    }
-
-    function copyToClipboard(val) {
+  constructor(props) {
+    super(props);
+    this.copyToClipboard = (repo) => {
+      console.log("copy!", repo);
       const t = document.createElement("textarea");
       document.body.appendChild(t);
-      t.value = val;
+      t.value = `npm i ${repo}`;
       t.select();
       document.execCommand("copy");
       document.body.removeChild(t);
+      const btn = document.getElementById(`copy-btn-${repo}`);
+      btn.innerText = "COPIED!";
       setTimeout(() => {
-        closeAllPopover();
+        btn.innerText = "COPY";
       }, 1000);
-    }
-    // window.copyToClipboard = copyToClipboard;
-    */
+    };
   }
+  componentDidMount() {}
 
   render() {
     const { html } = this.props.data.markdownRemark;
@@ -75,36 +64,13 @@ export default class Packages extends React.Component {
                       </div>
                       <div className="repo">
                         <code className="repo-install">npm i {item.repo}</code>
-
                         <button
                           className="repo-copy"
-                          onClick="copyToClipboard('npm i {{item.repo}}')"
-                          data-bs-placement="top"
-                          data-bs-toggle="popover"
-                          data-bs-content="Copied!"
+                          onClick={() => {
+                            this.copyToClipboard(item.repo);
+                          }}
                         >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="feather feather-copy"
-                          >
-                            <rect
-                              x="9"
-                              y="9"
-                              width="13"
-                              height="13"
-                              rx="2"
-                              ry="2"
-                            ></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                          </svg>
+                          <span id={"copy-btn-" + item.repo}>COPY</span>
                         </button>
                       </div>
                     </div>

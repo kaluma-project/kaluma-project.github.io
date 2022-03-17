@@ -10,7 +10,7 @@ export default function Home({ data }) {
   const { html } = data.markdownRemark;
   return (
     <Layout title="Kaluma">
-      <div class="hero">
+      <div className="hero">
         <header>
           <Nav title="" navs={navs} />
         </header>
@@ -33,7 +33,7 @@ export default function Home({ data }) {
           </a>
         </div>
       </div>
-      <div class="container markdown-content my-5 front-content">
+      <div className="container markdown-content my-5 front-content">
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
       <div>

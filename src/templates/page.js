@@ -27,7 +27,7 @@ export default function Page({ data }) {
             Download
           </a>
         </div>
-        <div class="container markdown-content my-5 front-content">
+        <div className="container markdown-content my-5 front-content">
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </div>
