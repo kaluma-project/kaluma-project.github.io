@@ -11,6 +11,7 @@ export default function Footer({ navs }) {
               href={nav.url}
               target="_blank"
               rel="noreferrer"
+              key={nav.name}
             >
               {nav.name}
             </a>
@@ -18,6 +19,7 @@ export default function Footer({ navs }) {
             <a
               className="text-secondary text-decoration-none px-2"
               href={nav.url}
+              key={nav.name}
             >
               {nav.name}
             </a>

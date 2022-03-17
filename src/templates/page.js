@@ -1,7 +1,7 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import '../styles/main.scss';
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import "../styles/page.scss";
 
 export default function Page({ data }) {
   const { html } = data.markdownRemark;
@@ -11,7 +11,7 @@ export default function Page({ data }) {
       <div>
         <div className="container text-center my-4">
           <h1 style={{ fontWeight: 900 }}>Kaluma</h1>
-          <p className="mb-3" style={{ color: '#666', fontSize: '20px' }}>
+          <p className="mb-3" style={{ color: "#666", fontSize: "20px" }}>
             A tiny JavaScript runtime for RP2040 (Raspberry Pi Pico)
           </p>
         </div>

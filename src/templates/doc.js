@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
-import "../styles/main.scss";
+import "../styles/page.scss";
 
 export default function Doc({ data }) {
   const { html } = data.markdownRemark;
