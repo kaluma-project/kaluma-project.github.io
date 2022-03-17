@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkkaluma_website=self.webpackChunkkaluma_website||[]).push([[883],{429:function(e,t,n){n.r(t),n.d(t,{default:function(){return l}});var a=n(7294),u=n(4446);function l(e){e.data;return a.createElement(u.Z,{title:"Kaluma"},a.createElement("main",null,a.createElement("h2",null,"Page not found")))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-a1281bee31ef69d2fc7a.js.map
