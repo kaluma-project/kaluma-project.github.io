@@ -74,7 +74,9 @@ export default class Packages extends React.Component {
                         </button>
                       </div>
                     </div>
-                    <div className="text-secondary">{item.description}</div>
+                    <div className="text-secondary mt-1">
+                      {item.description}
+                    </div>
                   </li>
                 ))}
               </ul>
