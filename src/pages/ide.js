@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Serial } from "../components/ide/serial";
 import { Terminal } from "../components/ide/terminal.jsx";
 import { Editor } from "../components/ide/editor.jsx";
@@ -143,6 +144,7 @@ export default class App extends Component {
   }
 
   async componentDidMount() {
+    document.body.classList.add("ide-body");
     /*
     console.log(window.location.search);
     const params = new URLSearchParams(window.location.search);
@@ -196,9 +198,9 @@ export default class App extends Component {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="feather feather-x"
                 >
                   <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -212,34 +214,27 @@ export default class App extends Component {
           <div className="head">
             <div className="px-2">CODE</div>
             <div>
-              <div className="dropdown">
-                <button
+              <DropdownMenu.Root>
+                <DropdownMenu.Trigger
                   className="btn btn-text dropdown-toggle"
-                  type="button"
                   id="examples-dropdown"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
                 >
                   Examples
-                </button>
-                <ul
-                  className="dropdown-menu"
-                  aria-labelledby="examples-dropdown"
-                >
+                </DropdownMenu.Trigger>
+                <DropdownMenu.Content className="radix-dropdown-content">
                   {examples.map((ex) => (
-                    <li key={ex.name}>
-                      <button
-                        className="dropdown-item"
-                        onClick={() => {
-                          this.load(ex.url);
-                        }}
-                      >
-                        {ex.name}
-                      </button>
-                    </li>
+                    <DropdownMenu.Item
+                      key={ex.name}
+                      className="radix-dropdown-item"
+                      onClick={() => {
+                        this.load(ex.url);
+                      }}
+                    >
+                      {ex.name}
+                    </DropdownMenu.Item>
                   ))}
-                </ul>
-              </div>
+                </DropdownMenu.Content>
+              </DropdownMenu.Root>
             </div>
           </div>
           <div className="body">

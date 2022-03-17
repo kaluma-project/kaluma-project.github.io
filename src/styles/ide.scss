@@ -7,7 +7,7 @@ $bg-color: #000;
 $border-color: #282828;
 $text-color: #e6e6e6;
 $widget-color: #888;
-$primary: blue;
+$primary: #0d6efd;
 
 /* xterm */
 
@@ -22,18 +22,42 @@ $primary: blue;
 @import "../../node_modules/codemirror/addon/scroll/simplescrollbars.css";
 @import "../../node_modules/codemirror/theme/monokai.css";
 
+/* radix-ui dropdown */
+
+.radix-dropdown-content {
+  background-color: white;
+  color: black;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  padding: 0.5em 0em;
+
+  .radix-dropdown-item {
+    padding: 0.2em 1em;
+    cursor: pointer;
+
+    &:hover {
+      outline: 0;
+      background-color: rgb(223, 221, 221);
+    }
+  }
+}
+
 /* ide layout and styles */
 
 $ide-header-height: 42px;
 $ide-border: 1px solid $border-color;
 $ide-section-head-height: 2rem;
 
+body.ide-body {
+  background-color: $bg-color;
+}
+
 main.ide {
   font-family: $font-sans;
   font-size: 0.75rem;
   background-color: $bg-color;
   color: $text-color;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;
