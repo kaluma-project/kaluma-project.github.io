@@ -7,14 +7,27 @@ exports.onCreateWebpackConfig = ({
   plugins,
   actions,
 }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      fallback: {
-        util: require.resolve("util/"),
-        assert: require.resolve("assert/"),
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /codemirror/,
+            use: loaders.null(),
+          },
+        ],
       },
-    },
-  });
+    });
+  } else {
+    actions.setWebpackConfig({
+      resolve: {
+        fallback: {
+          util: require.resolve("util/"),
+          assert: require.resolve("assert/"),
+        },
+      },
+    });
+  }
 };
 
 exports.createPages = async ({ graphql, actions }) => {

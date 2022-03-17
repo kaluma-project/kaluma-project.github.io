@@ -24,7 +24,9 @@ import "codemirror/mode/htmlmixed/htmlmixed";
 import "codemirror/mode/css/css";
 import "codemirror/mode/markdown/markdown";
 
-window.JSHINT = JSHINT;
+if (typeof window !== "undefined") {
+  window.JSHINT = JSHINT;
+}
 
 const lintOptions = {
   esversion: 11,

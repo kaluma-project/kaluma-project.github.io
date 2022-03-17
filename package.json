@@ -5,7 +5,8 @@
     "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "gatsby build && gh-pages -d public -b deploy"
   },
   "devDependencies": {
     "prettier": "^2.5.1"
@@ -24,12 +25,14 @@
     "gatsby-source-filesystem": "^4.9.1",
     "gatsby-transformer-json": "^4.9.0",
     "gatsby-transformer-remark": "^5.9.1",
+    "gh-pages": "^3.2.3",
     "jshint": "^2.13.4",
     "prismjs": "^1.27.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "sass": "^1.49.9",
+    "ssr-polyfill": "^1.0.1",
     "util": "^0.12.4",
     "xterm": "^4.18.0",
     "xterm-addon-fit": "^0.5.0",

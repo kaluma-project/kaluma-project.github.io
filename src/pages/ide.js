@@ -1,8 +1,9 @@
+import "../components/ide/ssr-polyfill";
 import React, { Component } from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Serial } from "../components/ide/serial";
-import { Terminal } from "../components/ide/terminal.jsx";
-import { Editor } from "../components/ide/editor.jsx";
+import { Terminal } from "../components/ide/terminal";
+import { Editor } from "../components/ide/editor";
 import { transfer } from "../components/ide/ymodem";
 import { delay } from "../components/ide/utils";
 import examples from "../components/ide/examples.json";
@@ -145,14 +146,6 @@ export default class App extends Component {
 
   async componentDidMount() {
     document.body.classList.add("ide-body");
-    /*
-    console.log(window.location.search);
-    const params = new URLSearchParams(window.location.search);
-    const load = params.get('load');
-    const res = await fetch(load);
-    const text = await res.text();
-    console.log(text);
-    */
   }
 
   render() {
