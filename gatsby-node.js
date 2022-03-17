@@ -1,4 +1,21 @@
-const path = require('path');
+const path = require("path");
+
+exports.onCreateWebpackConfig = ({
+  stage,
+  rules,
+  loaders,
+  plugins,
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      fallback: {
+        util: require.resolve("util/"),
+        assert: require.resolve("assert/"),
+      },
+    },
+  });
+};
 
 exports.createPages = async ({ graphql, actions }) => {
   const { data } = await graphql(`

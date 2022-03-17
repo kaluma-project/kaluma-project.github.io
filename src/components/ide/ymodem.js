@@ -1,5 +1,5 @@
-const crc16 = require('crc').crc16xmodem;
-import { Buffer } from 'buffer';
+import { Buffer } from "buffer";
+import { crc16xmodem as crc16 } from "crc";
 
 const PACKET_SIZE = 1024;
 // const SOH = 0x01 // 128 byte blocks
@@ -26,7 +26,7 @@ function makeFileHeader(filename, filesize) {
     offset = filename.length + 1;
   }
   if (filesize) {
-    payload.write(filesize.toString() + ' ', offset);
+    payload.write(filesize.toString() + " ", offset);
   }
   return payload;
 }
@@ -87,7 +87,7 @@ export function transfer(serial, filename, buffer) {
         var chunks = splitBuffer(buffer, 256);
         for (const chunk of chunks) {
           var arr = new Uint8Array(chunk.buffer);
-          await serial.write(arr, 'binary');
+          await serial.write(arr, "binary");
         }
       }
       return bulk();
@@ -170,7 +170,7 @@ export function transfer(serial, filename, buffer) {
     function close() {
       session = false;
       sending = false;
-      serial.removeListener('data', handler);
+      serial.removeListener("data", handler);
       if (!finished) {
         const result = {
           filePath: filename,
@@ -195,6 +195,6 @@ export function transfer(serial, filename, buffer) {
 
     // Start to transfer
     session = true;
-    serial.on('data', handler);
+    serial.on("data", handler);
   });
 }

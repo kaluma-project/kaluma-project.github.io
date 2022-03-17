@@ -1,8 +1,8 @@
-import React, { Component, ReactNode } from 'react';
-import { findDOMNode } from 'react-dom';
-import { Terminal as XTerm } from 'xterm';
-import { FitAddon } from 'xterm-addon-fit';
-import { WebLinksAddon } from 'xterm-addon-web-links';
+import React, { Component } from "react";
+import { findDOMNode } from "react-dom";
+import { Terminal as XTerm } from "xterm";
+import { FitAddon } from "xterm-addon-fit";
+import { WebLinksAddon } from "xterm-addon-web-links";
 
 export class Terminal extends Component {
   constructor(props) {
@@ -12,15 +12,15 @@ export class Terminal extends Component {
       convertEol: true,
       cursorBlink: true,
       fontFamily:
-        'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace',
+        "Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace",
       fontSize: 12,
-      windowsMode: props.platform === 'win32',
-      macOptionIsMeta: props.platform === 'darwin',
-      macOptionClickForcesSelection: props.platform === 'darwin',
+      windowsMode: props.platform === "win32",
+      macOptionIsMeta: props.platform === "darwin",
+      macOptionClickForcesSelection: props.platform === "darwin",
       theme: {
-        cursor: '#00dd00',
-        foreground: '#00dd00',
-        background: '#000000',
+        cursor: "#00dd00",
+        foreground: "#00dd00",
+        background: "#000000",
       },
     });
 
@@ -40,7 +40,7 @@ export class Terminal extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       this.fit();
     });
     const terminalContainer = findDOMNode(this);
@@ -65,11 +65,11 @@ export class Terminal extends Component {
   }
 
   enable() {
-    this.terminal.element.style.removeProperty('display');
+    this.terminal.element.style.removeProperty("display");
   }
 
   disable() {
-    this.terminal.element.style.display = 'none';
+    this.terminal.element.style.display = "none";
   }
 
   fit() {
