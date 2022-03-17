@@ -1,8 +1,8 @@
 ---
-layout: 'doc.js'
-title: 'REPL'
-slug: 'docs/repl'
-category: 'root'
+layout: "doc.js"
+title: "REPL"
+slug: "docs/repl"
+category: "root"
 order: 2
 ---
 
