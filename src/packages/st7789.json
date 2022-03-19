@@ -1,0 +1,5 @@
+{
+  "name": "st7789",
+  "repo": "https://github.com/niklauslee/st7789",
+  "description": "Kaluma library for ST7789 (Color TFT/IPS LCD Display)"
+}

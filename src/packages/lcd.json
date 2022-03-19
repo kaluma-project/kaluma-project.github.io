@@ -1,0 +1,5 @@
+{
+  "name": "lcd",
+  "repo": "https://github.com/niklauslee/lcd",
+  "description": "Kaluma library for liquid crystal display (HD44780 driver)"
+}

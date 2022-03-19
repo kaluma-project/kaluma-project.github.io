@@ -1,0 +1,5 @@
+{
+  "name": "servo",
+  "repo": "https://github.com/niklauslee/servo",
+  "description": "Kaluma library to control servo motors"
+}

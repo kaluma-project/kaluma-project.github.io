@@ -1,0 +1,21 @@
+/* prism syntax highlight */
+
+@import "../../node_modules/prismjs/themes/prism.css";
+
+.gatsby-highlight {
+  pre {
+    width: 100%;
+    background: $bg-light-gray;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.875em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    code[class*="language-"] {
+      font-family: $font-mono;
+      line-height: 0;
+      text-shadow: none;
+    }
+  }
+}
