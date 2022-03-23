@@ -8,7 +8,7 @@ module.exports = {
       { name: "Docs", url: "/docs", blank: false },
       {
         name: "Discussions",
-        url: "https://discord.gg/5dvKfMnXhU",
+        url: "https://github.com/kaluma-project/kaluma/discussions",
         blank: true,
       },
       { name: "IDE", url: "/ide", blank: false },

@@ -6,6 +6,8 @@ if (typeof window === "undefined") {
   };
   global.window = {
     navigator: global.navigator,
+    requestAnimationFrame: () => {},
+    cancelAnimationFrame: () => {},
   };
   global.self = global.window;
 }
