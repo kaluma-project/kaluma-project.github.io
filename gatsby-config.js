@@ -4,6 +4,7 @@ module.exports = {
     siteUrl: `https://kalumajs.org`,
     navs: [
       { name: "Download", url: "/download", blank: false },
+      { name: "Showcase", url: "/showcase", blank: false },
       { name: "Packages", url: "/packages", blank: false },
       { name: "Docs", url: "/docs", blank: false },
       {
@@ -27,6 +28,13 @@ module.exports = {
       options: {
         name: `packages`,
         path: `${__dirname}/src/packages/`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `showcase`,
+        path: `${__dirname}/src/showcase/`,
       },
     },
     {

@@ -154,6 +154,18 @@ $markdown-content-max-width: 680px;
   background-color: $border-color;
 }
 
+/* showcase page */
+
+.card {
+  .card-title {
+    font-weight: 600;
+    margin-bottom: .3em;
+  }
+  .card-text {
+    font-size: 14px;
+  }
+}
+
 /* Hide in small devices */
 @media (max-width: 767.98px) {
   .repo {
