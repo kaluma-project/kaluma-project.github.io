@@ -1,7 +1,7 @@
 ---
 name: Publish package template
 about: Request to publish a new package
-title: "[Publish Package]"
+title: "[Publish Request] New Package"
 labels: help wanted
 assignees: niklauslee
 ---

@@ -21,7 +21,7 @@ export default class Showcase extends React.Component {
             <div className="text-end">
               <a
                 className="btn btn-outline-secondary"
-                href="https://github.com/kaluma-project/kaluma-project.github.io/issues/new?template=publish-project-template.md&title=[Publish Project]"
+                href="https://github.com/kaluma-project/kaluma-project.github.io/issues/new?template=publish-project-template.md&title=[Publish Request] New Project in Showcase"
                 target="_blank"
                 rel="noreferrer"
               >

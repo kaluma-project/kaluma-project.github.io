@@ -41,7 +41,7 @@ export default class Packages extends React.Component {
               <p>
                 <a
                   className="btn btn-outline-secondary"
-                  href="https://github.com/kaluma-project/kaluma-project.github.io/issues/new?template=publish-package-template.md&title=[Publish Package]"
+                  href="https://github.com/kaluma-project/kaluma-project.github.io/issues/new?template=publish-package-template.md&title=[Publish Request] New Package"
                   target="_blank"
                   rel="noreferrer"
                 >
