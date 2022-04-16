@@ -29,7 +29,7 @@ export default class Showcase extends React.Component {
               </a>
             </div>
           </div>
-          <div className="container px-4">
+          <div className="container px-4 showcase">
             <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
               {showcaseItems.map((item) => (
                 <div className="col" key={item.name}>
@@ -47,7 +47,9 @@ export default class Showcase extends React.Component {
                           {item.name}
                         </a>
                       </div>
-                      <p className="card-text">{item.description}</p>
+                      <p className="card-text text-secondary">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 </div>

@@ -155,14 +155,23 @@ $markdown-content-max-width: 680px;
 }
 
 /* showcase page */
-
-.card {
-  .card-title {
-    font-weight: 600;
-    margin-bottom: .3em;
-  }
-  .card-text {
-    font-size: 14px;
+.showcase {
+  .card {
+    border: none;
+    .card-img-top {
+      border-radius: 0px;
+    }
+    .card-title {
+      font-weight: 600;
+      margin-top: .5em;
+      margin-bottom: 0em;
+    }
+    .card-text {
+      font-size: 14px;
+    }
+    .card-body {
+      padding: 0px;
+    }
   }
 }
 
