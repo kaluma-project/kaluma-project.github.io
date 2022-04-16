@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-showcase-js",
+    "path": "/showcase/",
+    "result": {"data":{"site":{"siteMetadata":{"navs":[{"name":"Download","url":"/download","blank":false},{"name":"Showcase","url":"/showcase","blank":false},{"name":"Packages","url":"/packages","blank":false},{"name":"Docs","url":"/docs","blank":false},{"name":"Discussions","url":"https://github.com/kaluma-project/kaluma/discussions","blank":true},{"name":"IDE","url":"/ide","blank":false}],"title":"Kaluma","siteUrl":"https://kalumajs.org","description":null}},"allShowcaseJson":{"nodes":[{"repo":"https://github.com/niklauslee/gamejoy-js","description":"Retro-style game console programmable with JavaScript (Kaluma)","name":"gamejoy-js","thumbnail":"https://raw.githubusercontent.com/niklauslee/gamejoy-js/main/images/colors.jpg"},{"repo":"https://github.com/niklauslee/picosystem","description":"Kaluma library for Pimoroni's PicoSystem","name":"picosystem","thumbnail":"https://raw.githubusercontent.com/niklauslee/picosystem/main/images/picosystem.jpg"}]}},"pageContext":{}},
+    "staticQueryHashes": []}

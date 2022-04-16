@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-download-js",
     "path": "/download/",
-    "result": {"data":{"site":{"siteMetadata":{"navs":[{"name":"Download","url":"/download","blank":false},{"name":"Packages","url":"/packages","blank":false},{"name":"Docs","url":"/docs","blank":false},{"name":"Discussions","url":"https://github.com/kaluma-project/kaluma/discussions","blank":true},{"name":"IDE","url":"/ide","blank":false}],"title":"Kaluma","siteUrl":"https://kalumajs.org","description":null}}},"pageContext":{}},
+    "result": {"data":{"site":{"siteMetadata":{"navs":[{"name":"Download","url":"/download","blank":false},{"name":"Showcase","url":"/showcase","blank":false},{"name":"Packages","url":"/packages","blank":false},{"name":"Docs","url":"/docs","blank":false},{"name":"Discussions","url":"https://github.com/kaluma-project/kaluma/discussions","blank":true},{"name":"IDE","url":"/ide","blank":false}],"title":"Kaluma","siteUrl":"https://kalumajs.org","description":null}}},"pageContext":{}},
     "staticQueryHashes": []}
