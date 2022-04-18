@@ -1,0 +1,6 @@
+{
+  "name": "weather-monitor",
+  "repo": "https://github.com/niklauslee/weather-monitor",
+  "description": "Classic Macintosh-style weather monitor with Wi-Fi and OLED display",
+  "thumbnail": "https://raw.githubusercontent.com/niklauslee/weather-monitor/main/images/photo1.jpg"
+}

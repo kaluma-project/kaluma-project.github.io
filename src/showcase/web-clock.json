@@ -1,0 +1,6 @@
+{
+  "name": "web-clock",
+  "repo": "https://github.com/niklauslee/web-clock",
+  "description": "A clock device reading time from Web",
+  "thumbnail": "https://raw.githubusercontent.com/niklauslee/web-clock/main/images/assemble.jpg"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "cooking-timer",
+  "repo": "https://github.com/niklauslee/cooking-timer",
+  "description": "A cooking timer made with 7-segment LED, knob and buzzer",
+  "thumbnail": "https://raw.githubusercontent.com/niklauslee/cooking-timer/main/images/cover.jpg"
+}
