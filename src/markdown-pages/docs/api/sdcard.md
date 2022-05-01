@@ -59,3 +59,50 @@ I/O operations are below:
 - `5` : Returns the number of bytes in a block
 - `6` : Erase a block (`arg` is the block number to erase)
 - `7` : Returns the sdcard page size. The same as number of bytes in a block for sdcard.
+
+## Example code for FAT file system
+### System setup
+- Pico GP2 -> SDCARD clock (SD_SCK)
+- Pico GP3 -> SDCARD MOSI (SD_MOSI)
+- Pico GP4 -> SDCARD MISO (SD_MISO)
+- Pico GP5 -> SDCARD chip select(SD_CS)
+- Pico 3V3(OUT), pin 36 -> SDCARD VCC
+- Pico GND, pin 38 -> SDCARD GND
+
+```
+const fs = require('fs');
+const { SDCard } = require('sdcard');
+const { VFSFatFS } = require("vfs_fat");
+
+const sd_options = {
+    cs: 5, // GP5 for chip select
+    sck: 2, // GP2 for SPI SCK
+    mosi: 3, // GP3 for SPI MOSI
+    miso: 4, // GP4 for SPI MISO
+}
+const sdcard = new SDCard(0, sd_options);
+
+// register fat filesystem type
+fs.register('fat', VFSFatFS);
+
+// Mount FAT file system at /sdcard
+fs.mount('/sdcard', sdcard, 'fat');
+
+// Change directory to /sdcard
+fs.chdir("/sdcard")
+
+const fname = 'file.txt';
+
+// file write (create)
+let fd_write = fs.open(fname, 'w');
+let buf_write = new Uint8Array([60, 61, 62, 63, 64, 65, 66, 67, 68, 69]);
+fs.write(fd_write, buf_write, 0, buf_write.length, 0);
+fs.close(fd_write);
+
+// file read
+let fd_read = fs.open(fname, 'r');
+let buf_read = new Uint8Array(10);
+fs.read(fd_read, buf_read, 0, buf_read.length, 0);
+fs.close(fd_read);
+console.log(buf_read);
+```
