@@ -1,8 +1,8 @@
 ---
-layout: 'doc.js'
-title: 'Introduction'
-slug: 'docs'
-category: 'root'
+layout: "doc.js"
+title: "Introduction"
+slug: "docs"
+category: "root"
 order: 0
 ---
 
@@ -22,7 +22,6 @@ Welcome to Kaluma! Kaluma is a tiny and efficient JavaScript runtime for [RP2040
 ## Related Tools
 
 - [Kaluma CLI](https://github.com/kaluma-project/kaluma-cli) - A command-line tool to program devices running Kaluma runtime.
-- [Wokwi](https://wokwi.com/projects/new/kaluma-pi-pico) - Online microcontroller emulator supporting Kaluma.
 
 ## ECMAScript
 
