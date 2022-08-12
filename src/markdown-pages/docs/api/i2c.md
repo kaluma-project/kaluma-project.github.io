@@ -45,7 +45,7 @@ const i2c0 = new I2C(0);
 i2c0.close();
 
 // open bus 1 in master mode, full speed
-const i2c1 = new I2C(1, {mode: I2C.MASTER, baudrate: 400000);
+const i2c1 = new I2C(1, { mode: I2C.MASTER, baudrate: 400000 });
 // read or write ...
 i2c1.close();
 ```
