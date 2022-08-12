@@ -1,0 +1,5 @@
+{
+  "name": "i2c-lcd",
+  "repo": "https://github.com/slashinfty/i2c-lcd",
+  "description": "Kaluma library for liquid crystal display with PCF8574 I2C port expander (LCM1602 module)"
+}
