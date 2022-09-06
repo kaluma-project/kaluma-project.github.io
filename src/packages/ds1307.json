@@ -1,0 +1,5 @@
+{
+  "name": "ds1307",
+  "repo": "https://github.com/rossdoker/ds1307",
+  "description": "Kaluma library for DS1307 RTC module"
+}
