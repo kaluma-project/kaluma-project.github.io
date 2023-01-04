@@ -9,6 +9,7 @@ order: 0
 # RP2 (Raspberry Pi Pico)
 
 This page describes information about the Kaluma port for [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/).
+Kamula officially support Raspberry Pi Pico and Pico-W (Pico-W is beta version) but Raspberry Pi Pico FW could support the board which has RP2040 micro processor (Need to check Pin configuration between RP Pico and other boards)
 
 ## Pinout
 
@@ -38,9 +39,10 @@ This section shows the Raspberry Pi Pico specific properties of the global [boar
 - `<number>`&#x20;
 
 The GPIO number for the on-board LED.
+ * Pico-W does not have on-board LED which is controlled by RP2040. On-board LED on Pico-W can be controlled by pico_cyw43 module.
 
 ```javascript
-console.log(board.LED); // 25
+console.log(board.LED); // 25 for pico and undefined for pico-w
 ```
 
 ## Flash
@@ -117,3 +119,8 @@ Capacity for [Storage](/docs/api/storage) functions.
 | --------------------------- | --------------------------------- |
 | Max size of storage item    | 253 bytes (key size + value size) |
 | Max number of storage items | 64                                |
+
+## CYW43 module (for Pico-W board)
+
+Raspberry Pi Pico W adds on-board WiFi module using the Infineon CYW43439.
+Kamula support pico_cyw43 module as WiFi and network driver.
