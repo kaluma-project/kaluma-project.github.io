@@ -18,22 +18,32 @@ This page describes information about the Kaluma port for [Raspberry Pi Pico W](
 
 ![Raspberry Pi Pico W (from https://raspberrypi.org)](/images/doc-pico-w-pinout.svg)
 
-## Object: board
+## On-board LED
 
-This section shows the Raspberry Pi Pico specific properties of the global [board](/docs/api/board/) object.
+Pico-W does not have on-board LED which is controlled by RP2040. Instead, the on-board LED can be controlled by [CYW43](/docs/api/cyw43) module as below:
 
-### board.LED
+```js
+const { PicoCYW43 } = require('pico_cyw43');
+const pico_cyw43 = new PicoCYW43();
 
-- `<number>`&#x20;
-
-The GPIO number for the on-board LED.
- * Pico-W does not have on-board LED which is controlled by RP2040. On-board LED on Pico-W can be controlled by pico_cyw43 module.
-
-```javascript
-console.log(board.LED); // 25 for pico and undefined for pico-w
+// Blink on-board LED
+setInterval(() => {
+  if (pico_cyw43.getGpio(0) === false) {
+    pico_cyw43.putGpio(0, true); // turn on LED
+  } else {
+    pico_cyw43.putGpio(0, false); // turn off LED
+  }
+}, 1000);
 ```
 
 ## Modules
+
+Supported modules:
+
+- [CYW43](/docs/api/cyw43)
+- [Wi-Fi](/docs/api/wifi)
+- [Net](/docs/api/net)
+- [HTTP](/docs/api/http)
 
 ### CYW43
 
