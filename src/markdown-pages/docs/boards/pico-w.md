@@ -28,17 +28,17 @@ const pico_cyw43 = new PicoCYW43();
 
 // Blink on-board LED
 setInterval(() => {
-  if (pico_cyw43.getGpio(0) === false) {
-    pico_cyw43.putGpio(0, true); // turn on LED
+  if (pico_cyw43.getGpio(0)) {
+    pico_cyw43.putGpio(0, false); // turn-off LED
   } else {
-    pico_cyw43.putGpio(0, false); // turn off LED
+    pico_cyw43.putGpio(0, true); // turn-on LED
   }
 }, 1000);
 ```
 
 ## Modules
 
-Supported modules:
+Supported modules more than Pico board:
 
 - [CYW43](/docs/api/cyw43)
 - [Wi-Fi](/docs/api/wifi)

@@ -164,7 +164,7 @@ Bind the socket to the given address and port.
 
 Starts to listening for connections. When a new connection is accepted, the socket's `accept_cb` is called.
 
-## IEEE 802.11 (WiFi) Device Driver <a href="#ieee-80211-dev" id="ieee-80211-dev"></a>
+## IEEE 802.11 (WiFi) Device Driver
 
 The IEEE 802.11 (Wi-Fi) device driver should provide the interface described in this section.
 
