@@ -142,7 +142,7 @@ $ kaluma flash ./index.js --bundle --shell
 
 Then you can see all console logs and errors because shell connection still alive even after flashing code. Hit `ctrl+z` to quit.
 
-Sometimes the flashed code can crash the board. Because Kaluma automatically execute the code in flash on boot, you have no way to recover the board in software manner. In this case you can skip code loading on boot by wiring `GP22` pin and `GND` pin (See [Skip code loading on boot](/docs/boards/rp2/#skip-code-loading-on-boot)). Then you can connect with terminal and you can erase the code from the internal flash in REPL mode.
+Sometimes the flashed code can crash the board. Because Kaluma automatically execute the code in flash on boot, you have no way to recover the board in software manner. In this case you can skip code loading on boot by wiring `GP22` pin and `GND` pin (See [Skip code loading on boot](/docs/boards/pico/#skip-code-loading-on-boot)). Then you can connect with terminal and you can erase the code from the internal flash in REPL mode.
 
 ```plain
 > .flash -e

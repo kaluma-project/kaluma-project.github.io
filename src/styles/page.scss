@@ -175,6 +175,27 @@ $markdown-content-max-width: 680px;
   }
 }
 
+/* download page */
+.download {
+  .card {
+    border: none;
+    .card-img-top {
+      border-radius: 0px;
+    }
+    .card-title {
+      font-weight: 600;
+      margin-top: .5em;
+      margin-bottom: 0em;
+    }
+    .card-text {
+      font-size: 14px;
+    }
+    .card-body {
+      padding: 0px;
+    }
+  }
+}
+
 /* Hide in small devices */
 @media (max-width: 767.98px) {
   .repo {

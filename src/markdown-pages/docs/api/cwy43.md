@@ -1,7 +1,7 @@
 ---
 layout: 'doc.js'
-title: 'pico_cyw43'
-slug: 'docs/api/pico-cyw43'
+title: 'CYW43'
+slug: 'docs/api/cyw43'
 category: 'api'
 ---
 
