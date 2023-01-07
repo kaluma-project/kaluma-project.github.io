@@ -29,8 +29,8 @@ An instances of `I2C` represents a I2C bus.
 - **`options` ** `<object>` The object of I2C options. _Default values are depends on board (Check in a board page)._
   - **`mode`** `<number>` I2C mode, `I2C.MASTER` or `I2C.SLAVE` mode. **Default:** `I2C.MASTER`
   - **`baudrate`** `<number>` Clock speed (bit/s) for Master mode.
-  - **`scl`** `<number>` SCL pin number. Not to use this pin. **Default:** board dependent. Check the `Boards` document.
-  - **`sda`** `<number>` SDA pin number. Not to use this pin. **Default:** board dependent. Check the `Boards` document.
+  - **`scl`** `<number>` SCL pin number. `-1` Not to use this pin. **Default:** board dependent. Check the `Boards` document.
+  - **`sda`** `<number>` SDA pin number. `-1` Not to use this pin. **Default:** board dependent. Check the `Boards` document.
 - **Returns:** `<object>` The return value is `I2C` object.
 
 Instances of the `I2C` class can be created using the `new` keyword or by calling `i2c.I2C()` as a function. A `RangeError` will be thrown if **`bus`** exceeds max bus number.
