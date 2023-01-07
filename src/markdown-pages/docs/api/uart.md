@@ -65,8 +65,10 @@ Use both RTS and CTS flow control.
   - **`stop`** `<number>` Number of stop bits. One of the `[1, 2]`. **Default:** `1`.
   - **`flow`** `<number>` Flow control. One of the `UART.FLOW_NONE (0)`, `UART.FLOW_RTS (1)`, `UART.FLOW_CTS (2)`, or `UART.FLOW_RTS_CTS (3)`. **Default:** `UART.FLOW_NONE`
   - **`bufferSize`** `<number>` The size of internal read buffer.
-  - **`tx`** `<number>` UART TX pin number.
-  - **`rx`** `<number>` UART RX pin number.
+  - **`tx`** `<number>` UART TX pin number. `-1` Not to use this pin. **Default:** board dependent. Check the `Boards` document.
+  - **`rx`** `<number>` UART RX pin number. `-1` Not to use this pin. **Default:** board dependent. Check the `Boards` document.
+  - **`cts`** `<number>` UART CTS pin number. `-1` Not to use this pin. **Default:**`-1`
+  - **`rts`** `<number>` UART RTS pin number. `-1` Not to use this pin. **Default:**`-1`
 
 ```javascript
 // Create the UART instance and close it
