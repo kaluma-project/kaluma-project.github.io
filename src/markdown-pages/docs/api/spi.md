@@ -56,9 +56,9 @@ SPI bitorder, LSB is the first bit.
   - **`mode`** `<number>` `SPI.MODE_0` (CPOL=0/CPHA=0), `SPI.MODE_1` (CPOL=0/CPHA=1), `SPI.MODE_2` (CPOL=1/CPHA=0), or `SPI.MODE_3` (CPOL=1/CPHA=1). **Default:** `SPI.MODE_0`.
   - **`baudrate`** `<number>` Baud rate. **Default:** `3000000`, 3 Mbit/s
   - **`bitorder`** `<number>` `SPI.MSB (0)` or `SPI.LSB (1)` **Default:** `SPI.MSB (0)`.
-  - **`sck`** `<number>` SPI SCK pin number.
-  - **`mosi`** `<number>` SPI MOSI (TX) pin number.
-  - **`miso`** `<number>` SPI MISO (RX) pin number.
+  - **`sck`** `<number>` SPI SCK pin number. `-1` Not to use this pin. **Default:** board dependent. Check the `Boards` document.
+  - **`mosi`** `<number>` SPI MOSI (TX) pin number. `-1` Not to use this pin. **Default:** board dependent. Check the `Boards` document.
+  - **`miso`** `<number>` SPI MISO (RX) pin number. `-1` Not to use this pin. **Default:** board dependent. Check the `Boards` document.
 - **Returns:** `<object>` An initialized SPI instance corresponds to the bus number. Once initialized, the same object will be returned.
 
 Instances of the `SPI` class can be created using the new keyword or by calling spi.SPI() as a function. A `RangeError` will be thrown if **`bus`** is not less than max bus number. Please see [here](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface#Clock_polarity_and_phase) for more about SPI modes.
