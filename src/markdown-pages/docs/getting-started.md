@@ -58,7 +58,7 @@ Then you will see a welcome message and the prompt `>` (If you cannot see the pr
 
 You can exit the CLI shell connection by pressing `ctrl+z`.
 
-You can use other serial terminal programs including `screen` command in macOS and Linux, or [PuTTY](https://www.putty.org/)) in Windows.
+You can use other serial terminal programs including `screen` command in macOS and Linux, or [PuTTY](https://www.putty.org/) in Windows.
 
 ## Setup project
 
