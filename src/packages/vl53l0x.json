@@ -1,0 +1,5 @@
+{
+  "name": "vl53l0x",
+  "repo": "https://github.com/haraldkubota/vl53l0x",
+  "description": "Time-of-Flight Sensor VL53L0X"
+}
