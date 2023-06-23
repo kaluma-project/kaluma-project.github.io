@@ -29,7 +29,7 @@ Creates a HTTP request and returns an instance of `ClientRequest`.
 
 ```javascript
 const options = {
-  hostname: 'www.somewhere.com',
+  host: 'www.somewhere.com',
   port: 80,
   path: '/',
   method: 'GET',

@@ -95,14 +95,14 @@ Add interrupt on the GPIO pin. Run the **`callback`** function when the **`event
 The interrupt does not support level triggering, you can use setWatch() function when you want to use level triggering events (`LOW_LEVEL`, `HIGH_LEVEL`).
 
 ```javascript
-// Set interrupt on the GPIO0
+// Set interrupt on the GPIO 0
 const { GPIO } = require('gpio');
-// GPIO0 and GPIO1 are connected together
-const pin0 = new GPIO(0, INPUT); // GPIO0 is input port which check the state change of GPIO1
+// GPIO 0 and GPIO 1 are connected together
+const pin0 = new GPIO(0, INPUT); // GPIO 0 is input port which check the state change of GPIO 1
 const pin1 = new GPIO(1, OUTPUT); // GPIO 1 is output
-pin1.low(); // Set LOW on the GPIO1
+pin1.low(); // Set LOW on the GPIO 1
 
-// Callback function for the GPIO0
+// Callback function for the GPIO 0
 function callback0(pin, mode) {
   console.log('Event ' + mode + ' is triggered on the GPIO' + pin);
 }
@@ -110,9 +110,9 @@ function callback0(pin, mode) {
 // Set interrupt callback function on GPIO01
 pin0.irq(callback0, CHANGE);
 
-pin1.high(); // Callback is called bcause GPIO0 is changed from LOW to HIGH
+pin1.high(); // Callback is called bcause GPIO 0 is changed from LOW to HIGH
 delay(1);
-pin0.low(); // Callback is called bcause GPIO0 is changed from HIGH to LOW
+pin1.low(); // Callback is called bcause GPIO 0 is changed from HIGH to LOW
 ```
 
 ### gpio.pin
