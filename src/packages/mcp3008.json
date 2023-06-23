@@ -1,0 +1,5 @@
+{
+  "name": "mcp3008",
+  "repo": "https://github.com/alexander-daniel/mcp3008",
+  "description": "Kaluma library for MCP3008 8-Channel ADC"
+}
