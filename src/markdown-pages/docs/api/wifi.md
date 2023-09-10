@@ -62,7 +62,9 @@ wifi.scan((err, scanResults) => {
 
 - **`connectInfo`** `{object}` Information to connect a Wi-Fi network.
   - **`ssid`** `{string}` SSID.
-  - **`password`** `{string}` Password.
+  - **`password`** `{string}` Password. Default: `undefined`.
+  - **`bssid`** `{string}` O\_\*\*\_BSSID. (Typically MAC address). Default: `undefined`.
+  - **`security`** `{string}` Security. `OPEN`, `WPA2_WPA_PSK`, `WPA2_PSK`, `WPA_PSK`, `WEP_PSK`. Defaule: `OPEN` if password is not set or length of the password is less than 8 characters. `WPA2_WPA_PSK` if length of the password is greater or equal to 8 characters.
   - **`enforce`** `{boolean}` When set to `true`, enforce to connect even if there is already a Wi-Fi connection. Otherwise, do not try to connect if there is Wi-Fi connection. Default: `false`.
 - **`callback`** `{Function}` A callback function called when a Wi-Fi connection is established. This is also called when there is already a Wi-Fi connection.
   - **`err`** `{Error}`&#x20;
@@ -88,6 +90,7 @@ If you do not want to expose your Wi-Fi connection info, you can set them in the
 ```javascript
 storage.setItem('WIFI_SSID', 'MyHome');
 storage.setItem('WIFI_PASSWORD', '12345678');
+storage.setItem('WIFI_SECURITY', 'WPA2_WPA_PSK');
 ```
 
 And then, call `connect` method without `connectInfo` argument as below.

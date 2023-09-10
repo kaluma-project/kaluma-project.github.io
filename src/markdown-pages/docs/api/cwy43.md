@@ -59,6 +59,49 @@ const { PicoCYW43WIFI } = require('pico_cyw43');
 global.__ieee80211dev = new PicoCYW43WIFI();
 ```
 
+This class also has a WIFI AP (Access Pointer) function. So Pico-W board can be used to WIFI AP.
+
+### pico_cyw43.wifiApMode(apInfo, \[callback])
+
+- **`apInfo`**`{object}`
+  - **`ssid`** `{string}` SSID.
+  - **`password`** `{string}` password of the WIFI AP.
+  - **`gateway`** `{string}` Gateway of the WIFI AP. Default: `192.168.4.1`
+  - **`subnetMask`** `{string}` Subnet Maks of the WIFI AP. Default: `255.255.255.0`
+
+Start WIFI AP mode.
+
+### pico_cyw43.disableWifiApMode()
+
+Disable WIFI AP mode.
+
+### pico_cyw43.getWifiApClients()
+
+- **Returns:** `<{Array<string>}>`
+  - **`bssid`** `{string}` \_\*\*\_BSSID. (Typically MAC address)
+
+Get the list of the clients's bssid (MAC address).
+
+```js
+const { PicoCYW43WIFI } = require('pico_cyw43');
+const picoWifi = new PicoCYW43WIFI();
+
+var apCallBack = function(err) {
+    console.log("WIFI ap is enabled - err: " + err);
+}
+
+var apOptions = {
+  // WIFI AP options
+  ssid: "raspberry_pi_ap",
+  password: "12345678",
+  gateway: "192.168.4.1",
+  subnet_mask: "255.255.0.0"
+};
+
+picoWifi.wifiApMode(apOptions, apCallBack);
+```
+
+
 ## Class: PicoCYW43Network
 
 > **In Pico-W board, this driver is automatically registered as a default network driver. User don't need to register manually**

@@ -28,6 +28,8 @@ The `http` module supports HTTP server and client.
 Creates a HTTP request and returns an instance of `ClientRequest`.
 
 ```javascript
+const http = require('http');
+
 const options = {
   host: 'www.somewhere.com',
   port: 80,
@@ -68,6 +70,8 @@ req.end();
 This function is same with `http.request()` except for the method is fixed to `'GET'` and automatically call `request.end()` with empty body content.
 
 ```javascript
+const http = require('http');
+
 http.get({ host: 'somewhere.com', path: '/' }, function (response) {
   response.on('data', function (chunk) {
     console.log('received: ', chunk);
@@ -82,17 +86,19 @@ http.get({ host: 'somewhere.com', path: '/' }, function (response) {
 Creates an instance of `http.Server` and returns.
 
 ```javascript
+const http = require('http');
+
 var message = '<h1>Hello</h1>';
 var port = 80;
 
 var server = http.createServer((req, res) => {
   console.log('Request path: ' + req.url);
-  response.writeHead(200, 'OK', {
+  res.writeHead(200, 'OK', {
     'Content-Type': 'text/html',
     'Content-Length': message.length,
   });
-  response.write(message);
-  response.end();
+  res.write(message);
+  res.end();
 });
 
 server.listen(port, function () {

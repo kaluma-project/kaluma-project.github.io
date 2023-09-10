@@ -192,7 +192,8 @@ interface scan_info {
 
 interface connection_info {
   ssid: string;
-  bssid: string;
+  password: string;
+  security: string;
 }
 ```
 
@@ -225,7 +226,7 @@ Reset the device.
 
 - **`callback`** `{Function}` A callback function to be called when scan complete.
   - **`err`** `{number}` `0` on success, `-1` on error. Error code is set to `errno`
-  - **`scan_results`** `{Array<Object>}`&#x20;
+  - **`scan_results`** `{Array<Object>}`
     - **`security`** `{string}` Security. `OPEN`, or multiple of `WEP`, `WPA`, `PSK`, `WPA2`, `WPA2-EAP`.
     - **`ssid`** `{string}` SSID.
     - **`rssi`** `{number}` Received signal strength indication.
@@ -238,7 +239,8 @@ Scan wireless networks.
 
 - **`connectInfo`** `{object}` Information of the wireless network to connect .
   - **`ssid`** `{string}` SSID.
-  - **`password`** `{string}` Password.
+  - **`password`** `{string}` Password. Optional.
+  - **`security`** `{string}` Security. `OPEN`, `WPA2_WPA_PSK`, `WPA2_PSK`, `WPA_PSK`, `WEP_PSK`. Optional. The defaule value is `OPEN` if password is not set or length of the password is less than 8 characters, or `WPA2_WPA_PSK` if length of the password is greater or equal to 8 characters.
 - **`callback`** `{Function}` A callback function.
   - **`err`** `{number}` `0` on success, `-1` on error. Error code is set to `errno`
 
