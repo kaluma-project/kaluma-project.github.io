@@ -21,6 +21,18 @@ The ID of the target board. ex) `pico`, ...
 console.log(board.name); // e.g.) 'pico' for Raspberry Pi Pico.
 ```
 
+### board.uid
+
+- `<string>`
+
+The Uinque ID of the target board. ex) `abcdefg`, serial number of the board
+
+Each board shall return different string value. So uid helps you identify a board.
+
+```javascript
+console.log(board.uid); // e.g.) 'E6XXXXXXXXXXXXXX' for Raspberry Pi Pico.
+```
+
 For more properties, please check the page for each board.
 
 ### board.LED
