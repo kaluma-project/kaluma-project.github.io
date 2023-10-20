@@ -93,6 +93,11 @@ Closes the server.
 - **`port`** `{number}` Port to listen.
 - **`callback`** `{Function}` Automatically added as a listener for the `'listening'` event.
 
+### server._dev
+
+- **`mac`** `{string}` The string representation of mac address.
+- **`ip`** `{string}` The string representation of IP address.
+
 Starts to listening for connections.
 
 ### Event: 'close'

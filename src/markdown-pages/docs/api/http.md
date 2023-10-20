@@ -191,6 +191,11 @@ Closes the HTTP server.
 
 Starts to listening for HTTP requests.
 
+### server._dev
+
+- **`mac`** `{string}` The string representation of mac address.
+- **`ip`** `{string}` The string representation of IP address.
+
 ### Event: 'request'
 
 - **`request`** `{http.IncomingMessage}`
