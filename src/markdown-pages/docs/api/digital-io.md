@@ -145,7 +145,7 @@ clearWatch(id); // Stop watching the on-board pin event.
 - **`options`** `<object>`&#x20;
   - **`timeout`** `<number>` timeout in us(microseconds). **Default:** `1000000`
   - **`startState`** `<number>` Start to read the pulse from this state. **Default:** `undefined`
-  - **`mode` ** `<number>` Pin mode to read pulse.
+  - **`mode`** `<number>` Pin mode to read pulse.
   - **`trigger`** `<object>`&#x20;
     - **`pin`** `<number>` Pin number to trigger. **Default:** same with `pin`&#x20;
     - **`startState`** `<number>` Start state for trigger. **Default:** `LOW`&#x20;
