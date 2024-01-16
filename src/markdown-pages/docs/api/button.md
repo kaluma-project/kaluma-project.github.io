@@ -73,7 +73,7 @@ const pin = 0; // Pin number for button
 const btn0 = new Button(pin);
 const led = 25; // LED
 pinMode(led, OUTPUT);
-btn.on('click', function () {
+btn0.on('click', function () {
   digitalToggle(led);
 });
 ```
