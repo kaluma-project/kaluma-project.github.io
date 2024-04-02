@@ -1,0 +1,5 @@
+{
+  "name": "kaluma-eink",
+  "repo": "https://gitlab.com/kobaj/kaluma-eink",
+  "description": "A library for controlling e-ink and e-paper displays (mostly from Waveshare) with Kaluma and an RP2040."
+}
