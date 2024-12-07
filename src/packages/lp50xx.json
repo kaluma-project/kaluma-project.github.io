@@ -1,0 +1,5 @@
+{
+  "name": "lp50xx",
+  "repo": "https://github.com/AlexK-99/lp50xx",
+  "description": "This is an Kaluma library for interaction with the LP5009 and LP5012 constant current RGB driver from Texas Instrument"
+}
