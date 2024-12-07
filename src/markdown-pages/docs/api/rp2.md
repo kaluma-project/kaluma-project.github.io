@@ -44,6 +44,37 @@ setWatch(
 );
 ```
 
+## randomBigInt()
+Added in: v1.2.0
+
+- **Returns:** `<BigInt>` 128bit random integer number.
+
+Generate BigInt type random interger number.
+
+```javascript
+const rp2 = require('rp2');
+
+const random_bigint = rp2.randomBigInt();
+
+// convert to string to print out the number
+console.log(random_bigint.toString());
+
+// conver to Number
+var random_num = Number(random_bigint);
+console.log(random_num);
+
+// conver to ingeger number
+// generate 0 ~ 99999 integer number
+var random_int_num = Number(rp2.randomBigInt() % 100000n);
+console.log(random_int_num);
+
+// This is the maximun Number type integer random number.
+// generate 0 ~ MAX_SAFE_INTEGER
+const MAX_RANDOM = BigInt(Number.MAX_SAFE_INTEGER + 1);
+var random_int_max = Number(rp2.randomBigInt() % MAX_RANDOM)
+console.log(random_int_max);
+```
+
 ## Object: PIO
 
 Constants for state machine of PIO.
