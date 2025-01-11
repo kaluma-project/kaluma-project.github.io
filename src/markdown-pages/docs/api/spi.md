@@ -49,6 +49,30 @@ SPI bitorder, MSB is the first bit.
 
 SPI bitorder, LSB is the first bit.
 
+### SPI.DATA_NOPULL
+*Added in: v1.2.0*
+- `<number>` = `0`
+
+SPI data lines (MOSI, MISO) have no pulls (PULL UP/PULL DOWN)
+
+### SPI.MOSI_PULLUP
+*Added in: v1.2.0*
+- `<number>` = `1`
+
+SPI MOSI has PULL UP
+
+### SPI.MISO_PULLUP
+*Added in: v1.2.0*
+- `<number>` = `2`
+
+SPI MISO has PULL UP
+
+### SPI.DATA_PULLUP
+*Added in: v1.2.0*
+- `<number>` = `3`
+
+SPI data lines (MOSI, MISO) have PULL UP
+
 ### new SPI(bus\[, options])
 
 - **`bus`** `<number>` SPI bus number.
@@ -59,6 +83,7 @@ SPI bitorder, LSB is the first bit.
   - **`sck`** `<number>` SPI SCK pin number. `-1` Not to use this pin. **Default:** board dependent. Check the `Boards` document.
   - **`mosi`** `<number>` SPI MOSI (TX) pin number. `-1` Not to use this pin. **Default:** board dependent. Check the `Boards` document.
   - **`miso`** `<number>` SPI MISO (RX) pin number. `-1` Not to use this pin. **Default:** board dependent. Check the `Boards` document.
+  - **`pullup`** `<number>` SPI data line pull up settings. `SPI.DATA_NOPULL`, `SPI.MOSI_PULLUP`, `SPI.MISO_PULLUP`, `SPI.DATA_PULLUP` **Default:** `SPI.DATA_NOPULL`. *Added in: v1.2.0*
 - **Returns:** `<object>` An initialized SPI instance corresponds to the bus number. Once initialized, the same object will be returned.
 
 Instances of the `SPI` class can be created using the new keyword or by calling spi.SPI() as a function. A `RangeError` will be thrown if **`bus`** is not less than max bus number. Please see [here](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface#Clock_polarity_and_phase) for more about SPI modes.

@@ -122,7 +122,25 @@ export default class Download extends React.Component {
                       </a>
                       <br />
                       <a
-                        href="https://github.com/kaluma-project/kaluma/releases/download/1.1.0/kaluma-rp2-pico-1.1.0.uf2"
+                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0-beta.1"
+                        className="tag-version"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        1.2.0-beta.1
+                      </a>
+                      <br />
+                      <a
+                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0-beta.2"
+                        className="tag-version"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        1.2.0-beta.2
+                      </a>
+                      <br />
+                      <a
+                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.0-beta.2/kaluma-rp2-pico-1.2.0-beta.2.uf2"
                         className="btn btn-primary btn-rounded tag-download mt-2"
                       >
                         Download .UF2
@@ -188,7 +206,99 @@ export default class Download extends React.Component {
                       </a>
                       <br />
                       <a
-                        href="https://github.com/kaluma-project/kaluma/releases/download/1.1.0/kaluma-rp2-pico-w-1.1.0.uf2"
+                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0-beta.1"
+                        className="tag-version"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        1.2.0-beta.1
+                      </a>
+                      <br />
+                      <a
+                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0-beta.2"
+                        className="tag-version"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        1.2.0-beta.2
+                      </a>
+                      <br />
+                      <a
+                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.0-beta.2/kaluma-rp2-pico-w-1.2.0-beta.2.uf2"
+                        className="btn btn-primary btn-rounded tag-download mt-2"
+                      >
+                        Download .UF2
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="container px-4 download">
+            <div className="fs-1 fw-bold my-2">RP2350</div>
+            <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+              <div className="col">
+                <div className="card">
+                  <img
+                    src="/images/pico2.png"
+                    width="250px"
+                    className="card-img-top"
+                    alt=""
+                  />
+                  <div className="card-body">
+                    <div className="card-title">Raspberry Pi Pico2</div>
+                    <p className="card-text text-secondary">
+                      <a
+                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0-beta.1"
+                        className="tag-version"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        1.2.0-beta.1
+                      </a>
+                      <br />
+                      <a
+                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0-beta.2"
+                        className="tag-version"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        1.2.0-beta.2
+                      </a>
+                      <br />
+                      <a
+                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.0-beta.2/kaluma-rp2-pico2-1.2.0-beta.2.uf2"
+                        className="btn btn-primary btn-rounded tag-download mt-2"
+                      >
+                        Download .UF2
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col">
+                <div className="card">
+                  <img
+                    src="/images/pico2-w.png"
+                    width="250px"
+                    className="card-img-top"
+                    alt=""
+                  />
+                  <div className="card-body">
+                    <div className="card-title">Raspberry Pi Pico2 W</div>
+                    <p className="card-text text-secondary">
+                      <a
+                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0-beta.2"
+                        className="tag-version"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        1.2.0-beta.2
+                      </a>
+                      <br />
+                      <a
+                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.0-beta.2/kaluma-rp2-pico2-w-1.2.0-beta.2.uf2"
                         className="btn btn-primary btn-rounded tag-download mt-2"
                       >
                         Download .UF2

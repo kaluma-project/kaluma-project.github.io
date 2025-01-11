@@ -67,7 +67,7 @@ wifi.scan((err, scanResults) => {
   - **`security`** `{string}` Security. `OPEN`, `WPA2_WPA_PSK`, `WPA2_PSK`, `WPA_PSK`, `WEP_PSK`. Defaule: `OPEN` if password is not set or length of the password is less than 8 characters. `WPA2_WPA_PSK` if length of the password is greater or equal to 8 characters.
   - **`enforce`** `{boolean}` When set to `true`, enforce to connect even if there is already a Wi-Fi connection. Otherwise, do not try to connect if there is Wi-Fi connection. Default: `false`.
 - **`callback`** `{Function}` A callback function called when a Wi-Fi connection is established. This is also called when there is already a Wi-Fi connection.
-  - **`err`** `{Error}`&#x20;
+  - **`err`** `{Error}`;
   - **`connectInfo`** `{Object}`
 
 Establish a connection to Wi-Fi network.
@@ -110,18 +110,18 @@ wifi.connect((err) => {
 
 ### wifi.disconnect(\[callback])
 
-- **`callback`** `{Function}`
+- **`callback`** `{Function}` A callback function called when a Wi-Fi connection is disconnected.
   - **`error`** `{Error}`
 
 Disconnect from currently connected Wi-Fi network.
 
 ### wifi.getConnection(\[callback])
 
-- **`callback`** `{Function}`
+- **`callback`** `{Function}` A callback function called when this function is done.
   - **`error`** `{Error}`
   - **`connectionInfo`** `{object}`
-    - **`ssid`** `{string}`
-    - **`bssid`** `{string}`
+    - **`ssid`** `{string}` SSID.
+    - **`bssid`** `{string}` \_\*\*\_BSSID. (Typically MAC address)
 
 Get connection information of currently connected Wi-Fi network.
 
@@ -136,3 +136,87 @@ This event is emitted when Wi-Fi network is connected with IP assignment.
 ### Event: 'disconnected'
 
 This event is emitted when Wi-Fi network is disconnected.
+
+### wifi.wifiApMode(\[apInfo], \[callback])
+*Added in: v1.2.0*
+
+*This is optional, callback function parameter return error if the board does not support WIFI AP mode*
+
+- **`apInfo`**`{object}`
+  - **`ssid`** `{string}` SSID. Default: `Kaluma_AP`
+  - **`password`** `{string}` password of the WIFI AP. Default: `kalumaAp`
+  - **`gateway`** `{string}` Gateway of the WIFI AP. Default: `192.168.4.1`
+  - **`subnetMask`** `{string}` Subnet Maks of the WIFI AP. Default: `255.255.255.0`
+- **`callback`**`{function}` A callback function called when a Wi-Fi AP mode is established.
+  - **`err`** `{Error}`
+
+Start WIFI AP mode.
+
+### wifi.disableWifiApMode()
+*Added in: v1.2.0*
+
+*This is optional, Do nothing if the board does not support WIFI AP mode*
+
+Disable WIFI AP mode.
+
+### wifi.getWifiApClients()
+*Added in: v1.2.0*
+
+*This is optional, Do nothing if the board does not support WIFI AP mode*
+
+- **Returns:** `<{Array<string>}>`
+  - **`bssid`** `{string}` \_\*\*\_BSSID. (Typically MAC address)
+
+Get the list of the clients's bssid (MAC address).
+
+```js
+// HTTP server on WIFI AP mode
+let { WiFi } = require('wifi')
+let wifi = new WiFi()
+let http = require('http')
+
+console.log('Starting...')
+
+wifi.wifiApMode({ssid: 'PicoHTTPServer', password: 'password' }, */(err) => {
+    if (err) {
+        console.error('err', err);
+        return;
+    }
+    console.log('access point running')
+
+    var message = '<h1>Hello</h1>';
+    var port = 80;
+    console.log(port);
+    var server = http.createServer((req, res) => {
+        console.log('Request path: ' + req.url);
+        res.writeHead(200, 'OK', {
+            'Content-Type': 'text/html',
+            'Content-Length': message.length,
+        });
+        res.write(message);
+        res.end();
+    });
+    console.log(server);
+    console.log(server._dev.ip);
+    server.listen(port, function () {
+    console.log('HTTP server listening on ', server._dev.ip, ' port: ', port);
+    console.log(server);
+    });
+})
+
+// Show client list every 10 sec.
+let show_cli_interval = setInterval(() => {
+        console.log("AP Client")
+        var clients = wifi.getWifiApClients();
+        console.log(clients);
+    }, 10*1000);
+
+// Stop server after 10 min
+let close_interval = setTimeout(() => {
+        wifi.disableWifiApMode();
+        clearTimeout(show_cli_interval);
+        console.log("WIFI AP is disabled");
+    }, 600*1000);
+
+// User can access HTTP server with "http://192.168.4.1/
+```

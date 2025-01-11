@@ -13,7 +13,7 @@ The `pico_cyw43` module is for the Raspberry Pi Pico W board.
 
 ## Class: PicoCYW43
 
-An instance of `PicoCYW43` represents a Pico-W WiFi module.
+An instance of `PicoCYW43` represents a Pico-W and Pico2-W WiFi module.
 
 ### new PicoCYW43()
 
@@ -60,6 +60,7 @@ global.__ieee80211dev = new PicoCYW43WIFI();
 ```
 
 This class also has a WIFI AP (Access Pointer) function. So Pico-W board can be used to WIFI AP.
+> This WIFI AP features is being deprecated. [WIFI class](/docs/api/wifi/) support WIFI AP feature from v1.2.0 release.
 
 ### pico_cyw43.wifiApMode(apInfo, \[callback])
 

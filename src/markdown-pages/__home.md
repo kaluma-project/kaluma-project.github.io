@@ -6,7 +6,7 @@ category: ''
 order: 0
 ---
 
-**Kaluma** is a tiny and efficient JavaScript runtime for RP2040 (Raspberry Pi Pico). The main features are:
+**Kaluma** is a tiny and efficient JavaScript runtime for RP2040 and RP2350 (Raspberry Pi Pico, Pico-w, Pico2, Pico2-W). The main features are:
 
 - <u>Small footprint</u>. Runs minimally on microcontrollers with 300KB ROM with 64KB RAM.
 - Support <u>modern JavaScript</u> standards (ECMAScript 5/6/6+). Powered by [JerryScript](https://jerryscript.net/).
@@ -20,6 +20,7 @@ order: 0
 ![Pico](/images/pico-bootsel.png)
 
 - Get a [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/) board or other RP2040 board.
+- Get a [Raspberry Pi Pico2](https://www.raspberrypi.com/products/raspberry-pi-pico-2/) board or other RP2350 board.
 - [Download](/download) firmware **.UF2** file.
 - Push and hold the **BOOTSEL** button and plug into USB port of your computer, and then release the button. It will mount as USB storage device named **RPI-RP2**.
 - Drag and drop the downloaded **.UF2** onto the **RPI-RP2** volume. Your Pico will reboot automatically.

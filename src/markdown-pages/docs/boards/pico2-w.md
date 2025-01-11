@@ -1,20 +1,20 @@
 ---
 layout: 'doc.js'
-title: 'Pico W'
-slug: 'docs/boards/pico-w'
+title: 'Pico2 W'
+slug: 'docs/boards/pico2-w'
 category: 'board'
 order: 0
 ---
 
-# Raspberry Pi Pico W
+# Raspberry Pi Pico 2W
 
-This page describes information about the Kaluma port for [Raspberry Pi Pico W](https://www.raspberrypi.org/products/raspberry-pi-pico/).
+This page describes information about the Kaluma port for [Raspberry Pi Pico2 W](https://www.raspberrypi.org/products/raspberry-pi-pico-2/).
 
 > Note that this page describes only the differences from the Pico board. Please see the [Pico](/docs/boards/pico) page for the information not covered here.
 
 ## Pinout
 
-![Raspberry Pi Pico W (from https://raspberrypi.org)](/images/doc-pico-w-pinout.svg)
+![Raspberry Pi Pico2-w (from https://www.raspberrypi.com)](https://www.raspberrypi.com/documentation/microcontrollers/images/pico2w-pinout.svg)
 
 ## On-board LED
 
@@ -33,15 +33,16 @@ setInterval(() => {
   }
 }, 1000);
 ```
+
 ## Flash
 
-Pico has 2MB flash size. 1008KB are used for firmware binary and the rest (1040KB) are used for user (total 260 blocks, block size is 4KB). Here is the flash allocation map.
+Pico has 4MB flash size. 960KB are used for firmware binary and the rest (3136KB) are used for user (total 768 blocks, block size is 4KB). Here is the flash allocation map.
 
-| Block    | Size  |                                                 |
-| -------- | ----- | ----------------------------------------------- |
-| 0\~3     | 16KB  | [Storage](/docs/api/storage) (Key-Value)        |
-| 4\~131   | 512KB | User Program                                    |
-| 132\~259 | 512KB | [File System](/docs/api/file-system) (LittleFS) |
+| Block    | Size   |                                                 |
+| -------- | ------ | ----------------------------------------------- |
+| 0\~15    | 64KB   | [Storage](/docs/api/storage) (Key-Value)        |
+| 16\~383  | 1472KB | User Program                                    |
+| 384\~767 | 1536KB | [File System](/docs/api/file-system) (LittleFS) |
 
 ## Modules
 

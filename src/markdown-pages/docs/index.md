@@ -8,7 +8,7 @@ order: 0
 
 # Introduction
 
-Welcome to Kaluma! Kaluma is a tiny and efficient JavaScript runtime for [RP2040 (Raspberry Pi Pico)](https://www.raspberrypi.com/products/raspberry-pi-pico/). If you are a JavaScript developer familiar with Node.js, you can make electronics without learning a new language like C/C++ or Arduino sketch. Written in C99 and built on [JerryScript](https://jerryscript.net/) - A lightweight and efficient JavaScript engine.
+Welcome to Kaluma! Kaluma is a tiny and efficient JavaScript runtime for [RP2040 (Raspberry Pi Pico)](https://www.raspberrypi.com/products/raspberry-pi-pico/) and [RP2350 (Raspberry Pi Pico2)](https://www.raspberrypi.com/products/raspberry-pi-pico-2/). If you are a JavaScript developer familiar with Node.js, you can make electronics without learning a new language like C/C++ or Arduino sketch. Written in C99 and built on [JerryScript](https://jerryscript.net/) - A lightweight and efficient JavaScript engine.
 
 ## Main features
 

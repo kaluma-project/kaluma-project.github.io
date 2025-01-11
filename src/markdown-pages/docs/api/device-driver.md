@@ -180,6 +180,9 @@ interface ieee80211dev {
   connect(cb: (err: number) => void): void;
   disconnect(cb: (err: number) => void): void;
   get_connection(cb: (err: number, conn: connection_info) => void): void;
+  ap_mode(apInfo: Object, cb: (err: number) => void): void;
+  disable_ap_mode() => void;
+  get_ap_client() => Array<string>;
 }
 
 interface scan_info {
@@ -262,3 +265,35 @@ Disconnect from the currently connected wireless network. The callback `onDiscon
     - **`bssid`** `{string}`
 
 Request connection information.
+
+### ieee80211dev.ap_mode(\[apInfo], \[callback])
+*Added in: v1.2.0*
+
+*This is optional, Do not implement this function if the board does not support WIFI AP mode.*
+
+- **`apInfo`**`{object}`
+  - **`ssid`** `{string}` SSID. Default: `Kaluma_AP`
+  - **`password`** `{string}` password of the WIFI AP. Default: `kalumaAp`
+  - **`gateway`** `{string}` Gateway of the WIFI AP. Default: `192.168.4.1`
+  - **`subnetMask`** `{string}` Subnet Maks of the WIFI AP. Default: `255.255.255.0`
+- **`callback`**`{function}` A callback function called when a Wi-Fi AP mode is established.
+  - **`err`** `{Error}`;
+
+Start WIFI AP mode.
+
+### ieee80211dev.disable_ap_mode()
+*Added in: v1.2.0*
+
+*This is optional, Do not implement this function if the board does not support WIFI AP mode.*
+
+Disable WIFI AP mode.
+
+### ieee80211dev.get_ap_client()
+*Added in: v1.2.0*
+
+*This is optional, Do not implement this function if the board does not support WIFI AP mode.*
+
+- **Returns:** `<{Array<string>}>`
+  - **`bssid`** `{string}` \_\*\*\_BSSID. (Typically MAC address)
+
+Get the list of the clients's bssid (MAC address).

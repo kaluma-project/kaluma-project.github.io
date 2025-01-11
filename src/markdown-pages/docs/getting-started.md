@@ -12,7 +12,7 @@ In this article we will give you a quick tutorial to get start within 10 minutes
 
 ## Get a Rasberry Pi Pico
 
-Get a [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/) board or other RP2040 board.
+Get a [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/) board or [Raspberry Pi Pico2](https://www.raspberrypi.com/products/raspberry-pi-pico-2/) board or other RP2040 orRP2350 board.
 
 ## Install firmware
 
