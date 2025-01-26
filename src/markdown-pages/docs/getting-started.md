@@ -79,12 +79,33 @@ $ npm init -y
 
 Let's write the first blink code `index.js` in the project folder with any text editor (VSCode, Atom, Sublime Text, etc).
 
+The very simple code without any external HW component is LED blinking code if your board has on board LED.
+
+> pico and pico2 board has on board LED connected to GPIO 25. If your board is officially supported by Kaluma, you can use `board.LED` constant.
+
 ```js
 // index.js
-const led = 25;
+const led = board.LED  // board.LED=25 for pico, pico2 board because GPIO 25 is connected to on board LED.
 pinMode(led, OUTPUT);
 setInterval(() => {
   digitalToggle(led);
+}, 1000);
+```
+
+> pico-w and pico2-w board has on board LED connected to WIFI module. General GPIO can't control on board LED. This is special on board LED blinking example code for pico-w and pico2-w board only.
+
+```js
+// index.js
+const { PicoCYW43 } = require('pico_cyw43');
+const pico_cyw43 = new PicoCYW43();
+
+// Blink on-board LED
+setInterval(() => {
+  if (pico_cyw43.getGpio(0)) {
+    pico_cyw43.putGpio(0, false); // turn-off LED
+  } else {
+    pico_cyw43.putGpio(0, true); // turn-on LED
+  }
 }, 1000);
 ```
 
