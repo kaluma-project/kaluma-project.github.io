@@ -3,6 +3,7 @@ https://kalumajs.org
 ## Setup
 
 ```sh
+# Use node.js version 16.x.
 $ git clone https://github.com/kaluma-project/kaluma-project.github.io.git
 $ cd kaluma-project.github.io
 $ npm install
