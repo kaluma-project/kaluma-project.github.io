@@ -149,7 +149,16 @@ export default class Download extends React.Component {
                       </a>
                       <br />
                       <a
-                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.0/kaluma-rp2-pico-1.2.0.uf2"
+                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.1"
+                        className="tag-version"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        1.2.1
+                      </a>
+                      <br />
+                      <a
+                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.1/kaluma-rp2-pico-1.2.1.uf2"
                         className="btn btn-primary btn-rounded tag-download mt-2"
                       >
                         Download the latest .UF2
@@ -242,7 +251,16 @@ export default class Download extends React.Component {
                       </a>
                       <br />
                       <a
-                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.0/kaluma-rp2-pico-w-1.2.0.uf2"
+                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.1"
+                        className="tag-version"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        1.2.1
+                      </a>
+                      <br />
+                      <a
+                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.1/kaluma-rp2-pico-w-1.2.1.uf2"
                         className="btn btn-primary btn-rounded tag-download mt-2"
                       >
                         Download the latest .UF2
@@ -295,7 +313,16 @@ export default class Download extends React.Component {
                       </a>
                       <br />
                       <a
-                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.0/kaluma-rp2-pico2-1.2.0.uf2"
+                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.1"
+                        className="tag-version"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        1.2.1
+                      </a>
+                      <br />
+                      <a
+                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.1/kaluma-rp2-pico2-1.2.1.uf2"
                         className="btn btn-primary btn-rounded tag-download mt-2"
                       >
                         Download the latest .UF2
@@ -334,7 +361,16 @@ export default class Download extends React.Component {
                       </a>
                       <br />
                       <a
-                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.0/kaluma-rp2-pico2-w-1.2.0.uf2"
+                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.1"
+                        className="tag-version"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        1.2.1
+                      </a>
+                      <br />
+                      <a
+                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.1/kaluma-rp2-pico2-w-1.2.1.uf2"
                         className="btn btn-primary btn-rounded tag-download mt-2"
                       >
                         Download the latest .UF2
