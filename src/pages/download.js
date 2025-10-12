@@ -77,66 +77,12 @@ export default class Download extends React.Component {
                       </a>
                       <br />
                       <a
-                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.1.0-beta.1"
-                        className="tag-version"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        1.1.0-beta.1
-                      </a>
-                      <br />
-                      <a
-                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.1.0-beta.2"
-                        className="tag-version"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        1.1.0-beta.2
-                      </a>
-                      <br />
-                      <a
-                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.1.0-beta.3"
-                        className="tag-version"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        1.1.0-beta.3
-                      </a>
-                      <br />
-                      <a
-                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.1.0-beta.4"
-                        className="tag-version"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        1.1.0-beta.4
-                      </a>
-                      <br />
-                      <a
                         href="https://github.com/kaluma-project/kaluma/releases/tag/1.1.0"
                         className="tag-version"
                         target="_blank"
                         rel="noreferrer"
                       >
                         1.1.0
-                      </a>
-                      <br />
-                      <a
-                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0-beta.1"
-                        className="tag-version"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        1.2.0-beta.1
-                      </a>
-                      <br />
-                      <a
-                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0-beta.2"
-                        className="tag-version"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        1.2.0-beta.2
                       </a>
                       <br />
                       <a
@@ -158,7 +104,7 @@ export default class Download extends React.Component {
                       </a>
                       <br />
                       <a
-                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.1/kaluma-rp2-pico-1.2.1.uf2"
+                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.17/kaluma-rp2-pico-1.2.1.uf2"
                         className="btn btn-primary btn-rounded tag-download mt-2"
                       >
                         Download the latest .UF2
@@ -179,66 +125,12 @@ export default class Download extends React.Component {
                     <div className="card-title">Raspberry Pi Pico W</div>
                     <p className="card-text text-secondary">
                       <a
-                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.1.0-beta.1"
-                        className="tag-version"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        1.1.0-beta.1
-                      </a>
-                      <br />
-                      <a
-                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.1.0-beta.2"
-                        className="tag-version"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        1.1.0-beta.2
-                      </a>
-                      <br />
-                      <a
-                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.1.0-beta.3"
-                        className="tag-version"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        1.1.0-beta.3
-                      </a>
-                      <br />
-                      <a
-                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.1.0-beta.4"
-                        className="tag-version"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        1.1.0-beta.4
-                      </a>
-                      <br />
-                      <a
                         href="https://github.com/kaluma-project/kaluma/releases/tag/1.1.0"
                         className="tag-version"
                         target="_blank"
                         rel="noreferrer"
                       >
                         1.1.0
-                      </a>
-                      <br />
-                      <a
-                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0-beta.1"
-                        className="tag-version"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        1.2.0-beta.1
-                      </a>
-                      <br />
-                      <a
-                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0-beta.2"
-                        className="tag-version"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        1.2.0-beta.2
                       </a>
                       <br />
                       <a
@@ -286,24 +178,6 @@ export default class Download extends React.Component {
                     <div className="card-title">Raspberry Pi Pico2</div>
                     <p className="card-text text-secondary">
                       <a
-                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0-beta.1"
-                        className="tag-version"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        1.2.0-beta.1
-                      </a>
-                      <br />
-                      <a
-                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0-beta.2"
-                        className="tag-version"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        1.2.0-beta.2
-                      </a>
-                      <br />
-                      <a
                         href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0"
                         className="tag-version"
                         target="_blank"
@@ -322,7 +196,16 @@ export default class Download extends React.Component {
                       </a>
                       <br />
                       <a
-                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.1/kaluma-rp2-pico2-1.2.1.uf2"
+                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.3.0"
+                        className="tag-version"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        1.3.0
+                      </a>
+                      <br />
+                      <a
+                        href="https://github.com/kaluma-project/kaluma/releases/download/1.3.0/kaluma-rp2-pico2-1.3.0.uf2"
                         className="btn btn-primary btn-rounded tag-download mt-2"
                       >
                         Download the latest .UF2
@@ -343,15 +226,6 @@ export default class Download extends React.Component {
                     <div className="card-title">Raspberry Pi Pico2 W</div>
                     <p className="card-text text-secondary">
                       <a
-                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0-beta.2"
-                        className="tag-version"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        1.2.0-beta.2
-                      </a>
-                      <br />
-                      <a
                         href="https://github.com/kaluma-project/kaluma/releases/tag/1.2.0"
                         className="tag-version"
                         target="_blank"
@@ -370,7 +244,16 @@ export default class Download extends React.Component {
                       </a>
                       <br />
                       <a
-                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.1/kaluma-rp2-pico2-w-1.2.1.uf2"
+                        href="https://github.com/kaluma-project/kaluma/releases/tag/1.3.0"
+                        className="tag-version"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        1.3.0
+                      </a>
+                      <br />
+                      <a
+                        href="https://github.com/kaluma-project/kaluma/releases/download/1.3.0/kaluma-rp2-pico2-w-1.3.0.uf2"
                         className="btn btn-primary btn-rounded tag-download mt-2"
                       >
                         Download the latest .UF2
