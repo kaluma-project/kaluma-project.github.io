@@ -104,7 +104,7 @@ export default class Download extends React.Component {
                       </a>
                       <br />
                       <a
-                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.17/kaluma-rp2-pico-1.2.1.uf2"
+                        href="https://github.com/kaluma-project/kaluma/releases/download/1.2.1/kaluma-rp2-pico-1.2.1.uf2"
                         className="btn btn-primary btn-rounded tag-download mt-2"
                       >
                         Download the latest .UF2
